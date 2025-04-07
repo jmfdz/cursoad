@@ -7,207 +7,223 @@
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    
+  >
+
+  <link
+          href="estilos.css"
+          rel="stylesheet"
   >
 </head>
 <body>
 
   <!-- Barra de navegación (misma que en index.html) -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="/">Curso Accesibilidad</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCurso"
-        aria-controls="navbarCurso"
-        aria-expanded="false"
-        aria-label="Mostrar u ocultar menú"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">Curso Accesibilidad</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCurso"
+          aria-controls="navbarCurso"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarCurso">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="formularios.html">Formularios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="tablas.html">Tablas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="componentes.html">Componentes</a>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarCurso">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="formularios.html">Formularios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tablas.html">Tablas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="componentes.html">Componentes</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <!-- Contenido principal -->
-  <div class="container mt-5">
-    <h1>Formulario de Solicitud</h1>
+  <main>
+    <div class="container mt-5">
+      <div class="row mx-5 mx-xs-0">
+        <div class="col-md-6">
+          <h1>Formulario de Solicitud</h1>
 
-    <!-- Formulario con distintos tipos de campos -->
-    <form id="miFormulario" onsubmit="procesarFormulario(event)">
-      <!-- Datos del solicitante -->
-      <fieldset class="mb-4">
-        <legend>Datos del solicitante</legend>
+          <!-- Formulario con distintos tipos de campos -->
+          <form id="miFormulario" onsubmit="procesarFormulario(event)">
+            <!-- Datos del solicitante -->
+            <fieldset class="mb-4">
+              <legend>Datos del solicitante</legend>
 
-        <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre</label>
-          <input
-            type="text"
-            class="form-control"
-            id="nombre"
-            name="nombre"
-            aria-required="true"
-            required
-          >
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  name="nombre"
+                >
+              </div>
+
+              <div class="mb-3">
+                <label for="apellidos" class="form-label">Apellidos</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="apellidos"
+                  name="apellidos"
+                >
+              </div>
+
+              <div class="mb-3">
+                <label for="dni" class="form-label">DNI</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="dni"
+                  name="dni"
+                >
+              </div>
+            </fieldset>
+
+            <!-- Género -->
+            <fieldset class="mb-4">
+              <legend>Género</legend>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="genero"
+                  id="generoHombre"
+                  value="hombre"
+                >
+                <label class="form-check-label" for="generoHombre">
+                  Hombre
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="genero"
+                  id="generoMujer"
+                  value="mujer"
+                >
+                <label class="form-check-label" for="generoMujer">
+                  Mujer
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Datos de la solicitud -->
+            <fieldset class="mb-4">
+              <legend>Datos de la solicitud</legend>
+
+              <div class="mb-3">
+                <label for="solicita" class="form-label">Solicita</label>
+                <textarea
+                  class="form-control"
+                  id="solicita"
+                  name="solicita"
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="categoria" class="form-label">Categoría</label>
+                <select
+                  class="form-select"
+                  id="categoria"
+                  name="categoria"
+                >
+                  <option value="">Seleccione una categoría</option>
+                  <option value="elemento1">Elemento 1</option>
+                  <option value="elemento2">Elemento 2</option>
+                  <option value="elemento3">Elemento 3</option>
+                </select>
+              </div>
+            </fieldset>
+
+            <!-- ¿Cómo quieres que te respondamos? -->
+            <fieldset class="mb-4">
+              <legend>¿Cómo quieres que te respondamos?</legend>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="resEmail"
+                  name="respuesta[]"
+                  value="email"
+                >
+                <label class="form-check-label" for="resEmail">
+                  Por e-mail
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="resTelefono"
+                  name="respuesta[]"
+                  value="telefono"
+                >
+                <label class="form-check-label" for="resTelefono">
+                  Por teléfono
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="resUACloud"
+                  name="respuesta[]"
+                  value="uacloud"
+                >
+                <label class="form-check-label" for="resUACloud">
+                  Por UACloud
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Div para mostrar los errores -->
+            <div id="mensajealerta" role="alert"></div>
+
+            <!-- Botón de envío -->
+            <button type="submit" class="btn btn-primary">
+              Enviar solicitud
+            </button>
+          </form>
         </div>
+        <div class="offset-md-2 col-md-4 mt-5">
+          <h2>Sobre la solicitud</h2>
+          <p>
+            Este formulario es un ejemplo de cómo se pueden implementar formularios accesibles utilizando HTML y Bootstrap 5.
+            Asegúrate de completar todos los campos obligatorios antes de enviar el formulario.
+          </p>
+          <p>
+            <a href="/">Más información del trámite</a>
+          </p>
+    </div>
+  </main>
 
-        <div class="mb-3">
-          <label for="apellidos" class="form-label">Apellidos</label>
-          <input
-            type="text"
-            class="form-control"
-            id="apellidos"
-            name="apellidos"
-            aria-required="true"
-            required
-          >
-        </div>
-
-        <div class="mb-3">
-          <label for="dni" class="form-label">DNI</label>
-          <input
-            type="text"
-            class="form-control"
-            id="dni"
-            name="dni"
-            aria-required="true"
-            required
-          >
-        </div>
-      </fieldset>
-
-      <!-- Género -->
-      <fieldset class="mb-4">
-        <legend>Género</legend>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="genero"
-            id="generoHombre"
-            value="hombre"
-          >
-          <label class="form-check-label" for="generoHombre">
-            Hombre
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="genero"
-            id="generoMujer"
-            value="mujer"
-          >
-          <label class="form-check-label" for="generoMujer">
-            Mujer
-          </label>
-        </div>
-      </fieldset>
-
-      <!-- Datos de la solicitud -->
-      <fieldset class="mb-4">
-        <legend>Datos de la solicitud</legend>
-
-        <div class="mb-3">
-          <label for="solicita" class="form-label">Solicita</label>
-          <textarea
-            class="form-control"
-            id="solicita"
-            name="solicita"
-            rows="3"
-            aria-required="true"
-            required
-          ></textarea>
-        </div>
-
-        <div class="mb-3">
-          <label for="categoria" class="form-label">Categoría</label>
-          <select
-            class="form-select"
-            id="categoria"
-            name="categoria"
-            aria-required="true"
-            required
-          >
-            <option value="">Seleccione una categoría</option>
-            <option value="elemento1">Elemento 1</option>
-            <option value="elemento2">Elemento 2</option>
-            <option value="elemento3">Elemento 3</option>
-          </select>
-        </div>
-      </fieldset>
-
-      <!-- ¿Cómo quieres que te respondamos? -->
-      <fieldset class="mb-4">
-        <legend>¿Cómo quieres que te respondamos?</legend>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="resEmail"
-            name="respuesta[]"
-            value="email"
-          >
-          <label class="form-check-label" for="resEmail">
-            Por e-mail
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="resTelefono"
-            name="respuesta[]"
-            value="telefono"
-          >
-          <label class="form-check-label" for="resTelefono">
-            Por teléfono
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="resUACloud"
-            name="respuesta[]"
-            value="uacloud"
-          >
-          <label class="form-check-label" for="resUACloud">
-            Por UACloud
-          </label>
-        </div>
-      </fieldset>
-
-      <!-- Div para mostrar los errores -->
-      <div id="mensajealerta" role="alert"></div>
-
-      <!-- Botón de envío -->
-      <button type="submit" class="btn btn-primary">
-        Enviar
-      </button>
-    </form>
-  </div>
+  <footer>
+    <div class="container my-5">
+      <hr/>
+      <p>Curso de Accesibilidad - Universidad de Alicante</p>
+    </div>
+  </footer>
 
   <!-- JS de Bootstrap 5 desde CDN -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  
   ></script>
 
   <!-- Script para manejar el envío del formulario por AJAX -->
@@ -245,10 +261,15 @@
       // Si hay errores, los mostramos
       if (errores.length > 0) {
         mensajeAlerta.classList.add("alert", "alert-danger");
-        mensajeAlerta.textContent = errores.join(" ");
+        let texto = "<p>Error al enviar el formualrio, se produjeron los siguientes errores:</p><ul>"
+        errores.forEach( (error) => {
+          texto += "<li>" + error + "</li>";
+        })
+        texto += "</ul>"
+        mensajeAlerta.innerHTML = texto;
       } else {
         // En caso de no haber errores, mostramos un alert de éxito
-        alert("Formulario enviado correctamente (por AJAX).");
+        alert("¡Enviado! Hacer algo.....");
         // Aquí podrías implementar la lógica real de envío (fetch, axios, etc.)
       }
     }

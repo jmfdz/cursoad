@@ -6,10 +6,17 @@ html {
 /* Encabezados */
 h1 {
   color: #005682;
-  font-weight: 600;
 }
 
-h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, legend {
+  font-weight: 700;
+}
+
+fieldset legend {
+
+}
+
+label {
   font-weight: 600;
 }
 
@@ -17,12 +24,13 @@ h2, h3, h4, h5, h6 {
    - Cabecera de color #005682 y texto en blanco.
    - Borde de las celdas en #005682 (opcional).
 */
-.table-dark thead th {
-  background-color: #005682;
-  color: #fff; /* para contraste */
+
+.table-dark th {
+  background-color: #005682 !important;
+  color: #fff !important;
 }
 
-.table-dark tbody th,
+table tbody th,
 .table-dark tbody td {
   border-color: #005682; /* Opcional, para remarcar el contorno */
 }
@@ -57,7 +65,21 @@ h2, h3, h4, h5, h6 {
 
 /* Campos de formulario (input, textarea, select) en hover o focus: borde naranja */
 .form-control:hover,
-.form-control:focus {
-  border: 2px solid orange !important;
+.form-control:focus,
+.form-select:hover,
+.form-select:focus,
+.form-check:hover,
+.form-check:focus {
+  border: 5px solid orange !important;
   box-shadow: none !important; /* para evitar superposiciones con la sombra de Bootstrap */
+}
+
+.form-check {
+  /* estilos que tengas ya */
+  position: relative; /* recomendado si quieres que el borde/outline aparezca bien */
+}
+
+.form-check:focus-within {
+  outline: 2px solid orange; /* o el grosor y color que prefieras */
+  outline-offset: 5px;       /* separación del contenedor, opcional */
 }
