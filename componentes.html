@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Componentes - Curso Accesibilidad</title>
+  <!-- CSS de Bootstrap 5 desde CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"   
+  >
+  <!-- Bootstrap Icons (opcional, para iconos si se requieren) -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" 
+  >
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">Curso Accesibilidad</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCurso"
+        aria-controls="navbarCurso"
+        aria-expanded="false"
+        aria-label="Mostrar u ocultar menú"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCurso">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="formularios.html">Formularios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tablas.html">Tablas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="componentes.html">Componentes</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="container mt-5">
+    <h1>Componentes de Bootstrap</h1>
+
+    <!-- Botones de Bootstrap -->
+    <section class="mb-5">
+      <h2>Botones</h2>
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-success">Success</button>
+      <button class="btn btn-danger">Danger</button>
+      <button class="btn btn-warning">Warning</button>
+      <button class="btn btn-info">Info</button>
+      <button class="btn btn-light">Light</button>
+      <button class="btn btn-dark">Dark</button>
+      <button class="btn btn-link">Link</button>
+    </section>
+
+    <!-- Dropdowns con botones y 3 opciones -->
+    <section class="mb-5">
+      <h2>Dropdowns</h2>
+      <div class="dropdown d-inline-block me-2">
+        <button 
+          class="btn btn-primary dropdown-toggle" 
+          type="button"
+          id="dropdownMenuButton1" 
+          data-bs-toggle="dropdown" 
+          aria-expanded="false"
+        >
+          Menú desplegable
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Acción 1</a></li>
+          <li><a class="dropdown-item" href="#">Acción 2</a></li>
+          <li><a class="dropdown-item" href="#">Acción 3</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown d-inline-block me-2">
+        <button 
+          class="btn btn-secondary dropdown-toggle" 
+          type="button"
+          id="dropdownMenuButton2" 
+          data-bs-toggle="dropdown" 
+          aria-expanded="false"
+        >
+          Otro desplegable
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+          <li><a class="dropdown-item" href="#">Opción A</a></li>
+          <li><a class="dropdown-item" href="#">Opción B</a></li>
+          <li><a class="dropdown-item" href="#">Opción C</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown d-inline-block">
+        <button 
+          class="btn btn-success dropdown-toggle" 
+          type="button"
+          id="dropdownMenuButton3" 
+          data-bs-toggle="dropdown" 
+          aria-expanded="false"
+        >
+          Desplegable extra
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+          <li><a class="dropdown-item" href="#">Item 1</a></li>
+          <li><a class="dropdown-item" href="#">Item 2</a></li>
+          <li><a class="dropdown-item" href="#">Item 3</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pestañas (Nav Tabs) -->
+    <section class="mb-5">
+      <h2>Pestañas (Tabs)</h2>
+      <ul class="nav nav-tabs" id="miTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button 
+            class="nav-link active" 
+            id="home-tab" 
+            data-bs-toggle="tab" 
+            data-bs-target="#home" 
+            type="button" 
+            role="tab" 
+            aria-controls="home" 
+            aria-selected="true"
+          >
+            Home
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button 
+            class="nav-link" 
+            id="profile-tab" 
+            data-bs-toggle="tab" 
+            data-bs-target="#profile" 
+            type="button" 
+            role="tab" 
+            aria-controls="profile" 
+            aria-selected="false"
+          >
+            Profile
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button 
+            class="nav-link" 
+            id="contact-tab" 
+            data-bs-toggle="tab" 
+            data-bs-target="#contact" 
+            type="button" 
+            role="tab" 
+            aria-controls="contact" 
+            aria-selected="false"
+          >
+            Contact
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="miTabContent">
+        <div 
+          class="tab-pane fade show active p-3 border border-top-0" 
+          id="home" 
+          role="tabpanel" 
+          aria-labelledby="home-tab"
+        >
+          Contenido de la pestaña Home.
+        </div>
+        <div 
+          class="tab-pane fade p-3 border border-top-0" 
+          id="profile" 
+          role="tabpanel" 
+          aria-labelledby="profile-tab"
+        >
+          Contenido de la pestaña Profile.
+        </div>
+        <div 
+          class="tab-pane fade p-3 border border-top-0" 
+          id="contact" 
+          role="tabpanel" 
+          aria-labelledby="contact-tab"
+        >
+          Contenido de la pestaña Contact.
+        </div>
+      </div>
+    </section>
+
+    <!-- Acordeón -->
+    <section class="mb-5">
+      <h2>Acordeón</h2>
+      <div class="accordion" id="acordeonEjemplo">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingUno">
+            <button 
+              class="accordion-button" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#collapseUno" 
+              aria-expanded="true" 
+              aria-controls="collapseUno"
+            >
+              Sección #1
+            </button>
+          </h2>
+          <div 
+            id="collapseUno" 
+            class="accordion-collapse collapse show" 
+            aria-labelledby="headingUno" 
+            data-bs-parent="#acordeonEjemplo"
+          >
+            <div class="accordion-body">
+              Contenido de la sección 1 del acordeón.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingDos">
+            <button 
+              class="accordion-button collapsed" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#collapseDos" 
+              aria-expanded="false" 
+              aria-controls="collapseDos"
+            >
+              Sección #2
+            </button>
+          </h2>
+          <div 
+            id="collapseDos" 
+            class="accordion-collapse collapse" 
+            aria-labelledby="headingDos" 
+            data-bs-parent="#acordeonEjemplo"
+          >
+            <div class="accordion-body">
+              Contenido de la sección 2 del acordeón.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTres">
+            <button 
+              class="accordion-button collapsed" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#collapseTres" 
+              aria-expanded="false" 
+              aria-controls="collapseTres"
+            >
+              Sección #3
+            </button>
+          </h2>
+          <div 
+            id="collapseTres" 
+            class="accordion-collapse collapse" 
+            aria-labelledby="headingTres" 
+            data-bs-parent="#acordeonEjemplo"
+          >
+            <div class="accordion-body">
+              Contenido de la sección 3 del acordeón.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- JS de Bootstrap 5 desde CDN -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"  
+  ></script>
+</body>
+</html>
