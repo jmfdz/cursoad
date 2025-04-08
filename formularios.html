@@ -229,6 +229,8 @@
 
   <!-- Script para manejar el envío del formulario por AJAX -->
   <script>
+    let editando = false;
+
     function procesarFormulario(event) {
       // Evita que se haga el envío normal del formulario
       event.preventDefault();
@@ -241,7 +243,7 @@
       const solicita = formulario.solicita.value.trim();
       const categoria = formulario.categoria.value;
       const respuestas = formulario.querySelectorAll('input[name="respuesta[]"]:checked');
-      
+
       // Contenedor para los mensajes de error
       const mensajeAlerta = document.getElementById("mensajealerta");
       mensajeAlerta.classList.remove("alert", "alert-danger");
@@ -274,6 +276,27 @@
         // Aquí podrías implementar la lógica real de envío (fetch, axios, etc.)
       }
     }
+
+    /*document.addEventListener("DOMContentLoaded",(event) => {
+      document.getElementById("nombre")?.focus()
+
+
+      // Agregamos eventos de escucha a todos los inputs, select y textarea
+      const inputs = document.querySelectorAll('input, select, textarea');
+      inputs.forEach((elem) => {
+        elem.addEventListener('input', () => {
+          editando = true;
+        });
+      });
+
+      // Evento que se dispara al intentar salir de la página
+      window.addEventListener('beforeunload', (e) => {
+        if (editando) {
+          e.preventDefault();
+          e.returnValue = 'Hay cambios sin guardar. ¿Estás seguro de que deseas salir?';
+        }
+      });
+    });*/
   </script>
 </body>
 </html>

@@ -1,48 +1,123 @@
-/* Tamaño de fuente base */
 html {
-  font-size: 1.116rem;
+  font-size: 1.166rem;
 }
 
-/* Encabezados */
-h1 {
+body {
+  background-color: #ededed;
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, span {
+  word-break: break-word;
+}
+
+h1, .h1, .text-primary, .text-secondary {
   color: #005682;
 }
 
-h1, h2, h3, h4, h5, h6, legend, label {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, legend, label {
   font-weight: 600;
 }
 
-/* Tabla con estilo dark:
-   - Cabecera de color #005682 y texto en blanco.
-   - Borde de las celdas en #005682 (opcional).
-*/
-
-.table-dark th {
-  background-color: #005682 !important;
-  color: #fff !important;
+b, strong {
+  font-weight: 700;
 }
 
-table tbody th,
-.table-dark tbody td {
-  border-color: #005682; /* Opcional, para remarcar el contorno */
+/* Enlaces y botones */
+a {
+  color: #005682;
+}
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius:23px;
+  line-height: 1.3;
+  word-break: initial;
+}
+button.btn-primary {
+  background: #005682;
+  border-color: #005682;
+  color: #fff;
+}
+.btn-primary:hover{
+  background: #00486C;
+  border-color: #00486C;
+  color: #fff;
 }
 
-/* Botón primary con color #005682 */
-.btn-primary {
-  background-color: #005682 !important;
-  border-color: #005682 !important;
+/* Tablas */
+caption {
+  caption-side: top;
+  color: #656565;
 }
+table.table thead tr th {
+  background-color: #005682;
+  color: #ffffff;
+}
+
+.table td, .table th {
+  padding: 0.5em;
+}
+
+.table.table-striped>tbody>tr:nth-of-type(odd)>*{
+  background-color: rgba(0, 0, 0, 0.0);
+  --bs-table-bg-type: rgba(0, 0, 0, 0.05);
+}
+.table.table-striped>tbody>tr>*{
+  background-color: rgba(0, 0, 0, 0.0);
+  --bs-table-bg-type: #EDEDED;
+}
+
+.table{
+  border-color: #cccccc;
+}
+
+/* Foco en formularios */
+.form-control, .form-select {
+  border: 1px solid #005682;
+}
+.form-control:focus, .form-select:focus,
+.form-control:hover, .form-select:hover,
+.form-check:hover, .form-check:focus {
+  outline: 3px solid #CE6F05;
+}
+
+.form-check {
+  /* estilos que tengas ya */
+  position: relative; /* recomendado si quieres que el borde/outline aparezca bien */
+}
+
+.form-check:focus-within {
+  outline: 2px solid #CE6F05; /* o el grosor y color que prefieras */
+  outline-offset: 5px; /* separación del contenedor, opcional */
+}
+
+
+
+
+.tab-content {
+  border: 1px solid #005682;
+}
+
 
 /* Pestañas (tab) seleccionadas y acordeón abierto con color #005682 */
+.nav-tabs {
+  border: none;
+}
 .nav-tabs .nav-link.active {
   background-color: #005682;
   color: #fff;
   border-color: #005682 #005682 #fff; /* Ajusta si quieres distinto estilo */
 }
+.nav-tabs .nav-link {
+  color: black;
+}
 
 .accordion-button:not(.collapsed) {
   background-color: #005682;
   color: #fff;
+}
+
+.accordion-item {
+  border: 1px solid #005682;
 }
 
 /* Hover y focus en botones y dropdowns: borde naranja */
@@ -52,26 +127,5 @@ table tbody th,
 .dropdown-toggle:focus {
   outline: none; /* quita el outline por defecto */
   box-shadow: none; /* quita la sombra por defecto si la hubiera */
-  border: 2px solid orange;
-}
-
-/* Campos de formulario (input, textarea, select) en hover o focus: borde naranja */
-.form-control:hover,
-.form-control:focus,
-.form-select:hover,
-.form-select:focus,
-.form-check:hover,
-.form-check:focus {
-  border: 5px solid orange !important;
-  box-shadow: none !important; /* para evitar superposiciones con la sombra de Bootstrap */
-}
-
-.form-check {
-  /* estilos que tengas ya */
-  position: relative; /* recomendado si quieres que el borde/outline aparezca bien */
-}
-
-.form-check:focus-within {
-  outline: 2px solid orange; /* o el grosor y color que prefieras */
-  outline-offset: 5px;       /* separación del contenedor, opcional */
+  border: 2px solid #CE6F05;
 }
