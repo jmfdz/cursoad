@@ -8,15 +8,7 @@ h1 {
   color: #005682;
 }
 
-h1, h2, h3, h4, h5, h6, legend {
-  font-weight: 700;
-}
-
-fieldset legend {
-
-}
-
-label {
+h1, h2, h3, h4, h5, h6, legend, label {
   font-weight: 600;
 }
 
