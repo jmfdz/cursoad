@@ -1,0 +1,122 @@
+/* 
+   override-colors.css
+   Sobrescribe los colores para que coincidan con Bootstrap 5
+*/
+
+/* -------------------- */
+/*     BOTONES (btn)    */
+/* -------------------- */
+.btn-primary {
+  background-color: #0d6efd !important; /* Bootstrap 5 primary */
+  border-color: #0d6efd !important;
+  color: #fff !important;
+}
+
+.btn-secondary {
+  background-color: #6c757d !important; /* Bootstrap 5 secondary */
+  border-color: #6c757d !important;
+  color: #fff !important;
+}
+
+.btn-success {
+  background-color: #198754 !important; /* Bootstrap 5 success */
+  border-color: #198754 !important;
+  color: #fff !important;
+}
+
+.btn-info {
+  background-color: #0dcaf0 !important; /* Bootstrap 5 info */
+  border-color: #0dcaf0 !important;
+  color: #000 !important; /* El texto sobre color info se recomienda que sea oscuro */
+}
+
+.btn-warning {
+  background-color: #ffc107 !important; /* Bootstrap 5 warning */
+  border-color: #ffc107 !important;
+  color: #000 !important; /* El texto sobre color warning se recomienda que sea oscuro */
+}
+
+.btn-danger {
+  background-color: #dc3545 !important; /* Bootstrap 5 danger */
+  border-color: #dc3545 !important;
+  color: #fff !important;
+}
+
+.btn-light, btn-default {
+  background-color: #f8f9fa !important; /* Bootstrap 5 light */
+  border-color: #f8f9fa !important;
+  color: #000 !important;
+}
+
+.btn-dark {
+  background-color: #212529 !important; /* Bootstrap 5 dark */
+  border-color: #212529 !important;
+  color: #fff !important;
+}
+
+/* -------------------- */
+/*     ALERTAS (alert)  */
+/* -------------------- */
+.alert {
+  border: 1px solid transparent;
+  border-radius: 4px; /* Ajustar según versión de BS si deseas */
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* Primary */
+.alert-primary {
+  background-color: #cfe2ff !important; 
+  color: #084298 !important;
+  border-color: #b6d4fe !important;
+}
+
+/* Secondary */
+.alert-secondary {
+  background-color: #e2e3e5 !important; 
+  color: #41464b !important;
+  border-color: #d3d6d8 !important;
+}
+
+/* Success */
+.alert-success {
+  background-color: #d1e7dd !important; 
+  color: #0f5132 !important;
+  border-color: #badbcc !important;
+}
+
+/* Info (ya no existe "info" como tal en BS5, 
+   pero algunos proyectos lo mantienen, aquí lo equiparamos a .alert-info) */
+.alert-info {
+  background-color: #cff4fc !important;
+  color: #055160 !important;
+  border-color: #b6effb !important;
+}
+
+/* Warning */
+.alert-warning {
+  background-color: #fff3cd !important; 
+  color: #664d03 !important;
+  border-color: #ffecb5 !important;
+}
+
+/* Danger */
+.alert-danger {
+  background-color: #f8d7da !important; 
+  color: #842029 !important;
+  border-color: #f5c2c7 !important;
+}
+
+/* Light */
+.alert-light, .alert-default {
+  background-color: #fcfcfd !important; 
+  color: #636464 !important;
+  border-color: #fefefe !important;
+}
+
+/* Dark */
+.alert-dark {
+  background-color: #d3d3d4 !important;
+  color: #141619 !important;
+  border-color: #c6c6c7 !important;
+}
