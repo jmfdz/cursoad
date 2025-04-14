@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Curso Accesibilidad</title>
+  <!-- CSS de Bootstrap 5 desde CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet" >
+
+  <link
+          href="estilos.css"
+          rel="stylesheet" >
+
+ <style>
+    .step-card {
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .step-card.active {
+      border: 2px solid #0d6efd;
+      background-color: #005682;
+      color: #ffffff;
+    }
+    .step-section {
+      display: none;
+    }
+    .step-section.active {
+      display: block;
+    }
+    label.form-label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">Curso Accesibilidad</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCurso"
+          aria-controls="navbarCurso"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCurso">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="formularios.html">Formularios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tablas.html">Tablas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="componentes.html">Componentes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bs3/colores.html">Colores</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDiseno" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Diseño
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDiseno">
+                <li><a class="dropdown-item" href="2columnas.html">2 columnas</a></li>
+                <li><a class="dropdown-item" href="centrado.html">Formulario centrado</a></li>
+                <li><a class="dropdown-item" href="pasos.html">Pasos</a></li>
+                <li><a class="dropdown-item" href="paneles.html">Paneles</a></li>
+                <li><a class="dropdown-item" href="vertice.html">Vertice</a></li>
+                <li><a class="dropdown-item" href="solicitudes.html">Solicitudes</a></li>
+                <li><a class="dropdown-item" href="salas-virtuales.html">Salas virtuales</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido principal (aquí puedes añadir lo que desees para la portada) -->
+  <main>
+     <div class="container py-5">
+    <h1 class="mb-4">Proceso de Matrícula</h1>
+
+    <div class="row text-center mb-4">
+      <div class="col-md-4">
+        <div id="btn-step-1" class="card step-card active">
+          <div class="card-body">Paso 1: Datos personales</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div id="btn-step-2" class="card step-card">
+          <div class="card-body">Paso 2: Datos académicos</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div id="btn-step-3" class="card step-card">
+          <div class="card-body">Paso 3: Opciones y pago</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6">
+        <!-- Paso 1 -->
+        <div id="step-1" class="step-section active">
+          <h2>Datos personales</h2>
+          <form id="form-step-1">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="apellidos" class="form-label">Apellidos</label>
+              <input type="text" class="form-control" id="apellidos" required>
+            </div>
+            <div class="mb-3">
+              <label for="dni" class="form-label">DNI</label>
+              <input type="text" class="form-control" id="dni" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Género</label><br>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="genero" id="masculino" value="Masculino" required>
+                <label class="form-check-label" for="masculino">Masculino</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="genero" id="femenino" value="Femenino">
+                <label class="form-check-label" for="femenino">Femenino</label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Paso 2 -->
+        <div id="step-2" class="step-section">
+          <h2>Datos académicos</h2>
+          <form id="form-step-2">
+            <div class="mb-3">
+              <label for="estudio" class="form-label">Estudio</label>
+              <select class="form-select" id="estudio" required>
+                <option selected disabled value="">Selecciona un estudio</option>
+                <option>Ingeniería Informática</option>
+                <option>Derecho</option>
+                <option>Psicología</option>
+                <option>Biología</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Asignaturas</label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Matemáticas" id="asig1">
+                <label class="form-check-label" for="asig1">Matemáticas</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Programación" id="asig2">
+                <label class="form-check-label" for="asig2">Programación</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Estadística" id="asig3">
+                <label class="form-check-label" for="asig3">Estadística</label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Paso 3 -->
+        <div id="step-3" class="step-section">
+          <h2>Opciones y forma de pago</h2>
+          <form id="form-step-3">
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="discapacidad">
+              <label class="form-check-label" for="discapacidad">Necesito ayuda por discapacidad</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="info-ua">
+              <label class="form-check-label" for="info-ua">Deseo recibir información de la UA</label>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Forma de pago</label>
+              <select class="form-select" id="pago" required>
+                <option value="">Selecciona forma de pago</option>
+                <option>Efectivo</option>
+                <option>Tarjeta</option>
+                <option>Transferencia</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <!-- Botones de navegación -->
+        <div class="d-flex justify-content-between mt-4">
+          <button id="btn-prev" class="btn btn-light d-none">Atrás</button>
+          <button id="btn-next" class="btn btn-primary">Siguiente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+ <!-- JS de Bootstrap 5 desde CDN -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <script>
+    const steps = ["step-1", "step-2", "step-3"];
+    let currentStep = 0;
+
+    const showStep = (index) => {
+      steps.forEach((stepId, i) => {
+        document.getElementById(stepId).classList.toggle("active", i === index);
+        document.getElementById("btn-" + stepId).classList.toggle("active", i === index);
+      });
+
+      document.getElementById("btn-prev").classList.toggle("d-none", index === 0);
+      document.getElementById("btn-next").textContent = index === steps.length - 1 ? "Enviar" : "Siguiente";
+    };
+
+    document.getElementById("btn-next").addEventListener("click", () => {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      } else {
+        alert("Formulario enviado correctamente!");
+        // Aquí puedes hacer el envío AJAX si lo deseas
+      }
+    });
+
+    document.getElementById("btn-prev").addEventListener("click", () => {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+
+    document.getElementById("btn-step-1").addEventListener("click", () => { currentStep = 0; showStep(currentStep); });
+    document.getElementById("btn-step-2").addEventListener("click", () => { currentStep = 1; showStep(currentStep); });
+    document.getElementById("btn-step-3").addEventListener("click", () => { currentStep = 2; showStep(currentStep); });
+  </script>
+
+ 
+</body>
+</html>

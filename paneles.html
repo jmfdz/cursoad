@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Curso Accesibilidad</title>
+  <!-- CSS de Bootstrap 5 desde CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet" >
+
+  <link
+          href="estilos.css"
+          rel="stylesheet" >
+
+
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">Curso Accesibilidad</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCurso"
+          aria-controls="navbarCurso"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCurso">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="formularios.html">Formularios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tablas.html">Tablas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="componentes.html">Componentes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bs3/colores.html">Colores</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDiseno" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Diseño
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDiseno">
+                <li><a class="dropdown-item" href="2columnas.html">2 columnas</a></li>
+                <li><a class="dropdown-item" href="centrado.html">Formulario centrado</a></li>
+                <li><a class="dropdown-item" href="pasos.html">Pasos</a></li>
+                <li><a class="dropdown-item" href="paneles.html">Paneles</a></li>
+                <li><a class="dropdown-item" href="vertice.html">Vertice</a></li>
+                <li><a class="dropdown-item" href="solicitudes.html">Solicitudes</a></li>
+                <li><a class="dropdown-item" href="salas-virtuales.html">Salas virtuales</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido principal (aquí puedes añadir lo que desees para la portada) -->
+  <main>
+    <div class="container">
+    <h1 class="mb-3">Solicitudes - Vista tipo Trello</h1>
+
+    <div class="row g-3">
+      <!-- Pendientes -->
+      <div class="col-md-4">
+        <div class="board-column">
+          <h2>Pendientes</h2>
+          <!-- Tarjeta 1 (ejemplo) -->
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title mb-2">Código #1266614</h5>
+              <h6 class="card-subtitle text-muted mb-2">Fernández Gil, Jose María</h6>
+              <p class="card-text">
+                <strong>Asunto:</strong> Accesibilidad Digital, Mejoras en extensión<br/>
+                <strong>Formulario:</strong> Servicio de Informática. Aplicaciones
+              </p>
+              <span class="badge bg-secondary">Pendiente</span>
+              <!-- Podrías añadir un botón o enlace para ver más detalles -->
+            </div>
+          </div>
+
+          <!-- Tarjeta 2 (ejemplo) -->
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title mb-2">Código #1263392</h5>
+              <h6 class="card-subtitle text-muted mb-2">Fernández Gil, Jose María</h6>
+              <p class="card-text">
+                <strong>Asunto:</strong> Accesibilidad colores Preinsua<br/>
+                <strong>Formulario:</strong> Servicio de Informática. Aplicaciones
+              </p>
+              <span class="badge bg-secondary">Pendiente</span>
+            </div>
+          </div>
+
+          <!-- Más tarjetas de ejemplo aquí... -->
+        </div>
+      </div>
+
+      <!-- En curso (Haciendo) -->
+      <div class="col-md-4">
+        <div class="board-column">
+          <h2>En curso</h2>
+          <!-- Tarjeta 1 (ejemplo) -->
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title mb-2">Código #1265001</h5>
+              <h6 class="card-subtitle text-muted mb-2">Ortiz López, Marta</h6>
+              <p class="card-text">
+                <strong>Asunto:</strong> Mejora en interfaz<br/>
+                <strong>Formulario:</strong> Servicio de Informática. Redes
+              </p>
+              <span class="badge bg-warning text-dark">En curso</span>
+            </div>
+          </div>
+          <!-- Más tarjetas de ejemplo aquí... -->
+        </div>
+      </div>
+
+      <!-- Finalizadas -->
+      <div class="col-md-4">
+        <div class="board-column">
+          <h2>Finalizadas</h2>
+          <!-- Tarjeta 1 (ejemplo) -->
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title mb-2">Código #1263330</h5>
+              <h6 class="card-subtitle text-muted mb-2">López Núñez, Alejandro</h6>
+              <p class="card-text">
+                <strong>Asunto:</strong> Actualización de software<br/>
+                <strong>Formulario:</strong> Servicio de Informática. Aplicaciones<br/>
+                <small class="text-muted">Finalizado el 11/04/2025 11:13</small>
+              </p>
+              <span class="badge bg-success">Finalizada</span>
+            </div>
+          </div>
+          <!-- Más tarjetas de ejemplo aquí... -->
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <!-- JS de Bootstrap 5 desde CDN -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>

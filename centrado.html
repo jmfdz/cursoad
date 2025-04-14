@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Curso Accesibilidad</title>
+  <!-- CSS de Bootstrap 5 desde CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet" >
+
+  <link
+          href="estilos.css"
+          rel="stylesheet" >
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">Curso Accesibilidad</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCurso"
+          aria-controls="navbarCurso"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCurso">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="formularios.html">Formularios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tablas.html">Tablas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="componentes.html">Componentes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bs3/colores.html">Colores</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDiseno" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Diseño
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDiseno">
+                <li><a class="dropdown-item" href="2columnas.html">2 columnas</a></li>
+                <li><a class="dropdown-item" href="form-centrado.html">Formulario centrado</a></li>
+                <li><a class="dropdown-item" href="pasos.html">Pasos</a></li>
+                <li><a class="dropdown-item" href="paneles.html">Paneles</a></li>
+                <li><a class="dropdown-item" href="vertice.html">Vertice</a></li>
+                <li><a class="dropdown-item" href="solicitudes.html">Solicitudes</a></li>
+                <li><a class="dropdown-item" href="salas-virtuales.html">Salas virtuales</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido principal (aquí puedes añadir lo que desees para la portada) -->
+  <main>
+     <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6">
+
+        <h1 class="mb-3">Servicio de Informática. Aplicaciones.</h1>
+        <p class="mb-4">Por favor, complete el siguiente formulario para registrar una incidencia o realizar una nueva solicitud relacionada con las aplicaciones informáticas.</p>
+
+        <form>
+          <!-- Tipo -->
+          <div class="mb-3">
+            <label class="form-label">Tipo</label>
+            <div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo" id="incidencia" value="Incidencia">
+                <label class="form-check-label" for="incidencia">Incidencia</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo" id="nueva" value="Nueva solicitud">
+                <label class="form-check-label" for="nueva">Nueva solicitud</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Área / Aplicación -->
+          <div class="mb-3">
+            <label for="area" class="form-label">Área / Aplicación</label>
+            <select id="area" class="form-select">
+              <option selected disabled>Seleccione un área</option>
+              <!-- Opciones aquí -->
+            </select>
+          </div>
+
+          <!-- Datos de contacto -->
+          <div class="mb-3">
+            <label for="contacto" class="form-label">Datos de contacto (opcional)</label>
+            <textarea id="contacto" class="form-control" rows="2"></textarea>
+          </div>
+
+          <!-- Asunto -->
+          <div class="mb-3">
+            <label for="asunto" class="form-label">Asunto</label>
+            <input type="text" id="asunto" class="form-control">
+          </div>
+
+          <!-- Descripción detallada -->
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción detallada</label>
+            <textarea id="descripcion" class="form-control" rows="5"></textarea>
+          </div>
+
+          <!-- Documento adjunto -->
+          <div class="mb-3">
+            <label for="documento" class="form-label">Documento adjunto (opcional)</label>
+            <input type="file" id="documento" class="form-control">
+          </div>
+
+          <!-- Botón Enviar -->
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary btn-enviar">Enviar</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+  </main>
+
+  <!-- JS de Bootstrap 5 desde CDN -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Curso Accesibilidad</title>
+  <!-- CSS de Bootstrap 5 desde CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet" >
+
+  <link
+          href="estilos.css"
+          rel="stylesheet" >
+
+
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">Curso Accesibilidad</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCurso"
+          aria-controls="navbarCurso"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCurso">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="formularios.html">Formularios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tablas.html">Tablas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="componentes.html">Componentes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bs3/colores.html">Colores</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDiseno" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Diseño
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDiseno">
+                <li><a class="dropdown-item" href="2columnas.html">2 columnas</a></li>
+                <li><a class="dropdown-item" href="centrado.html">Formulario centrado</a></li>
+                <li><a class="dropdown-item" href="pasos.html">Pasos</a></li>
+                <li><a class="dropdown-item" href="paneles.html">Paneles</a></li>
+                <li><a class="dropdown-item" href="vertice.html">Vertice</a></li>
+                <li><a class="dropdown-item" href="solicitudes.html">Solicitudes</a></li>
+                <li><a class="dropdown-item" href="salas-virtuales.html">Salas virtuales</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido principal (aquí puedes añadir lo que desees para la portada) -->
+  <main>
+
+    <div class="container py-5">
+      <h1 class="mb-4">Vídeos de Vértice</h1>
+
+      <!-- Botones -->
+      <div class="mb-4">
+        <button class="btn btn-light me-2">Vídeos</button>
+        <button class="btn btn-light me-2">Audios</button>
+        <button class="btn btn-light me-2">Directo</button>
+        <button class="btn btn-light">Studio</button>
+      </div>
+
+      <!-- Tabla -->
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle">
+          <thead class="table-secondary">
+          <tr>
+            <th>Título</th>
+            <th>Estado</th>
+            <th>Fecha</th>
+            <th>Tamaño</th>
+            <th>Tipo</th>
+            <th>Etiquetas</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- Fila 1 -->
+          <tr>
+            <td>
+              Uso de lector de pantalla
+              <div class="dropdown d-inline">
+                <a href="#" class="dots-menu" data-bs-toggle="dropdown" aria-expanded="false">⋮</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Gestionar publicación</a></li>
+                  <li><a class="dropdown-item" href="#">Ver vídeo</a></li>
+                  <li><a class="dropdown-item" href="#">Borrar</a></li>
+                  <li><a class="dropdown-item" href="#">Cambiar propiedades</a></li>
+                  <li><a class="dropdown-item" href="#">Descargar</a></li>
+                  <li><a class="dropdown-item" href="#">Edición básica</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>Publicado</td>
+            <td>29/09/2023 13:18</td>
+            <td>3,01 Mb</td>
+            <td>VIDEO</td>
+            <td>Arrastre etiqueta</td>
+          </tr>
+          <!-- Fila 2 -->
+          <tr>
+            <td>
+              Explicación Apoyo-Estudiantes-CAE
+              <div class="dropdown d-inline">
+                <a href="#" class="dots-menu" data-bs-toggle="dropdown">⋮</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Gestionar publicación</a></li>
+                  <li><a class="dropdown-item" href="#">Ver vídeo</a></li>
+                  <li><a class="dropdown-item" href="#">Borrar</a></li>
+                  <li><a class="dropdown-item" href="#">Cambiar propiedades</a></li>
+                  <li><a class="dropdown-item" href="#">Descargar</a></li>
+                  <li><a class="dropdown-item" href="#">Edición básica</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>Publicado</td>
+            <td>20/04/2022 15:47</td>
+            <td>506,75 Mb</td>
+            <td>VIDEO</td>
+            <td>Arrastre etiqueta</td>
+          </tr>
+          <!-- Fila 3 -->
+          <tr>
+            <td>
+              Curso Materiales Accesibles
+              <div class="dropdown d-inline">
+                <a href="#" class="dots-menu" data-bs-toggle="dropdown">⋮</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Gestionar publicación</a></li>
+                  <li><a class="dropdown-item" href="#">Ver vídeo</a></li>
+                  <li><a class="dropdown-item" href="#">Borrar</a></li>
+                  <li><a class="dropdown-item" href="#">Cambiar propiedades</a></li>
+                  <li><a class="dropdown-item" href="#">Descargar</a></li>
+                  <li><a class="dropdown-item" href="#">Edición básica</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>Publicado</td>
+            <td>14/01/2022 12:27</td>
+            <td>34,32 Mb</td>
+            <td>VIDEO</td>
+            <td>Arrastre etiqueta</td>
+          </tr>
+          <!-- Fila 4 -->
+          <tr>
+            <td>
+              Videomarketing no editado
+              <div class="dropdown d-inline">
+                <a href="#" class="dots-menu" data-bs-toggle="dropdown">⋮</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Gestionar publicación</a></li>
+                  <li><a class="dropdown-item" href="#">Ver vídeo</a></li>
+                  <li><a class="dropdown-item" href="#">Borrar</a></li>
+                  <li><a class="dropdown-item" href="#">Cambiar propiedades</a></li>
+                  <li><a class="dropdown-item" href="#">Descargar</a></li>
+                  <li><a class="dropdown-item" href="#">Edición básica</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>Publicado</td>
+            <td>13/04/2021 21:50</td>
+            <td>43,75 Mb</td>
+            <td>VIDEO</td>
+            <td>Arrastre etiqueta</td>
+          </tr>
+          <!-- Fila 5 -->
+          <tr>
+            <td>
+              Documentos Word accesibles
+              <div class="dropdown d-inline">
+                <a href="#" class="dots-menu" data-bs-toggle="dropdown">⋮</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Gestionar publicación</a></li>
+                  <li><a class="dropdown-item" href="#">Ver vídeo</a></li>
+                  <li><a class="dropdown-item" href="#">Borrar</a></li>
+                  <li><a class="dropdown-item" href="#">Cambiar propiedades</a></li>
+                  <li><a class="dropdown-item" href="#">Descargar</a></li>
+                  <li><a class="dropdown-item" href="#">Edición básica</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>Publicado</td>
+            <td>04/11/2020 20:08</td>
+            <td>63,72 Mb</td>
+            <td>VIDEO</td>
+            <td>Arrastre etiqueta</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- JS de Bootstrap 5 desde CDN -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>
