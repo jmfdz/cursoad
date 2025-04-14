@@ -344,6 +344,23 @@
 
     </section>
 
+    <hr/>
+
+    <section class="mb-5">
+      <h2>Notificaicones</h2>
+      <p>Presiona el botón para mostrar una nueva notificación.</p>
+      <button class="btn btn-primary" onclick="mostrarNotificacion()">Mostrar notificación</button>
+    </section>
+
+    <!-- Contenedor para las notificaciones (toasts) -->
+    <div
+            class="toast-container position-fixed top-0 end-0 p-3"
+            id="toastContainer"
+            aria-live="polite"
+            aria-atomic="true"
+    >
+    </div>
+
   </div>
   </main>
 
@@ -361,6 +378,45 @@
     const modalInstance = bootstrap.Modal.getInstance(modalElement);
     modalInstance.hide();
   });
+
+  /* Función para mostrar notificaciones */
+  function mostrarNotificacion() {
+    // Obtenemos el contenedor de toasts
+    const container = document.getElementById('toastContainer');
+
+    // Definimos el contenido HTML de la notificación
+    const toastHTML = `
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto">Notificación</strong>
+            <small class="text-muted">Ahora</small>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+          <div class="toast-body">
+            Esta es una nueva notificación.
+          </div>
+        </div>
+      `;
+
+    // Creamos un contenedor temporal y seteamos el contenido HTML de la notificación
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = toastHTML.trim();
+
+    // Tomamos el primer elemento hijo como la notificación
+    const newToast = tempDiv.firstElementChild;
+
+    // Añadimos la notificación al contenedor de toasts
+    container.appendChild(newToast);
+
+    // Inicializamos y mostramos el toast
+    const toastBootstrap = new bootstrap.Toast(newToast, { delay: 5000 });
+    toastBootstrap.show();
+  }
 </script>
 </body>
 </html>
