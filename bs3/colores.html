@@ -6,7 +6,18 @@
   <!-- CSS de Bootstrap 3 o 4, por ejemplo: -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- Sobrescribe colores con nuestra hoja de estilo -->
+</head>
   <link rel="stylesheet" href="colores.css">
+  <style>
+    /* Botón "Ir arriba" */
+    #btn-back-to-top{
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      display: none;
+      z-index: 999;
+    }
+  </style>
 </head>
 <body>
 
@@ -125,4 +136,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
+  <!-- Botón "Ir arriba" -->
+  <button type="button" id="btn-back-to-top" class="btn btn-primary btn-lg" aria-label="Ir arriba">
+    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+  </button>
+
+  <script>
+    $(function () {
+      var btn = $('#btn-back-to-top');
+
+      $(window).on('scroll', function () {
+        if ($(this).scrollTop() > 300) {
+          btn.fadeIn();
+        } else {
+          btn.fadeOut();
+        }
+      });
+
+      btn.on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, 300);
+      });
+    });
+  </script>
 </html>
