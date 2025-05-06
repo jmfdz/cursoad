@@ -59,7 +59,7 @@
           <h1>Formulario de Solicitud</h1>
 
           <!-- Formulario con distintos tipos de campos -->
-          <form id="miFormulario" onsubmit="procesarFormulario(event)">
+          <form id="miFormulario" onsubmit="procesarFormulario(event)" enctype="multipart/form-data">
             <!-- Datos del solicitante -->
             <fieldset class="mb-4">
               <legend class="h2">Datos del solicitante</legend>
@@ -194,6 +194,21 @@
               </div>
             </fieldset>
 
+            <!-- Adjuntar archivo -->
+            <div class="mb-3">
+              <label for="archivo" class="form-label">
+                Adjunta tu archivo (docx, pptx o pdf, máx. 10&nbsp;MB):
+              </label>
+              <input
+                type="file"
+                class="form-control"
+                id="archivo"
+                name="archivo"
+                accept=".docx,.pptx,.pdf"
+              >
+              <small id="archivoError" class="text-danger d-none"></small>
+            </div>
+
             <!-- Div para mostrar los errores -->
             <div id="mensajealerta" role="alert"></div>
 
@@ -231,6 +246,10 @@
   <script>
     let editando = false;
 
+    // Configuración de validación de archivos
+    const MAX_BYTES = 10 * 1024 * 1024;            // 10 MB
+    const EXT_PERMITIDAS = ['docx', 'pptx', 'pdf']; // extensiones permitidas
+
     function procesarFormulario(event) {
       // Evita que se haga el envío normal del formulario
       event.preventDefault();
@@ -243,6 +262,8 @@
       const solicita = formulario.solicita.value.trim();
       const categoria = formulario.categoria.value;
       const respuestas = formulario.querySelectorAll('input[name="respuesta[]"]:checked');
+      const archivoInput = formulario.archivo;
+      const archivo      = archivoInput && archivoInput.files[0];
 
       // Contenedor para los mensajes de error
       const mensajeAlerta = document.getElementById("mensajealerta");
@@ -259,6 +280,23 @@
       if (!categoria) errores.push("Debes seleccionar una categoría.");
       if (respuestas.length === 0) {
         errores.push("Debes seleccionar al menos una forma de respuesta.");
+      }
+
+      // Validar el archivo (si se ha seleccionado)
+      if (archivo) {
+        const ext = archivo.name.split('.').pop().toLowerCase();
+        const mimeOk = (
+          archivo.type === 'application/pdf' ||
+          archivo.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ||
+          archivo.type === 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+        );
+
+        if (archivo.size > MAX_BYTES) {
+          errores.push("El archivo supera los 10 MB.");
+        }
+        if (!EXT_PERMITIDAS.includes(ext) || !mimeOk) {
+          errores.push("Solo se permiten archivos .docx, .pptx o .pdf.");
+        }
       }
 
       // Si hay errores, los mostramos
@@ -287,6 +325,32 @@
         elem.addEventListener('input', () => {
           editando = true;
         });
+      });
+
+      // Validación inmediata al elegir archivo
+      const archivoInputLive = document.getElementById('archivo');
+      const archivoErrElem   = document.getElementById('archivoError');
+      archivoInputLive?.addEventListener('change', () => {
+        archivoErrElem.classList.add('d-none');
+        const archivoSel = archivoInputLive.files[0];
+        if (!archivoSel) return;
+
+        const ext = archivoSel.name.split('.').pop().toLowerCase();
+        const mimeOk = (
+          archivoSel.type === 'application/pdf' ||
+          archivoSel.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ||
+          archivoSel.type === 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+        );
+
+        if (archivoSel.size > MAX_BYTES) {
+          archivoErrElem.textContent = 'El archivo supera los 10 MB.';
+          archivoErrElem.classList.remove('d-none');
+          archivoInputLive.value = '';
+        } else if (!EXT_PERMITIDAS.includes(ext) || !mimeOk) {
+          archivoErrElem.textContent = 'Solo se permiten archivos .docx, .pptx o .pdf.';
+          archivoErrElem.classList.remove('d-none');
+          archivoInputLive.value = '';
+        }
       });
 
       // Evento que se dispara al intentar salir de la página
