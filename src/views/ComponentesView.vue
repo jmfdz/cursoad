@@ -3,5 +3,5 @@ import CourseBlockView from '../components/CourseBlockView.vue'
 </script>
 
 <template>
-  <CourseBlockView slug="componentes" />
+  <CourseBlockView slug="requisitos-web" />
 </template>

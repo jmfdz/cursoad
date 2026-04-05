@@ -3,5 +3,5 @@ import CourseBlockView from '../components/CourseBlockView.vue'
 </script>
 
 <template>
-  <CourseBlockView slug="validacion" />
+  <CourseBlockView slug="fundamentos" />
 </template>

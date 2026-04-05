@@ -9,6 +9,8 @@ const sectionHeadings = [
   'Formato del texto',
   'Formato de párrafo',
   'Texto en imágenes',
+  'Niveles de conformidad',
+  'Principales criterios por principio',
   'Establecer el idioma por defecto de una página web',
   'Establecer el idioma por defecto en una parte de la página web',
   'Título de página',

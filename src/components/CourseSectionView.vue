@@ -31,7 +31,7 @@ const mobileNavId = computed(() => `section-nav-${props.blockSlug}-${props.secti
           <h1 class="mb-2">{{ section.title }}</h1>
           <p class="mb-0">{{ block.title }}</p>
 
-          <div class="d-lg-none mt-4">
+          <div v-if="subheadings.length" class="d-lg-none mt-4">
             <button
               class="btn btn-outline-primary w-100 d-flex justify-content-between align-items-center"
               type="button"
@@ -40,16 +40,14 @@ const mobileNavId = computed(() => `section-nav-${props.blockSlug}-${props.secti
               aria-expanded="false"
               :aria-controls="mobileNavId"
             >
-              <span>Ver navegación del apartado</span>
-              <span>{{ block.sections.length }} temas</span>
+              <span>Ver índice de la página</span>
+              <span>{{ subheadings.length }} apartados</span>
             </button>
 
-            <div :id="mobileNavId" class="collapse mt-3">
-              <nav class="card border-0 shadow-sm" aria-label="Subapartados">
+            <div v-if="subheadings.length" :id="mobileNavId" class="collapse mt-3">
+              <nav class="card border-0 shadow-sm" aria-label="Índice de la página">
                 <div class="card-body">
                   <CourseSectionNav
-                    :block="block"
-                    :section="section"
                     :subheadings="subheadings"
                     :current-hash="currentHash"
                   />
@@ -61,16 +59,15 @@ const mobileNavId = computed(() => `section-nav-${props.blockSlug}-${props.secti
       </header>
     </div>
 
-    <div class="col-lg-4 col-xl-3 d-none d-lg-block">
+    <div v-if="subheadings.length" class="col-lg-4 col-xl-3 d-none d-lg-block">
       <nav
         class="card border-0 shadow-sm sticky-lg-top"
         style="top: 5.5rem"
-        aria-label="Subapartados"
+        aria-label="Índice de la página"
       >
         <div class="card-body">
+          <h2 class="h5 mb-3">En esta página</h2>
           <CourseSectionNav
-            :block="block"
-            :section="section"
             :subheadings="subheadings"
             :current-hash="currentHash"
           />
@@ -78,7 +75,7 @@ const mobileNavId = computed(() => `section-nav-${props.blockSlug}-${props.secti
       </nav>
     </div>
 
-    <div class="col-lg-8 col-xl-9">
+    <div :class="subheadings.length ? 'col-lg-8 col-xl-9' : 'col-12'">
       <article class="card border-0 shadow-sm">
         <div class="card-body p-4 p-xl-5">
           <div v-if="section.figure" class="mb-4">

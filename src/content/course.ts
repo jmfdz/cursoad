@@ -39,7 +39,7 @@ export type Block = {
   sections: Section[]
 }
 
-export const courseTitle = 'Diseño Inclusivo y Accesibilidad Digital: Web, Documentos y UX'
+export const courseTitle = 'Accesibilidad digital, usabilidad y UX'
 
 export const courseAuthor = 'José María Fernández Gil'
 
@@ -57,7 +57,7 @@ export const courseLinks = [
 ]
 
 export const originalTableOfContents = [
-  { title: 'Diseño Inclusivo y Accesibilidad Digital: Web, Documentos y UX', page: 1 },
+  { title: 'Accesibilidad digital, usabilidad y UX', page: 1 },
   { title: 'Fundamentos de la accesibilidad digital', page: 3 },
   { title: 'Introducción a la accesibilidad digital', page: 3 },
   { title: 'Tipos de discapacidad', page: 4 },
@@ -66,7 +66,7 @@ export const originalTableOfContents = [
   { title: 'Legislación aplicable', page: 7 },
   { title: 'Extensión de navegador de CADUA', page: 9 },
   { title: 'Uso de un lector de pantalla', page: 11 },
-  { title: 'Requisitos de accesibilidad digital', page: 13 },
+  { title: 'Requisitos web', page: 13 },
   { title: 'Texto', page: 13 },
   { title: 'Idioma', page: 16 },
   { title: 'Estructura y semántica', page: 18 },
@@ -79,7 +79,7 @@ export const originalTableOfContents = [
   { title: 'Componentes interactivos', page: 33 },
   { title: 'WAI-ARIA', page: 33 },
   { title: 'Ejemplos de componentes', page: 40 },
-  { title: 'Diseño, usabilidad y experiencia de usuario (UX)', page: 41 },
+  { title: 'Usabilidad y UX', page: 41 },
   { title: 'Principios de diseño inclusivo', page: 41 },
   { title: 'Usabilidad', page: 42 },
   { title: 'Experiencia de usuario (UX)', page: 42 },
@@ -257,16 +257,16 @@ export const courseBlocks: Block[] = [
   {
     slug: "fundamentos",
     shortTitle: "Fundamentos",
-    title: "Fundamentos de la accesibilidad digital",
+    title: "Fundamentos",
     route: "/fundamentos",
-    menuDescription: "Conceptos básicos, WCAG y legislación.",
-    homeSummary: "Introduce la accesibilidad digital, los tipos de discapacidad, las WCAG, sus niveles de conformidad y el marco normativo que condiciona el trabajo técnico.",
-    introHtml: "<p>En este apartado veremos los fundamentos de la accesibilidad digital, por qué es importante y su relación con la usabilidad.</p>\n<p>Además, conoceremos los diferentes tipos de discapacidad, los principios de accesibilidad y la legislación aplicable.</p>",
+    menuDescription: "Conceptos básicos, WCAG, legislación y comprobación de accesibilidad.",
+    homeSummary: "Introduce la accesibilidad digital, a quién beneficia, las WCAG, la legislación aplicable y las bases para validar con herramientas y lector de pantalla.",
+    introHtml: "<p>En este bloque se presentan los conceptos fundamentales de accesibilidad digital, por qué es importante y su relación con la usabilidad.</p>\n<p>También se explica el marco normativo y cómo empezar a comprobar la accesibilidad con herramientas y productos de apoyo.</p>",
     sections: [
       {
         "id": "introduccion",
-        "title": "Introducción a la accesibilidad digital",
-        "html": "<p>Podemos definir la accesibilidad web como el grado en el que todas las personas pueden <b>percibir, comprender, utilizar y navegar</b> por un contenido digital independientemente de sus capacidades <b>físicas, técnicas o cognitivas</b>, así como del contexto: idioma, nivel social, cultura, etc.</p>\n<p>La accesibilidad web es importante porque permite que todas las personas, independientemente de sus capacidades, puedan acceder a la información y servicios en línea. Esto incluye a personas con discapacidad visual, auditiva, motriz o cognitiva, así como a personas mayores o con limitaciones temporales.</p>\n<p>Además, la accesibilidad web <b>mejora la usabilidad</b> y la <b>experiencia del usuario</b> para todos, no solo para aquellos con discapacidad.</p>\n<p>Un sitio web accesible es más fácil de navegar y utilizar, lo que puede aumentar la satisfacción del usuario.</p>",
+        "title": "Qué es la accesibilidad digital",
+        "html": "<h2 class=\"mt-4 mb-3\">Definición</h2>\n<p>Podemos definir la accesibilidad web como el grado en el que todas las personas pueden <b>percibir, comprender, utilizar y navegar</b> por un contenido digital independientemente de sus capacidades <b>físicas, técnicas o cognitivas</b>, así como del contexto: idioma, nivel social, cultura, etc.</p>\n<h2 class=\"mt-4 mb-3\">Por qué es importante</h2>\n<p>La accesibilidad web es importante porque permite que todas las personas, independientemente de sus capacidades, puedan acceder a la información y servicios en línea. Esto incluye a personas con discapacidad visual, auditiva, motriz o cognitiva, así como a personas mayores o con limitaciones temporales.</p>\n<p>Además, la accesibilidad web <b>mejora la usabilidad</b> y la <b>experiencia del usuario</b> para todos, no solo para aquellos con discapacidad.</p>\n<p>Un sitio web accesible es más fácil de navegar y utilizar, lo que puede aumentar la satisfacción del usuario.</p>\n<h2 class=\"mt-4 mb-3\">Barreras frecuentes</h2>\n<p>Entre los problemas más habituales en páginas y aplicaciones web se encuentran las imágenes sin texto alternativo, la falta de contraste suficiente, el uso de enlaces poco descriptivos o formularios sin etiquetas correctamente asociadas.</p>\n<p>Muchas veces no son errores complejos, sino detalles de estructura, semántica o contenido que acaban bloqueando el acceso a una parte de los usuarios.</p>",
         "figure": {
           "src": "/curso-media/image1.jpeg",
           "alt": "Web de la Universidad de Alicante mostrada en móvil y ordenador.",
@@ -275,39 +275,49 @@ export const courseBlocks: Block[] = [
       },
       {
         "id": "tipos-discapacidad",
-        "title": "Tipos de discapacidad",
-        "html": "<p>Los tipos de discapacidad se pueden agrupar en cuatro categorías:</p>\n<ul>\n<li><b>Visual</b> (1M en España): ceguera, baja visión, problemas de visión, daltonismo (10% de la población), etc.</li>\n<li><b>Auditiva</b> (1M en España): sordera total o parcial, problemas de audición o de entendimiento del habla, etc.</li>\n<li><b>Motora</b> (1,8M en España): limitaciones en el uso de las manos, movilidad reducida, problemas en el habla, etc.</li>\n<li><b>Cognitiva</b>: dificultades de aprendizaje, dislexia (10% de la población),, problemas de memoria, de atención, etc.</li>\n</ul>\n<p>¿Y cómo accede una persona con discapacidad al contenido?</p>\n<ul>\n<li>Si no puedo ver, utilizo un lector de pantalla.</li>\n<li>Si mi visión es limitada, utilizo un magnificador de pantalla.</li>\n<li>Si no puedo escuchar una película, leo los subtítulos.</li>\n<li>Si no tengo movilidad en las manos puedo dictar y dar órdenes.</li>\n<li>Si me cuesta comprender lo que leo, puedo configurar el texto a mis necesidades.</li>\n<li>....</li>\n</ul>\n<p>¿Quién utiliza las tecnologías accesibles?</p>\n<p>Las tecnologías de apoyo que utilizan las personas con discapacidad, se crearon con ese fin y ahora, las utilizamos todos, ejemplos:</p>\n<ul>\n<li>La síntesis de voz de un GPS, Siri, Alexa...</li>\n<li>Reconocimiento del habla: Dictar y \"hablar\" con Siri, Alexa...</li>\n<li>Los subtítulos estáticos o automáticos y en otros idiomas</li>\n<li>...</li>\n</ul>"
+        "title": "A quién beneficia",
+        "html": "<p>Los tipos de discapacidad se pueden agrupar en cuatro categorías, aunque realmente la accesibilidad beneficia a muchas más personas y situaciones de uso:</p>\n<h2 class=\"mt-4 mb-3\">Perfiles de personas</h2>\n<ul>\n<li><b>Visual</b> (1M en España): ceguera, baja visión, problemas de visión, daltonismo (10% de la población), etc.</li>\n<li><b>Auditiva</b> (1M en España): sordera total o parcial, problemas de audición o de entendimiento del habla, etc.</li>\n<li><b>Motora</b> (1,8M en España): limitaciones en el uso de las manos, movilidad reducida, problemas en el habla, etc.</li>\n<li><b>Cognitiva</b>: dificultades de aprendizaje, dislexia (10% de la población), problemas de memoria, de atención, etc.</li>\n</ul>\n<h2 class=\"mt-4 mb-3\">Cómo acceden al contenido</h2>\n<p>¿Y cómo accede una persona con discapacidad al contenido?</p>\n<ul>\n<li>Si no puedo ver, utilizo un lector de pantalla.</li>\n<li>Si mi visión es limitada, utilizo un magnificador de pantalla.</li>\n<li>Si no puedo escuchar una película, leo los subtítulos.</li>\n<li>Si no tengo movilidad en las manos puedo dictar y dar órdenes.</li>\n<li>Si me cuesta comprender lo que leo, puedo configurar el texto a mis necesidades.</li>\n<li>...</li>\n</ul>\n<h2 class=\"mt-4 mb-3\">Tecnologías que hoy utilizamos todos</h2>\n<p>Las tecnologías de apoyo que utilizan las personas con discapacidad se crearon con ese fin y ahora las utilizamos todos. Ejemplos:</p>\n<ul>\n<li>La síntesis de voz de un GPS, Siri, Alexa...</li>\n<li>Reconocimiento del habla: dictar y \"hablar\" con Siri, Alexa...</li>\n<li>Los subtítulos estáticos o automáticos y en otros idiomas.</li>\n</ul>\n<p>Por eso la accesibilidad no beneficia solo a un colectivo concreto, sino que mejora el acceso y la comodidad de uso para muchas personas.</p>"
       },
       {
         "id": "wcag",
         "title": "Pautas de Accesibilidad para el Contenido web (WCAG)",
-        "html": "<p>El W3C (World Wide Web Consortium) es la organización internacional que establece estándares para la web. Dentro de esta organización, el WAI (Web Accessibility Initiative) se encarga de promover la accesibilidad en la web.</p>\n<p>Las pautas de accesibilidad para el contenido web, conocidas como WCAG por sus siglas en inglés:&nbsp;Web Content Accessibility Guidelines,&nbsp;son las normas diseñadas por el W3C para garantizar la accesibilidad de cualquier contenido en la web, incluidos documentos ofimáticos como Word o PowerPoint, documentos de diseño e impresión como PDF o documentos de multimedia.</p>\n<p>La última versión de las WCAG es la 2.2 y dada su&nbsp;universalidad, promoviendo normas desligadas a una tecnología en concreto, también se han convertido en el estándar para el diseño de cualquier producto o servicio digital.</p>\n<p>En definitiva, las WCAG son pautas que establecen criterios para hacer que el contenido web sea más accesible. Estas pautas se dividen en cuatro principios fundamentales:</p>\n<ul>\n<li><b>Perceptible:</b> La información y los componentes de la interfaz de usuario deben ser presentados de manera que puedan ser percibidos por todos los usuarios.</li>\n<li><b>Operable:</b> Los componentes de la interfaz de usuario y la navegación deben ser utilizables por todos los usuarios.</li>\n<li><b>Comprensible:</b> La información y el funcionamiento de la interfaz de usuario deben ser comprensibles para todos los usuarios.</li>\n<li><b>Robusto:</b> El contenido debe ser lo suficientemente robusto como para que pueda ser interpretado de manera confiable por una amplia variedad de agentes de usuario, incluidos los tecnologías de apoyo.</li>\n</ul>\n<p>Consulta el resumen de criterios en la WCAG UA Web.</p>"
-      },
-      {
-        "id": "niveles",
-        "title": "Criterios de las WCAG y niveles de accesibilidad",
-        "html": "<p>Cada principio de las WCAG tiene una serie de criterios de nivel A, AA y AAA. Cada nivel tiene un significado:</p>\n<ul>\n<li>Nivel A: Son criterios imprescindibles para que los usuarios puedan acceder a los contenidos, si no se cumplen, no se puede acceder.</li>\n<li>Nivel AA: Permite acceder y usar los contenidos de forma accesible.</li>\n<li>Nivel AAA: Permiten acceder y usar los contenidos con características de accesibilidad avanzada.</li>\n</ul>\n<p>En España (y en casi todo el mundo) se exige que los sitios web cumplan al menos con el nivel AA. Para cumplir con ese nivel, se entiende que hay que cumplir con todos los requisitos de nivel A y todos los del nivel AA.</p>\n<p>Cumplir el nivel AAA en todos los contenidos es muy difícil, ya que hay criterios como contrastes de color muy alto, que todos los contenidos multimedia tengan subtítulos o audio-descripción.</p>\n<p>A continuación, se listan los principales criterios para cada principio:</p>\n<ul>\n<li><b>Perceptible</b>:</li>\n<ul>\n<li>Ofrece alternativas textuales</li>\n<li>Medios tempo-dependientes</li>\n<li>Adaptable, presenta el contenido de diferentes formas</li>\n<li>Distinguible, separa el fondo del primer plano</li>\n</ul>\n<li><b>Operable:</b></li>\n<ul>\n<li>Manejable por teclado, no olvides a los usuarios sin ratón</li>\n<li>Da tiempo suficiente</li>\n<li>No causes reacciones físicas y psíquicas negativas</li>\n<li>Céntrate en la Arquitectura de la Información para que sea fácilmente navegable</li>\n<li>Formas de introducción de la información</li>\n</ul>\n<li><b>Comprensible:</b></li>\n<ul>\n<li>Fácil de leer y de comprender</li>\n<li>Haz tu página predecible, no reinventes los estándares de navegación</li>\n<li>Ayuda en la introducción de datos</li>\n</ul>\n<li><b>Robusto:</b></li>\n<ul>\n<li>Respeta el código para que sea compatible con el mayor número de dispositivos y programas</li>\n</ul>"
+        "html": "<h2 class=\"mt-4 mb-3\">Qué son las WCAG</h2>\n<p>El W3C (World Wide Web Consortium) es la organización internacional que establece estándares para la web. Dentro de esta organización, el WAI (Web Accessibility Initiative) se encarga de promover la accesibilidad en la web.</p>\n<p>Las pautas de accesibilidad para el contenido web, conocidas como WCAG por sus siglas en inglés: <i>Web Content Accessibility Guidelines</i>, son las normas diseñadas por el W3C para garantizar la accesibilidad de cualquier contenido en la web, incluidos documentos ofimáticos como Word o PowerPoint, documentos de diseño e impresión como PDF o documentos multimedia.</p>\n<p>La última versión de las WCAG es la 2.2 y dada su universalidad, promoviendo normas desligadas a una tecnología en concreto, también se han convertido en el estándar para el diseño de cualquier producto o servicio digital.</p>\n<h2 class=\"mt-4 mb-3\">Los cuatro principios</h2>\n<p>En definitiva, las WCAG son pautas que establecen criterios para hacer que el contenido web sea más accesible. Estas pautas se dividen en cuatro principios fundamentales:</p>\n<ul>\n<li><b>Perceptible:</b> La información y los componentes de la interfaz de usuario deben ser presentados de manera que puedan ser percibidos por todos los usuarios.</li>\n<li><b>Operable:</b> Los componentes de la interfaz de usuario y la navegación deben ser utilizables por todos los usuarios.</li>\n<li><b>Comprensible:</b> La información y el funcionamiento de la interfaz de usuario deben ser comprensibles para todos los usuarios.</li>\n<li><b>Robusto:</b> El contenido debe ser lo suficientemente robusto como para que pueda ser interpretado de manera confiable por una amplia variedad de agentes de usuario, incluidos las tecnologías de apoyo.</li>\n</ul>\n<p>Consulta el resumen de criterios en la WCAG UA Web.</p>\n<h2 class=\"mt-4 mb-3\">Niveles de conformidad</h2>\n<p>Cada principio de las WCAG tiene una serie de criterios de nivel A, AA y AAA. Cada nivel tiene un significado:</p>\n<ul>\n<li>Nivel A: Son criterios imprescindibles para que los usuarios puedan acceder a los contenidos, si no se cumplen, no se puede acceder.</li>\n<li>Nivel AA: Permite acceder y usar los contenidos de forma accesible.</li>\n<li>Nivel AAA: Permiten acceder y usar los contenidos con características de accesibilidad avanzada.</li>\n</ul>\n<p>En España (y en casi todo el mundo) se exige que los sitios web cumplan al menos con el nivel AA. Para cumplir con ese nivel, se entiende que hay que cumplir con todos los requisitos de nivel A y todos los del nivel AA.</p>\n<p>Cumplir el nivel AAA en todos los contenidos es muy difícil, ya que hay criterios como contrastes de color muy alto, que todos los contenidos multimedia tengan subtítulos o audio-descripción.</p>\n<h2 class=\"mt-4 mb-3\">Principales criterios por principio</h2>\n<p>A continuación, se listan los principales criterios para cada principio:</p>\n<ul>\n<li><b>Perceptible</b>:</li>\n<ul>\n<li>Ofrece alternativas textuales.</li>\n<li>Medios tempo-dependientes.</li>\n<li>Adaptable, presenta el contenido de diferentes formas.</li>\n<li>Distinguible, separa el fondo del primer plano.</li>\n</ul>\n<li><b>Operable</b>:</li>\n<ul>\n<li>Manejable por teclado, no olvides a los usuarios sin ratón.</li>\n<li>Da tiempo suficiente.</li>\n<li>No causes reacciones físicas y psíquicas negativas.</li>\n<li>Céntrate en la arquitectura de la información para que sea fácilmente navegable.</li>\n<li>Formas de introducción de la información.</li>\n</ul>\n<li><b>Comprensible</b>:</li>\n<ul>\n<li>Fácil de leer y de comprender.</li>\n<li>Haz tu página predecible, no reinventes los estándares de navegación.</li>\n<li>Ayuda en la introducción de datos.</li>\n</ul>\n<li><b>Robusto</b>:</li>\n<ul>\n<li>Respeta el código para que sea compatible con el mayor número de dispositivos y programas.</li>\n</ul>\n<p>Como veremos a lo largo del curso, muchos de los requisitos técnicos concretos que aplicamos en páginas, aplicaciones y documentos nacen precisamente de estos criterios.</p>"
       },
       {
         "id": "legislacion",
         "title": "Legislación aplicable",
-        "html": "<p>Existe numerosa legislación española, europea y mundial relacionada con la accesibilidad, pero en este curso se mencionan sólo las más relevantes y que nos afectan.</p>\n<ul>\n<li>Convención internacional sobre los derechos de las personas con discapacidad de la ONU</li>\n</ul>\n<p>Ratificada por España en 2007. Artículo 9. Accesibilidad. Convención (PDF 300KB).</p>\n<ul>\n<li>Real Decreto 1112/2018 y Directiva (UE) 2016/2102</li>\n</ul>\n<p>El Real Decreto 1112/2018, de 7 de septiembre, sobre la accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público<br>\ntraspone a la legislación española la Directiva (UE) 2016/2102 del mismo nombre. Sus objetivos son:</p>\n<ul>\n<li>Garantizar los requisitos de accesibilidad de los sitios web y aplicaciones para dispositivos móviles de los organismos del sector público y otros.</li>\n<li>Los requisitos a cumplir se especifican en la Norma Europea (EN) 301 349, equivalente a las WCAG 2.2.</li>\n<li>Proporcionar mecanismos de comunicación y quejas.</li>\n<li>Requiere una declaración de accesibilidad y revisiones periódicas.</li>\n<li>Establecer una URA (Unidad Responsable de Accesibilidad) en el ámbito competencial.</li>\n<li>Realizar actividades de promoción, concienciación y formación</li>\n</ul>\n<ul>\n<li>Norma europea (EN) 301 549</li>\n</ul>\n<p>El estándar de aplicación para el cumplimiento de los requisitos de accesibilidad se recoge en la norma europea EN 301 549: Norma Europea de Accesibilidad para Productos y Servicios de Tecnologías de la Información y Comunicación (TIC).&nbsp;</p>\n<p>Esta norma europea es dinámica y se va actualizando periódicamente incorporando nuevos requisitos de accesibilidad adecuándose así a un medio cambiante.</p>\n<p>Estas normas para contenidos digitales son equivalentes a la versión más reciente de las&nbsp;Pautas de Accesibilidad de Contenido Web (WCAG) 2.2.</p>\n<p>Además de normas para contenidos digitales, también incluyen requisitos para productos y servicios (maquinaria, ordenadores...).</p>\n<p>Consulta la Web de normativa de accesibilidad UA.</p>",
+        "html": "<p>Existe numerosa legislación española, europea y mundial relacionada con la accesibilidad, pero en este curso se mencionan sólo las más relevantes y que nos afectan.</p>\n<h2 class=\"mt-4 mb-3\">Convención internacional de la ONU</h2>\n<ul>\n<li>Convención internacional sobre los derechos de las personas con discapacidad de la ONU.</li>\n</ul>\n<p>Ratificada por España en 2007. Artículo 9. Accesibilidad. Convención (PDF 300KB).</p>\n<h2 class=\"mt-4 mb-3\">Real Decreto 1112/2018 y Directiva (UE) 2016/2102</h2>\n<p>El Real Decreto 1112/2018, de 7 de septiembre, sobre la accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público, traspone a la legislación española la Directiva (UE) 2016/2102 del mismo nombre. Sus objetivos son:</p>\n<ul>\n<li>Garantizar los requisitos de accesibilidad de los sitios web y aplicaciones para dispositivos móviles de los organismos del sector público y otros.</li>\n<li>Los requisitos a cumplir se especifican en la Norma Europea (EN) 301 349, equivalente a las WCAG 2.2.</li>\n<li>Proporcionar mecanismos de comunicación y quejas.</li>\n<li>Requiere una declaración de accesibilidad y revisiones periódicas.</li>\n<li>Establecer una URA (Unidad Responsable de Accesibilidad) en el ámbito competencial.</li>\n<li>Realizar actividades de promoción, concienciación y formación.</li>\n</ul>\n<h2 class=\"mt-4 mb-3\">Norma europea EN 301 549</h2>\n<ul>\n<li>Norma europea (EN) 301 549.</li>\n</ul>\n<p>El estándar de aplicación para el cumplimiento de los requisitos de accesibilidad se recoge en la norma europea EN 301 549: Norma Europea de Accesibilidad para Productos y Servicios de Tecnologías de la Información y Comunicación (TIC).</p>\n<p>Esta norma europea es dinámica y se va actualizando periódicamente incorporando nuevos requisitos de accesibilidad, adecuándose así a un medio cambiante.</p>\n<p>Estas normas para contenidos digitales son equivalentes a la versión más reciente de las Pautas de Accesibilidad de Contenido Web (WCAG) 2.2.</p>\n<p>Además de normas para contenidos digitales, también incluyen requisitos para productos y servicios (maquinaria, ordenadores...).</p>\n<h2 class=\"mt-4 mb-3\">Qué implica en la práctica</h2>\n<p>En la práctica, esta normativa obliga no solo a cumplir requisitos técnicos, sino también a revisar periódicamente los contenidos, publicar una declaración de accesibilidad y ofrecer mecanismos de comunicación a los usuarios.</p>\n<p>Consulta la Web de normativa de accesibilidad UA.</p>",
         "figure": {
           "src": "/curso-media/image2.jpeg",
           "alt": "Mapa de Europa con referencias a normativa europea y española sobre accesibilidad.",
           "caption": "Imagen usada en el documento para contextualizar la legislación aplicable."
         }
+      },
+      {
+        "id": "lector",
+        "title": "Uso de un lector de pantalla",
+        "html": "<h2 class=\"mt-4 mb-3\">Qué es</h2>\n<p>NVDA es un lector de pantalla gratuito para Windows que utilizan personas ciegas y con baja visión para acceder a un ordenador.</p>\n<p>Descargar NVDA</p>\n<p>Este programa lee todo lo que hay en la pantalla y permite navegar por todos los elementos de la interfaz.</p>\n<p>Si arrancamos el programa, podemos mover el ratón y leerá todo lo que tenga debajo de él.</p>\n<h2 class=\"mt-4 mb-3\">Cómo utilizarlo</h2>\n<p>Para utilizarlo con el teclado, como lo utilizaría una persona ciega, la forma de trabajar es muy sencilla:</p>\n<ul>\n<li>Si pulsamos TAB en el teclado, nos movemos por todos los enlaces, botones y campos de formulario.</li>\n<li>Si pulsamos la H, vamos al H1 de la página (o el primer encabezado que haya). Si volvemos a pulsar la H, vamos al siguiente encabezado, y así.</li>\n<li>Si pulsamos la T, vamos a la primera tabla; si pulsamos la F, al primer formulario, y así.</li>\n<li>Si pulsamos la P, iremos al primer párrafo con contenido del documento o web.</li>\n<li>Podemos movernos además para arriba y para abajo con las flechas del teclado.</li>\n<li>Si pulsamos INSERT (tecla NVDA por defecto) + F7 nos sale un panel con la lista de enlaces de la página, los encabezados, etc.</li>\n</ul>\n<h2 class=\"mt-4 mb-3\">Qué revisar con él</h2>\n<p>Al hacer una prueba rápida con lector de pantalla conviene comprobar si los enlaces tienen sentido, si la estructura de encabezados es correcta, si las tablas y formularios se anuncian bien y si podemos recorrer el contenido sin necesidad de usar el ratón.</p>\n<p>No sustituye a las pruebas con personas usuarias, pero sí permite detectar muchos problemas de semántica, navegación y etiquetado.</p>"
+      },
+      {
+        "id": "cadua",
+        "title": "Pruebas de accesibilidad: automáticas y manuales",
+        "html": "<p>Para comprobar la accesibilidad no basta con una sola herramienta. Lo habitual es combinar pruebas automáticas con revisión manual y, cuando sea posible, también con productos de apoyo como un lector de pantalla.</p>\n<h2 class=\"mt-4 mb-3\">Pruebas automáticas</h2>\n<p>Las herramientas automáticas permiten detectar rápidamente determinados errores de accesibilidad, por ejemplo imágenes sin texto alternativo, campos de formulario sin etiqueta, problemas de contraste, encabezados mal estructurados o ciertos usos incorrectos de ARIA.</p>\n<p>Son muy útiles para hacer una primera revisión, pero no pueden decidir por sí solas si una página es accesible.</p>\n<h2 class=\"mt-4 mb-3\">Pruebas manuales</h2>\n<p>La revisión manual es necesaria para comprobar aspectos que una herramienta no puede valorar bien, como si un texto alternativo describe correctamente una imagen, si una tabla se entiende, si los mensajes de error son claros o si una tarea completa puede realizarse cómodamente con teclado.</p>\n<p>Por eso, las pruebas automáticas deben verse como una ayuda, no como una validación completa.</p>\n<h2 class=\"mt-4 mb-3\">Ejemplo: extensión de CADUA</h2>\n<p>La extensión de navegador de CADUA para Chrome, Edge, Brave o cualquier navegador Chromium tiene las mismas pruebas que la aplicación web CADUA (Comprobador de Accesibilidad Digital de la UA), pero añade algunas pruebas adicionales que no se pueden implementar en un servidor.</p>\n<p>La extensión permite ejecutar las pruebas después de que se ejecute el JavaScript en el navegador, pudiendo hacer pruebas de contraste de color, detectar qué elementos están visibles o no, etc. Por otro lado, al estar en el navegador, se puede acceder a cualquier contenido, como proyectos en desarrollo o páginas que requieren autenticación.</p>\n<p>Además, al poder ejecutarse dentro de la web actual en el navegador, se puede marcar qué elementos tienen errores y detectarlos así de una forma más rápida.</p>\n<h2 class=\"mt-4 mb-3\">Cómo complementarlas</h2>\n<p>Lo recomendable es combinar este tipo de herramientas con una revisión por teclado, una lectura de la estructura de encabezados, una comprobación del foco visible y alguna prueba con lector de pantalla.</p>\n<p>De esta forma, la comprobación es mucho más completa y se acerca más a la experiencia real de uso.</p>",
+        "figure": {
+          "src": "/curso-media/image3.png",
+          "alt": "Captura de pantalla de la extensión CADUA mostrando errores de lista vacía y tabla sin título.",
+          "caption": "Resultados de la extensión de navegador de CADUA."
+        }
       }
     ],
   },
   {
-    slug: "contenido",
-    shortTitle: "Contenido",
-    title: "Requisitos de accesibilidad digital",
-    route: "/contenido",
-    menuDescription: "Texto, idioma, estructura, imágenes, enlaces, tablas y formularios.",
-    homeSummary: "Recoge los requisitos base que deben cumplir los contenidos digitales: texto, idioma, semántica, imágenes, enlaces, tablas y formularios accesibles.",
-    introHtml: "<p>En este bloque se introducen los requisitos universales de accesibilidad digital que se aplican a todos los contenidos (texto, idioma, imágenes, etc.) y a todos los soportes (página web, aplicaciones web, documentos Word/PDF, vídeos, etc.).</p>",
+    slug: "requisitos-web",
+    shortTitle: "Requisitos",
+    title: "Requisitos web",
+    route: "/requisitos-web",
+    menuDescription: "Texto, semántica, formularios, tablas, componentes y ARIA.",
+    homeSummary: "Recoge los requisitos técnicos que deben cumplir las páginas y aplicaciones web: texto, idioma, estructura, imágenes, enlaces, tablas, formularios y componentes accesibles.",
+    introHtml: "<p>En este bloque se reúnen los requisitos técnicos de accesibilidad aplicados a la web: contenido, estructura, interacción y componentes.</p>",
     sections: [
       {
         "id": "texto",
@@ -383,18 +393,7 @@ export const courseBlocks: Block[] = [
             "description": "Formulario completo con agrupaciones, ayudas, validación y mejoras de usabilidad incluido en el curso."
           }
         ]
-      }
-    ],
-  },
-  {
-    slug: "componentes",
-    shortTitle: "Componentes",
-    title: "Componentes interactivos",
-    route: "/componentes",
-    menuDescription: "WAI-ARIA y ejemplos de componentes accesibles.",
-    homeSummary: "Aborda la accesibilidad de componentes dinámicos, el uso correcto de WAI-ARIA y varios patrones interactivos habituales en interfaces web.",
-    introHtml: "",
-    sections: [
+      },
       {
         "id": "wai-aria",
         "title": "WAI-ARIA",
@@ -416,12 +415,12 @@ export const courseBlocks: Block[] = [
   },
   {
     slug: "ux",
-    shortTitle: "Diseño UX",
-    title: "Diseño, usabilidad y experiencia de usuario (UX)",
+    shortTitle: "Usabilidad y UX",
+    title: "Usabilidad y UX",
     route: "/ux",
-    menuDescription: "Diseño inclusivo, usabilidad, UX, color y ejemplos de diseño.",
-    homeSummary: "Reúne principios de diseño inclusivo, usabilidad, experiencia de usuario, color y las leyes UX aplicadas al diseño e implementación de interfaces.",
-    introHtml: "<p>En este apartado veremos los conceptos de diseño inclusivo, usabilidad y experiencia de usuario. Veremos cómo se relacionan entre sí y otros aspectos fundamentales como el uso del color y otras factores como las restricciones de tiempo.</p>",
+    menuDescription: "Diseño inclusivo, usabilidad, UX, color y patrones de diseño.",
+    homeSummary: "Reúne principios de diseño inclusivo, usabilidad, experiencia de usuario, color y patrones aplicados al diseño e implementación de interfaces.",
+    introHtml: "<p>En este bloque se trabajan los conceptos de diseño inclusivo, usabilidad y experiencia de usuario, así como el uso del color y varios patrones de diseño.</p>",
     sections: [
       {
         "id": "diseno-inclusivo",
@@ -569,38 +568,12 @@ export const courseBlocks: Block[] = [
     ],
   },
   {
-    slug: "validacion",
-    shortTitle: "Validación",
-    title: "Validación y pruebas",
-    route: "/validacion",
-    menuDescription: "CADUA y uso de lector de pantalla.",
-    homeSummary: "Explica cómo revisar y comprobar la accesibilidad con herramientas automáticas, CADUA, lectores de pantalla y técnicas de validación manual.",
-    introHtml: "",
-    sections: [
-      {
-        "id": "cadua",
-        "title": "Extensión de navegador de CADUA",
-        "html": "<p>Esta extensión de navegador para Chrome/Edge/Brave/Chromium tiene las mismas pruebas que la aplicación web CADUA (Comprobador de Accesibilidad Digital de la UA), pero añade algunas pruebas adicionales que no se pueden implementar en un servidor.</p>\n<p>La extensión de navegador permite ejecutar las pruebas después de que se ejecute el JavaScript en el navegador, pudiendo hacer pruebas de contraste de color, detectar qué elementos están visibles o no, etc. Por otro lado, al estar en el navegador, se puede acceder a cualquier contenido del navegador, como proyectos en desarrollo o que requieren autenticación.</p>\n<p>Además, al poder ejecutarse dentro de la web actual en el navegador, se puede marcar qué elementos tienen errores y detectarlos así de una forma más rápida.</p>\n<p>Para instalar la extensión de CADUA:</p>\n<ul>\n<li>Descargar la extensión: https://appuad.ua.es/apps/extension</li>\n<li>Abrir Chrome/Edge/Brave/Navegador Chromium e ir a \"Gestionar extensiones\" o pulsar o escribir en la barra de direcciones chrome://extensions/</li>\n<li>En la parte superior derecha, activar el check del Modo desarrollador</li>\n<li>Arrastrar la carpeta appuadext a la ventana dónde se muestran las extensiones del navegador</li>\n<li>Una vez hecho esto, abriendo cualquier web en una nueva pestaña, pulsamos el icono de la extensión y se realizarán las pruebas de accesibilidad.</li>\n<li>Para actualizar la extensión, darle a quitar y volver a arrastrar la extensión.</li>\n</ul>",
-        "figure": {
-          "src": "/curso-media/image3.png",
-          "alt": "Captura de pantalla de la extensión CADUA mostrando errores de lista vacía y tabla sin título.",
-          "caption": "Resultados de la extensión de navegador de CADUA."
-        }
-      },
-      {
-        "id": "lector",
-        "title": "Uso de un lector de pantalla",
-        "html": "<p>NVDA es un lector de pantalla gratuito para Windows que utilizan personas ciegas y con baja visión para acceder a un ordenador.</p>\n<p>Descargar NVDA</p>\n<p>Este programa, lee todo lo que hay en la pantalla y permite navegar por todos los elementos de la interfaz.</p>\n<p>Si arrancamos el programa, podemos mover el ratón y leera todo lo que tenga debajo de él.</p>\n<p>Para utilizarlo con el teclado, como lo utilizaría una persona ciega, la forma de trabajar es muy sencilla:</p>\n<ul>\n<li>Si pulsamos TAB en el teclado, nos movemos por todos los enlaces, botones y campos de formulario.</li>\n<li>Si pulsamos la H, vamos al H1 de la página (o el primer encabezado que haya),. Si volvemos a pulsar la H, vamos al siguiente encabezado, y así.</li>\n<li>Si pulsamos la T, vamos a la primera tabla, si pulsamos la F, al primer formulario y así.</li>\n<li>Si pulsamos la P, iremos al primer párrafo con contenido del documento/web.</li>\n<li>Podemos movernos además para arriba y para abajo con las flechas del teclado.</li>\n<li>Si pulsamos INSERT (tecla NVDA por defecto) + F7 nos sale un panel con la lista de enlaces de la página, los encabezados, etc.</li>\n</ul>"
-      }
-    ],
-  },
-  {
     slug: "documentos",
     shortTitle: "Documentos",
-    title: "Accesibilidad en documentos y multimedia",
+    title: "Documentos",
     route: "/documentos",
     menuDescription: "Word, PowerPoint, PDF y contenidos multimedia.",
-    homeSummary: "Agrupa criterios y buenas prácticas para aplicar la accesibilidad también a documentos ofimáticos, PDF y materiales multimedia.",
+    homeSummary: "Agrupa criterios y buenas prácticas para aplicar la accesibilidad a documentos ofimáticos, PDF y materiales multimedia.",
     introHtml: "<p>La accesibilidad digital no se limita a las páginas web. Los mismos principios deben aplicarse a documentos Word, presentaciones PowerPoint, PDF y contenidos multimedia.</p>\n<p>Este bloque reúne una base de trabajo para revisar esos soportes con la misma lógica de estructura, alternativas textuales, navegación y comprensión.</p>",
     sections: [
       {
