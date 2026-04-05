@@ -1,14 +1,25 @@
 <script setup lang="ts">
+import Collapse from 'bootstrap/js/dist/collapse'
 import { courseBlocks, getSectionPath } from './content/course'
 
 const navbarTitle = 'Accesibilidad, Usabilidad y UX'
+
+const closeMainNav = () => {
+  const nav = document.getElementById('mainNav')
+
+  if (!nav || !nav.classList.contains('show')) {
+    return
+  }
+
+  Collapse.getOrCreateInstance(nav).hide()
+}
 </script>
 
 <template>
   <div class="min-vh-100">
     <nav class="navbar navbar-expand-xl bg-white border-bottom shadow-sm sticky-top">
       <div class="container">
-        <RouterLink class="navbar-brand d-inline-block fw-semibold text-wrap lh-sm" to="/">
+        <RouterLink class="navbar-brand d-inline-block fw-semibold text-wrap lh-sm" to="/" @click="closeMainNav">
           {{ navbarTitle }}
         </RouterLink>
         <button
@@ -36,7 +47,11 @@ const navbarTitle = 'Accesibilidad, Usabilidad y UX'
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li v-for="section in block.sections" :key="section.id">
-                  <RouterLink class="dropdown-item" :to="getSectionPath(block.slug, section.id)">
+                  <RouterLink
+                    class="dropdown-item"
+                    :to="getSectionPath(block.slug, section.id)"
+                    @click="closeMainNav"
+                  >
                     {{ section.title }}
                   </RouterLink>
                 </li>
