@@ -18,7 +18,7 @@ const navbarTitle = 'Accesibilidad, Usabilidad y UX'
           data-bs-target="#mainNav"
           aria-controls="mainNav"
           aria-expanded="false"
-          aria-label="Alternar navegación"
+          aria-label="Mostrar u ocultar menú de navegación"
         >
           <span class="navbar-toggler-icon"></span>
         </button>

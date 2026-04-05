@@ -97,6 +97,73 @@ const mobileNavId = computed(() => `section-nav-${props.blockSlug}-${props.secti
 
           <div class="mb-4 lh-lg" v-html="renderSectionHtml(section)" />
 
+          <section
+            v-if="section.showcase"
+            class="mb-4"
+            aria-labelledby="section-showcase"
+          >
+            <div class="rounded-4 border bg-white p-4 shadow-sm">
+              <h2 id="section-showcase" class="mb-2">{{ section.showcase.title }}</h2>
+              <p class="mb-4">{{ section.showcase.summary }}</p>
+
+              <div v-if="section.showcase.notes?.length" class="mb-4">
+                <h3 class="h5 mb-3">Qué se está usando</h3>
+                <ul class="mb-0">
+                  <li v-for="note in section.showcase.notes" :key="note">
+                    {{ note }}
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mb-4">
+                <h3 class="h5 mb-3">Resultado visual</h3>
+                <div class="rounded-4 border bg-body-tertiary p-3 p-lg-4">
+                  <div v-html="section.showcase.previewHtml" />
+                </div>
+              </div>
+
+              <div>
+                <h3 class="h5 mb-3">Código representativo</h3>
+                <pre class="bg-dark text-light p-3 rounded overflow-auto"><code class="font-monospace">{{ section.showcase.code }}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section v-if="section.examples?.length" class="mb-4" aria-labelledby="section-examples">
+            <div class="rounded-4 border bg-body-tertiary p-4">
+              <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-3">
+                <div>
+                  <h2 id="section-examples" class="mb-2">Ejemplos relacionados</h2>
+                  <p class="mb-0">
+                    Ejemplos del curso disponibles como páginas independientes dentro de la app.
+                  </p>
+                </div>
+              </div>
+
+              <div class="row g-3">
+                <div
+                  v-for="example in section.examples"
+                  :key="example.href"
+                  class="col-lg-6"
+                >
+                  <a
+                    :href="example.href"
+                    class="card h-100 border text-decoration-none text-body"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div class="card-body">
+                      <p class="mb-2 text-uppercase small">Demo</p>
+                      <h3 class="h5 mb-2">{{ example.title }}</h3>
+                      <p class="mb-3">{{ example.description }}</p>
+                      <span class="btn btn-outline-primary">Abrir ejemplo</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <div v-if="section.gallery" class="mb-4">
             <h2 class="mb-3">Galería de ejemplos</h2>
             <div class="row g-3">
