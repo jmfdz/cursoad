@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  src: url('/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --bs-primary: #005682;
+  --bs-primary-rgb: 0, 86, 130;
+  --bs-link-color: #005682;
+  --bs-link-hover-color: #004362;
+  --bs-body-bg: #f1f5f8;
+  --bs-body-color: #000000;
+  --bs-font-sans-serif:
+    'Atkinson Hyperlegible Next',
+    Arial,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  --bs-body-font-size: 1.166rem;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--bs-font-sans-serif);
+  font-size: var(--bs-body-font-size);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+a {
+  color: var(--bs-primary);
+}
+
+a:hover {
+  color: var(--bs-link-hover-color);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+.nav-pills {
+  --bs-nav-pills-link-active-bg: var(--bs-primary);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-link-hover-color);
+  --bs-btn-hover-border-color: var(--bs-link-hover-color);
+  --bs-btn-active-bg: var(--bs-link-hover-color);
+  --bs-btn-active-border-color: var(--bs-link-hover-color);
+  --bs-btn-disabled-bg: var(--bs-primary);
+  --bs-btn-disabled-border-color: var(--bs-primary);
+}

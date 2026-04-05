@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Curso Accesibilidad</title>
+  <!-- CSS de Bootstrap 5 desde CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet" >
+  <!-- Bootstrap Icons (opcional, para los iconos del menú) -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" 
+  >
+
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">Curso Accesibilidad</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCurso"
+        aria-controls="navbarCurso"
+        aria-expanded="false"
+        aria-label="Mostrar u ocultar menú"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarCurso">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="formularios.html">Formularios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tablas.html">Tablas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="componentes.html">Componentes</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <!-- Contenido principal (aquí puedes añadir lo que desees para la portada) -->
+  <main class="mb-5" style="min-height:300px;">
+  <div class="container mt-5">
+    <h1>Bienvenido al Curso de Accesibilidad</h1>
+    <p>Esta es la página principal.</p>
+<h2>Imágenes</h2>
+    <p>imagen: <img src="https://web.ua.es/es/accesibilidad/cabecera.png" width="50" alt"Logo Accesibilidad UA" title="Logo " /></p>
+    
+<p>Icono: <i class="bi bi-pencil" aria-label="Editar" title="Editar"></i></p>
+    <p>Enlaces y botones</p>
+    <p>
+      Para acceder pulsa <a href="/">aquí</a>
+    </p>
+     <p>
+      Enlace de imagen:
+        <a href="/" aria-Aplicación accesibilidadlabel="">
+	  <img src="https://web.ua.es/es/accesibilidad/cabecera.png" width="50" alt"" />
+          
+        </a>
+    </p>
+    <p>
+      Enlace de imagen:
+        <a href="/" aria-label="Editar" title="Editar">
+          <i class="bi bi-pencil" aria-hidden="true">
+          
+        </a>
+    </p>
+    <p>
+      <button class="btn btn-primary">Púlsame</button>
+      - <button class="btn btn-light">No pasa nada</button>
+    </p>
+    <p>
+     <div onclick="alert('Hola')" onkeypress="">Soy un baton de mentira :)</div>
+    </p>
+    
+
+    <p>Tablas</p>
+     <!-- Tabla responsiva -->
+     <div class="table-responsive">
+      <table class="table" aria-label="Tabla de solicitudes">
+        <caption>Tabla de ejemplo con datos de solicitudes</caption>
+        <!-- Cabecera con estilo oscuro -->
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Nombre + Apellidos</th>
+            <th scope="col">DNI</th>
+            <th scope="col">Género</th>
+            <th scope="col">Solicita</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Respuesta(s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Fila 1 -->
+          <tr>
+            <td>
+              Juan Pérez 
+              <!-- Icono desplegable de 3 puntitos -->
+              <div class="dropdown d-inline-block ms-2">
+                <button 
+                  class="btn btn-sm p-0" 
+                  type="button" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false"
+                >
+                  <i class="bi bi-three-dots-vertical"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="bi bi-pencil"></i> Editar
+                    </a>
+                  </li>
+                  <li class="dropdown-divider"></li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="bi bi-eye"></i> Ver
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="bi bi-trash"></i> Borrar
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+            <td>12345678A</td>
+            <td>Hombre</td>
+            <td>Quiero información</td>
+            <td>Elemento 1</td>
+            <td>Email, UACloud</td>
+          </tr>
+
+          <!-- Fila 2 -->
+          <tr>
+            <td>
+              Marta González
+              <div class="dropdown d-inline-block ms-2">
+                <button 
+                  class="btn btn-sm p-0" 
+                  type="button" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false"
+                >
+                  <i class="bi bi-three-dots-vertical"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="bi bi-pencil"></i> Editar
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="bi bi-eye"></i> Ver
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="bi bi-trash"></i> Borrar
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+            <td>23456789B</td>
+            <td>Mujer</td>
+            <td>Solicitud de beca</td>
+            <td>Elemento 2</td>
+            <td>Teléfono</td>
+          </tr>
+
+          <!-- Fila 3 -->
+          <tr>
+            <td>
+              Carlos López
+              <div class="dropdown d-inline-block ms-2">
+                <button 
+                  class="btn btn-sm p-0" 
+                  type="button" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false"
+                >
+                  <i class="bi bi-three-dots-vertical"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="bi bi-pencil"></i> Editar
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="bi bi-eye"></i> Ver
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="bi bi-trash"></i> Borrar
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+            <td>34567890C</td>
+            <td>Hombre</td>
+            <td>Renovación matrícula</td>
+            <td>Elemento 3</td>
+            <td>Email</td>
+          </tr>
+
+        
+
+
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Universidad de Alicante.</p>
+    </div>
+  </footer>
+
+  <!-- JS de Bootstrap 5 desde CDN -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>
