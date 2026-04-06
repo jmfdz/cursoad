@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { courseBlocks, courseTitle, getSectionPath } from '../content/course'
+import { courseBlocks, courseTitle, getSectionPath } from '../course'
 </script>
 
 <template>

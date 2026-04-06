@@ -1,0 +1,69 @@
+<template>
+  <div class="lh-lg">
+    <p>
+      Para comprobar la accesibilidad no basta con una sola herramienta. Lo habitual es combinar
+      pruebas automáticas, revisión manual y, cuando sea posible, alguna prueba con productos de
+      apoyo como un lector de pantalla.
+    </p>
+    <p>
+      Además, es mucho más eficiente incorporar la accesibilidad desde el principio del proyecto
+      que intentar corregirla al final, cuando ya hay que rehacer diseño, contenidos o desarrollo.
+    </p>
+
+    <h2 class="mt-4 mb-3">Pruebas automáticas</h2>
+    <p>
+      Las herramientas automáticas detectan con rapidez ciertos errores frecuentes: imágenes sin
+      texto alternativo, campos de formulario sin etiqueta, problemas de contraste, estructura
+      deficiente de encabezados o usos incorrectos de ARIA.
+    </p>
+    <p>
+      Son muy útiles para una primera revisión y para integrar comprobaciones recurrentes en
+      desarrollo, pero no pueden decidir por sí solas si una página es accesible. Que una
+      herramienta no marque errores no significa que la experiencia sea correcta.
+    </p>
+
+    <h2 class="mt-4 mb-3">Pruebas manuales</h2>
+    <p>La revisión manual es imprescindible para comprobar aspectos que una herramienta no puede valorar bien:</p>
+    <ul>
+      <li>si un texto alternativo describe de verdad lo que la imagen aporta,</li>
+      <li>si una tabla se entiende y no solo valida,</li>
+      <li>si los mensajes de error ayudan a corregir el problema,</li>
+      <li>si el foco se mueve de forma lógica,</li>
+      <li>y si una tarea completa puede realizarse cómodamente con teclado.</li>
+    </ul>
+    <p>Por eso, las pruebas automáticas deben verse como ayuda y acelerador, no como validación completa.</p>
+
+    <h2 class="mt-4 mb-3">Ejemplo: extensión de CADUA</h2>
+    <p>
+      La extensión de navegador de CADUA para Chrome, Edge, Brave o cualquier navegador Chromium
+      comparte la base de comprobaciones de la aplicación web CADUA, pero añade pruebas que solo
+      pueden ejecutarse desde el propio navegador.
+    </p>
+    <p>
+      Al ejecutarse sobre la página ya renderizada, permite revisar estados generados por
+      JavaScript, contraste de color, visibilidad real de elementos o contenidos accesibles solo
+      tras autenticación. Además, puede marcar visualmente sobre la propia interfaz qué elementos
+      presentan errores, lo que agiliza mucho la localización y corrección.
+    </p>
+
+    <h2 class="mt-4 mb-3">Revisión mínima recomendable</h2>
+    <p>Como pauta práctica, una revisión básica debería combinar al menos:</p>
+    <ul>
+      <li>una pasada con herramienta automática,</li>
+      <li>una navegación completa por teclado,</li>
+      <li>una comprobación de foco visible y orden de tabulación,</li>
+      <li>una lectura de la estructura de encabezados y regiones,</li>
+      <li>una prueba rápida con lector de pantalla,</li>
+      <li>y una revisión humana con criterio técnico del contenido y la interacción.</li>
+    </ul>
+    <p>
+      De esta forma, la comprobación se acerca mucho más a la experiencia real de uso y evita la
+      falsa sensación de conformidad que a veces da un informe automático.
+    </p>
+
+    <h3 class="mt-4 mb-3">Referencias</h3>
+    <ul>
+      <li><a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es" target="_blank" rel="noreferrer">W3C: Introducción a la accesibilidad web</a></li>
+    </ul>
+  </div>
+</template>

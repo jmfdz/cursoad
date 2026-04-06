@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { getBlockBySlug, type Section } from '../content/course'
+import { getBlockBySlug } from '../course'
+import type { CourseSection, SectionSubheading } from '../course/types'
 import CourseSectionNav from './CourseSectionNav.vue'
-import { getSectionSubheadings, renderSectionHtml } from './courseContent'
 
 const props = defineProps<{
   blockSlug: string
@@ -15,12 +15,59 @@ const block = computed(() => getBlockBySlug(props.blockSlug))
 const currentSectionIndex = computed(() =>
   block.value?.sections.findIndex((section) => section.id === props.sectionId) ?? -1,
 )
-const section = computed<Section | undefined>(() =>
+const section = computed<CourseSection | undefined>(() =>
   currentSectionIndex.value >= 0 ? block.value?.sections[currentSectionIndex.value] : undefined,
 )
-const subheadings = computed(() => (section.value ? getSectionSubheadings(section.value) : []))
+const componentContentRef = ref<HTMLElement | null>(null)
+const componentSubheadings = ref<SectionSubheading[]>([])
+
+const extractComponentSubheadings = async () => {
+  if (!section.value?.component) {
+    componentSubheadings.value = []
+    return
+  }
+
+  await nextTick()
+
+  const root = componentContentRef.value
+  if (!root) {
+    componentSubheadings.value = []
+    return
+  }
+
+  const tocMode = section.value.toc ?? 'h2'
+  const selector = tocMode === 'h2-h3' ? 'h2, h3' : 'h2'
+  const headings = Array.from(root.querySelectorAll<HTMLElement>(selector))
+
+  componentSubheadings.value = headings.map((heading, index) => {
+    if (!heading.id) {
+      heading.id = `${props.sectionId}-heading-${index + 1}`
+    }
+
+    return {
+      id: heading.id,
+      title: heading.textContent?.trim() ?? '',
+      level: heading.tagName === 'H3' ? 3 : 2,
+    }
+  })
+}
+
+const subheadings = computed(() => {
+  if (!section.value) {
+    return []
+  }
+  return componentSubheadings.value
+})
 const currentHash = computed(() => route.hash.replace('#', ''))
 const mobileNavId = computed(() => `section-nav-${props.blockSlug}-${props.sectionId}`)
+
+watch(section, () => {
+  void extractComponentSubheadings()
+})
+
+onMounted(() => {
+  void extractComponentSubheadings()
+})
 </script>
 
 <template>
@@ -93,7 +140,12 @@ const mobileNavId = computed(() => `section-nav-${props.blockSlug}-${props.secti
             </figure>
           </div>
 
-          <div class="mb-4 lh-lg" v-html="renderSectionHtml(section)" />
+          <div
+            ref="componentContentRef"
+            class="mb-4 lh-lg"
+          >
+            <component :is="section.component" />
+          </div>
 
           <section
             v-if="section.showcase"

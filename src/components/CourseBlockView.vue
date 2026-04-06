@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { getBlockBySlug, getSectionPath } from '../content/course'
+import { getBlockBySlug, getSectionPath } from '../course'
 
 const props = defineProps<{
   slug: string
@@ -16,7 +16,7 @@ const block = computed(() => getBlockBySlug(props.slug))
         <div class="d-flex flex-column flex-lg-row justify-content-between gap-4">
           <div class="pe-lg-4">
             <h1 class="mb-3">{{ block.title }}</h1>
-            <div v-if="block.introHtml" class="lh-lg" v-html="block.introHtml" />
+            <component :is="block.introComponent" />
           </div>
 
           <div class="card border-0 bg-body-tertiary flex-shrink-0" style="max-width: 20rem">

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Collapse from 'bootstrap/js/dist/collapse'
-import { courseBlocks, getSectionPath } from './content/course'
+import { courseBlocks, getSectionPath } from './course'
 
 const navbarTitle = 'Accesibilidad, Usabilidad y UX'
 

@@ -1,10 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { courseBlocks } from '../content/course'
+import { courseBlocks } from '../course'
+
+const blockViewBySlug = {
+  fundamentos: () => import('../views/FundamentosView.vue'),
+  'requisitos-web': () => import('../views/RequisitosWebView.vue'),
+  ux: () => import('../views/UxView.vue'),
+  documentos: () => import('../views/DocumentosView.vue'),
+} as const
 
 const blockRoutes = courseBlocks.map((block) => ({
   path: block.route,
   name: block.slug,
-  component: () => import('../views/BlockIndexView.vue'),
+  component: blockViewBySlug[block.slug as keyof typeof blockViewBySlug],
   props: { blockSlug: block.slug },
 }))
 
