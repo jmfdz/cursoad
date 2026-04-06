@@ -21,7 +21,7 @@
     <p>Esto tiene consecuencias muy concretas en varios niveles:</p>
     <ul>
       <li><strong>Personas</strong>: facilita el acceso a información, trámites, formación, salud, empleo y servicios.</li>
-      <li><strong>Organizaciones</strong>: mejora la calidad del producto, amplía el alcance, reduce incidencias y ayuda a cumplir la normativa.</li>
+      <li><strong>Organizaciones</strong>: mejora la calidad, amplía el alcance, reduce incidencias y ayuda a cumplir la normativa.</li>
       <li><strong>Sociedad</strong>: reduce barreras y favorece una participación más igualitaria en el entorno digital.</li>
     </ul>
     <p>
@@ -44,7 +44,7 @@
     <p>Pero también beneficia a muchas situaciones de uso no permanentes:</p>
     <ul>
       <li>Personas mayores cuyas capacidades cambian con la edad.</li>
-      <li>Personas con limitaciones temporales, por ejemplo un brazo inmovilizado o la pérdida de unas gafas.</li>
+      <li>Personas con limitaciones temporales, por ejemplo por un brazo inmovilizado o por la pérdida de unas gafas.</li>
       <li>Personas con limitaciones situacionales, como estar al sol, en un entorno ruidoso o usando el móvil con una sola mano.</li>
       <li>Personas con mala conexión, pantallas pequeñas o dispositivos de entrada distintos al teclado y ratón tradicionales.</li>
     </ul>
@@ -57,14 +57,14 @@
     </p>
     <ul>
       <li>Si no puedo ver, puedo utilizar un lector de pantalla.</li>
-      <li>Si veo con dificultad, puedo utilizar ampliación, alto contraste o ajustes de tamaño y espaciado.</li>
+      <li>Si veo con dificultad, puedo usar ampliación, alto contraste o ajustes de tamaño y espaciado.</li>
       <li>Si no puedo escuchar un vídeo, necesito subtítulos o transcripción.</li>
       <li>Si no puedo usar bien las manos, puedo navegar con teclado, conmutadores, dictado o control por voz.</li>
       <li>Si me cuesta comprender lo que leo, necesito contenido más claro, bien estructurado y predecible.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Tecnologías de apoyo que hoy utilizamos todos</h2>
-    <p>Muchas soluciones nacidas como apoyo a la discapacidad forman parte ya del uso cotidiano:</p>
+    <h2 class="mt-4 mb-3">Funciones de accesibilidad que hoy utilizamos todos</h2>
+    <p>Muchas funciones nacidas para mejorar la accesibilidad forman parte ya del uso cotidiano:</p>
     <ul>
       <li>Síntesis de voz en GPS, asistentes o lectores automáticos.</li>
       <li>Reconocimiento del habla para dictar o lanzar acciones.</li>
@@ -76,7 +76,7 @@
       como una mejora general de acceso, comprensión y comodidad de uso.
     </p>
 
-    <h2 class="mt-4 mb-3">Qué implica en una web real</h2>
+    <h2 class="mt-4 mb-3">Qué implica en un entorno digital real</h2>
     <p>Llevado a la práctica, hablar de accesibilidad significa comprobar cosas bastante concretas:</p>
     <ul>
       <li>que la estructura del contenido sea clara y semántica,</li>
@@ -87,7 +87,7 @@
       <li>y que el contenido resulte legible, comprensible y predecible.</li>
     </ul>
     <p>
-      La accesibilidad no se limita a añadir un texto alternativo o pasar una herramienta, sino a
+      La accesibilidad no se limita a añadir un texto alternativo o pasar una herramienta. Implica
       construir bien el contenido, la interacción y la semántica desde el principio.
     </p>
 

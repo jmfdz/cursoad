@@ -3,19 +3,21 @@
     <p>
       Existe numerosa legislación española, europea e internacional relacionada con la
       accesibilidad, pero en este curso nos centraremos en las referencias más relevantes para
-      entender por qué la accesibilidad digital no es solo una buena práctica técnica.
+      entender por qué la accesibilidad digital no es solo una buena práctica técnica, sino también
+      una cuestión de derechos y de cumplimiento.
     </p>
 
     <h2 class="mt-4 mb-3">Convención internacional de la ONU</h2>
     <p>
       La Convención sobre los derechos de las personas con discapacidad, ratificada por España en
-      2007, es un punto de partida importante. En su artículo 9 reconoce la accesibilidad como
+      2007, es un punto de partida clave. En su artículo 9 reconoce la accesibilidad como una
       condición necesaria para acceder en igualdad de condiciones a la información, las
       comunicaciones y los servicios.
     </p>
     <p>
       Esto deja clara una idea de fondo: la accesibilidad digital no es un extra técnico ni un
-      embellecimiento del producto, sino una parte del derecho de acceso.
+      embellecimiento del producto, sino una parte del derecho de acceso en igualdad de
+      condiciones.
     </p>
 
     <h2 class="mt-4 mb-3">Directiva (UE) 2016/2102 y Real Decreto 1112/2018</h2>
@@ -25,14 +27,15 @@
     </p>
     <p>
       Esta norma regula la accesibilidad de sitios web y aplicaciones móviles del sector público y,
-      además del cumplimiento técnico, exige una serie de obligaciones organizativas:
+      además del cumplimiento técnico, exige también una serie de obligaciones organizativas.
+      Entre ellas:
     </p>
     <ul>
       <li>cumplir los requisitos de accesibilidad aplicables,</li>
       <li>publicar una declaración de accesibilidad,</li>
       <li>ofrecer un mecanismo de comunicación y reclamación,</li>
       <li>realizar revisiones periódicas,</li>
-      <li>y articular responsabilidades internas sobre accesibilidad.</li>
+      <li>y articular responsabilidades internas en materia de accesibilidad.</li>
     </ul>
 
     <h2 class="mt-4 mb-3">Norma europea EN 301 549</h2>
@@ -41,27 +44,29 @@
       accesibilidad para productos y servicios TIC.
     </p>
     <p>
-      Es importante matizar algo: la versión armonizada vigente de EN 301 549 utilizada en este
+      Conviene matizar algo: la versión armonizada vigente de EN 301 549 utilizada en este
       contexto europeo sigue apoyándose en <strong>WCAG 2.1</strong> para web, documentos y
       aplicaciones. Aun así, desde el punto de vista técnico tiene sentido trabajar ya con
       <strong>WCAG 2.2</strong> como referencia de mejora, porque amplía criterios y no contradice
       lo anterior.
     </p>
     <p>
-      Además, EN 301 549 no se limita a páginas web. También cubre otros entornos y productos
-      digitales, por lo que actúa como marco más amplio cuando hablamos de accesibilidad en TIC.
+      Además, EN 301 549 no se limita a páginas web. También cubre otros entornos, productos y
+      servicios digitales, por lo que actúa como un marco más amplio cuando hablamos de
+      accesibilidad en TIC.
     </p>
 
     <h2 class="mt-4 mb-3">Qué implica en la práctica</h2>
     <p>
       En la práctica, cumplir la normativa no consiste solo en pasar un validador. Implica diseñar,
       desarrollar, mantener y revisar los contenidos con criterios de accesibilidad, documentar el
-      estado real del servicio y ofrecer vías para que un usuario pueda comunicar barreras o
-      solicitar alternativas.
+      estado real del servicio y ofrecer vías para que una persona usuaria pueda comunicar barreras,
+      solicitar alternativas o ejercer sus derechos.
     </p>
     <p>
-      Por eso conviene leer la legislación junto con las WCAG: una marca el marco de obligación y
-      la otra concreta buena parte de los requisitos técnicos que luego hay que verificar.
+      Por eso conviene leer la legislación junto con las WCAG: la legislación marca el marco de
+      obligación y las WCAG concretan buena parte de los requisitos técnicos que luego hay que
+      verificar.
     </p>
 
     <h3 class="mt-4 mb-3">Referencias</h3>
