@@ -1,17 +1,12 @@
 <script setup lang="ts">
-import Collapse from 'bootstrap/js/dist/collapse'
-import { courseBlocks, getSectionPath } from './course'
+import { ref } from 'vue'
+import { bloquesCurso, getRutaApartado } from './curso'
 
 const navbarTitle = 'Accesibilidad, Usabilidad y UX'
+const menuAbierto = ref(false)
 
 const closeMainNav = () => {
-  const nav = document.getElementById('mainNav')
-
-  if (!nav || !nav.classList.contains('show')) {
-    return
-  }
-
-  Collapse.getOrCreateInstance(nav).hide()
+  menuAbierto.value = false
 }
 </script>
 
@@ -25,17 +20,16 @@ const closeMainNav = () => {
         <button
           class="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
+          @click="menuAbierto = !menuAbierto"
           aria-controls="mainNav"
-          aria-expanded="false"
+          :aria-expanded="menuAbierto ? 'true' : 'false'"
           aria-label="Mostrar u ocultar menú de navegación"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div id="mainNav" class="collapse navbar-collapse">
+        <div id="mainNav" class="navbar-collapse collapse" :class="{ show: menuAbierto }">
           <ul class="navbar-nav ms-auto align-items-xl-center">
-            <li v-for="block in courseBlocks" :key="block.slug" class="nav-item dropdown">
+            <li v-for="block in bloquesCurso" :key="block.slug" class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -49,7 +43,7 @@ const closeMainNav = () => {
                 <li v-for="section in block.sections" :key="section.id">
                   <RouterLink
                     class="dropdown-item"
-                    :to="getSectionPath(block.slug, section.id)"
+                    :to="getRutaApartado(block.slug, section.id)"
                     @click="closeMainNav"
                   >
                     {{ section.title }}

@@ -1,29 +1,29 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { getBlockBySlug, getSectionPath } from '../course'
+import { getBloquePorSlug, getRutaApartado } from '../curso'
 
 const props = defineProps<{
   slug: string
 }>()
 
-const block = computed(() => getBlockBySlug(props.slug))
+const bloque = computed(() => getBloquePorSlug(props.slug))
 </script>
 
 <template>
-  <div v-if="block" class="row g-4">
+  <div v-if="bloque" class="row g-4">
     <div class="col-12">
       <header class="rounded-4 border bg-white p-4 p-lg-5 shadow-sm">
         <div class="d-flex flex-column flex-lg-row justify-content-between gap-4">
           <div class="pe-lg-4">
-            <h1 class="mb-3">{{ block.title }}</h1>
-            <component :is="block.introComponent" />
+            <h1 class="mb-3">{{ bloque.title }}</h1>
+            <component :is="bloque.introComponent" />
           </div>
 
           <div class="card border-0 bg-body-tertiary flex-shrink-0" style="max-width: 20rem">
             <div class="card-body">
               <h2 class="mb-3">Resumen del bloque</h2>
-              <p class="mb-1">{{ block.menuDescription }}</p>
-              <p class="mb-0">{{ block.sections.length }} subapartados</p>
+              <p class="mb-1">{{ bloque.menuDescription }}</p>
+              <p class="mb-0">{{ bloque.sections.length }} subapartados</p>
             </div>
           </div>
         </div>
@@ -44,16 +44,16 @@ const block = computed(() => getBlockBySlug(props.slug))
 
           <div class="row g-3">
             <div
-              v-for="(section, index) in block.sections"
-              :key="section.id"
+              v-for="(apartado, index) in bloque.sections"
+              :key="apartado.id"
               class="col-lg-6"
             >
               <article class="card h-100 border">
                 <div class="card-body p-4">
                   <p class="mb-2">Tema {{ index + 1 }}</p>
-                  <h3 class="mb-3">{{ section.title }}</h3>
+                  <h3 class="mb-3">{{ apartado.title }}</h3>
                   <RouterLink
-                    :to="getSectionPath(block.slug, section.id)"
+                    :to="getRutaApartado(bloque.slug, apartado.id)"
                     class="btn btn-outline-primary"
                   >
                     Abrir subapartado

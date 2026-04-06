@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { courseBlocks, courseTitle, getSectionPath } from '../course'
+import { bloquesCurso, getRutaApartado, tituloCurso } from '../curso'
 </script>
 
 <template>
@@ -8,14 +8,14 @@ import { courseBlocks, courseTitle, getSectionPath } from '../course'
       <div class="row g-0">
         <div class="col-12">
           <div class="card-body p-4 p-md-5">
-            <h1 class="mb-3">{{ courseTitle }}</h1>
+            <h1 class="mb-3">{{ tituloCurso }}</h1>
           </div>
         </div>
       </div>
     </div>
 
     <div class="row g-4">
-      <div v-for="block in courseBlocks" :key="block.slug" class="col-md-6">
+      <div v-for="block in bloquesCurso" :key="block.slug" class="col-md-6">
         <article class="card h-100 border-0 shadow-sm">
           <div class="card-body p-4 d-flex flex-column">
             <h2 class="mb-3">{{ block.title }}</h2>
@@ -23,7 +23,7 @@ import { courseBlocks, courseTitle, getSectionPath } from '../course'
             <p class="mb-4">{{ block.homeSummary ?? block.menuDescription }}</p>
 
             <RouterLink
-              :to="getSectionPath(block.slug, block.sections[0].id)"
+              :to="getRutaApartado(block.slug, block.sections[0].id)"
               class="btn btn-primary mt-auto align-self-start d-inline-flex text-white"
               :aria-label="`Ir al bloque ${block.shortTitle}`"
             >

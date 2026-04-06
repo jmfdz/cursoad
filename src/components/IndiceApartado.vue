@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { SectionSubheading } from '../course/types'
+import type { SubtituloApartado } from '../curso'
 
 defineProps<{
-  subheadings: SectionSubheading[]
+  subheadings: SubtituloApartado[]
   currentHash: string
 }>()
 </script>

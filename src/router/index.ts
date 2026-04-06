@@ -1,26 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { courseBlocks } from '../course'
+import { bloquesCurso } from '../curso'
 
-const blockViewBySlug = {
-  fundamentos: () => import('../views/FundamentosView.vue'),
-  'requisitos-web': () => import('../views/RequisitosWebView.vue'),
-  ux: () => import('../views/UxView.vue'),
-  documentos: () => import('../views/DocumentosView.vue'),
-} as const
-
-const blockRoutes = courseBlocks.map((block) => ({
-  path: block.route,
-  name: block.slug,
-  component: blockViewBySlug[block.slug as keyof typeof blockViewBySlug],
-  props: { blockSlug: block.slug },
+const rutasBloque = bloquesCurso.map((bloque) => ({
+  path: `/${bloque.slug}`,
+  name: bloque.slug,
+  component: () => import('../views/Bloque.vue'),
+  props: { slug: bloque.slug },
 }))
 
-const sectionRoutes = courseBlocks.flatMap((block) =>
-  block.sections.map((section) => ({
-    path: `${block.route}/${section.id}`,
-    name: `${block.slug}-${section.id}`,
-    component: () => import('../views/SectionView.vue'),
-    props: { blockSlug: block.slug, sectionId: section.id },
+const rutasApartado = bloquesCurso.flatMap((bloque) =>
+  bloque.sections.map((apartado) => ({
+    path: `/${bloque.slug}/${apartado.id}`,
+    name: `${bloque.slug}-${apartado.id}`,
+    component: () => import('../views/Apartado.vue'),
+    props: { bloqueSlug: bloque.slug, apartadoId: apartado.id },
   })),
 )
 
@@ -45,10 +38,10 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/HomeView.vue'),
+      component: () => import('../views/Inicio.vue'),
     },
-    ...blockRoutes,
-    ...sectionRoutes,
+    ...rutasBloque,
+    ...rutasApartado,
   ],
 })
 
