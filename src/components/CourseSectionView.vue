@@ -83,6 +83,7 @@ const mobileNavId = computed(() => `section-nav-${props.blockSlug}-${props.secti
               <img
                 :src="section.figure.src"
                 :alt="section.figure.alt"
+                :title="section.figure.alt"
                 class="figure-img img-fluid rounded-4 border shadow-sm"
                 loading="lazy"
               />
@@ -169,6 +170,7 @@ const mobileNavId = computed(() => `section-nav-${props.blockSlug}-${props.secti
                   <img
                     :src="figure.src"
                     :alt="figure.alt"
+                    :title="figure.alt"
                     class="figure-img img-fluid rounded-4 border shadow-sm mb-2"
                     loading="lazy"
                   />
