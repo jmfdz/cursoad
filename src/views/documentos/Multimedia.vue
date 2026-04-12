@@ -1,11 +1,11 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Adicionalmente veremos las singularidades de los documentos de multimedia y varias
       herramientas para la evaluación automática de la accesibilidad de documentos Word.
     </p>
 
-    <h2 class="mt-4 mb-3">Percepción de lo audiovisual</h2>
+    <h2>Percepción de lo audiovisual</h2>
     <p>
       Los documentos multimedia están formados por un conjunto de imágenes, sonidos y textos
       simultáneos, unidos entre sí a través de transiciones. Por su composición es muy difícil
@@ -16,12 +16,12 @@
       asegurar un alto grado de accesibilidad para los documentos multimedia.
     </p>
 
-    <h2 class="mt-4 mb-3">¿Y cómo accede una persona con discapacidad al contenido?</h2>
+    <h2>¿Y cómo accede una persona con discapacidad al contenido?</h2>
     <ul>
       <li>Si no puedo escuchar una película, leo los subtítulos.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Subtitulado</h2>
+    <h2>Subtitulado</h2>
     <p>
       El subtitulado es un servicio de apoyo a la comunicación que muestra en pantalla, mediante
       texto y gráficos, los discursos orales, la información suprasegmental y los efectos sonoros
@@ -58,7 +58,7 @@
   allowfullscreen
 &gt;&lt;/iframe&gt;</code></pre>
 
-    <h2 class="mt-4 mb-3">Audiodescripción</h2>
+    <h2>Audiodescripción</h2>
     <p>
       Es un servicio de apoyo a la comunicación. Son un conjunto de técnicas y habilidades
       aplicadas, con objeto de compensar la carencia de captación de la parte visual contenida en
@@ -74,7 +74,7 @@
       <li>Densidad de la audiodescripción, evitando dentro de lo posible que sea alta.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Lengua de signos</h2>
+    <h2>Lengua de signos</h2>
     <p>
       Se tiende a pensar que los lenguajes de signos son similares a los idiomas del país en que se
       encuentran, pero no es así. Son idiomas totalmente diferentes y cada uno tiene sus propias
@@ -85,7 +85,7 @@
       es posible, al menos crear resúmenes con la información más importante en este sistema.
     </p>
 
-    <h2 class="mt-4 mb-3">Audio y transcripción</h2>
+    <h2>Audio y transcripción</h2>
     <p>
       En documentos de solo audio, la forma más clara de asegurar el acceso al contenido es incluir
       una transcripción visible o enlazada junto al reproductor.
@@ -108,7 +108,7 @@
       no debería ser la única vía para acceder a esa información.
     </p>
 
-    <h3 class="mt-4 mb-3">Referencia</h3>
+    <h3>Referencia</h3>
     <ul>
       <li><a href="https://web.ua.es/es/accesibilidad/documentos-electronicos-accesibles/documentos-multimedia.html" target="_blank" rel="noreferrer">UA: Documentos multimedia</a></li>
     </ul>

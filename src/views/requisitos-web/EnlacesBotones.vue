@@ -1,5 +1,5 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Los enlaces y botones deben transmitir claramente qué ocurrirá cuando pulsemos en ellos.
       Deben ser cortos y concisos, por ejemplo: “Procesar imagen”, “Descargar documento”, etc.
@@ -13,7 +13,7 @@
       es un enlace de YouTube, ponerle `title="Se abrirá en YouTube"`.
     </p>
 
-    <h2 class="mt-4 mb-3">Enlaces a descargas</h2>
+    <h2>Enlaces a descargas</h2>
     <p>
       Si el enlace descargará un fichero, por ejemplo un documento de Word o PowerPoint, es
       altamente aconsejable incluir la extensión y el tamaño del enlace. Por ejemplo para un vídeo
@@ -28,7 +28,7 @@
       descargar un archivo grande si está fuera de casa con datos.
     </p>
 
-    <h2 class="mt-4 mb-3">Texto accesible</h2>
+    <h2>Texto accesible</h2>
     <p>
       Los enlaces y botones no pueden estar vacíos, siempre deben tener un texto, ya sea visible o
       no. En este sentido, si el enlace o botón solo incluye una imagen o icono, deben tener texto

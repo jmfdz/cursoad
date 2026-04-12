@@ -1,5 +1,5 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>Las tablas son para estructurar datos, no para maquetar contenido. Para eso están los `div`.</p>
     <p>No hay que dividir ni combinar celdas, por lo que las tablas deben ser uniformes.</p>
     <p>
@@ -12,7 +12,7 @@
       contraste más alto.
     </p>
 
-    <h2 class="mt-4 mb-3">Ejemplo de tabla</h2>
+    <h2>Ejemplo de tabla</h2>
     <pre class="course-code"><code>&lt;table class="table"&gt;
   &lt;caption&gt;Notas de la asignatura de accesibilidad&lt;/caption&gt;
   &lt;thead&gt;
@@ -34,7 +34,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
 
-    <h2 class="mt-4 mb-3">Tablas adaptables</h2>
+    <h2>Tablas adaptables</h2>
     <p>
       Si la tabla es muy ancha, se recomienda hacerla adaptable con la clase de Bootstrap
       `table-responsive` para poder desplazarnos con scroll horizontal en dispositivos móviles:

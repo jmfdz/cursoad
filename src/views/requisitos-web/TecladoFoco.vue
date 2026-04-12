@@ -1,12 +1,12 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Una página web no debe depender exclusivamente del ratón. Debe poder recorrerse y utilizarse
       también con teclado, ya que muchas personas navegan de esta forma de manera habitual o la
       necesitan como única vía de acceso.
     </p>
 
-    <h2 class="mt-4 mb-3">Recorrido con teclado</h2>
+    <h2>Recorrido con teclado</h2>
     <p>
       Al pulsar la tecla `TAB`, el foco del teclado va avanzando por los enlaces, botones, campos
       de formulario y otros elementos interactivos. Ese recorrido debe seguir una lógica clara y no
@@ -18,7 +18,7 @@
       vuelve confusa.
     </p>
 
-    <h2 class="mt-4 mb-3">Foco visible</h2>
+    <h2>Foco visible</h2>
     <p>
       No basta con que el foco exista, también debe verse con claridad. El usuario necesita saber
       en todo momento sobre qué elemento está situado para poder continuar la navegación o activar
@@ -29,7 +29,7 @@
       sustituya por otro estilo claramente visible y con contraste suficiente.
     </p>
 
-    <h2 class="mt-4 mb-3">Controles interactivos reales</h2>
+    <h2>Controles interactivos reales</h2>
     <p>
       Los elementos que realizan acciones o cambian de pantalla deben construirse con los controles
       adecuados: enlaces para navegar y botones para ejecutar acciones. No deberíamos usar `div`,
@@ -40,7 +40,7 @@
       muestra su estado de forma clara, parte de los usuarios quedará fuera.
     </p>
 
-    <h2 class="mt-4 mb-3">Problemas habituales</h2>
+    <h2>Problemas habituales</h2>
     <p>Entre los fallos más frecuentes relacionados con teclado y foco están los siguientes:</p>
     <ul>
       <li>enlaces, botones o iconos que solo funcionan con ratón,</li>

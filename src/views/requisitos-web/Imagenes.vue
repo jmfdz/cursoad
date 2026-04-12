@@ -1,5 +1,5 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Todos los elementos no textuales como imágenes, gráficos, fórmulas matemáticas, cuadros de
       texto, etc. deben disponer de un texto alternativo que describa el contenido o lo que
@@ -15,7 +15,7 @@
       alternativo vacía.
     </p>
 
-    <h2 class="mt-4 mb-3">Texto alternativo</h2>
+    <h2>Texto alternativo</h2>
     <p>
       Para incluir la descripción de una imagen en una web debemos incluir el atributo `alt`, que
       es obligatorio. Veamos dos ejemplos, una imagen con descripción y otra decorativa:
@@ -37,7 +37,7 @@
       larga, debemos valorar si incluirla dentro del contenido de la página.
     </p>
 
-    <h2 class="mt-4 mb-3">Descripciones largas</h2>
+    <h2>Descripciones largas</h2>
     <p>
       Otra forma de incluir una descripción larga es mediante la etiqueta `figcaption` dentro de
       `figure` en HTML5. Veamos un ejemplo:
@@ -47,7 +47,7 @@
   &lt;figcaption&gt;Descripción larga&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
 
-    <h2 class="mt-4 mb-3">Iconos</h2>
+    <h2>Iconos</h2>
     <p>
       Los iconos, como otro elemento no textual, deben describirse para proporcionar indicaciones
       claras de qué propósito tienen, ya sea incluyéndolos con una etiqueta `&lt;i&gt;`,

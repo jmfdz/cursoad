@@ -1,12 +1,12 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       En los siguientes apartados se habla de la percepción del color, el concepto de contraste de
       luminosidad entre color del texto y del fondo y los tipos de ceguera al color para no
       cometer el error de transmitir información únicamente mediante el color.
     </p>
 
-    <h2 class="mt-4 mb-3">Contraste de luminosidad</h2>
+    <h2>Contraste de luminosidad</h2>
     <p>
       Existe un porcentaje de la población con problemas para percibir los colores, ya sea a la
       hora de diferenciar determinados colores o porque padece alguna forma de ceguera que solo le
@@ -50,7 +50,7 @@
       todo si se coloca texto sobre ese fondo.
     </p>
 
-    <h2 class="mt-4 mb-3">Comprobar el contraste entre colores</h2>
+    <h2>Comprobar el contraste entre colores</h2>
     <p>
       En la aplicación Accesibilidad de UACloud está disponible la herramienta Comprobación del
       contraste entre colores con el objetivo de hacer un buen uso del color en tu web o documento.
@@ -65,7 +65,7 @@
       cómo la propia herramienta propone colores alternativos accesibles para corregirlo.
     </p>
 
-    <h2 class="mt-4 mb-3">Uso semántico del color</h2>
+    <h2>Uso semántico del color</h2>
     <p>
       Es recomendable no utilizar únicamente el color para transmitir información. Siempre se debe
       incluir esta información mediante otro sistema alternativo, además del uso del color.
@@ -90,7 +90,7 @@
       letra equis.
     </p>
 
-    <h2 class="mt-4 mb-3">Movimiento y parpadeos</h2>
+    <h2>Movimiento y parpadeos</h2>
     <p>
       Debemos evitar imágenes parpadeantes o con más de tres destellos por segundo, ya que pueden
       afectar a personas que sufran epilepsia fotosensitiva.
@@ -102,7 +102,7 @@
       hiperactividad.
     </p>
 
-    <h2 class="mt-4 mb-3">Simular la ceguera al color</h2>
+    <h2>Simular la ceguera al color</h2>
     <p>
       Se puede instalar en Google Chrome una extensión de navegador llamada Colorblindly que
       permite comprobar cómo se ven los colores de nuestra web por una persona con diferentes

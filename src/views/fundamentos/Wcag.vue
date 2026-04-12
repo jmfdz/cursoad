@@ -1,6 +1,6 @@
 <template>
-  <div class="lh-lg">
-    <h2 class="mt-4 mb-3">Qué son las WCAG</h2>
+  <div>
+    <h2>Qué son las WCAG</h2>
     <p>
       Las WCAG (<i>Web Content Accessibility Guidelines</i>) son las pautas del W3C para hacer
       accesible el contenido web. Aunque nacieron para la web, hoy son también la referencia
@@ -8,7 +8,7 @@
       contenidos en este ámbito.
     </p>
 
-    <h2 class="mt-4 mb-3">Versiones</h2>
+    <h2>Versiones</h2>
     <ul>
       <li><strong>WCAG 1.0</strong>: publicada en 1999. Fue la primera versión.</li>
       <li><strong>WCAG 2.0</strong>: publicada en 2008. Introdujo la estructura basada en principios, pautas y criterios de conformidad.</li>
@@ -16,7 +16,7 @@
       <li><strong>WCAG 2.2</strong>: publicada en 2023. Es la versión más reciente y la que tomamos como referencia en este curso.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Los cuatro principios</h2>
+    <h2>Los cuatro principios</h2>
     <p>Las WCAG 2.2 se apoyan en cuatro principios fundamentales:</p>
     <ul>
       <li><strong>1. Perceptible</strong>: la información debe poder percibirse por distintos medios. Por ejemplo, una imagen informativa necesita texto alternativo y un vídeo puede necesitar subtítulos.</li>
@@ -25,7 +25,7 @@
       <li><strong>4. Robusto</strong>: el contenido debe estar bien construido para que navegadores y tecnologías de apoyo puedan interpretarlo correctamente.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Pautas</h2>
+    <h2>Pautas</h2>
     <p>Dentro de esos principios, WCAG 2.2 agrupa <strong>13 pautas</strong>. Son los grandes bloques en los que se organiza esta norma.</p>
 
     <p><strong>Perceptible</strong></p>
@@ -57,7 +57,7 @@
       <li><strong>4.1 Compatible</strong>: asegurar que el código y los componentes puedan ser interpretados correctamente por navegadores y productos de apoyo.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Criterios de conformidad</h2>
+    <h2>Criterios de conformidad</h2>
     <p>
       Lo que realmente se comprueba para determinar si una web cumple WCAG son los
       <strong>criterios de conformidad</strong>. Actualmente, en WCAG 2.2 hay
@@ -87,12 +87,12 @@
       alternativa.
     </p>
 
-    <h3 class="mt-4 mb-3">Referencias</h3>
+    <h3>Referencias</h3>
     <ul>
-      <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noreferrer">W3C: WCAG 2 Overview</a></li>
-      <li><a href="https://www.w3.org/WAI/WCAG22/quickref/" target="_blank" rel="noreferrer">W3C: How to Meet WCAG 2.2</a></li>
-      <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/intro" target="_blank" rel="noreferrer">W3C: Introduction to Understanding WCAG 2.2</a></li>
-      <li><a href="https://www.w3.org/WAI/intro/wcag10.html" target="_blank" rel="noreferrer">W3C: WCAG 1.0</a></li>
+      <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noreferrer">W3C: WCAG 2 Overview (Inglés)</a></li>
+      <li><a href="https://www.w3.org/WAI/WCAG22/quickref/" target="_blank" rel="noreferrer">W3C: How to Meet WCAG 2.2 (Inglés)</a></li>
+      <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/intro" target="_blank" rel="noreferrer">W3C: Introduction to Understanding WCAG 2.2 (Inglés)</a></li>
+      <li><a href="https://www.w3.org/WAI/intro/wcag10.html" target="_blank" rel="noreferrer">W3C: WCAG 1.0 (Inglés)</a></li>
     </ul>
   </div>
 </template>

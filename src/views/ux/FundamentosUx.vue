@@ -1,12 +1,12 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       El diseño inclusivo, la usabilidad y la experiencia de usuario están muy relacionados, pero
       no significan exactamente lo mismo. Conviene diferenciarlos porque cada uno aporta un enfoque
       distinto a la calidad real de una interfaz.
     </p>
 
-    <h2 class="mt-4 mb-3">Diseño inclusivo</h2>
+    <h2>Diseño inclusivo</h2>
     <p>
       El diseño inclusivo es una metodología creada para habilitar y apoyarse en toda la diversidad
       humana al concebir productos y servicios, de modo que funcionen para personas con diferentes
@@ -31,7 +31,7 @@
       formas de participación, que guían a los equipos durante todo el ciclo de vida del producto.
     </p>
 
-    <h2 class="mt-4 mb-3">Usabilidad</h2>
+    <h2>Usabilidad</h2>
     <p>
       La usabilidad se refiere a cómo de <strong>fácil, eficiente y satisfactoria</strong> es la
       interacción del usuario con un sitio web o aplicación. Una interfaz usable permite al usuario
@@ -46,7 +46,7 @@
       <li>Satisfacción: el uso del sistema resulta agradable.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Experiencia de usuario (UX)</h2>
+    <h2>Experiencia de usuario (UX)</h2>
     <p>
       La experiencia de usuario es más amplia: engloba todas las <strong>emociones, percepciones y
       reacciones</strong> que una persona tiene al interactuar con una página web o aplicación.

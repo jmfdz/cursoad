@@ -16,7 +16,15 @@ const bloque = computed(() => getBloquePorSlug(props.slug))
         <div class="d-flex flex-column flex-lg-row justify-content-between gap-4">
           <div class="pe-lg-4">
             <h1 class="mb-3">{{ bloque.title }}</h1>
-            <component :is="bloque.introComponent" />
+            <div>
+              <p
+                v-for="(paragraph, index) in bloque.intro"
+                :key="`${bloque.slug}-intro-${index}`"
+                :class="{ 'mb-0': index === bloque.intro.length - 1 }"
+              >
+                {{ paragraph }}
+              </p>
+            </div>
           </div>
 
           <div class="card border-0 bg-body-tertiary flex-shrink-0" style="max-width: 20rem">

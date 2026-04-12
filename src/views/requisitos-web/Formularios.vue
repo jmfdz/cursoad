@@ -1,12 +1,17 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Los formularios tienen como finalidad proporcionar interactividad a los sitios y aplicaciones
       web, esto es, dados una serie de datos, procesarlos de alguna forma para obtener resultados,
       ya sean filtrar listados, enviar peticiones al servidor o producir cambios en la interfaz.
     </p>
+    <p>
+      En este apartado nos centramos en los requisitos de accesibilidad del formulario. Más
+      adelante, en usabilidad y UX, veremos patrones y decisiones de diseño orientadas a mejorar
+      también la experiencia de uso.
+    </p>
 
-    <h2 class="mt-4 mb-3">Campos de formulario con etiqueta asociada</h2>
+    <h2>Campos de formulario con etiqueta asociada</h2>
     <p>
       Todo campo de formulario debe estar <strong>dentro</strong> de una etiqueta de formulario
       `&lt;form&gt;`, de la misma forma que un elemento de lista `&lt;li&gt;` debe estar dentro
@@ -41,7 +46,7 @@
   &lt;/div&gt;
 &lt;/form&gt;</code></pre>
 
-    <h2 class="mt-4 mb-3">Agrupar campos de formulario</h2>
+    <h2>Agrupar campos de formulario</h2>
     <p>Hay dos ocasiones en las que debemos agrupar campos de formulario utilizando `fieldset` y `legend`:</p>
     <ul>
       <li>Cuando el formulario es muy largo, para agrupar campos de formulario relacionados.</li>
@@ -107,7 +112,7 @@
   &lt;/fieldset&gt;
 &lt;/form&gt;</code></pre>
 
-    <h2 class="mt-4 mb-3">Validación de formularios</h2>
+    <h2>Validación de formularios</h2>
     <p>
       La primera cuestión que debemos plantearnos es cómo señalizar los campos que son obligatorios
       u opcionales.
@@ -140,12 +145,10 @@
     <p>De esta forma, nos aseguramos de que siempre se muestran los errores en primer plano.</p>
     <p>
       Además, los mensajes deben ser claros y útiles. No basta con indicar que hay un error: hay
-      que explicar qué campo ha fallado y, si es posible, cómo corregirlo. Del mismo modo, si un
-      formulario se envía correctamente sin cambio completo de pantalla, también conviene mostrar un
-      mensaje de confirmación visible y fácil de comprender.
+      que explicar qué campo ha fallado y, si es posible, cómo corregirlo.
     </p>
 
-    <h2 class="mt-4 mb-3">Ejemplo de validación Ajax</h2>
+    <h2>Ejemplo de validación Ajax</h2>
     <p>Veamos un ejemplo de validación de un formulario mediante Ajax que efectúa los cambios en el cliente:</p>
     <pre class="course-code"><code>&lt;form novalidate id="mi-form"&gt;
   &lt;div class="mb-3"&gt;
@@ -199,9 +202,6 @@ document.getElementById("mi-form").addEventListener("submit", (event) =&gt; {
       En el fichero `formularios.html` del repositorio GitHub se pueden encontrar más ejemplos de
       validación, como por ejemplo el tamaño máximo de un fichero y su extensión requerida.
     </p>
-    <p>
-      En el apartado de usabilidad veremos más acciones interesantes para hacer los formularios más
-      usables y accesibles.
-    </p>
+    <p>En el bloque de usabilidad y UX veremos después cómo reducir también la fricción y mejorar la experiencia general de estos formularios.</p>
   </div>
 </template>

@@ -1,13 +1,11 @@
 import { markRaw } from 'vue'
 import type { Component } from 'vue'
-import IntroduccionBloqueFundamentos from './views/fundamentos/IntroduccionBloque.vue'
 import IntroduccionFundamentos from './views/fundamentos/Introduccion.vue'
 import Legislacion from './views/fundamentos/Legislacion.vue'
 import LectorPantalla from './views/fundamentos/LectorPantalla.vue'
 import PruebasAccesibilidad from './views/fundamentos/PruebasAccesibilidad.vue'
 import ProductosApoyo from './views/fundamentos/ProductosApoyo.vue'
 import Wcag from './views/fundamentos/Wcag.vue'
-import IntroduccionDocumentos from './views/documentos/Introduccion.vue'
 import Multimedia from './views/documentos/Multimedia.vue'
 import Pdf from './views/documentos/Pdf.vue'
 import Powerpoint from './views/documentos/Powerpoint.vue'
@@ -17,7 +15,6 @@ import EnlacesBotones from './views/requisitos-web/EnlacesBotones.vue'
 import EstructuraSemantica from './views/requisitos-web/EstructuraSemantica.vue'
 import Formularios from './views/requisitos-web/Formularios.vue'
 import Imagenes from './views/requisitos-web/Imagenes.vue'
-import IntroduccionRequisitosWeb from './views/requisitos-web/Introduccion.vue'
 import Tablas from './views/requisitos-web/Tablas.vue'
 import TecladoFoco from './views/requisitos-web/TecladoFoco.vue'
 import TextoIdioma from './views/requisitos-web/TextoIdioma.vue'
@@ -26,7 +23,6 @@ import Color from './views/ux/Color.vue'
 import ArquitecturaInformacion from './views/ux/ArquitecturaInformacion.vue'
 import EstadosFeedback from './views/ux/EstadosFeedback.vue'
 import FundamentosUx from './views/ux/FundamentosUx.vue'
-import IntroduccionUx from './views/ux/Introduccion.vue'
 import LeyesUxCargaDecision from './views/ux/LeyesUxCargaDecision.vue'
 import LeyesUxInteraccion from './views/ux/LeyesUxInteraccion.vue'
 import LeyesUxPercepcion from './views/ux/LeyesUxPercepcion.vue'
@@ -72,7 +68,7 @@ export type BloqueCurso = {
   title: string
   menuDescription: string
   homeSummary?: string
-  introComponent: Component
+  intro: string[]
   sections: ApartadoCurso[]
 }
 
@@ -107,7 +103,10 @@ export const bloquesCurso: BloqueCurso[] = [
     menuDescription: 'Conceptos básicos, WCAG, legislación y comprobación de accesibilidad.',
     homeSummary:
       'Introduce la accesibilidad digital, a quién beneficia, las WCAG, la legislación aplicable y las bases para validar con herramientas y lector de pantalla.',
-    introComponent: markRaw(IntroduccionBloqueFundamentos),
+    intro: [
+      'En este bloque se presenta la base de trabajo del curso: qué entendemos por accesibilidad digital, a quién beneficia, qué marco técnico y normativo la sostiene y cómo empezar a revisarla en la práctica.',
+      'La idea es dejar claro desde el principio que accesibilidad, usabilidad y experiencia de uso están relacionadas, pero no son exactamente lo mismo: una interfaz puede ser vistosa o cómoda para parte de sus usuarios y seguir excluyendo a otros si no cumple unos mínimos de percepción, manejo y comprensión.',
+    ],
     sections: [
       {
         id: 'introduccion',
@@ -169,7 +168,9 @@ export const bloquesCurso: BloqueCurso[] = [
     menuDescription: 'Texto, semántica, formularios, tablas, componentes y ARIA.',
     homeSummary:
       'Recoge los requisitos técnicos que deben cumplir las páginas y aplicaciones web: texto, idioma, estructura, imágenes, enlaces, tablas, formularios y componentes accesibles.',
-    introComponent: markRaw(IntroduccionRequisitosWeb),
+    intro: [
+      'En este bloque se reúnen los requisitos técnicos de accesibilidad aplicados a la web: contenido, estructura, interacción y componentes.',
+    ],
     sections: [
       {
         id: 'estructura-semantica',
@@ -275,7 +276,9 @@ export const bloquesCurso: BloqueCurso[] = [
     menuDescription: 'Conceptos base, técnicas, leyes UX, color y patrones de diseño.',
     homeSummary:
       'Reúne fundamentos de diseño inclusivo, usabilidad y experiencia de usuario, junto con técnicas de evaluación, leyes UX, color y patrones aplicados al diseño de interfaces.',
-    introComponent: markRaw(IntroduccionUx),
+    intro: [
+      'En este bloque se trabajan los conceptos de diseño inclusivo, usabilidad y experiencia de usuario, así como el uso del color y varios patrones de diseño.',
+    ],
     sections: [
       {
         id: 'fundamentos-ux',
@@ -476,7 +479,10 @@ export const bloquesCurso: BloqueCurso[] = [
     menuDescription: 'Word, PowerPoint, PDF y contenidos multimedia.',
     homeSummary:
       'Agrupa criterios y buenas prácticas para aplicar la accesibilidad a documentos ofimáticos, PDF y materiales multimedia.',
-    introComponent: markRaw(IntroduccionDocumentos),
+    intro: [
+      'La accesibilidad digital no se limita a las páginas web. Los mismos principios deben aplicarse a documentos Word, presentaciones PowerPoint, PDF y contenidos multimedia.',
+      'Este bloque reúne una base de trabajo para revisar esos soportes con la misma lógica de estructura, alternativas textuales, navegación y comprensión.',
+    ],
     sections: [
       {
         id: 'word',

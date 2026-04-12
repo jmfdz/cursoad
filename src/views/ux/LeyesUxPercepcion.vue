@@ -1,5 +1,5 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       <i>Laws of UX</i> es una colección de principios psicológicos y heurísticas de diseño
       aplicables a interfaces digitales. En este bloque se recogen agrupadas por tema, con una
@@ -10,7 +10,7 @@
       <a href="https://lawsofux.com/es/" target="_blank" rel="noreferrer">Laws of UX</a>.
     </p>
 
-    <h2 class="mt-4 mb-3">Percepción visual y organización</h2>
+    <h2>Percepción visual y organización</h2>
 
     <h3>Atención selectiva</h3>
     <p>Las personas solo atienden a una parte de los estímulos disponibles y suelen centrarse en lo que les ayuda a cumplir su objetivo.</p>

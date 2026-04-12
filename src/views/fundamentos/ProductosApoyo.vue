@@ -1,16 +1,16 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Una vez entendido que no todas las personas acceden al contenido de la misma forma, conviene
-      concretar mejor algunas de las funciones de accesibilidad, tecnologías de apoyo y ajustes más habituales con los que se
-      navega por la web.
+      concretar mejor algunas de las funciones de accesibilidad, tecnologías de apoyo y ajustes
+      más habituales con los que se navega por la web.
     </p>
     <p>
       El objetivo no es aprender a utilizarlos a fondo, sino entender qué necesitan para que una
       página web pueda percibirse, recorrerse y utilizarse de forma correcta.
     </p>
 
-    <h2 class="mt-4 mb-3">Productos de apoyo y ajustes habituales</h2>
+    <h2>Productos de apoyo y ajustes habituales</h2>
     <p>Entre las ayudas más habituales que pueden utilizarse para acceder a la web están las siguientes:</p>
     <ul>
       <li><strong>Navegación por teclado</strong>, cuando no se utiliza ratón o no puede utilizarse con precisión.</li>
@@ -21,7 +21,7 @@
       <li><strong>Subtítulos y transcripciones</strong>, cuando el contenido incluye audio o vídeo.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Qué necesitan para funcionar bien</h2>
+    <h2>Qué necesitan para funcionar bien</h2>
     <p>
       Cada una de estas formas de acceso depende de que la interfaz esté bien construida. Por
       ejemplo, el teclado necesita un orden lógico de foco; el lector de pantalla necesita

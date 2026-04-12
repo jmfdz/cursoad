@@ -1,6 +1,5 @@
 <template>
-  <div class="lh-lg">
-    <h2 class="mt-4 mb-3">Qué es la accesibilidad digital</h2>
+    <h2>Qué es la accesibilidad digital</h2>
     <p>
       Podemos definir la accesibilidad digital como el grado en el que todas las personas pueden
       <strong>percibir, comprender, utilizar y navegar</strong> por un contenido o servicio digital
@@ -13,7 +12,7 @@
       accesibles.
     </p>
 
-    <h2 class="mt-4 mb-3">Por qué es importante</h2>
+    <h2>Por qué es importante</h2>
     <p>
       La accesibilidad no es un añadido ni una capa de calidad opcional. Es una condición básica
       para que la información y los servicios puedan usarse de forma real por todas las personas.
@@ -30,7 +29,7 @@
       más legibles suelen beneficiar a todo el mundo.
     </p>
 
-    <h2 class="mt-4 mb-3">A quién beneficia</h2>
+    <h2>A quién beneficia</h2>
     <p>
       Solemos agrupar las necesidades de accesibilidad en cuatro grandes bloques, aunque en la
       práctica el impacto es mucho más amplio:
@@ -49,7 +48,7 @@
       <li>Personas con mala conexión, pantallas pequeñas o dispositivos de entrada distintos al teclado y ratón tradicionales.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Cómo acceden las personas al contenido</h2>
+    <h2>Cómo acceden las personas al contenido</h2>
     <p>
       Las personas con discapacidad utilizan productos de apoyo o funciones de accesibilidad del
       sistema para acceder al contenido digital. No son casos raros ni excepcionales: forman parte
@@ -63,7 +62,7 @@
       <li>Si me cuesta comprender lo que leo, necesito contenido más claro, bien estructurado y predecible.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Funciones de accesibilidad que hoy utilizamos todos</h2>
+    <h2>Funciones de accesibilidad que hoy utilizamos todos</h2>
     <p>Muchas funciones nacidas para mejorar la accesibilidad forman parte ya del uso cotidiano:</p>
     <ul>
       <li>Síntesis de voz en GPS, asistentes o lectores automáticos.</li>
@@ -76,7 +75,7 @@
       como una mejora general de acceso, comprensión y comodidad de uso.
     </p>
 
-    <h2 class="mt-4 mb-3">Qué implica en un entorno digital real</h2>
+    <h2>Qué implica en un entorno digital real</h2>
     <p>Llevado a la práctica, hablar de accesibilidad significa comprobar cosas bastante concretas:</p>
     <ul>
       <li>que la estructura del contenido sea clara y semántica,</li>
@@ -91,23 +90,15 @@
       construir bien el contenido, la interacción y la semántica desde el principio.
     </p>
 
-    <h2 class="mt-4 mb-3">Navegación y orientación</h2>
-    <p>
-      Además de estar bien construida, una web debe poder recorrerse y entenderse con facilidad. No
-      basta con que existan menús, enlaces o secciones: también deben organizarse de forma
-      coherente para que el usuario sepa dónde está, qué puede hacer y cómo continuar.
-    </p>
-    <p>
-      Esta parte está muy relacionada con la usabilidad y la experiencia de usuario. Más adelante,
-      en el bloque correspondiente, veremos con más detalle cómo organizar la navegación, la
-      jerarquía de contenidos y la orientación dentro de una interfaz.
-    </p>
-
-    <h2 class="mt-4 mb-3">Barreras frecuentes y situación actual</h2>
+    <h2>Barreras frecuentes y situación actual</h2>
     <p>
       El estado actual de accesibilidad en la web sigue siendo claramente mejorable. El informe
-      WebAIM Million 2026, basado en el análisis de un millón de páginas de inicio, muestra algunos
-      datos bastante claros:
+      <a
+        href="https://webaim.org/projects/million/?locale=en_GB"
+        target="_blank"
+        rel="noreferrer"
+      >WebAIM Million 2026 (Inglés)</a>, basado en el análisis de un millón de páginas de
+      inicio, muestra algunos datos bastante claros:
     </p>
     <ul>
       <li>El 95,9% de las páginas analizadas presentaba fallos automáticos de WCAG.</li>
@@ -130,10 +121,9 @@
       principio.
     </p>
 
-    <h3 class="mt-4 mb-3">Referencias</h3>
+    <h3>Referencias</h3>
     <ul>
       <li><a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es" target="_blank" rel="noreferrer">W3C: Introducción a la accesibilidad web</a></li>
-      <li><a href="https://webaim.org/projects/million/?locale=en_GB" target="_blank" rel="noreferrer">WebAIM Million 2026</a></li>
+      <li><a href="https://webaim.org/projects/million/?locale=en_GB" target="_blank" rel="noreferrer">WebAIM Million 2026 (Inglés)</a></li>
     </ul>
-  </div>
 </template>

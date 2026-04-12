@@ -1,12 +1,12 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Una interfaz no solo debe ser visualmente correcta. También tiene que estar bien organizada
       para que el usuario entienda dónde está, qué información tiene delante y qué caminos puede
       seguir.
     </p>
 
-    <h2 class="mt-4 mb-3">Agrupar y jerarquizar</h2>
+    <h2>Agrupar y jerarquizar</h2>
     <p>
       La arquitectura de información consiste en ordenar contenidos, acciones y rutas de navegación
       de forma coherente. Para ello conviene agrupar lo relacionado, separar lo secundario y dar
@@ -17,7 +17,7 @@
       la búsqueda y obliga al usuario a interpretar demasiado la interfaz.
     </p>
 
-    <h2 class="mt-4 mb-3">Orientación del usuario</h2>
+    <h2>Orientación del usuario</h2>
     <p>En cualquier pantalla deberían resolverse con claridad cuatro preguntas básicas:</p>
     <ul>
       <li><strong>Dónde estoy</strong>.</li>
@@ -29,8 +29,13 @@
       Cuando esto no está claro, aparecen menús redundantes, títulos ambiguos o pantallas que
       exigen demasiada interpretación antes de actuar.
     </p>
+    <p>
+      No basta con que existan menús, enlaces o secciones. También deben organizarse de forma
+      coherente para que el usuario pueda recorrer la interfaz con facilidad y entienda cómo pasar
+      de una zona a otra sin perderse.
+    </p>
 
-    <h2 class="mt-4 mb-3">Patrones habituales de navegación</h2>
+    <h2>Patrones habituales de navegación</h2>
     <p>Según el tipo de contenido y la complejidad del sistema, pueden utilizarse distintos patrones:</p>
     <ul>
       <li><strong>Navegación principal</strong>, para las secciones globales del sitio o aplicación.</li>
@@ -44,7 +49,7 @@
       requiere demasiados clics o demasiada memoria, probablemente está mal resuelta.
     </p>
 
-    <h2 class="mt-4 mb-3">Consistencia entre pantallas</h2>
+    <h2>Consistencia entre pantallas</h2>
     <p>
       La arquitectura también depende de la consistencia. Si los menús cambian de sitio, si una
       misma acción aparece con nombres distintos o si cada pantalla tiene una lógica diferente, la

@@ -1,14 +1,14 @@
 <template>
-  <div class="lh-lg">
-    <h2 class="mt-4 mb-3">¿Cómo creo un PDF de forma accesible?</h2>
+  <div>
+    <h2>¿Cómo creo un PDF de forma accesible?</h2>
 
-    <h3 class="mt-4 mb-3">Documentos PDF</h3>
+    <h3>Documentos PDF</h3>
     <ul>
       <li>Si hemos tenido en cuenta los aspectos del diseño universal, cuando guardemos nuestro documento de Word o PowerPoint a PDF, éste conservará las opciones de accesibilidad y será accesible. En caso contrario, no.</li>
       <li>No debemos guardar como PDF con los típicos programas tipo ‘Impresora PDF’ puesto que hacen que el PDF resultante pierda características de accesibilidad.</li>
     </ul>
 
-    <h3 class="mt-4 mb-3">Guardar como PDF</h3>
+    <h3>Guardar como PDF</h3>
     <figure class="my-4">
       <img
         class="img-fluid"
@@ -17,7 +17,7 @@
       />
     </figure>
 
-    <h3 class="mt-4 mb-3">Opciones guardar PDF</h3>
+    <h3>Opciones guardar PDF</h3>
     <ul>
       <li>Marcar Crear marcadores usando ➡️ Títulos.</li>
       <li>Marcar Etiquetas de la estructura del documento para accesibilidad.</li>

@@ -1,6 +1,6 @@
 <template>
-  <div class="lh-lg">
-    <h2 class="mt-4 mb-3">Memoria, aprendizaje y carga mental</h2>
+  <div>
+    <h2>Memoria, aprendizaje y carga mental</h2>
 
     <h3>Carga Cognitiva</h3>
     <p>Cuanto más esfuerzo mental exige una interfaz, más difícil es comprenderla y usarla con soltura.</p>
@@ -37,7 +37,7 @@
     <p><strong>Ejemplo:</strong> si un filtro básico resuelve la búsqueda, no hace falta obligar a pasar por una búsqueda avanzada compleja.</p>
     <p><strong>Referencias:</strong> <a href="https://lawsofux.com/es/la-navaja-de-occam/" target="_blank" rel="noreferrer">Laws of UX: La Navaja de Occam</a>.</p>
 
-    <h2 class="mt-4 mb-3">Decisión y comportamiento</h2>
+    <h2>Decisión y comportamiento</h2>
 
     <h3>Efecto de Tendencia a la Meta</h3>
     <p>La motivación aumenta cuando la persona percibe que está cerca de completar una meta.</p>

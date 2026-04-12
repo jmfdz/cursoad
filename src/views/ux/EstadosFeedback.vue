@@ -1,12 +1,17 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Cuando una persona interactúa con una interfaz necesita saber en todo momento qué está
       ocurriendo, si su acción se ha procesado y qué puede hacer a continuación. Si no hay señales
       claras, aparecen la duda, la repetición de acciones y la sensación de falta de control.
     </p>
+    <p>
+      Los requisitos técnicos de formularios, etiquetas y validación accesible ya se han tratado en
+      el bloque anterior. Aquí nos centramos en cómo responder mejor a las acciones del usuario y
+      cómo comunicar lo que ocurre en la interfaz.
+    </p>
 
-    <h2 class="mt-4 mb-3">Estados de una interfaz</h2>
+    <h2>Estados de una interfaz</h2>
     <p>En muchos componentes y pantallas hay al menos cinco estados habituales que conviene diseñar de forma explícita:</p>
     <ul>
       <li><strong>Inicial</strong>: la pantalla todavía no tiene resultados o espera una acción del usuario.</li>
@@ -20,7 +25,7 @@
       ambiguos, pantallas vacías o cambios de interfaz que el usuario no entiende.
     </p>
 
-    <h2 class="mt-4 mb-3">Feedback inmediato</h2>
+    <h2>Feedback inmediato</h2>
     <p>
       Cuando el usuario pulsa un botón, envía un formulario o cambia un filtro, la interfaz debe
       reaccionar de inmediato. A veces basta con deshabilitar un botón y mostrar un indicador de
@@ -32,7 +37,7 @@
       claridad.
     </p>
 
-    <h2 class="mt-4 mb-3">Mensajes claros y proporcionados</h2>
+    <h2>Mensajes claros y proporcionados</h2>
     <p>
       No todos los mensajes deben presentarse de la misma forma. Un aviso menor no necesita el
       mismo peso visual que un error que impide continuar.
@@ -56,7 +61,7 @@
       <li>En acciones reversibles, muchas veces es preferible ofrecer una opción de deshacer antes que pedir confirmación previa.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Relación con accesibilidad</h2>
+    <h2>Relación con accesibilidad</h2>
     <p>
       Todo esto tiene también un impacto directo en accesibilidad. Si el cambio solo se percibe
       visualmente, una parte de los usuarios no sabrá que algo ha ocurrido.

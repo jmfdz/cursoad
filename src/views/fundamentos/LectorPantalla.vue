@@ -1,6 +1,6 @@
 <template>
-  <div class="lh-lg">
-    <h2 class="mt-4 mb-3">Qué es</h2>
+  <div>
+    <h2>Qué es</h2>
     <p>
       NVDA es un lector de pantalla gratuito para Windows utilizado por personas ciegas y con baja
       visión para acceder al ordenador, las aplicaciones y la web.
@@ -10,7 +10,7 @@
       recibe una persona cuando la interfaz está bien o mal construida.
     </p>
 
-    <h2 class="mt-4 mb-3">Cómo hacer una prueba rápida</h2>
+    <h2>Cómo hacer una prueba rápida</h2>
     <p>
       Para una primera toma de contacto, basta con activar el lector y hacer una navegación básica
       por teclado:
@@ -25,7 +25,7 @@
     </ul>
     <p>No hace falta dominar todos los comandos para que la prueba sea útil. Con muy poco ya pueden detectarse bastantes problemas.</p>
 
-    <h2 class="mt-4 mb-3">Qué revisar con un lector de pantalla</h2>
+    <h2>Qué revisar con un lector de pantalla</h2>
     <p>Al hacer una prueba rápida con lector de pantalla conviene comprobar al menos lo siguiente:</p>
     <ul>
       <li>si el título de la página y los encabezados describen bien la estructura,</li>
@@ -44,9 +44,9 @@
       detectar problemas reales de semántica, navegación y etiquetado.
     </p>
 
-    <h3 class="mt-4 mb-3">Referencias</h3>
+    <h3>Referencias</h3>
     <ul>
-      <li><a href="https://www.nvaccess.org/download/" target="_blank" rel="noreferrer">NV Access: Descargar NVDA</a></li>
+      <li><a href="https://www.nvaccess.org/download/" target="_blank" rel="noreferrer">NV Access: Descargar NVDA (Inglés)</a></li>
     </ul>
   </div>
 </template>

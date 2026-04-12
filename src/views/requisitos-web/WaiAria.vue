@@ -1,5 +1,5 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       WAI-ARIA (<i>Web Accessibility Initiative - Accessible Rich Internet Applications</i>) es una
       especificación del W3C. Está pensada para hacer más accesible el contenido dinámico,
@@ -20,7 +20,7 @@
       WAI-ARIA.
     </p>
 
-    <h2 class="mt-4 mb-3">Tabindex</h2>
+    <h2>Tabindex</h2>
     <p>
       Es conveniente recordar que en HTML solo pueden recibir el foco del teclado los enlaces,
       botones y elementos de formulario.
@@ -55,7 +55,7 @@
       <li>`tabindex="x"` donde `x` es un número entero define un orden de tabulación explícito. No se recomienda su uso porque puede crear confusión.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Roles</h2>
+    <h2>Roles</h2>
     <p>
       Incluir información sobre el rol o función de un elemento de nuestra página mediante ARIA es
       tan sencillo como añadir a la etiqueta del elemento `role="[nombre_del_rol]"`.
@@ -74,7 +74,7 @@
       la estructura de la página.
     </p>
 
-    <h2 class="mt-4 mb-3">Landmark roles</h2>
+    <h2>Landmark roles</h2>
     <p>
       Dentro de los roles que definen la estructura de la página se distinguen los
       <i>landmark roles</i>, que se usan para identificar áreas separadas de la página y
@@ -105,7 +105,7 @@
   &lt;ul&gt;...&lt;/ul&gt;
 &lt;/div&gt;</code></pre>
 
-    <h2 class="mt-4 mb-3">aria-label, aria-labelledby y aria-describedby</h2>
+    <h2>aria-label, aria-labelledby y aria-describedby</h2>
     <p>
       Estos atributos nos permiten dar un nombre accesible, etiquetar o dar una descripción a los
       elementos HTML que lo necesiten.
@@ -129,7 +129,7 @@
       elemento que proporciona la descripción.
     </p>
 
-    <h2 class="mt-4 mb-3">Estados y propiedades</h2>
+    <h2>Estados y propiedades</h2>
     <p>
       Los elementos dinámicos cambian de estado, por ejemplo un menú desplegable puede estar
       plegado o desplegado. ARIA permite definir las propiedades y estados de los elementos.
@@ -170,7 +170,7 @@ button.addEventListener('click', () =&gt; {
 });
 &lt;/script&gt;</code></pre>
 
-    <h2 class="mt-4 mb-3">Live regions: aria-live</h2>
+    <h2>Live regions: aria-live</h2>
     <p>
       `aria-live` permite identificar una zona dinámica de nuestro contenido que se actualiza
       automáticamente. De esta manera los cambios se anunciarán al usuario de los productos de

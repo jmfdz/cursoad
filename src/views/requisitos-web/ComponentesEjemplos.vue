@@ -1,5 +1,5 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Como hemos visto en el apartado anterior, crear componentes interactivos accesibles tiene una
       gran complejidad. En nuestro caso, tenemos la suerte de utilizar la librería Bootstrap, que
@@ -10,7 +10,7 @@
       ejemplos de cuadros modales, acordeones, desplegables, pestañas, etc.
     </p>
 
-    <h2 class="mt-4 mb-3">Qué debe cumplir un componente interactivo</h2>
+    <h2>Qué debe cumplir un componente interactivo</h2>
     <p>
       Aunque cada componente tenga sus particularidades, en general todos deberían cumplir una serie
       de requisitos comunes:
@@ -23,7 +23,7 @@
       <li>y anunciar o hacer perceptibles los cambios importantes cuando el contenido se actualiza.</li>
     </ul>
 
-    <h2 class="mt-4 mb-3">Ejemplos habituales</h2>
+    <h2>Ejemplos habituales</h2>
     <p>
       Entre los componentes que suelen exigir más cuidado están los cuadros modales, los
       desplegables, los acordeones, las pestañas o cualquier panel que muestra y oculta contenido
@@ -35,7 +35,7 @@
       interfaz.
     </p>
 
-    <h2 class="mt-4 mb-3">Errores frecuentes</h2>
+    <h2>Errores frecuentes</h2>
     <ul>
       <li>iconos sin nombre accesible,</li>
       <li>botones o enlaces que visualmente parecen correctos, pero no reciben foco,</li>

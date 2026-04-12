@@ -1,6 +1,6 @@
 <template>
-  <div class="lh-lg">
-    <h2 class="mt-4 mb-3">Interacción y rendimiento</h2>
+  <div>
+    <h2>Interacción y rendimiento</h2>
 
     <h3>Fluir</h3>
     <p>El flujo aparece cuando una persona puede concentrarse en su tarea sin interrupciones ni fricciones innecesarias.</p>

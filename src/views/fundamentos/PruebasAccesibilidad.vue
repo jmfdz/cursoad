@@ -1,5 +1,5 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Para comprobar la accesibilidad no basta con una sola herramienta. Lo habitual es combinar
       pruebas automáticas, revisión manual y, cuando sea posible, alguna prueba con tecnologías de
@@ -10,7 +10,7 @@
       que intentar corregirla al final, cuando ya hay que rehacer diseño, contenidos o desarrollo.
     </p>
 
-    <h2 class="mt-4 mb-3">Pruebas automáticas</h2>
+    <h2>Pruebas automáticas</h2>
     <p>
       Las herramientas automáticas detectan con rapidez ciertos errores frecuentes: imágenes sin
       texto alternativo, campos de formulario sin etiqueta, problemas de contraste, estructura
@@ -22,7 +22,7 @@
       herramienta no marque errores no significa que la experiencia sea correcta.
     </p>
 
-    <h2 class="mt-4 mb-3">Pruebas manuales</h2>
+    <h2>Pruebas manuales</h2>
     <p>La revisión manual es imprescindible para comprobar aspectos que una herramienta no puede valorar bien, por ejemplo:</p>
     <ul>
       <li>si un texto alternativo describe de verdad lo que la imagen aporta,</li>
@@ -33,7 +33,7 @@
     </ul>
     <p>Por eso, las pruebas automáticas deben verse como ayuda y apoyo al análisis, no como validación completa.</p>
 
-    <h2 class="mt-4 mb-3">Ejemplo: extensión de CADUA</h2>
+    <h2>Ejemplo: extensión de CADUA</h2>
     <p>
       La extensión de navegador de CADUA para Chrome, Edge, Brave o cualquier navegador Chromium
       comparte la base de comprobaciones de la aplicación web CADUA, pero añade pruebas que solo
@@ -46,7 +46,7 @@
       presentan errores, lo que agiliza mucho su localización y corrección.
     </p>
 
-    <h2 class="mt-4 mb-3">Revisión mínima recomendable</h2>
+    <h2>Revisión mínima recomendable</h2>
     <p>Como pauta práctica, una revisión básica debería combinar al menos:</p>
     <ul>
       <li>una pasada con herramienta automática,</li>
@@ -67,7 +67,7 @@
       revisión manual ni la comprobación de tareas reales.
     </p>
 
-    <h3 class="mt-4 mb-3">Referencias</h3>
+    <h3>Referencias</h3>
     <ul>
       <li><a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es" target="_blank" rel="noreferrer">W3C: Introducción a la accesibilidad web</a></li>
     </ul>

@@ -1,5 +1,5 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Antes de comenzar a elaborar un contenido, debemos pensar en el tipo de personas a las que
       se dirige, las ideas más importantes a transmitir y su estructura. Para ello utilizaremos un
@@ -8,7 +8,7 @@
       debe ser <strong>detectado de forma clara por los usuarios</strong>.
     </p>
 
-    <h2 class="mt-4 mb-3">Formato del texto</h2>
+    <h2>Formato del texto</h2>
     <p>
       La tipografía utilizada es un elemento fundamental de nuestro documento. Es aconsejable
       utilizar fuentes de tipo Sans Serif, como por ejemplo <strong>Arial o Verdana</strong>, ya
@@ -64,7 +64,7 @@
       tachado `&lt;s&gt;`, ya que, al cambiar la forma del texto, dificulta mucho su lectura.
     </p>
 
-    <h2 class="mt-4 mb-3">Formato de párrafo</h2>
+    <h2>Formato de párrafo</h2>
     <p>
       Lo primero que tener en cuenta es que todo texto debe estar incluido en una etiqueta
       semántica, ya sean botones, enlaces, párrafos, encabezados, etc. Esto quiere decir que
@@ -94,7 +94,7 @@
   margin-bottom: 1rem;
 }</code></pre>
 
-    <h2 class="mt-4 mb-3">Texto en imágenes</h2>
+    <h2>Texto en imágenes</h2>
     <p>
       <strong>No es aconsejable incluir texto en imágenes</strong> debido a que dificulta su
       legibilidad. En este caso podríamos tener problemas con el contraste entre colores de fondo y
@@ -103,7 +103,7 @@
       altos de ampliación.
     </p>
 
-    <h2 class="mt-4 mb-3">Idioma del contenido</h2>
+    <h2>Idioma del contenido</h2>
     <p>
       Tanto si trabajamos páginas web con varios idiomas o tan solo aparecen términos de otra
       lengua, deberemos <strong>marcar siempre el idioma al que pertenece cada parte del texto</strong>.
@@ -121,7 +121,7 @@
       fuera castellano. Si lo hemos marcado correctamente, la pronunciación será la adecuada.
     </p>
 
-    <h2 class="mt-4 mb-3">Establecer el idioma por defecto</h2>
+    <h2>Establecer el idioma por defecto</h2>
     <p>
       Para especificar los idiomas en HTML5 disponemos del atributo `lang`, que se puede aplicar a
       cualquier etiqueta. En la etiqueta debemos pasarle el código del idioma o el locale, por
@@ -134,7 +134,7 @@
 &lt;body&gt;...&lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-    <h2 class="mt-4 mb-3">Cambios de idioma dentro de la página</h2>
+    <h2>Cambios de idioma dentro de la página</h2>
     <p>
       Para marcar que un fragmento de texto está en otro idioma, lo hacemos directamente en el
       texto deseado. Por ejemplo, marcando la palabra <i>People</i> como palabra inglesa:

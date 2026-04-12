@@ -1,5 +1,5 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Para asegurar de que nuestros diseños son usables y tienen una buena experiencia de usuario,
       hay diferentes técnicas y herramientas que podemos utilizar:

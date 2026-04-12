@@ -1,6 +1,6 @@
 <template>
-  <div class="lh-lg">
-    <h2 class="mt-4 mb-3">Comprobar accesibilidad en Word o PowerPoint</h2>
+  <div>
+    <h2>Comprobar accesibilidad en Word o PowerPoint</h2>
     <figure class="my-4">
       <img
         class="img-fluid"

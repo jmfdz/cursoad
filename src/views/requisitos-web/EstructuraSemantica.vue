@@ -1,5 +1,5 @@
 <template>
-  <div class="lh-lg">
+  <div>
     <p>
       Debemos considerar que cada página web es la suma de diferentes elementos, que cada uno tiene
       una relación y a su vez se relacionan entre sí. Esto es, un documento cuenta con listas
@@ -12,7 +12,7 @@
       y relación con los demás elementos.
     </p>
 
-    <h2 class="mt-4 mb-3">Semántica de los elementos</h2>
+    <h2>Semántica de los elementos</h2>
     <p>Pongamos un ejemplo de lista con los colores corporativos UA. Podemos hacerla escribiendo en cada línea:</p>
     <pre class="course-code"><code>&lt;p&gt;1. Azul&lt;/p&gt;
 &lt;p&gt;2. Naranja&lt;/p&gt;
@@ -36,7 +36,7 @@
       etiquetas de encabezado (`h1`, `h2`, `h3`...).
     </p>
 
-    <h2 class="mt-4 mb-3">Estructura de una página web</h2>
+    <h2>Estructura de una página web</h2>
     <p>
       Siguiendo con la función semántica de las etiquetas HTML, deberíamos especificar un
       esqueleto de nuestra página web que separe las diferentes secciones y elementos de la página.
@@ -51,7 +51,7 @@
       especificar que es un menú de navegación.
     </p>
 
-    <h2 class="mt-4 mb-3">Título de página</h2>
+    <h2>Título de página</h2>
     <p>
       Otro requisito de accesibilidad es que todo documento web tenga definido un título con la
       etiqueta `&lt;title&gt;` dentro del `&lt;head&gt;`. Este título se aconseja que:
@@ -99,11 +99,12 @@
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-    <h2 class="mt-4 mb-3">Encabezados</h2>
+    <h2>Encabezados</h2>
     <p>
       Los encabezados son uno de los elementos más importantes para darle una estructura coherente
       a una página web.
     </p>
+
     <p>
       Hablamos de las etiquetas `h1`, `h2`, `h3`, `h4`, `h5` y `h6`. Debe fomentarse su uso en
       lugar de otros elementos para marcar las diferentes secciones de una web.
