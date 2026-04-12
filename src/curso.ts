@@ -498,7 +498,7 @@ export const bloquesCurso: BloqueCurso[] = [
       },
       {
         id: 'multimedia',
-        title: 'Multimedia',
+        title: 'Vídeo y audio',
         component: markRaw(Multimedia),
         toc: 'h2',
       },

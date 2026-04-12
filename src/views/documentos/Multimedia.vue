@@ -34,6 +34,29 @@
       <li>Subtítulos en diferido.</li>
       <li>Subtítulos en directo.</li>
     </ul>
+    <p>Por ejemplo, en HTML5 podríamos cargar un vídeo con un fichero de subtítulos `.srt` convertido a `WebVTT` así:</p>
+    <pre class="course-code"><code>&lt;video controls width="720"&gt;
+  &lt;source src="clase.mp4" type="video/mp4" /&gt;
+  &lt;track
+    kind="subtitles"
+    src="clase-es.vtt"
+    srclang="es"
+    label="Español"
+    default
+  /&gt;
+  Tu navegador no soporta vídeo HTML5.
+&lt;/video&gt;</code></pre>
+    <p>
+      Si el vídeo está incrustado desde otra plataforma, por ejemplo YouTube, al menos el `iframe`
+      debe tener un título que identifique con claridad su contenido:
+    </p>
+    <pre class="course-code"><code>&lt;iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/xxxxxxxxxxx"
+  title="Vídeo de presentación del curso"
+  allowfullscreen
+&gt;&lt;/iframe&gt;</code></pre>
 
     <h2 class="mt-4 mb-3">Audiodescripción</h2>
     <p>
@@ -60,6 +83,29 @@
     <p>
       Nuestros documentos multimedia deberían estar signados, en la medida de lo posible. Y si no
       es posible, al menos crear resúmenes con la información más importante en este sistema.
+    </p>
+
+    <h2 class="mt-4 mb-3">Audio y transcripción</h2>
+    <p>
+      En documentos de solo audio, la forma más clara de asegurar el acceso al contenido es incluir
+      una transcripción visible o enlazada junto al reproductor.
+    </p>
+    <p>
+      Puede hacerse, por ejemplo, enlazando un fichero de texto o una página con la transcripción:
+    </p>
+    <pre class="course-code"><code>&lt;p id="transcripcion-audio"&gt;
+  Transcripción de la entrevista:
+  &lt;a href="entrevista.txt"&gt;leer transcripción completa&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;audio controls aria-describedby="transcripcion-audio"&gt;
+  &lt;source src="entrevista.mp3" type="audio/mpeg" /&gt;
+  Tu navegador no soporta el elemento de audio.
+&lt;/audio&gt;</code></pre>
+    <p>
+      En este caso, lo más importante no es tanto el `aria-describedby` como que la transcripción
+      exista de forma visible y fácil de localizar. El atributo puede complementar la relación, pero
+      no debería ser la única vía para acceder a esa información.
     </p>
 
     <h3 class="mt-4 mb-3">Referencia</h3>
