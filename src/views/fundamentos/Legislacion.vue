@@ -71,6 +71,7 @@
 
     <h3>Referencias</h3>
     <ul>
+      <li><a href="https://web.ua.es/es/accesibilidad/unidad/normativa-de-accesibilidad-digital.html" target="_blank" rel="noreferrer">Normativa Accesibilidad Digital</a></li>
       <li><a href="https://www.un.org/disabilities/documents/convention/convoptprot-s.pdf" target="_blank" rel="noreferrer">ONU: Convención sobre los derechos de las personas con discapacidad</a></li>
       <li><a href="https://eur-lex.europa.eu/eli/dir/2016/2102/oj" target="_blank" rel="noreferrer">Directiva (UE) 2016/2102</a></li>
       <li><a href="https://www.boe.es/eli/es/rd/2018/09/07/1112" target="_blank" rel="noreferrer">BOE: Real Decreto 1112/2018</a></li>

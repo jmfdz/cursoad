@@ -4,7 +4,7 @@ import IntroduccionFundamentos from './views/fundamentos/Introduccion.vue'
 import Legislacion from './views/fundamentos/Legislacion.vue'
 import LectorPantalla from './views/fundamentos/LectorPantalla.vue'
 import PruebasAccesibilidad from './views/fundamentos/PruebasAccesibilidad.vue'
-import ProductosApoyo from './views/fundamentos/ProductosApoyo.vue'
+import TecnologiasAccesibilidad from './views/fundamentos/TecnologiasAccesibilidad.vue'
 import Wcag from './views/fundamentos/Wcag.vue'
 import Multimedia from './views/documentos/Multimedia.vue'
 import Pdf from './views/documentos/Pdf.vue'
@@ -137,9 +137,9 @@ export const bloquesCurso: BloqueCurso[] = [
         },
       },
       {
-        id: 'productos-apoyo',
-        title: 'Funciones de accesibilidad y formas de acceso',
-        component: markRaw(ProductosApoyo),
+        id: 'tecnologias-accesibilidad',
+        title: 'Tecnologías y funciones de accesibilidad',
+        component: markRaw(TecnologiasAccesibilidad),
         toc: 'h2',
       },
       {

@@ -76,3 +76,19 @@ h6 {
   --bs-btn-disabled-bg: var(--bs-primary);
   --bs-btn-disabled-border-color: var(--bs-primary);
 }
+
+.course-code {
+  margin: 1rem 0;
+  padding: 1rem;
+  overflow: auto;
+  border-radius: 0.5rem;
+  background: #212529;
+  color: #f8f9fa;
+  line-height: 1.45;
+}
+
+.course-code code {
+  color: inherit;
+  font-family: var(--bs-font-monospace);
+  white-space: pre;
+}

@@ -75,8 +75,8 @@ onMounted(() => {
     <div class="col-12">
       <header class="border-bottom px-1 px-lg-0">
         <div class="py-3 py-xl-4">
-          <h1 class="mb-2">{{ apartado.title }}</h1>
-          <p class="mb-0">{{ bloque.title }}</p>
+          <p class="mb-2">{{ bloque.title }}</p>
+          <h1 class="mb-0">{{ apartado.title }}</h1>
 
           <div v-if="subtitulos.length" class="d-lg-none mt-4">
             <button
@@ -161,7 +161,7 @@ onMounted(() => {
 
               <div>
                 <h3 class="h5 mb-3">Código representativo</h3>
-                <pre class="bg-dark text-light p-3 rounded overflow-auto"><code class="font-monospace">{{ apartado.showcase.code }}</code></pre>
+                <pre class="course-code"><code>{{ apartado.showcase.code }}</code></pre>
               </div>
             </div>
           </section>

@@ -89,10 +89,9 @@
 
     <h3>Referencias</h3>
     <ul>
-      <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noreferrer">W3C: WCAG 2 Overview (Inglés)</a></li>
-      <li><a href="https://www.w3.org/WAI/WCAG22/quickref/" target="_blank" rel="noreferrer">W3C: How to Meet WCAG 2.2 (Inglés)</a></li>
-      <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/intro" target="_blank" rel="noreferrer">W3C: Introduction to Understanding WCAG 2.2 (Inglés)</a></li>
-      <li><a href="https://www.w3.org/WAI/intro/wcag10.html" target="_blank" rel="noreferrer">W3C: WCAG 1.0 (Inglés)</a></li>
+      <li><a href="https://www.youtube.com/watch?v=20SHvU2PKsM" target="_blank" rel="noreferrer">W3C: Introducción a la accesibilidad y WCAG (vídeo)</a></li>
+      <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/es" target="_blank" rel="noreferrer">W3C: Sumario de WCAG 2</a></li>
+      <li><a href="https://www.w3.org/WAI/standards-guidelines/es" target="_blank" rel="noreferrer">W3C: Resumen de los estándares de accesibilidad de W3C</a></li>
     </ul>
   </div>
 </template>
