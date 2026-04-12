@@ -1,13 +1,19 @@
 <template>
   <div class="lh-lg">
-    <p>
-      En PowerPoint deben revisarse el orden de lectura de cada diapositiva, el uso correcto de
-      títulos, el contraste, el tamaño de texto y la accesibilidad de gráficos, imágenes y
-      elementos incrustados.
-    </p>
-    <p>
-      Las diapositivas no deberían depender solo de la exposición oral para ser comprendidas, y los
-      contenidos complejos deben acompañarse de una explicación textual suficiente.
-    </p>
+    <h2 class="mt-4 mb-3">Comprobar accesibilidad en Word o PowerPoint</h2>
+    <figure class="my-4">
+      <img
+        class="img-fluid"
+        src="/curso-media/unican/page_21.png"
+        alt="Comprobar accesibilidad en Word o PowerPoint."
+      />
+    </figure>
+    <figure class="my-4">
+      <img
+        class="img-fluid"
+        src="/curso-media/unican/page_22.png"
+        alt="Comprobador de accesibilidad."
+      />
+    </figure>
   </div>
 </template>
