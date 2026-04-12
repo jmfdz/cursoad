@@ -60,6 +60,12 @@
       De esta forma, la comprobación se acerca mucho más a la experiencia real de uso y evita la
       falsa sensación de conformidad que a veces puede dar un informe automático.
     </p>
+    <p>
+      En este sentido, conviene recordar una idea importante: que una página cumpla parte de los
+      requisitos o que una herramienta no detecte errores no significa automáticamente que la
+      experiencia real de uso sea buena. La conformidad técnica ayuda mucho, pero no sustituye la
+      revisión manual ni la comprobación de tareas reales.
+    </p>
 
     <h3 class="mt-4 mb-3">Referencias</h3>
     <ul>

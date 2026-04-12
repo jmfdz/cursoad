@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Navegación y arquitectura - Curso Accesibilidad</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link href="estilos.css" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <div class="container py-4">
+      <nav aria-label="Ruta de navegación" class="mb-3">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+          <li class="breadcrumb-item"><a href="#">Gestión académica</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Expediente</li>
+        </ol>
+      </nav>
+
+      <h1 class="mb-3">Expediente del estudiante</h1>
+      <p class="mb-4">Ejemplo de navegación principal, navegación local y orientación dentro de una sección.</p>
+
+      <div class="row g-4">
+        <div class="col-lg-3">
+          <nav aria-label="Navegación local">
+            <div class="list-group">
+              <a class="list-group-item list-group-item-action active" href="#datos">Datos generales</a>
+              <a class="list-group-item list-group-item-action" href="#matricula">Matrícula</a>
+              <a class="list-group-item list-group-item-action" href="#pagos">Pagos</a>
+              <a class="list-group-item list-group-item-action" href="#documentos">Documentos</a>
+            </div>
+          </nav>
+        </div>
+
+        <div class="col-lg-9">
+          <section id="datos" class="card border-0 shadow-sm p-4">
+            <h2 class="h3">Datos generales</h2>
+            <p>En esta sección se muestran los datos básicos del expediente y las acciones principales relacionadas con la matrícula.</p>
+
+            <ul class="nav nav-tabs mt-4" id="miTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="resumen-tab" data-bs-toggle="tab" data-bs-target="#resumen" type="button" role="tab" aria-controls="resumen" aria-selected="true">Resumen</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="estado-tab" data-bs-toggle="tab" data-bs-target="#estado" type="button" role="tab" aria-controls="estado" aria-selected="false">Estado</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="avisos-tab" data-bs-toggle="tab" data-bs-target="#avisos" type="button" role="tab" aria-controls="avisos" aria-selected="false">Avisos</button>
+              </li>
+            </ul>
+
+            <div class="tab-content border border-top-0 p-4" id="miTabContent">
+              <div class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab" tabindex="0">
+                <p class="mb-0">El resumen concentra la información principal y evita obligar al usuario a recorrer varias pantallas para ver lo básico.</p>
+              </div>
+              <div class="tab-pane fade" id="estado" role="tabpanel" aria-labelledby="estado-tab" tabindex="0">
+                <p class="mb-0">El estado permite ver en qué punto se encuentra el expediente y qué acciones siguen disponibles.</p>
+              </div>
+              <div class="tab-pane fade" id="avisos" role="tabpanel" aria-labelledby="avisos-tab" tabindex="0">
+                <p class="mb-0">Los avisos ayudan a orientar sobre tareas pendientes, incidencias o próximos pasos.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

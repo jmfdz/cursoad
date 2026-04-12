@@ -91,25 +91,37 @@
       construir bien el contenido, la interacción y la semántica desde el principio.
     </p>
 
+    <h2 class="mt-4 mb-3">Navegación y orientación</h2>
+    <p>
+      Además de estar bien construida, una web debe poder recorrerse y entenderse con facilidad. No
+      basta con que existan menús, enlaces o secciones: también deben organizarse de forma
+      coherente para que el usuario sepa dónde está, qué puede hacer y cómo continuar.
+    </p>
+    <p>
+      Esta parte está muy relacionada con la usabilidad y la experiencia de usuario. Más adelante,
+      en el bloque correspondiente, veremos con más detalle cómo organizar la navegación, la
+      jerarquía de contenidos y la orientación dentro de una interfaz.
+    </p>
+
     <h2 class="mt-4 mb-3">Barreras frecuentes y situación actual</h2>
     <p>
       El estado actual de accesibilidad en la web sigue siendo claramente mejorable. El informe
-      WebAIM Million 2025, basado en el análisis de un millón de páginas de inicio, muestra algunos
+      WebAIM Million 2026, basado en el análisis de un millón de páginas de inicio, muestra algunos
       datos bastante claros:
     </p>
     <ul>
-      <li>El 94,8% de las páginas analizadas presentaba fallos automáticos de WCAG.</li>
-      <li>La media era de 51 errores detectados por página de inicio.</li>
+      <li>El 95,9% de las páginas analizadas presentaba fallos automáticos de WCAG.</li>
+      <li>Se detectaron 56.114.377 errores distintos, con una media de 56,1 errores por página de inicio.</li>
       <li>El 96% de los errores detectados se concentraba en solo seis tipos de problema.</li>
     </ul>
     <p>Los fallos más frecuentes eran:</p>
     <ul>
-      <li>Contraste insuficiente en textos.</li>
-      <li>Imágenes sin texto alternativo.</li>
-      <li>Campos de formulario sin etiquetas correctas.</li>
-      <li>Enlaces vacíos.</li>
-      <li>Botones vacíos.</li>
-      <li>Idioma del documento sin marcar.</li>
+      <li>Contraste insuficiente en textos, presente en el 83,9% de las páginas.</li>
+      <li>Imágenes sin texto alternativo, presente en el 53,1% de las páginas.</li>
+      <li>Campos de formulario sin etiquetas correctas, presente en el 51% de las páginas.</li>
+      <li>Enlaces vacíos, presente en el 46,3% de las páginas.</li>
+      <li>Botones vacíos, presente en el 30,6% de las páginas.</li>
+      <li>Idioma del documento sin marcar, presente en el 13,5% de las páginas.</li>
     </ul>
     <p>
       Esto es importante porque muestra que gran parte de la inaccesibilidad no viene de problemas
@@ -121,7 +133,7 @@
     <h3 class="mt-4 mb-3">Referencias</h3>
     <ul>
       <li><a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es" target="_blank" rel="noreferrer">W3C: Introducción a la accesibilidad web</a></li>
-      <li><a href="https://webaim.org/projects/million/2025" target="_blank" rel="noreferrer">WebAIM Million 2025</a></li>
+      <li><a href="https://webaim.org/projects/million/?locale=en_GB" target="_blank" rel="noreferrer">WebAIM Million 2026</a></li>
     </ul>
   </div>
 </template>

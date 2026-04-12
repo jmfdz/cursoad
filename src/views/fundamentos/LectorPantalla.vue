@@ -3,7 +3,7 @@
     <h2 class="mt-4 mb-3">Qué es</h2>
     <p>
       NVDA es un lector de pantalla gratuito para Windows utilizado por personas ciegas y con baja
-      visión para acceder al ordenador y a la web.
+      visión para acceder al ordenador, las aplicaciones y la web.
     </p>
     <p>
       Su interés en este curso no es aprender a usarlo a fondo, sino entender qué información
@@ -12,7 +12,7 @@
 
     <h2 class="mt-4 mb-3">Cómo hacer una prueba rápida</h2>
     <p>
-      Para una primera toma de contacto, basta con activar el lector y probar una navegación básica
+      Para una primera toma de contacto, basta con activar el lector y hacer una navegación básica
       por teclado:
     </p>
     <ul>
@@ -21,11 +21,11 @@
       <li><strong>F</strong> para ir a formularios.</li>
       <li><strong>T</strong> para ir a tablas.</li>
       <li><strong>INSERT + F7</strong> para abrir listados de enlaces, encabezados y otros elementos.</li>
-      <li>Flechas del teclado para leer el contenido en secuencia.</li>
+      <li>Flechas del teclado para leer el contenido de forma secuencial.</li>
     </ul>
-    <p>No hace falta dominar todos los comandos para que la prueba sea útil. Con muy poco ya se detectan bastantes problemas.</p>
+    <p>No hace falta dominar todos los comandos para que la prueba sea útil. Con muy poco ya pueden detectarse bastantes problemas.</p>
 
-    <h2 class="mt-4 mb-3">Qué revisar con él</h2>
+    <h2 class="mt-4 mb-3">Qué revisar con un lector de pantalla</h2>
     <p>Al hacer una prueba rápida con lector de pantalla conviene comprobar al menos lo siguiente:</p>
     <ul>
       <li>si el título de la página y los encabezados describen bien la estructura,</li>
@@ -35,9 +35,9 @@
       <li>y si el recorrido completo puede hacerse sin depender del ratón.</li>
     </ul>
     <p>
-      Un lector de pantalla permite descubrir enseguida cuándo una interfaz estaba pensada solo
+      Un lector de pantalla permite descubrir enseguida cuándo una interfaz está pensada solo
       visualmente: encabezados simulados, iconos sin nombre, cambios dinámicos no anunciados o
-      formularios que visualmente parecen claros pero semánticamente no lo son.
+      formularios que visualmente parecen claros, pero semánticamente no lo son.
     </p>
     <p>
       No sustituye a las pruebas con personas usuarias, pero sí es una de las formas más rápidas de

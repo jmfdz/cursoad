@@ -5,6 +5,7 @@ import IntroduccionFundamentos from './views/fundamentos/Introduccion.vue'
 import Legislacion from './views/fundamentos/Legislacion.vue'
 import LectorPantalla from './views/fundamentos/LectorPantalla.vue'
 import PruebasAccesibilidad from './views/fundamentos/PruebasAccesibilidad.vue'
+import ProductosApoyo from './views/fundamentos/ProductosApoyo.vue'
 import Wcag from './views/fundamentos/Wcag.vue'
 import IntroduccionDocumentos from './views/documentos/Introduccion.vue'
 import Multimedia from './views/documentos/Multimedia.vue'
@@ -12,25 +13,25 @@ import Pdf from './views/documentos/Pdf.vue'
 import Powerpoint from './views/documentos/Powerpoint.vue'
 import Word from './views/documentos/Word.vue'
 import ComponentesEjemplos from './views/requisitos-web/ComponentesEjemplos.vue'
-import Encabezados from './views/requisitos-web/Encabezados.vue'
 import EnlacesBotones from './views/requisitos-web/EnlacesBotones.vue'
-import Estructura from './views/requisitos-web/Estructura.vue'
+import EstructuraSemantica from './views/requisitos-web/EstructuraSemantica.vue'
 import Formularios from './views/requisitos-web/Formularios.vue'
-import Idioma from './views/requisitos-web/Idioma.vue'
 import Imagenes from './views/requisitos-web/Imagenes.vue'
 import IntroduccionRequisitosWeb from './views/requisitos-web/Introduccion.vue'
-import PaginaWeb from './views/requisitos-web/PaginaWeb.vue'
 import Tablas from './views/requisitos-web/Tablas.vue'
-import Texto from './views/requisitos-web/Texto.vue'
+import TecladoFoco from './views/requisitos-web/TecladoFoco.vue'
+import TextoIdioma from './views/requisitos-web/TextoIdioma.vue'
 import WaiAria from './views/requisitos-web/WaiAria.vue'
 import Color from './views/ux/Color.vue'
-import DisenoInclusivo from './views/ux/DisenoInclusivo.vue'
-import EjemplosDiseno from './views/ux/EjemplosDiseno.vue'
+import ArquitecturaInformacion from './views/ux/ArquitecturaInformacion.vue'
+import EstadosFeedback from './views/ux/EstadosFeedback.vue'
+import FundamentosUx from './views/ux/FundamentosUx.vue'
 import IntroduccionUx from './views/ux/Introduccion.vue'
-import LeyesUx from './views/ux/LeyesUx.vue'
+import LeyesUxCargaDecision from './views/ux/LeyesUxCargaDecision.vue'
+import LeyesUxInteraccion from './views/ux/LeyesUxInteraccion.vue'
+import LeyesUxPercepcion from './views/ux/LeyesUxPercepcion.vue'
+import PatronesUsabilidad from './views/ux/PatronesUsabilidad.vue'
 import Tecnicas from './views/ux/Tecnicas.vue'
-import Usabilidad from './views/ux/Usabilidad.vue'
-import ExperienciaUsuario from './views/ux/ExperienciaUsuario.vue'
 
 export type Figura = {
   src: string
@@ -98,39 +99,6 @@ export const enlacesCurso = [
   },
 ]
 
-export const indiceOriginalCurso = [
-  { title: 'Accesibilidad digital, usabilidad y UX', page: 1 },
-  { title: 'Fundamentos de la accesibilidad digital', page: 3 },
-  { title: 'Introducción a la accesibilidad digital', page: 3 },
-  { title: 'Tipos de discapacidad', page: 4 },
-  { title: 'Pautas de Accesibilidad para el Contenido web (WCAG)', page: 5 },
-  { title: 'Criterios de las WCAG y niveles de accesibilidad', page: 6 },
-  { title: 'Legislación aplicable', page: 7 },
-  { title: 'Extensión de navegador de CADUA', page: 9 },
-  { title: 'Uso de un lector de pantalla', page: 11 },
-  { title: 'Requisitos web', page: 13 },
-  { title: 'Texto', page: 13 },
-  { title: 'Idioma', page: 16 },
-  { title: 'Estructura y semántica', page: 18 },
-  { title: 'Estructura de una página web', page: 19 },
-  { title: 'Encabezados', page: 21 },
-  { title: 'Imágenes y elementos no textuales', page: 22 },
-  { title: 'Enlaces y botones', page: 24 },
-  { title: 'Tablas', page: 25 },
-  { title: 'Formularios', page: 26 },
-  { title: 'Componentes interactivos', page: 33 },
-  { title: 'WAI-ARIA', page: 33 },
-  { title: 'Ejemplos de componentes', page: 40 },
-  { title: 'Usabilidad y UX', page: 41 },
-  { title: 'Principios de diseño inclusivo', page: 41 },
-  { title: 'Usabilidad', page: 42 },
-  { title: 'Experiencia de usuario (UX)', page: 42 },
-  { title: 'Técnicas y herramientas comunes en usabilidad y UX', page: 43 },
-  { title: 'Leyes UX', page: 44 },
-  { title: 'Correcto uso del color', page: 44 },
-  { title: 'Ejemplos de diseño', page: 51 },
-]
-
 export const bloquesCurso: BloqueCurso[] = [
   {
     slug: 'fundamentos',
@@ -170,9 +138,9 @@ export const bloquesCurso: BloqueCurso[] = [
         },
       },
       {
-        id: 'lector',
-        title: 'Uso de un lector de pantalla',
-        component: markRaw(LectorPantalla),
+        id: 'productos-apoyo',
+        title: 'Funciones de accesibilidad y formas de acceso',
+        component: markRaw(ProductosApoyo),
         toc: 'h2',
       },
       {
@@ -186,11 +154,17 @@ export const bloquesCurso: BloqueCurso[] = [
           caption: 'Resultados de la extensión de navegador de CADUA.',
         },
       },
+      {
+        id: 'lector',
+        title: 'Uso de un lector de pantalla',
+        component: markRaw(LectorPantalla),
+        toc: 'h2',
+      },
     ],
   },
   {
     slug: 'requisitos-web',
-    shortTitle: 'Requisitos',
+    shortTitle: 'Requisitos web',
     title: 'Requisitos web',
     menuDescription: 'Texto, semántica, formularios, tablas, componentes y ARIA.',
     homeSummary:
@@ -198,32 +172,9 @@ export const bloquesCurso: BloqueCurso[] = [
     introComponent: markRaw(IntroduccionRequisitosWeb),
     sections: [
       {
-        id: 'texto',
-        title: 'Texto',
-        component: markRaw(Texto),
-        toc: 'h2',
-        figure: {
-          src: '/curso-media/image4.jpeg',
-          alt: 'Ejemplo de texto incorrecto justificado y otro correcto alineado a la izquierda.',
-          caption: 'Comparativa del documento sobre maquetación de texto incorrecta y correcta.',
-        },
-      },
-      {
-        id: 'idioma',
-        title: 'Idioma',
-        component: markRaw(Idioma),
-        toc: 'h2',
-      },
-      {
-        id: 'estructura',
-        title: 'Estructura y semántica',
-        component: markRaw(Estructura),
-        toc: 'h2',
-      },
-      {
-        id: 'pagina-web',
-        title: 'Estructura de una página web',
-        component: markRaw(PaginaWeb),
+        id: 'estructura-semantica',
+        title: 'Estructura semántica de una página web',
+        component: markRaw(EstructuraSemantica),
         toc: 'h2',
         figure: {
           src: '/curso-media/image5.png',
@@ -232,10 +183,15 @@ export const bloquesCurso: BloqueCurso[] = [
         },
       },
       {
-        id: 'encabezados',
-        title: 'Encabezados',
-        component: markRaw(Encabezados),
+        id: 'texto-idioma',
+        title: 'Texto e idioma',
+        component: markRaw(TextoIdioma),
         toc: 'h2',
+        figure: {
+          src: '/curso-media/image4.jpeg',
+          alt: 'Ejemplo de texto incorrecto justificado y otro correcto alineado a la izquierda.',
+          caption: 'Comparativa del documento sobre maquetación de texto incorrecta y correcta.',
+        },
       },
       {
         id: 'imagenes',
@@ -247,6 +203,12 @@ export const bloquesCurso: BloqueCurso[] = [
         id: 'enlaces-botones',
         title: 'Enlaces y botones',
         component: markRaw(EnlacesBotones),
+        toc: 'h2',
+      },
+      {
+        id: 'teclado-foco',
+        title: 'Navegación por teclado y foco',
+        component: markRaw(TecladoFoco),
         toc: 'h2',
       },
       {
@@ -310,44 +272,64 @@ export const bloquesCurso: BloqueCurso[] = [
     slug: 'ux',
     shortTitle: 'Usabilidad y UX',
     title: 'Usabilidad y UX',
-    menuDescription: 'Diseño inclusivo, usabilidad, UX, color y patrones de diseño.',
+    menuDescription: 'Conceptos base, técnicas, leyes UX, color y patrones de diseño.',
     homeSummary:
-      'Reúne principios de diseño inclusivo, usabilidad, experiencia de usuario, color y patrones aplicados al diseño e implementación de interfaces.',
+      'Reúne fundamentos de diseño inclusivo, usabilidad y experiencia de usuario, junto con técnicas de evaluación, leyes UX, color y patrones aplicados al diseño de interfaces.',
     introComponent: markRaw(IntroduccionUx),
     sections: [
       {
-        id: 'diseno-inclusivo',
-        title: 'Principios de diseño inclusivo',
-        component: markRaw(DisenoInclusivo),
-        toc: 'h2',
-      },
-      {
-        id: 'usabilidad',
-        title: 'Usabilidad',
-        component: markRaw(Usabilidad),
-        toc: 'h2',
-      },
-      {
-        id: 'ux',
-        title: 'Experiencia de usuario (UX)',
-        component: markRaw(ExperienciaUsuario),
+        id: 'fundamentos-ux',
+        title: 'Fundamentos de usabilidad y UX',
+        component: markRaw(FundamentosUx),
         toc: 'h2',
       },
       {
         id: 'tecnicas',
-        title: 'Técnicas y herramientas comunes en usabilidad y UX',
+        title: 'Técnicas de usabilidad y UX',
         component: markRaw(Tecnicas),
         toc: 'h2',
       },
       {
-        id: 'leyes-ux',
-        title: 'Leyes UX',
-        component: markRaw(LeyesUx),
+        id: 'estados-feedback',
+        title: 'Estados, feedback y microcopy',
+        component: markRaw(EstadosFeedback),
+        toc: 'h2',
+        examples: [
+          {
+            title: 'Estados vacíos',
+            href: '/ejemplos/estado-vacio.html',
+            description:
+              'Ejemplo de pantalla sin resultados o sin contenido inicial, con contexto y acciones siguientes.',
+          },
+          {
+            title: 'Feedback y estados',
+            href: '/ejemplos/feedback.html',
+            description:
+              'Ejemplo de carga, éxito y error con mensajes visibles y jerarquía clara de respuesta.',
+          },
+        ],
+      },
+      {
+        id: 'leyes-ux-percepcion',
+        title: 'Leyes UX: percepción y organización',
+        component: markRaw(LeyesUxPercepcion),
+        toc: 'h2-h3',
+      },
+      {
+        id: 'leyes-ux-carga-decision',
+        title: 'Leyes UX: carga mental y decisión',
+        component: markRaw(LeyesUxCargaDecision),
+        toc: 'h2-h3',
+      },
+      {
+        id: 'leyes-ux-interaccion',
+        title: 'Leyes UX: interacción y rendimiento',
+        component: markRaw(LeyesUxInteraccion),
         toc: 'h2-h3',
       },
       {
         id: 'color',
-        title: 'Correcto uso del color',
+        title: 'Color, contraste y percepción visual',
         component: markRaw(Color),
         toc: 'h2',
         figure: {
@@ -394,18 +376,26 @@ export const bloquesCurso: BloqueCurso[] = [
             description:
               'Ejemplo con colores corporativos y ajustes de contraste sobre Bootstrap 3.',
           },
+        ],
+      },
+      {
+        id: 'arquitectura-informacion',
+        title: 'Arquitectura de información y navegación',
+        component: markRaw(ArquitecturaInformacion),
+        toc: 'h2',
+        examples: [
           {
-            title: 'Ejemplo de formularios usables',
-            href: '/ejemplos/formularios.html',
+            title: 'Navegación y arquitectura',
+            href: '/ejemplos/navegacion.html',
             description:
-              'Ejemplo relacionado con foco inicial, alertas, validación y otras mejoras de usabilidad en formularios.',
+              'Ejemplo con migas, navegación local y pestañas para orientar al usuario dentro de una sección.',
           },
         ],
       },
       {
-        id: 'ejemplos-diseno',
-        title: 'Ejemplos de diseño',
-        component: markRaw(EjemplosDiseno),
+        id: 'patrones-usabilidad',
+        title: 'Patrones de diseño y usabilidad',
+        component: markRaw(PatronesUsabilidad),
         toc: 'h2',
         gallery: [
           {
@@ -440,6 +430,12 @@ export const bloquesCurso: BloqueCurso[] = [
           },
         ],
         examples: [
+          {
+            title: 'Ejemplo de formularios usables',
+            href: '/ejemplos/formularios.html',
+            description:
+              'Ejemplo relacionado con foco inicial, alertas, validación y otras mejoras de usabilidad en formularios.',
+          },
           {
             title: 'Diseño a dos columnas',
             href: '/ejemplos/2columnas.html',

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feedback y estados - Curso Accesibilidad</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link href="estilos.css" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <div class="container py-5">
+      <h1 class="mb-3">Feedback y estados de interfaz</h1>
+      <p class="mb-4">Ejemplo de carga, éxito y error en una misma interacción.</p>
+
+      <div class="row">
+        <div class="col-lg-7">
+          <form id="demo-feedback" class="card border-0 shadow-sm p-4">
+            <div class="mb-3">
+              <label class="form-label" for="nombre">Nombre de la tarea</label>
+              <input id="nombre" class="form-control" type="text" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="descripcion">Descripción</label>
+              <textarea id="descripcion" class="form-control" rows="4"></textarea>
+            </div>
+
+            <div id="mensaje" class="mb-3" role="status" aria-live="polite"></div>
+
+            <div class="d-flex gap-2 flex-wrap">
+              <button id="btn-guardar" class="btn btn-primary" type="submit">Guardar tarea</button>
+              <button id="btn-error" class="btn btn-outline-danger" type="button">Simular error</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-5 mt-4 mt-lg-0">
+          <section class="card border-0 bg-light p-4">
+            <h2 class="h4">Qué se ve en este ejemplo</h2>
+            <ul class="mb-0">
+              <li>Estado de carga en el botón.</li>
+              <li>Mensaje de éxito al terminar.</li>
+              <li>Mensaje de error cuando la acción falla.</li>
+              <li>Zona de aviso reutilizable para informar del resultado.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('demo-feedback');
+    const btnGuardar = document.getElementById('btn-guardar');
+    const btnError = document.getElementById('btn-error');
+    const mensaje = document.getElementById('mensaje');
+
+    function mostrarMensaje(clase, texto) {
+      mensaje.className = `alert ${clase} mb-3`;
+      mensaje.textContent = texto;
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      btnGuardar.disabled = true;
+      btnGuardar.innerHTML = '<span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> Guardando...';
+      mensaje.className = 'mb-3';
+      mensaje.textContent = '';
+
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      btnGuardar.disabled = false;
+      btnGuardar.textContent = 'Guardar tarea';
+      mostrarMensaje('alert-success', 'La tarea se ha guardado correctamente.');
+    });
+
+    btnError.addEventListener('click', () => {
+      mostrarMensaje('alert-danger', 'No se ha podido guardar la tarea. Revisa los datos e inténtalo de nuevo.');
+    });
+  </script>
+</body>
+</html>
