@@ -61,6 +61,12 @@ const subtitulos = computed(() => subtitulosDetectados.value)
 const hashActual = computed(() => route.hash.replace('#', ''))
 const idIndiceMovil = computed(() => `indice-apartado-${props.bloqueSlug}-${props.apartadoId}`)
 
+const normalizarPreviewHtml = (html: string) =>
+  html.replace(
+    '<h3 class="h4 mb-3">Lista de Solicitudes</h3>',
+    '<p class="h4 mb-3">Lista de Solicitudes</p>',
+  )
+
 watch(apartado, () => {
   void extraerSubtitulos()
 })
@@ -124,7 +130,6 @@ onMounted(() => {
               <img
                 :src="apartado.figure.src"
                 :alt="apartado.figure.alt"
-                :title="apartado.figure.alt"
                 class="figure-img img-fluid rounded-4 border shadow-sm"
                 loading="lazy"
               />
@@ -155,7 +160,7 @@ onMounted(() => {
               <div class="mb-4">
                 <h3 class="h5 mb-3">Resultado visual</h3>
                 <div class="rounded-4 border bg-body-tertiary p-3 p-lg-4">
-                  <div v-html="apartado.showcase.previewHtml" />
+                  <div v-html="normalizarPreviewHtml(apartado.showcase.previewHtml)" />
                 </div>
               </div>
 
@@ -197,7 +202,8 @@ onMounted(() => {
                       <p class="mb-2 text-uppercase small">Demo</p>
                       <h3 class="h5 mb-2">{{ example.title }}</h3>
                       <p class="mb-3">{{ example.description }}</p>
-                      <span class="btn btn-outline-primary">Abrir ejemplo</span>
+                      <span class="btn btn-outline-primary" aria-hidden="true">Abrir ejemplo</span>
+                      <span class="visually-hidden"> (se abre en una ventana nueva)</span>
                     </div>
                   </a>
                 </div>
@@ -213,7 +219,6 @@ onMounted(() => {
                   <img
                     :src="figure.src"
                     :alt="figure.alt"
-                    :title="figure.alt"
                     class="figure-img img-fluid rounded-4 border shadow-sm mb-2"
                     loading="lazy"
                   />

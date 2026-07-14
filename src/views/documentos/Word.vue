@@ -91,7 +91,7 @@
 
     <h3>Formas y SmartArt</h3>
     <ul>
-      <li>No son elementos textuales, aunque lo parezcan e introduzcamos texto, al final son imágenes sin texto alternativo.</li>
+      <li>Son objetos visuales y su contenido puede no leerse en un orden comprensible. Evitar usarlos para información imprescindible o revisar su orden de lectura y añadirles un texto alternativo que explique su función. Si son decorativos, se pueden marcar como tales.</li>
     </ul>
 
     <h3>Describiendo un esquema</h3>
@@ -110,8 +110,8 @@
     <ul>
       <li>Tablas sencillas sin muchas agrupaciones</li>
       <li>Utilizarlas solo para mostrar contenido, no para maquetar contenido</li>
-      <li>Tablas uniformes: ni combinar ni dividir celdas</li>
-      <li>No dejar celdas vacías: poner texto Vacío</li>
+      <li>Tablas uniformes: evitar combinar o dividir celdas salvo que sea imprescindible.</li>
+      <li>No dejar celdas vacías que oculten información: si la ausencia de un dato es relevante, indicarlo con texto, por ejemplo, “No disponible”.</li>
     </ul>
     <p>Insertar título a tablas (e ilustraciones) facilita la comprensión y el propósito de los datos.</p>
     <figure class="my-4">
@@ -147,7 +147,7 @@
     <h3>Describiendo gráficas</h3>
     <ul>
       <li>Como elemento no textual, debemos incluir una descripción.</li>
-      <li>Da igual si es una gráfica en imagen o hecha desde Word / Excel; el objeto resultante no es accesible.</li>
+      <li>Hay que comprobar que la gráfica tenga título y texto alternativo, y explicar también en texto la información o conclusión principal que aporta.</li>
     </ul>
 
     <figure class="my-4">
@@ -192,7 +192,7 @@
     <ul>
       <li>El texto de un enlace debe transmitir claramente su propósito, incluso fuera del contexto del texto que lo rodea.</li>
       <li>Prohibido: Haz click aquí, En este enlace, etc.</li>
-      <li>Hay usuarios navegan por listas de enlaces</li>
+      <li>Hay usuarios que navegan por listas de enlaces.</li>
     </ul>
     <p>Toda información es valiosa</p>
     <ul>

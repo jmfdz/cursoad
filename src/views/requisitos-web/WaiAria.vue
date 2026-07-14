@@ -43,11 +43,15 @@
       elemento nunca recibirá el foco.
     </p>
     <p>
-      En ocasiones se hace necesario utilizar elementos de marca y maquetación como `div` o `li`
-      para realizar acciones dinámicas. En estos casos podemos utilizar el atributo `tabindex` para
-      informar a los navegadores web de que ese elemento puede recibir el foco.
+      Si por compatibilidad o por una interfaz ya construida no podemos sustituir un `div` o un
+      `li` interactivo por un control nativo, hay que completar manualmente su comportamiento:
+      foco con `tabindex`, rol, nombre accesible y activación con teclado. Es más trabajo y por eso
+      se debe preferir un enlace o botón nativo siempre que sea posible.
     </p>
-    <pre class="course-code"><code>&lt;div onclick="alert('¡Saludo!');" tabindex="0"&gt;Púlsame&lt;/div&gt;</code></pre>
+    <pre class="course-code"><code>&lt;div role="button" tabindex="0" onclick="saludar()"
+  onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); saludar(); }"&gt;
+  Púlsame
+&lt;/div&gt;</code></pre>
     <p>El atributo `tabindex` puede utilizarse para varios cometidos dependiendo del valor asignado:</p>
     <ul>
       <li>`tabindex="0"` permite que un elemento que no puede recibir el foco por defecto pueda recibirlo siguiendo el orden natural del HTML.</li>
@@ -61,13 +65,16 @@
       tan sencillo como añadir a la etiqueta del elemento `role="[nombre_del_rol]"`.
     </p>
     <p>Por ejemplo:</p>
-    <pre class="course-code"><code>&lt;div role="progressbar"&gt;
-&lt;ul role="tree"&gt;
-&lt;li role="treeitem"&gt;
-&lt;div role="application"&gt;</code></pre>
+    <pre class="course-code"><code>&lt;div role="progressbar" aria-label="Progreso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"&gt;
+  60 %
+&lt;/div&gt;
+
+&lt;ul role="tree" aria-label="Contenido"&gt;
+  &lt;li role="treeitem" aria-level="1"&gt;Tema 1&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
     <p>
-      No se debe cambiar dinámicamente el rol de un elemento, este es fijo. Si se quiere cambiar
-      habría que eliminar del DOM el elemento y crear uno nuevo con el nuevo rol.
+      El rol de un elemento debería mantenerse estable. Si una interfaz necesita cambiarlo,
+      normalmente conviene revisar el patrón para comprobar si se está usando el elemento adecuado.
     </p>
     <p>
       Existen dos tipos de roles: aquellos que definen elementos de la interfaz y los que definen
@@ -88,7 +95,7 @@
       <li>`role="complementary"` para contenidos no imprescindibles, por ejemplo una barra lateral.</li>
       <li>`role="contentinfo"` para la información repetida del pie.</li>
       <li>`role="search"` para las zonas donde hay un buscador.</li>
-      <li>`role="form"` para las zonas donde hay formularios.</li>
+      <li>`role="form"` para una zona de formulario identificada con un nombre accesible.</li>
       <li>`role="application"` si hay una aplicación web interactiva que cambia las reglas normales de teclado.</li>
     </ul>
     <p>
@@ -114,7 +121,7 @@
       `aria-label` sirve para dar nombre accesible a un elemento. Debe usarse solo en ocasiones que
       lo requieran; por defecto, el nombre de un elemento debe ser su contenido.
     </p>
-    <pre class="course-code"><code>&lt;a href="#" aria-label="Cerrar"&gt;x&lt;/a&gt;</code></pre>
+    <pre class="course-code"><code>&lt;button type="button" aria-label="Cerrar"&gt;×&lt;/button&gt;</code></pre>
     <p>
       `aria-labelledby` también sirve para dar un nombre a un elemento HTML, con la diferencia de
       que aquí referenciamos el `id` de otro elemento que actúa como etiqueta.
@@ -134,13 +141,16 @@
       Los elementos dinámicos cambian de estado, por ejemplo un menú desplegable puede estar
       plegado o desplegado. ARIA permite definir las propiedades y estados de los elementos.
     </p>
-    <pre class="course-code"><code>&lt;li role="treeitem" aria-expanded="false" tabindex="0" onclick="a()" onkeypress="a()"&gt;
-  Lenguajes
-&lt;/li&gt;</code></pre>
+    <pre class="course-code"><code>&lt;ul role="tree" aria-label="Categorías"&gt;
+  &lt;li role="treeitem" aria-expanded="false" tabindex="0"&gt;
+    Lenguajes
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
     <p>
       En este ejemplo se indica que el elemento del árbol “Lenguajes” está plegado. Cuando el
       usuario lo despliegue deberás cambiar dinámicamente su estado mediante JavaScript para que los
-      productos de apoyo puedan transmitir el cambio al usuario.
+      productos de apoyo puedan transmitir el cambio al usuario. Un árbol completo también necesita
+      implementar su modelo de navegación con teclado.
     </p>
     <pre class="course-code"><code>$id.attr('aria-expanded', 'true');</code></pre>
     <p>
@@ -156,7 +166,7 @@
     <pre class="course-code"><code>&lt;button id="toggleButton" aria-expanded="false" aria-controls="panel"&gt;
   Mostrar panel
 &lt;/button&gt;
-&lt;div id="panel"&gt;
+&lt;div id="panel" hidden&gt;
   &lt;p&gt;Este es el contenido del panel desplegable.&lt;/p&gt;
 &lt;/div&gt;
 &lt;script&gt;
@@ -166,7 +176,7 @@ const panel = document.getElementById('panel');
 button.addEventListener('click', () =&gt; {
   const isExpanded = button.getAttribute('aria-expanded') === 'true';
   button.setAttribute('aria-expanded', String(!isExpanded));
-  panel.setAttribute('aria-hidden', String(isExpanded));
+  panel.hidden = isExpanded;
 });
 &lt;/script&gt;</code></pre>
 

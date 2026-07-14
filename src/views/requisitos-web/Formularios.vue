@@ -13,9 +13,9 @@
 
     <h2>Campos de formulario con etiqueta asociada</h2>
     <p>
-      Todo campo de formulario debe estar <strong>dentro</strong> de una etiqueta de formulario
-      `&lt;form&gt;`, de la misma forma que un elemento de lista `&lt;li&gt;` debe estar dentro
-      de una etiqueta de lista `&lt;ul&gt;`.
+      Cuando los campos forman parte de un envío o una operación conjunta, deben estar dentro de
+      una etiqueta de formulario `&lt;form&gt;`. Hay controles autónomos, como algunos filtros que se
+      aplican al cambiar su valor, que no necesitan enviar un formulario.
     </p>
     <pre class="course-code"><code>&lt;form&gt;
   &lt;!-- Campos de formulario --&gt;
@@ -93,19 +93,19 @@
     &lt;legend&gt;Colectivo UA&lt;/legend&gt;
     &lt;div class="mb-3"&gt;
       &lt;div class="form-check"&gt;
-        &lt;input class="form-check-input" type="radio" id="ptgas" /&gt;
+        &lt;input class="form-check-input" type="radio" id="ptgas" name="colectivo" /&gt;
         &lt;label class="form-check-label" for="ptgas"&gt;PTGAS&lt;/label&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class="mb-3"&gt;
       &lt;div class="form-check"&gt;
-        &lt;input class="form-check-input" type="radio" id="pdi" /&gt;
+        &lt;input class="form-check-input" type="radio" id="pdi" name="colectivo" /&gt;
         &lt;label class="form-check-label" for="pdi"&gt;PDI&lt;/label&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class="mb-3"&gt;
       &lt;div class="form-check"&gt;
-        &lt;input class="form-check-input" type="radio" id="alu" /&gt;
+        &lt;input class="form-check-input" type="radio" id="alu" name="colectivo" /&gt;
         &lt;label class="form-check-label" for="alu"&gt;Alumno/a&lt;/label&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -153,21 +153,21 @@
     <pre class="course-code"><code>&lt;form novalidate id="mi-form"&gt;
   &lt;div class="mb-3"&gt;
     &lt;label for="nombre"&gt;Nombre&lt;/label&gt;
-    &lt;input type="text" id="nombre" name="nombre" class="form-control" /&gt;
+    &lt;input type="text" id="nombre" name="nombre" class="form-control" required /&gt;
   &lt;/div&gt;
   &lt;div class="mb-3"&gt;
     &lt;label for="apellidos"&gt;Apellidos&lt;/label&gt;
-    &lt;input type="text" id="apellidos" name="apellidos" class="form-control" /&gt;
+    &lt;input type="text" id="apellidos" name="apellidos" class="form-control" required /&gt;
   &lt;/div&gt;
   &lt;div class="mb-3"&gt;
     &lt;label for="email"&gt;E-mail (opcional)&lt;/label&gt;
     &lt;input type="email" id="email" name="email" class="form-control" /&gt;
   &lt;/div&gt;
-  &lt;!-- Con role="alert" un lector de pantalla lee el contenido automáticamente cuando se inserte --&gt;
-  &lt;div id="mensajealerta" role="alert"&gt;&lt;/div&gt;
   &lt;div class="mb-3"&gt;
     &lt;button type="submit" class="btn btn-primary"&gt;Enviar&lt;/button&gt;
   &lt;/div&gt;
+  &lt;!-- Con role="alert" un lector de pantalla lee el contenido automáticamente cuando se inserte --&gt;
+  &lt;div id="mensajealerta" role="alert" tabindex="-1"&gt;&lt;/div&gt;
 &lt;/form&gt;</code></pre>
     <pre class="course-code"><code>&lt;script&gt;
 document.getElementById("mi-form").addEventListener("submit", (event) =&gt; {
@@ -180,10 +180,18 @@ document.getElementById("mi-form").addEventListener("submit", (event) =&gt; {
   const mensajeAlerta = document.getElementById("mensajealerta");
   mensajeAlerta.classList.remove("alert", "alert-danger");
   mensajeAlerta.textContent = "";
+  formulario.nombre.removeAttribute("aria-invalid");
+  formulario.apellidos.removeAttribute("aria-invalid");
 
   const errores = [];
-  if (!nombre) errores.push("El campo 'Nombre' es obligatorio.");
-  if (!apellidos) errores.push("El campo 'Apellidos' es obligatorio.");
+  if (!nombre) {
+    errores.push("El campo 'Nombre' es obligatorio.");
+    formulario.nombre.setAttribute("aria-invalid", "true");
+  }
+  if (!apellidos) {
+    errores.push("El campo 'Apellidos' es obligatorio.");
+    formulario.apellidos.setAttribute("aria-invalid", "true");
+  }
 
   if (errores.length &gt; 0) {
     mensajeAlerta.classList.add("alert", "alert-danger");
@@ -193,6 +201,7 @@ document.getElementById("mi-form").addEventListener("submit", (event) =&gt; {
     });
     texto += "&lt;/ul&gt;";
     mensajeAlerta.innerHTML = texto;
+    mensajeAlerta.focus();
   } else {
     alert("¡Enviado! Hacer algo...");
   }

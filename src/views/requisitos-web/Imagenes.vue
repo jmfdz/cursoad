@@ -66,11 +66,13 @@
       texto que haya dentro. Pero además debe incluirse el atributo `title` para quien use ratón y
       quiera descubrir qué propósito tiene.
     </p>
-    <p>Veamos un ejemplo de un icono de editar:</p>
-    <pre class="course-code"><code>&lt;i class="icon icon-edit" aria-label="Editar" title="Editar"&gt;&lt;/i&gt;</code></pre>
+    <p>Veamos un ejemplo de un botón con un icono de editar:</p>
+    <pre class="course-code"><code>&lt;button type="button" aria-label="Editar" title="Editar"&gt;
+  &lt;i class="icon icon-edit" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;/button&gt;</code></pre>
     <p>
-      De esta forma, un lector de pantalla al llegar al elemento leerá “Editar” y si pasamos el
-      ratón por encima podremos ver “Editar”.
+      De esta forma, un lector de pantalla al llegar al botón leerá “Editar” y si pasamos el ratón
+      por encima podremos ver “Editar”.
     </p>
     <p>
       En ningún caso podemos dejar solamente el atributo `title` y ninguna información más, ya que

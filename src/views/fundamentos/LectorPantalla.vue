@@ -13,16 +13,22 @@
     <h2>Cómo hacer una prueba rápida</h2>
     <p>
       Para una primera toma de contacto, basta con activar el lector y hacer una navegación básica
-      por teclado:
+      por teclado. En NVDA, la tecla modificadora se denomina <strong>NVDA</strong>; normalmente
+      es <strong>INSERT</strong> o <strong>BLOQ MAYÚS</strong>, según la configuración.
     </p>
     <ul>
       <li><strong>TAB</strong> y <strong>Shift + TAB</strong> para recorrer enlaces, botones y campos de formulario.</li>
       <li><strong>H</strong> para saltar entre encabezados.</li>
       <li><strong>F</strong> para ir a formularios.</li>
       <li><strong>T</strong> para ir a tablas.</li>
-      <li><strong>INSERT + F7</strong> para abrir listados de enlaces, encabezados y otros elementos.</li>
+      <li><strong>K</strong> para saltar entre enlaces.</li>
+      <li><strong>NVDA + F7</strong> para abrir listados de enlaces, encabezados y otros elementos.</li>
       <li>Flechas del teclado para leer el contenido de forma secuencial.</li>
     </ul>
+    <p>
+      Estas teclas de una letra funcionan en el modo exploración de NVDA. Al editar un campo de
+      texto escriben su carácter, por lo que no deben utilizarse como atajos en ese momento.
+    </p>
     <p>No hace falta dominar todos los comandos para que la prueba sea útil. Con muy poco ya pueden detectarse bastantes problemas.</p>
 
     <h2>Qué revisar con un lector de pantalla</h2>

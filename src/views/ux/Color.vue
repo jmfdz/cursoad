@@ -23,8 +23,9 @@
       mínimos de contraste según el tamaño y tipo de texto:
     </p>
     <ul>
-      <li>Ratio de <strong>4.5:1</strong> para textos menores a 18 puntos.</li>
-      <li>Ratio de <strong>3:1</strong> para texto mayor a 18 puntos, texto en negrita mayor o igual a 14 puntos y texto en enlaces y botones.</li>
+      <li>Ratio de <strong>4.5:1</strong> para texto normal, incluidos los enlaces y botones cuando contienen texto normal.</li>
+      <li>Ratio de <strong>3:1</strong> para texto grande: a partir de 18 puntos en peso normal o 14 puntos en negrita.</li>
+      <li>Ratio de <strong>3:1</strong> para componentes no textuales necesarios, como el borde, el icono o el indicador de foco de un control.</li>
     </ul>
     <p>
       Es importante destacar que hablamos en unidades absolutas de puntos (`pt`), por lo que habría
@@ -57,8 +58,9 @@
       Solo tienes que introducir el color de fondo y el color del texto y aparecerá el resultado.
     </p>
     <p>
-      Si la ratio supera 4.5 de contraste, los colores serán válidos. En caso contrario, tendrás
-      que modificarlos o buscar sugerencias de colores que sí lo cumplan.
+      Si la ratio alcanza 4.5:1, la combinación cumple el mínimo para texto normal. Para texto
+      grande o componentes no textuales el mínimo es 3:1. En caso contrario, tendrás que
+      modificar los colores o buscar sugerencias que sí lo cumplan.
     </p>
     <p>
       En las capturas del tema se puede observar un caso en el que el contraste no es suficiente y
@@ -96,10 +98,10 @@
       afectar a personas que sufran epilepsia fotosensitiva.
     </p>
     <p>
-      Además, en el caso de que se utilicen imágenes con animaciones como ficheros GIF, no
-      deberían durar más de 5 segundos ya que pueden dificultar la lectura del contenido del
-      documento a personas con problemas cognitivos o con trastornos de déficit de atención e
-      hiperactividad.
+      Además, cuando se utilicen animaciones que se inician automáticamente y duran más de cinco
+      segundos, debe existir una forma de pausarlas, detenerlas u ocultarlas, salvo que el
+      movimiento sea imprescindible para la actividad. Esto también se aplica a GIF y contenidos
+      que se actualizan automáticamente.
     </p>
 
     <h2>Simular la ceguera al color</h2>

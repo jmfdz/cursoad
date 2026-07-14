@@ -18,12 +18,12 @@
 
     <h2>Los cuatro principios</h2>
     <p>Las WCAG 2.2 se apoyan en cuatro principios fundamentales:</p>
-    <ul>
-      <li><strong>1. Perceptible</strong>: la información debe poder percibirse por distintos medios. Por ejemplo, una imagen informativa necesita texto alternativo y un vídeo puede necesitar subtítulos.</li>
-      <li><strong>2. Utilizable</strong>: la interfaz debe poder manejarse. Por ejemplo, una página debe poder usarse con teclado y no solo con ratón.</li>
-      <li><strong>3. Comprensible</strong>: el contenido y el funcionamiento deben entenderse con facilidad. Por ejemplo, los formularios deben estar bien etiquetados y los errores deben explicarse con claridad.</li>
-      <li><strong>4. Robusto</strong>: el contenido debe estar bien construido para que navegadores y tecnologías de apoyo puedan interpretarlo correctamente.</li>
-    </ul>
+    <ol>
+      <li><strong>Perceptible</strong>: la información debe poder percibirse por distintos medios. Por ejemplo, una imagen informativa necesita texto alternativo y un vídeo puede necesitar subtítulos.</li>
+      <li><strong>Utilizable</strong>: la interfaz debe poder manejarse. Por ejemplo, una página debe poder usarse con teclado y no solo con ratón.</li>
+      <li><strong>Comprensible</strong>: el contenido y el funcionamiento deben entenderse con facilidad. Por ejemplo, los formularios deben estar bien etiquetados y los errores deben explicarse con claridad.</li>
+      <li><strong>Robusto</strong>: el contenido debe estar bien construido para que navegadores y tecnologías de apoyo puedan interpretarlo correctamente.</li>
+    </ol>
 
     <h2>Pautas</h2>
     <p>Dentro de esos principios, WCAG 2.2 agrupa <strong>13 pautas</strong>. Son los grandes bloques en los que se organiza esta norma.</p>

@@ -1,14 +1,14 @@
 <template>
   <div>
     <p>
-      Para asegurar de que nuestros diseños son usables y tienen una buena experiencia de usuario,
+      Para asegurar que nuestros diseños son usables y tienen una buena experiencia de usuario,
       hay diferentes técnicas y herramientas que podemos utilizar:
     </p>
     <ul>
       <li><strong>Tests de usuario</strong>: observar cómo personas reales interactúan con el sitio.</li>
       <li><strong>Análisis de tareas</strong>: identificar los pasos necesarios para completar una tarea.</li>
       <li><strong>Prototipos</strong>: diseño preliminar para probar la estructura antes de desarrollar.</li>
-      <li><strong>Mapas de calor</strong>: visualizar dónde hacen clic y se enfocan los usuarios.</li>
+      <li><strong>Mapas de calor</strong>: visualizar patrones de clic, desplazamiento o movimiento del ratón; no sustituyen la observación directa.</li>
       <li><strong>Encuestas y entrevistas</strong>: recopilar opiniones y emociones.</li>
       <li><strong>A/B testing</strong>: comparar dos versiones para ver cuál rinde mejor.</li>
       <li><strong>Personas</strong>: perfiles ficticios que representan usuarios reales para diseñar pensando en sus necesidades.</li>

@@ -29,7 +29,8 @@
     <p>
       Cuando el usuario pulsa un botón, envía un formulario o cambia un filtro, la interfaz debe
       reaccionar de inmediato. A veces basta con deshabilitar un botón y mostrar un indicador de
-      carga; otras veces conviene actualizar una zona concreta con un mensaje de éxito o error.
+      carga, manteniendo claro qué acción está en curso; otras veces conviene actualizar una zona
+      concreta con un mensaje de éxito o error.
     </p>
     <p>
       Lo importante es evitar que la interfaz parezca bloqueada o silenciosa. Si una acción tarda,

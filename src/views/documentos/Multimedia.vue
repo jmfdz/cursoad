@@ -1,15 +1,15 @@
 <template>
   <div>
     <p>
-      Adicionalmente veremos las singularidades de los documentos de multimedia y varias
-      herramientas para la evaluación automática de la accesibilidad de documentos Word.
+      En este apartado veremos los requisitos básicos para que un contenido de audio o vídeo sea
+      accesible.
     </p>
 
     <h2>Percepción de lo audiovisual</h2>
     <p>
       Los documentos multimedia están formados por un conjunto de imágenes, sonidos y textos
-      simultáneos, unidos entre sí a través de transiciones. Por su composición es muy difícil
-      diseñar un video o un audio accesible para todas las personas.
+      simultáneos, unidos entre sí a través de transiciones. Hay que tener en cuenta a las personas
+      que no oyen, las que no ven y quienes no pueden utilizar un reproductor multimedia.
     </p>
     <p>
       Sin embargo, el diseño universal no excluye la adaptación, y disponemos de herramientas para
@@ -34,11 +34,12 @@
       <li>Subtítulos en diferido.</li>
       <li>Subtítulos en directo.</li>
     </ul>
+    <p>Los subtítulos pueden generarse con herramientas automáticas, pero hay que revisarlos antes de publicarlos. Cuando el vídeo está en el mismo idioma, deben incluir también la información sonora relevante, como quién habla, música o efectos.</p>
     <p>Por ejemplo, en HTML5 podríamos cargar un vídeo con un fichero de subtítulos `.srt` convertido a `WebVTT` así:</p>
     <pre class="course-code"><code>&lt;video controls width="720"&gt;
   &lt;source src="clase.mp4" type="video/mp4" /&gt;
   &lt;track
-    kind="subtitles"
+    kind="captions"
     src="clase-es.vtt"
     srclang="es"
     label="Español"
@@ -60,7 +61,7 @@
 
     <h2>Audiodescripción</h2>
     <p>
-      Es un servicio de apoyo a la comunicación. Son un conjunto de técnicas y habilidades
+      Es un servicio de apoyo a la comunicación. Es un conjunto de técnicas y habilidades
       aplicadas, con objeto de compensar la carencia de captación de la parte visual contenida en
       cualquier tipo de mensaje.
     </p>
@@ -81,8 +82,8 @@
       reglas.
     </p>
     <p>
-      Nuestros documentos multimedia deberían estar signados, en la medida de lo posible. Y si no
-      es posible, al menos crear resúmenes con la información más importante en este sistema.
+      Cuando proceda, se puede incluir un intérprete de lengua de signos en el vídeo. Esto
+      complementa, pero no sustituye, a los subtítulos y a la audiodescripción.
     </p>
 
     <h2>Audio y transcripción</h2>

@@ -8,11 +8,10 @@
 
     <h2>Diseño inclusivo</h2>
     <p>
-      El diseño inclusivo es una metodología creada para habilitar y apoyarse en toda la diversidad
-      humana al concebir productos y servicios, de modo que funcionen para personas con diferentes
-      capacidades, contextos y experiencias. Microsoft la impulsó públicamente en 2015 al publicar
-      su <i>Inclusive Design Toolkit</i>, convirtiéndola desde entonces en práctica interna y en
-      referencia para muchos equipos y universidades.
+      El diseño inclusivo busca aprovechar toda la diversidad humana al concebir productos y
+      servicios, de modo que funcionen para personas con diferentes capacidades, contextos y
+      experiencias. Microsoft lo impulsó públicamente en 2015 al publicar su <i>Inclusive Design
+      Toolkit</i>, que se ha convertido en una referencia para muchos equipos y universidades.
     </p>
     <p>
       La propuesta parte de entender la discapacidad como un desajuste entre la persona y el
@@ -33,9 +32,10 @@
 
     <h2>Usabilidad</h2>
     <p>
-      La usabilidad se refiere a cómo de <strong>fácil, eficiente y satisfactoria</strong> es la
-      interacción del usuario con un sitio web o aplicación. Una interfaz usable permite al usuario
-      lograr sus objetivos con <strong>rapidez, sin errores ni frustraciones</strong>.
+      La usabilidad se refiere a cómo de <strong>eficaz, eficiente y satisfactoria</strong> es la
+      interacción de personas concretas con un sitio web o aplicación, en un contexto de uso
+      determinado. Una interfaz usable ayuda a lograr los objetivos con el menor esfuerzo y con
+      errores fáciles de evitar o corregir.
     </p>
     <p>Principios clave de la usabilidad:</p>
     <ul>

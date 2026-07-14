@@ -22,8 +22,9 @@
     </p>
     <p>
       En el caso de que utilicemos tipos de fuente específicos, como en el caso de la UA que
-      utiliza en la nueva web Atkinson Hyperlegible Next y no está instalada en los sistemas por
-      defecto, deberemos incluirla como fuente, por ejemplo desde Google Fonts.
+      utiliza Atkinson Hyperlegible Next y no está instalada en los sistemas por defecto, debemos
+      servirla como recurso web e incluir fuentes alternativas. Puede alojarse en el propio sitio o
+      cargarse desde un proveedor de fuentes.
     </p>
     <p>Veamos cómo definir la fuente con CSS para toda una página web:</p>
     <pre class="course-code"><code>body {
@@ -39,8 +40,9 @@
       respetará la configuración que pueda tener el usuario.
     </p>
     <p>
-      En la mayoría de navegadores actuales el tamaño por defecto es de 16px, equivalente a
-      12 puntos o `1rem`/`1em`.
+      En la mayoría de navegadores actuales el tamaño por defecto es de 16px. Si el tamaño de la
+      raíz no se ha modificado, equivale a `1rem`; `1em` depende en cambio del tamaño del elemento
+      padre.
     </p>
     <p>
       Como hemos dicho, si quisiéramos cambiar el tamaño y subirlo a 14 puntos, serían
@@ -60,8 +62,9 @@
       ciegas, es menos cómoda la lectura de letras mayúsculas que minúsculas.
     </p>
     <p>
-      Por último, debemos evitar utilizar los estilos o etiquetas de énfasis `&lt;em&gt;` y el
-      tachado `&lt;s&gt;`, ya que, al cambiar la forma del texto, dificulta mucho su lectura.
+      Los estilos o etiquetas de énfasis `&lt;em&gt;` y el tachado `&lt;s&gt;` deben usarse solo cuando
+      expresen ese significado. No conviene utilizarlos únicamente para dar apariencia visual al
+      texto.
     </p>
 
     <h2>Formato de párrafo</h2>

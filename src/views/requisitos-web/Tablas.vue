@@ -1,11 +1,11 @@
 <template>
   <div>
     <p>Las tablas son para estructurar datos, no para maquetar contenido. Para eso están los `div`.</p>
-    <p>No hay que dividir ni combinar celdas, por lo que las tablas deben ser uniformes.</p>
+    <p>Conviene evitar dividir o combinar celdas cuando no sea necesario, para mantener las tablas sencillas de entender.</p>
     <p>
       Deben tener un título que las titule con la etiqueta `caption`. Por defecto, la etiqueta
-      `caption` se muestra visualmente debajo de la tabla, pero es mejor tocar el CSS para que el
-      título salga encima de la tabla.
+      `caption` se muestra visualmente asociado a la tabla. Si el diseño lo necesita, se puede
+      ajustar su posición con CSS sin perder esa asociación.
     </p>
     <p>
       Debe diferenciarse claramente cuáles son los encabezados de fila o columna, a poder ser con
@@ -18,18 +18,18 @@
   &lt;thead&gt;
     &lt;!-- Cabecera en azul con texto blanco para resaltar --&gt;
     &lt;tr style="background: blue; color: white;"&gt;
-      &lt;th&gt;Nombre&lt;/th&gt;
-      &lt;th&gt;Nota&lt;/th&gt;
+      &lt;th scope="col"&gt;Nombre&lt;/th&gt;
+      &lt;th scope="col"&gt;Nota&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;th&gt;Alberto&lt;/th&gt;
-      &lt;th&gt;8&lt;/th&gt;
+      &lt;th scope="row"&gt;Alberto&lt;/th&gt;
+      &lt;td&gt;8&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;th&gt;Alba&lt;/th&gt;
-      &lt;th&gt;9&lt;/th&gt;
+      &lt;th scope="row"&gt;Alba&lt;/th&gt;
+      &lt;td&gt;9&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>

@@ -148,9 +148,9 @@ export const bloquesCurso: BloqueCurso[] = [
         component: markRaw(PruebasAccesibilidad),
         toc: 'h2',
         figure: {
-          src: '/curso-media/image3.png',
-          alt: 'Captura de pantalla de la extensión CADUA mostrando errores de lista vacía y tabla sin título.',
-          caption: 'Resultados de la extensión de navegador de CADUA.',
+          src: '/curso-media/extension-accesibilidad.png',
+          alt: 'Ficha de CADUA en Chrome Web Store y panel de la extensión mostrando resultados de accesibilidad.',
+          caption: 'La extensión de navegador de CADUA está disponible en Chrome Web Store.',
         },
       },
       {

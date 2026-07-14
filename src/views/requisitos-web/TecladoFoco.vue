@@ -17,6 +17,10 @@
       página. Si el usuario ve una secuencia y el teclado sigue otra distinta, la navegación se
       vuelve confusa.
     </p>
+    <p>
+      Los enlaces de salto permiten ir directamente al contenido principal. Los botones se activan
+      con <strong>Espacio</strong> o <strong>INTRO</strong>; los enlaces, con <strong>INTRO</strong>.
+    </p>
 
     <h2>Foco visible</h2>
     <p>

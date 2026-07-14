@@ -18,8 +18,8 @@
     <p><strong>Referencias:</strong> <a href="https://lawsofux.com/es/ley-de-jakob/" target="_blank" rel="noreferrer">Laws of UX: Ley de Jakob</a>.</p>
 
     <h3>Ley de Postel</h3>
-    <p>Un sistema debe ser flexible al aceptar entradas y conservador al generar salidas consistentes.</p>
-    <p><strong>Ejemplo:</strong> un campo de teléfono puede aceptar espacios o guiones, pero al guardar debe normalizar el formato.</p>
+    <p>Un sistema debe ser flexible al aceptar entradas comprensibles y conservador al generar salidas consistentes, sin aceptar datos ambiguos o inválidos.</p>
+    <p><strong>Ejemplo:</strong> un campo de teléfono puede aceptar espacios o guiones, pero debe validar el dato, explicar cualquier error y normalizar el formato al guardar.</p>
     <p><strong>Referencias:</strong> <a href="https://lawsofux.com/es/ley-de-postel/" target="_blank" rel="noreferrer">Laws of UX: Ley de Postel</a>.</p>
 
     <h3>Ley de Tesler</h3>

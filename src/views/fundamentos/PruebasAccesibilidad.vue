@@ -35,15 +35,49 @@
 
     <h2>Ejemplo: extensión de CADUA</h2>
     <p>
-      La extensión de navegador de CADUA para Chrome, Edge, Brave o cualquier navegador Chromium
-      comparte la base de comprobaciones de la aplicación web CADUA, pero añade pruebas que solo
-      pueden ejecutarse desde el propio navegador.
+      CADUA cuenta ahora con una extensión de navegador que permite comprobar la accesibilidad de
+      sitios web y aplicaciones mientras se navega. Está disponible para Chrome, Edge, Brave y
+      otros navegadores basados en Chromium.
     </p>
     <p>
-      Al ejecutarse sobre la página ya renderizada, permite revisar estados generados por
-      JavaScript, contraste de color, visibilidad real de elementos o contenidos accesibles solo
-      tras autenticación. Además, puede marcar visualmente sobre la propia interfaz qué elementos
-      presentan errores, lo que agiliza mucho su localización y corrección.
+      Pulsa el icono de la extensión para comprobar la página abierta. La comprobación se refresca
+      automáticamente mientras navegas y, si cierras el panel, el icono seguirá apareciendo en el
+      margen derecho para volver a abrirlo. Para detener las comprobaciones, vuelve a pulsar el
+      botón de la extensión.
+    </p>
+
+    <p>
+      <a
+        href="https://chromewebstore.google.com/detail/cadua/dkdoelfmjnclpchkhfghgeabpkbjkigj?authuser=0&amp;hl=es"
+        target="_blank"
+        rel="noreferrer"
+      >Instalar la extensión CADUA desde Chrome Web Store</a>
+    </p>
+
+    <p>
+      <strong>Importante:</strong> si has iniciado sesión en el navegador con tu cuenta de GCloud,
+      Chrome Web Store puede indicar que no tienes acceso. Cierra sesión con esa cuenta o utiliza
+      otro perfil del navegador para instalar la extensión.
+    </p>
+
+    <h3>Instalar la extensión desde Chrome Web Store</h3>
+    <ol>
+      <li>Abre la ficha de CADUA en Chrome Web Store desde el enlace anterior.</li>
+      <li>Pulsa <strong>Añadir a Chrome</strong> y confirma la instalación cuando el navegador lo solicite.</li>
+      <li>Abre una página web, pulsa el icono de CADUA en la barra del navegador y ejecuta la comprobación de accesibilidad.</li>
+    </ol>
+
+    <h3>Herramientas de la extensión</h3>
+    <p>Además de la comprobación de accesibilidad, puedes utilizar estas herramientas:</p>
+    <ul>
+      <li>Jerarquía de encabezados.</li>
+      <li>Imágenes para revisión manual.</li>
+      <li>Enlaces.</li>
+      <li>Atajos de teclado.</li>
+    </ul>
+    <p>
+      También puedes configurar si la extensión permanece activa en una pestaña o en todo el
+      navegador, y definir el retardo para iniciar las comprobaciones en una web.
     </p>
 
     <h2>Revisión mínima recomendable</h2>

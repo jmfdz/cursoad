@@ -9,8 +9,8 @@
       etc.
     </p>
     <p>
-      Si van a provocar un cambio de contexto deberíamos indicarlo en el `title`; por ejemplo, si
-      es un enlace de YouTube, ponerle `title="Se abrirá en YouTube"`.
+      Si van a provocar un cambio de contexto debemos indicarlo en el texto del enlace o en su
+      nombre accesible. Por ejemplo: “Ver el vídeo en YouTube (se abre en una ventana nueva)”.
     </p>
 
     <h2>Enlaces a descargas</h2>

@@ -2,8 +2,8 @@
   <div>
     <p>
       Como hemos visto en el apartado anterior, crear componentes interactivos accesibles tiene una
-      gran complejidad. En nuestro caso, tenemos la suerte de utilizar la librería Bootstrap, que
-      proporciona unos componentes muy accesibles desde la base.
+      gran complejidad. En nuestro caso, utilizar una librería como Bootstrap aporta componentes
+      con una buena base, pero hay que mantener su estructura y comprobar su uso en cada caso.
     </p>
     <p>
       En el repositorio de GitHub del curso se puede consultar el fichero `componentes.html` con

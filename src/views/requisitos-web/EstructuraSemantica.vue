@@ -42,9 +42,9 @@
       esqueleto de nuestra página web que separe las diferentes secciones y elementos de la página.
     </p>
     <p>
-      Es imprescindible, al menos, incluir las secciones de cabecera y contenido principal con las
-      etiquetas `header` y `main`. También se pueden incluir otras etiquetas como `footer` para el
-      pie de página.
+      El contenido principal debe identificarse con la etiqueta `main`. Si la página tiene una
+      cabecera común, conviene marcarla con `header`; también se pueden incluir otras etiquetas
+      como `footer` para el pie de página.
     </p>
     <p>
       Además, si utilizamos menús de navegación, también deberíamos utilizar etiquetas `nav` para
@@ -110,13 +110,13 @@
       lugar de otros elementos para marcar las diferentes secciones de una web.
     </p>
     <p>
-      Como comentábamos en la sección anterior, toda página debe tener un `h1` único dentro de la
-      propia página web y a partir de ahí deberíamos incluir diferentes apartados usando los
+      Como comentábamos en la sección anterior, conviene que cada página tenga un `h1` que
+      identifique su tema principal y, a partir de ahí, incluir los diferentes apartados usando los
       siguientes niveles, por ejemplo el segundo nivel `h2`.
     </p>
     <p>
-      No se deben saltar niveles, es decir, si tenemos un `h1`, no podemos poner como siguiente
-      nivel un `h3`.
+      Conviene no saltar niveles sin una relación clara entre apartados. Por ejemplo, después de un
+      `h1` normalmente aparecerá un `h2`, no un `h3`.
     </p>
     <p>
       Tampoco se deben crear encabezados consecutivos del mismo nivel y que no tengan elementos
