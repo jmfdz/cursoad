@@ -21,6 +21,11 @@
       Los enlaces de salto permiten ir directamente al contenido principal. Los botones se activan
       con <strong>Espacio</strong> o <strong>INTRO</strong>; los enlaces, con <strong>INTRO</strong>.
     </p>
+    <pre class="course-code"><code>&lt;a class="skip-link" href="#contenido"&gt;Saltar al contenido principal&lt;/a&gt;
+
+&lt;main id="contenido"&gt;
+  ...
+&lt;/main&gt;</code></pre>
 
     <h2>Foco visible</h2>
     <p>
@@ -32,6 +37,11 @@
       Por este motivo, no se debe eliminar el contorno de foco que trae el navegador salvo que se
       sustituya por otro estilo claramente visible y con contraste suficiente.
     </p>
+    <pre class="course-code"><code>/* No eliminar el contorno sin proporcionar una alternativa */
+:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 3px;
+}</code></pre>
 
     <h2>Controles interactivos reales</h2>
     <p>
@@ -43,6 +53,11 @@
       Si un elemento parece interactivo, pero no recibe foco, no puede activarse con teclado o no
       muestra su estado de forma clara, parte de los usuarios quedará fuera.
     </p>
+    <pre class="course-code"><code>&lt;!-- Evitar: no recibe foco ni funciona con teclado de forma nativa --&gt;
+&lt;div onclick="guardar()"&gt;Guardar&lt;/div&gt;
+
+&lt;!-- Correcto: incluye semántica y comportamiento de teclado --&gt;
+&lt;button type="button" onclick="guardar()"&gt;Guardar&lt;/button&gt;</code></pre>
 
     <h2>Problemas habituales</h2>
     <p>Entre los fallos más frecuentes relacionados con teclado y foco están los siguientes:</p>

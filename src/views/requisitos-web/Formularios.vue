@@ -130,17 +130,16 @@
     <p>
       En esta línea, es recomendable utilizar el atributo `required` en los campos de formulario,
       ya que indica la semántica a un lector de pantalla. Aunque usemos el atributo `novalidate`,
-      hay que volver a validar siempre los datos de los campos del formulario, ya que el atributo
-      `required` puede eliminarse desde el navegador y nos podría ocasionar un problema de
-      seguridad.
+      hay que validar siempre los datos también en el servidor. La validación realizada en el
+      navegador mejora la experiencia, pero no es una medida de seguridad.
     </p>
     <p>
       Finalmente, la forma de mostrar los mensajes de error de la validación depende de la
       tipología de la petición:
     </p>
     <ul>
-      <li>Si es una petición Ajax, se recomienda mostrar los errores entre el último campo del formulario y el botón de enviar.</li>
-      <li>Si la petición se procesará en el servidor, los errores deben mostrarse al principio del formulario.</li>
+      <li>Si es una petición Ajax, se recomienda mostrar el resumen de errores después del botón de enviar y anunciarlo con <code>role="alert"</code>.</li>
+      <li>Si la petición se procesa en el servidor y recarga la página, los errores deben mostrarse antes del formulario.</li>
     </ul>
     <p>De esta forma, nos aseguramos de que siempre se muestran los errores en primer plano.</p>
     <p>

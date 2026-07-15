@@ -16,6 +16,12 @@
       esté bien construida.
     </p>
 
+    <p>
+      Un producto de apoyo puede ser un programa, como un lector de pantalla, o un dispositivo,
+      como una línea braille o un conmutador. Estas herramientas no corrigen una página mal
+      construida: necesitan que la interfaz proporcione la información adecuada.
+    </p>
+
     <h2>Dónde encontrar estas funciones en sistemas y navegadores</h2>
     <p>
       Todos los sistemas operativos y navegadores actuales incorporan funcionalidades de

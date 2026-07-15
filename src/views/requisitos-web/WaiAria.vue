@@ -22,8 +22,8 @@
 
     <h2>Tabindex</h2>
     <p>
-      Es conveniente recordar que en HTML solo pueden recibir el foco del teclado los enlaces,
-      botones y elementos de formulario.
+      Es conveniente recordar que los enlaces, botones y elementos de formulario, entre otros
+      controles nativos, pueden recibir el foco del teclado sin añadir <code>tabindex</code>.
     </p>
     <p>
       Por el contrario, elementos HTML como listas, párrafos, capas `div` o `span` nunca reciben
@@ -56,7 +56,7 @@
     <ul>
       <li>`tabindex="0"` permite que un elemento que no puede recibir el foco por defecto pueda recibirlo siguiendo el orden natural del HTML.</li>
       <li>`tabindex="-1"` permite que el elemento pueda coger el foco mediante JavaScript con la función `focus()`, aunque no podamos llegar a él con tabulación normal.</li>
-      <li>`tabindex="x"` donde `x` es un número entero define un orden de tabulación explícito. No se recomienda su uso porque puede crear confusión.</li>
+      <li>Un valor positivo, como <code>tabindex="1"</code>, define un orden de tabulación explícito. No se recomienda su uso porque puede crear confusión.</li>
     </ul>
 
     <h2>Roles</h2>
@@ -126,15 +126,17 @@
       `aria-labelledby` también sirve para dar un nombre a un elemento HTML, con la diferencia de
       que aquí referenciamos el `id` de otro elemento que actúa como etiqueta.
     </p>
-    <pre class="course-code"><code>&lt;p id="titulo-informe"&gt;Descargar el informe de accesibilidad en:
-  &lt;a aria-labelledby="titulo-informe pdf" href="pdf.pdf" id="pdf"&gt;PDF&lt;/a&gt; |
-  &lt;a aria-labelledby="titulo-informe docx" href="word.docx" id="docx"&gt;Word&lt;/a&gt; |
-  &lt;a aria-labelledby="titulo-informe pptx" href="ppt.pptx" id="pptx"&gt;PowerPoint&lt;/a&gt;
-&lt;/p&gt;</code></pre>
+    <pre class="course-code"><code>&lt;section aria-labelledby="titulo-informe"&gt;
+  &lt;h3 id="titulo-informe"&gt;Informe de accesibilidad&lt;/h3&gt;
+  ...
+&lt;/section&gt;</code></pre>
     <p>
       `aria-describedby` permite asociar una descripción larga a un elemento indicando el `id` del
       elemento que proporciona la descripción.
     </p>
+    <pre class="course-code"><code>&lt;label for="usuario"&gt;Usuario&lt;/label&gt;
+&lt;input id="usuario" aria-describedby="ayuda-usuario"&gt;
+&lt;p id="ayuda-usuario"&gt;Escribe tu dirección de correo sin @ua.es.&lt;/p&gt;</code></pre>
 
     <h2>Estados y propiedades</h2>
     <p>
@@ -193,9 +195,14 @@ button.addEventListener('click', () =&gt; {
       queremos que se anuncie.
     </p>
     <p>
-      También se puede utilizar la versión moderna e integrada de `role="alert"`, que es
-      equivalente a `aria-live="assertive"`.
+      <code>role="alert"</code> crea una región de aviso urgente con un comportamiento equivalente
+      a <code>aria-live="assertive"</code>.
     </p>
+    <pre class="course-code"><code>&lt;!-- Mensaje informativo: se anuncia cuando cambia --&gt;
+&lt;p id="estado" aria-live="polite"&gt;&lt;/p&gt;
+
+&lt;!-- Error urgente insertado dinámicamente --&gt;
+&lt;div role="alert"&gt;No se ha podido guardar el formulario.&lt;/div&gt;</code></pre>
     <p>
       En cualquier caso, esto debe aplicarse sobre componentes que además sean utilizables con
       teclado, tengan foco visible y una estructura correcta. ARIA complementa la interacción, pero

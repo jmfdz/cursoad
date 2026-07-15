@@ -6,7 +6,7 @@ El diseño inclusivo, la usabilidad y la experiencia de usuario están muy relac
 
 ## Diseño inclusivo
 
-El diseño inclusivo es una metodología creada para habilitar y apoyarse en toda la diversidad humana al concebir productos y servicios, de modo que funcionen para personas con diferentes capacidades, contextos y experiencias. Microsoft la impulsó públicamente en 2015 al publicar su *Inclusive Design Toolkit*, convirtiéndola desde entonces en práctica interna y en referencia para muchos equipos y universidades.
+El diseño inclusivo busca aprovechar toda la diversidad humana al concebir productos y servicios, de modo que funcionen para personas con diferentes capacidades, contextos y experiencias. Microsoft lo ha desarrollado y difundido mediante su [metodología de diseño inclusivo (Inglés)](https://devblogs.microsoft.com/premier-developer/microsoft-inclusive-design/), que se ha convertido en una referencia para muchos equipos y universidades.
 
 La propuesta parte de entender la discapacidad como un desajuste entre la persona y el entorno, y anima a quienes diseñan a detectar esos desajustes desde el inicio del proceso, no como un añadido posterior, para que la accesibilidad se traduzca en mejores experiencias para todas las personas.
 
@@ -20,7 +20,7 @@ A estos se suman pautas operativas como pensar de forma universal y diseñar con
 
 ## Usabilidad
 
-La usabilidad se refiere a cómo de **fácil, eficiente y satisfactoria** es la interacción del usuario con un sitio web o aplicación. Una interfaz usable permite al usuario lograr sus objetivos con **rapidez, sin errores ni frustraciones**.
+La usabilidad se refiere a cómo de **eficaz, eficiente y satisfactoria** es la interacción de personas concretas con un sitio web o aplicación, en un contexto de uso determinado. Una interfaz usable ayuda a lograr los objetivos con el menor esfuerzo y con errores fáciles de evitar o corregir.
 
 Principios clave de la usabilidad:
 
@@ -45,6 +45,20 @@ La UX abarca la usabilidad, pero también considera:
 
 Dicho de otro modo, una interfaz puede ser usable en términos funcionales y, sin embargo, generar una mala experiencia si resulta confusa, poco creíble, visualmente descuidada o excesivamente fría en la interacción.
 
+## Cómo evaluar la usabilidad y la experiencia
+
+Para comprobar si nuestros diseños son usables y ofrecen una buena experiencia de usuario, podemos utilizar diferentes técnicas y herramientas:
+
+- **Tests de usuario**: observar cómo personas reales interactúan con el sitio.
+- **Análisis de tareas**: identificar los pasos necesarios para completar una tarea.
+- **Prototipos**: probar la estructura antes de desarrollar.
+- **Mapas de calor**: visualizar patrones de clic o desplazamiento; no sustituyen la observación directa.
+- **Encuestas y entrevistas**: recopilar opiniones y emociones.
+- **Pruebas A/B**: comparar dos versiones según un objetivo medible.
+- **Personas**: representar necesidades y comportamientos detectados mediante investigación.
+
+No es necesario utilizar todas las técnicas en todos los proyectos. Conviene elegirlas según el objetivo, la fase del diseño y los recursos disponibles.
+
 ## Estados, feedback y microcopy
 
 Cuando una persona interactúa con una interfaz necesita saber en todo momento qué está ocurriendo, si su acción se ha procesado y qué puede hacer a continuación. Si no hay señales claras, aparecen la duda, la repetición de acciones y la sensación de falta de control.
@@ -62,6 +76,19 @@ En muchos componentes y pantallas hay al menos cinco estados habituales que conv
 - **Error**: algo ha fallado y hay que explicar qué ha ocurrido o cómo corregirlo.
 
 Si estos estados no están pensados desde el principio, es frecuente acabar mostrando mensajes ambiguos, pantallas vacías o cambios de interfaz que el usuario no entiende.
+
+```html
+<!-- Estado de carga: informa sin interrumpir -->
+<div class="alert alert-info" role="status">Cargando solicitudes…</div>
+<!-- Estado de éxito: confirma que la acción ha terminado -->
+<div class="alert alert-success" role="status">La solicitud se ha guardado correctamente.</div>
+<!-- Estado de error: se anuncia de forma inmediata -->
+<div class="alert alert-danger" role="alert">
+  No se ha podido guardar. Revisa los campos marcados.
+</div>
+```
+
+En Vue 3, estos mensajes se muestran según variables reactivas, por ejemplo con `ref`, `v-if` y `v-text`. Bootstrap mantiene la presentación y Vue controla cuándo aparece cada estado.
 
 ### Feedback inmediato
 
@@ -81,6 +108,14 @@ En general, estos textos deben decir con claridad qué ocurre o qué va a ocurri
 - Es mejor **Enviar solicitud** que **Continuar**, si realmente la acción ya envía el formulario.
 - Es mejor **No se ha podido guardar la solicitud. Revisa los campos marcados.** que un mensaje genérico como **Error inesperado**.
 - Es mejor **Todavía no tienes solicitudes creadas** que mostrar una pantalla vacía sin explicación.
+
+```html
+<!-- Textos que describen la acción -->
+<button type="submit" class="btn btn-primary">Guardar cambios</button>
+<button type="submit" class="btn btn-primary">Enviar solicitud</button>
+```
+
+Además de redactarlos con claridad, conviene decidir cómo y cuándo se mostrarán:
 
 - Los mensajes de éxito deben confirmar la acción realizada y, si procede, orientar sobre el siguiente paso.
 - Los mensajes de error deben explicar qué ha fallado y cómo corregirlo.
@@ -105,10 +140,11 @@ El contraste de luminosidad **entre el color del fondo y el color del texto** de
 
 Las pautas de accesibilidad del contenido web establecen en su nivel AA los diferentes ratios mínimos de contraste según el tamaño y tipo de texto:
 
-- Ratio de **4.5:1** para textos menores a 18 puntos.
-- Ratio de **3:1** para texto mayor a 18 puntos, texto en negrita mayor o igual a 14 puntos y texto en enlaces y botones.
+- Ratio de **4.5:1** para texto normal, incluidos los enlaces y botones cuando contienen texto normal.
+- Ratio de **3:1** para texto grande: a partir de 18 puntos en peso normal o 14 puntos en negrita.
+- Ratio de **3:1** para componentes no textuales necesarios, como el borde, el icono o el indicador de foco de un control.
 
-Podemos decir que a mayor contraste, mayor facilidad de lectura del texto, con independencia de la combinación de colores. En la mayoría de las situaciones, lo más recomendable es texto negro sobre fondo blanco o colores muy cercanos a estos, como gris oscuro y tonos sepia.
+Un contraste suficiente facilita la lectura, pero no existe una única combinación adecuada para todas las personas. Además de cumplir los mínimos, conviene comprobar el resultado con los colores, tamaños y estados reales de la interfaz.
 
 Por otro lado, no se aconseja utilizar fondos degradados de color o con tramas, ya que los cambios de tono de color podrían dificultar el acceso a la información del documento, sobre todo si se coloca texto sobre ese fondo.
 
@@ -130,49 +166,126 @@ En este ejemplo, una persona ciega será incapaz de saber cuáles son las respue
 
 Veamos ahora el mismo ejemplo utilizando una forma alternativa de transmitir la información:
 
-Nota: La respuesta correcta está marcada con una X.
+Nota: La respuesta correcta se indica también mediante texto.
 
 Pregunta 1: Debemos transmitir información únicamente mediante el color.
 
 a) Verdadero
 
-b) X Falso
+b) **Respuesta correcta:** Falso
 
-En este ejemplo una persona ciega conocerá las respuestas correctas cuando su lector lea la letra equis.
+En este ejemplo, la respuesta puede identificarse sin necesidad de percibir el color.
 
-## Patrones de diseño y usabilidad
+## Arquitectura de información y navegación
 
-Además de los principios teóricos, conviene aterrizar la usabilidad en decisiones de diseño concretas: cómo se distribuye la interfaz, cómo se guía al usuario en un proceso y qué pequeñas mejoras reducen errores o fricción.
+La arquitectura de información consiste en ordenar contenidos, acciones y rutas de navegación de forma coherente. En cualquier pantalla debería quedar claro dónde estamos, qué podemos hacer, cómo cambiar de sección y cuál es el siguiente paso.
 
-### Patrones de diseño útiles
+Las migas de pan pueden mostrar la jerarquía y la página actual:
 
-En el repositorio del curso se mostraron diferentes ejemplos de diseños que van más allá de la típica tabla de administración o del formulario que ocupa toda la pantalla. En general, la idea es aprovechar mejor el espacio y adaptar la disposición al tipo de tarea.
+```html
+<!-- La navegación tiene un nombre que indica su finalidad -->
+<nav aria-label="Migas de pan">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+    <li class="breadcrumb-item"><a href="/solicitudes">Solicitudes</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Detalle</li>
+  </ol>
+</nav>
+```
 
-- Diseño a dos columnas en escritorio y una en móvil, con la interacción a la izquierda y el resultado a la derecha.
-- Formulario en una columna de anchura limitada y panel lateral con más información.
-- Formulario centrado al estilo Google o Microsoft Forms para reducir la longitud de línea.
-- Formulario o asistente por pasos con progresión visual.
-- Paneles tipo Trello para trabajo operativo y seguimiento de solicitudes.
-- Exploraciones visuales de herramientas internas como Vértice.
+En una SPA, los enlaces pueden implementarse con `RouterLink`. La ruta obtenida mediante `useRoute()` permite aplicar la clase activa y `aria-current="page"` sin recargar el documento.
 
-### Mejoras prácticas de usabilidad
+## Plantillas y patrones de diseño
 
-En este punto no se trata tanto de validar técnicamente un formulario o un componente, sino de organizar mejor la interacción para que el usuario complete la tarea con menos esfuerzo.
+Las plantillas y patrones permiten resolver de forma coherente distribuciones e interacciones que se repiten. Deben elegirse según la tarea y la cantidad de información que necesita el usuario.
 
-Por ejemplo, en formularios largos puede ser útil limitar la anchura de lectura, dividir el proceso en pasos o acompañar la acción principal con paneles de ayuda y contexto.
+### Diseño en dos columnas
 
-Del mismo modo, si una tarea implica varias decisiones o varios bloques de datos, una buena distribución visual puede reducir la carga cognitiva y facilitar el seguimiento del proceso.
+Puede utilizarse para relacionar una entrada con su resultado o para acompañar un formulario con ayuda contextual. En pantallas pequeñas, las columnas pasan a mostrarse una debajo de otra.
 
-## Técnicas de usabilidad y UX
+```html
+<!-- El contenedor limita y centra el contenido general -->
+<div class="container my-4">
+  <div class="row g-4">
+    <section class="col-12 col-lg-5" aria-labelledby="entrada">
+      <h2 id="entrada">Texto original</h2>
+      <!-- Controles de entrada -->
+    </section>
+    <section class="col-12 col-lg-7" aria-labelledby="resultado">
+      <h2 id="resultado">Resultado</h2>
+      <div class="border rounded p-3" role="status" aria-live="polite"></div>
+    </section>
+  </div>
+</div>
+```
 
-Para asegurar de que nuestros diseños son usables y tienen una buena experiencia de usuario, hay diferentes técnicas y herramientas que podemos utilizar:
+### Formulario centrado
 
-- **Tests de usuario**: observar cómo personas reales interactúan con el sitio.
-- **Análisis de tareas**: identificar los pasos necesarios para completar una tarea.
-- **Prototipos**: diseño preliminar para probar la estructura antes de desarrollar.
-- **Mapas de calor**: visualizar dónde hacen clic y se enfocan los usuarios.
-- **Encuestas y entrevistas**: recopilar opiniones y emociones.
-- **A/B testing**: comparar dos versiones para ver cuál rinde mejor.
-- **Personas**: perfiles ficticios que representan usuarios reales para diseñar pensando en sus necesidades.
+En formularios lineales y sencillos, una anchura limitada mejora la lectura y evita campos innecesariamente largos.
 
-Usar todas las técnicas y herramientas es muy complicado, a no ser que seamos corporaciones muy grandes con equipos específicos. Por ejemplo, en empresas como Spotify hay equipos de decenas de personas solo para estudiar la mejor ubicación de botones, la mejor forma de crear un formulario o simular perfiles de personas para mejorar el proceso de suscripción a su servicio.
+```html
+<main class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <h1>Enviar solicitud</h1>
+      <!-- Formulario -->
+    </div>
+  </div>
+</main>
+```
+
+### Avisar antes de salir
+
+Si hay cambios sin guardar, puede mostrarse el aviso estándar del navegador antes de abandonar la página. Los navegadores actuales no permiten personalizar el texto del diálogo.
+
+```js
+// Localiza el formulario y registra si hay cambios pendientes.
+const formulario = document.querySelector('#solicitud')
+let cambiosSinGuardar = false
+
+// Marca el formulario como modificado.
+formulario?.addEventListener('input', () => {
+  cambiosSinGuardar = true
+})
+
+// Limpia la marca cuando se envía correctamente.
+formulario?.addEventListener('submit', () => {
+  cambiosSinGuardar = false
+})
+
+// Controla el cierre, la recarga o la salida del documento.
+window.addEventListener('beforeunload', (evento) => {
+  if (!cambiosSinGuardar) return
+  evento.preventDefault()
+  evento.returnValue = ''
+})
+```
+
+En una SPA, `beforeunload` no controla los cambios de ruta internos. En Vue Router debe combinarse con `onBeforeRouteLeave`:
+
+```vue
+<script setup lang="ts">
+import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { onBeforeRouteLeave } from 'vue-router'
+
+// Mantiene el estado de los cambios pendientes.
+const cambiosSinGuardar = ref(false)
+
+// Prepara el aviso nativo para cerrar o recargar el documento.
+function avisarAntesDeSalir(evento: BeforeUnloadEvent) {
+  if (!cambiosSinGuardar.value) return
+  evento.preventDefault()
+  evento.returnValue = ''
+}
+
+// Registra y elimina el evento con el ciclo de vida del componente.
+onMounted(() => window.addEventListener('beforeunload', avisarAntesDeSalir))
+onBeforeUnmount(() => window.removeEventListener('beforeunload', avisarAntesDeSalir))
+
+// Controla la navegación interna de Vue Router.
+onBeforeRouteLeave(() => {
+  if (!cambiosSinGuardar.value) return true
+  return window.confirm('Hay cambios sin guardar. ¿Quieres salir de esta página?')
+})
+</script>
+```

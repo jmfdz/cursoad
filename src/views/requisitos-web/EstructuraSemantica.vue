@@ -33,7 +33,7 @@
     <p>
       Otra mala práctica es crear títulos cambiando el aspecto visual, por ejemplo a un párrafo
       para hacerlo más grande y que visualmente parezca un título en lugar de utilizar las
-      etiquetas de encabezado (`h1`, `h2`, `h3`...).
+      etiquetas de encabezado (<code>h1</code>, <code>h2</code>, <code>h3</code>...).
     </p>
 
     <h2>Estructura de una página web</h2>
@@ -42,32 +42,48 @@
       esqueleto de nuestra página web que separe las diferentes secciones y elementos de la página.
     </p>
     <p>
-      El contenido principal debe identificarse con la etiqueta `main`. Si la página tiene una
-      cabecera común, conviene marcarla con `header`; también se pueden incluir otras etiquetas
-      como `footer` para el pie de página.
+      El contenido principal debe identificarse con la etiqueta <code>main</code>. Si la página tiene
+      una cabecera común, conviene marcarla con <code>header</code>; también se pueden incluir otras
+      etiquetas como <code>footer</code> para el pie de página.
     </p>
     <p>
-      Además, si utilizamos menús de navegación, también deberíamos utilizar etiquetas `nav` para
-      especificar que es un menú de navegación.
+      Además, si utilizamos menús de navegación, también deberíamos utilizar etiquetas
+      <code>nav</code> para especificar que es un menú de navegación.
+    </p>
+    <p>
+      En la etiqueta <code>html</code> también debemos indicar el idioma principal de la página, por
+      ejemplo <code>&lt;html lang="es"&gt;</code> para español. Este requisito se explicará con más
+      detalle en el apartado de idioma.
     </p>
 
     <h2>Título de página</h2>
     <p>
       Otro requisito de accesibilidad es que todo documento web tenga definido un título con la
-      etiqueta `&lt;title&gt;` dentro del `&lt;head&gt;`. Este título se aconseja que:
+      etiqueta <code>&lt;title&gt;</code> dentro del <code>&lt;head&gt;</code>. Este título se aconseja que:
     </p>
     <ul>
       <li>sea descriptivo y conciso, para no tener que leer mucho contenido,</li>
       <li>sea único en las diferentes páginas del sitio, para saber en qué página estamos,</li>
-      <li>coincida con el `h1` de la página, para evitar confusiones.</li>
+      <li>coincida con el <code>h1</code> de la página, para evitar confusiones.</li>
     </ul>
     <p>
       Pongamos el ejemplo de una web en la que tiene el mismo título en dos páginas: una es la
       página de inicio de la UA y la otra la de Actualidad Universitaria. ¿Qué ocurre si las dos
-      tienen el mismo `title`, “Universidad de Alicante”?
+      tienen el mismo <code>title</code>, “Universidad de Alicante”?
     </p>
+    <figure class="my-4">
+      <img
+        src="/curso-media/image5.png"
+        alt="Dos pestañas del navegador identificadas como Universidad de Alicante y Revista digital de la Universidad de Alicante."
+        class="figure-img img-fluid rounded-4 border shadow-sm"
+        loading="lazy"
+      />
+      <figcaption>
+        Los títulos diferentes permiten identificar cada página en las pestañas del navegador.
+      </figcaption>
+    </figure>
     <p>
-      En las pestañas del navegador se puede leer el `title`. Al ser diferentes, podremos
+      En las pestañas del navegador se puede leer el <code>title</code>. Al ser diferentes, podremos
       diferenciarlas; en otro caso, no sabremos en qué pestaña está cada contenido.
     </p>
     <p>Veamos un ejemplo completo con título, cabecera, contenido principal y pie de página:</p>
@@ -106,17 +122,18 @@
     </p>
 
     <p>
-      Hablamos de las etiquetas `h1`, `h2`, `h3`, `h4`, `h5` y `h6`. Debe fomentarse su uso en
-      lugar de otros elementos para marcar las diferentes secciones de una web.
+      Hablamos de las etiquetas <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>,
+      <code>h5</code> y <code>h6</code>. Debe fomentarse su uso en lugar de otros elementos para
+      marcar las diferentes secciones de una web.
     </p>
     <p>
-      Como comentábamos en la sección anterior, conviene que cada página tenga un `h1` que
+      Como comentábamos en la sección anterior, conviene que cada página tenga un <code>h1</code> que
       identifique su tema principal y, a partir de ahí, incluir los diferentes apartados usando los
-      siguientes niveles, por ejemplo el segundo nivel `h2`.
+      siguientes niveles, por ejemplo el segundo nivel <code>h2</code>.
     </p>
     <p>
       Conviene no saltar niveles sin una relación clara entre apartados. Por ejemplo, después de un
-      `h1` normalmente aparecerá un `h2`, no un `h3`.
+      <code>h1</code> normalmente aparecerá un <code>h2</code>, no un <code>h3</code>.
     </p>
     <p>
       Tampoco se deben crear encabezados consecutivos del mismo nivel y que no tengan elementos
@@ -138,14 +155,15 @@
 &lt;h3&gt;Enlace a noticia 2&lt;/h3&gt;
 &lt;p&gt;Descripción noticia 2&lt;/p&gt;
 &lt;h3&gt;Enlace a noticia 3&lt;/h3&gt;
-&lt;p&gt;Descripción noticia 3&lt;/p&gt;</code></pre>
-    <pre class="course-code"><code>&lt;h2&gt;Eventos&lt;/h2&gt;
+&lt;p&gt;Descripción noticia 3&lt;/p&gt;
+&lt;h2&gt;Eventos&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;Evento 1&lt;/li&gt;
   &lt;li&gt;Evento 2&lt;/li&gt;
   &lt;li&gt;Evento 3&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;La UA en Cifras&lt;/h2&gt;</code></pre>
+&lt;h2&gt;La UA en cifras&lt;/h2&gt;
+&lt;p&gt;Datos destacados de la Universidad de Alicante.&lt;/p&gt;</code></pre>
 
     <p>
       En definitiva, nunca debemos simular elementos y deberemos crearlos de la forma correcta

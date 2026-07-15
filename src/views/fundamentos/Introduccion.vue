@@ -51,8 +51,9 @@
     <h2>Cómo acceden las personas al contenido</h2>
     <p>
       Las personas con discapacidad utilizan productos de apoyo o funciones de accesibilidad del
-      sistema para acceder al contenido digital. No son casos raros ni excepcionales: forman parte
-      del uso real de la tecnología.
+      sistema para percibir el contenido, navegar e interactuar. Un producto de apoyo puede ser un
+      programa, como un lector de pantalla, o un dispositivo, como una línea braille o un
+      conmutador. No son casos raros ni excepcionales: forman parte del uso real de la tecnología.
     </p>
     <ul>
       <li>Si no puedo ver, puedo utilizar un lector de pantalla.</li>

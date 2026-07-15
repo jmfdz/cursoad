@@ -24,6 +24,71 @@
       Si estos estados no están pensados desde el principio, es frecuente acabar mostrando mensajes
       ambiguos, pantallas vacías o cambios de interfaz que el usuario no entiende.
     </p>
+    <pre class="course-code"><code>&lt;!-- Estado de carga: informa sin interrumpir --&gt;
+&lt;div class="alert alert-info" role="status"&gt;
+  Cargando solicitudes…
+&lt;/div&gt;
+
+&lt;!-- Estado de éxito: confirma que la acción ha terminado --&gt;
+&lt;div class="alert alert-success" role="status"&gt;
+  La solicitud se ha guardado correctamente.
+&lt;/div&gt;
+
+&lt;!-- Estado de error: se anuncia de forma inmediata --&gt;
+&lt;div class="alert alert-danger" role="alert"&gt;
+  No se ha podido guardar. Revisa los campos marcados.
+&lt;/div&gt;</code></pre>
+
+    <h3>Estados reactivos en Vue 3 y TypeScript</h3>
+    <p>
+      En Vue, estos mensajes pueden mostrarse según el estado de la petición. El marcado Bootstrap
+      sigue siendo el mismo, pero el contenido se actualiza mediante variables reactivas.
+    </p>
+    <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+import { ref } from 'vue'
+
+// Controla si la petición está en curso.
+const guardando = ref(false)
+
+// Guarda por separado los mensajes de éxito y error.
+const mensajeExito = ref('')
+const mensajeError = ref('')
+
+// Envía los datos y actualiza el estado visible de la interfaz.
+async function guardarSolicitud() {
+  guardando.value = true
+  mensajeExito.value = ''
+  mensajeError.value = ''
+
+  try {
+    const respuesta = await fetch('/api/solicitudes', { method: 'POST' })
+    if (!respuesta.ok) throw new Error('No se ha podido guardar')
+
+    mensajeExito.value = 'La solicitud se ha guardado correctamente.'
+  } catch {
+    mensajeError.value = 'No se ha podido guardar. Revisa los campos marcados.'
+  } finally {
+    guardando.value = false
+  }
+}
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;!-- El botón mantiene su nombre y evita envíos repetidos durante la carga. --&gt;
+  &lt;button class="btn btn-primary" type="button"
+    :disabled="guardando" @click="guardarSolicitud"&gt;
+    Guardar solicitud
+  &lt;/button&gt;
+
+  &lt;!-- Los mensajes se incorporan al DOM solo cuando son necesarios. --&gt;
+  &lt;p v-if="guardando" class="alert alert-info" role="status"&gt;
+    Guardando solicitud…
+  &lt;/p&gt;
+  &lt;p v-if="mensajeExito" class="alert alert-success" role="status"
+    v-text="mensajeExito"&gt;&lt;/p&gt;
+  &lt;p v-if="mensajeError" class="alert alert-danger" role="alert"
+    v-text="mensajeError"&gt;&lt;/p&gt;
+&lt;/template&gt;</code></pre>
 
     <h2>Feedback inmediato</h2>
     <p>
@@ -55,6 +120,14 @@
       <li>Es mejor <strong>No se ha podido guardar la solicitud. Revisa los campos marcados.</strong> que un mensaje genérico como <strong>Error inesperado</strong>.</li>
       <li>Es mejor <strong>Todavía no tienes solicitudes creadas</strong> que mostrar una pantalla vacía sin explicación.</li>
     </ul>
+    <pre class="course-code"><code>&lt;!-- Textos ambiguos --&gt;
+&lt;button type="button" class="btn btn-primary"&gt;Aceptar&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary"&gt;Continuar&lt;/button&gt;
+
+&lt;!-- Textos que describen la acción --&gt;
+&lt;button type="submit" class="btn btn-primary"&gt;Guardar cambios&lt;/button&gt;
+&lt;button type="submit" class="btn btn-primary"&gt;Enviar solicitud&lt;/button&gt;</code></pre>
+    <p>Además de redactarlos con claridad, conviene decidir cómo y cuándo se mostrarán:</p>
     <ul>
       <li>Los mensajes de éxito deben confirmar la acción realizada y, si procede, orientar sobre el siguiente paso.</li>
       <li>Los mensajes de error deben explicar qué ha fallado y cómo corregirlo.</li>
