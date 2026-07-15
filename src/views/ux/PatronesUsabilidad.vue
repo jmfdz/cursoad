@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import CodeTabs from '../../components/CodeTabs.vue'
+</script>
+
 <template>
   <div>
     <p>
@@ -11,7 +15,9 @@
       Puede utilizarse para relacionar una entrada con su resultado o para acompañar un formulario
       con ayuda contextual. En pantallas pequeñas, las columnas pasan a mostrarse una debajo de otra.
     </p>
-    <pre class="course-code"><code>&lt;!-- El contenedor limita y centra el contenido general. --&gt;
+    <CodeTabs label="Implementación del diseño en dos columnas">
+      <template #js>
+        <pre class="course-code"><code>&lt;!-- El contenedor limita y centra el contenido general. --&gt;
 &lt;div class="container my-4"&gt;
   &lt;!-- La fila crea separación entre las dos zonas. --&gt;
   &lt;div class="row g-4"&gt;
@@ -31,36 +37,14 @@
     &lt;/section&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+      </template>
 
-    <h2>Formulario centrado</h2>
-    <p>
-      En formularios lineales y sencillos, una anchura limitada mejora la lectura y evita campos
-      innecesariamente largos.
-    </p>
-    <pre class="course-code"><code>&lt;!-- El elemento main suele estar en el layout general de la aplicación. --&gt;
-&lt;main class="container my-5"&gt;
-  &lt;!-- justify-content-center centra la columna dentro de la fila. --&gt;
-  &lt;div class="row justify-content-center"&gt;
-    &lt;!-- La anchura aumenta de forma progresiva según la pantalla. --&gt;
-    &lt;div class="col-12 col-md-8 col-lg-6"&gt;
-      &lt;h1&gt;Enviar solicitud&lt;/h1&gt;
-      &lt;form&gt;
-        &lt;div class="mb-3"&gt;
-          &lt;label for="asunto" class="form-label"&gt;Asunto&lt;/label&gt;
-          &lt;input id="asunto" class="form-control" type="text" required&gt;
-        &lt;/div&gt;
-        &lt;button class="btn btn-primary" type="submit"&gt;Enviar solicitud&lt;/button&gt;
-      &lt;/form&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/main&gt;</code></pre>
-
-    <h3>Maquetación y datos reactivos en Vue</h3>
-    <p>
-      Las clases de Bootstrap se utilizan igual dentro del <code>template</code>. Vue se añade para
-      enlazar los campos y actualizar el resultado sin recargar la página.
-    </p>
-    <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+      <template #vue>
+        <p>
+          Las clases de Bootstrap se utilizan igual dentro del <code>template</code>. Vue se añade
+          para enlazar los campos y actualizar el resultado sin recargar la página.
+        </p>
+        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
 import { computed, ref } from 'vue'
 
 // Mantiene sincronizado el contenido del campo.
@@ -88,13 +72,54 @@ const resultado = computed(() =&gt; texto.value.trim().toUpperCase())
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/template&gt;</code></pre>
+      </template>
+
+      <template #preview>
+        <div class="row g-4">
+          <section class="col-12 col-lg-5" aria-labelledby="preview-entrada">
+            <h3 id="preview-entrada" class="h5">Texto original</h3>
+            <label for="preview-texto" class="form-label">Contenido</label>
+            <textarea id="preview-texto" class="form-control" rows="4"></textarea>
+          </section>
+          <section class="col-12 col-lg-7" aria-labelledby="preview-resultado">
+            <h3 id="preview-resultado" class="h5">Resultado</h3>
+            <div class="border rounded p-3">El resultado aparecerá aquí.</div>
+          </section>
+        </div>
+      </template>
+    </CodeTabs>
+
+    <h2>Formulario centrado</h2>
+    <p>
+      En formularios lineales y sencillos, una anchura limitada mejora la lectura y evita campos
+      innecesariamente largos. En Vue se mantienen las mismas clases de Bootstrap.
+    </p>
+    <pre class="course-code"><code>&lt;!-- El elemento main suele estar en el layout general de la aplicación. --&gt;
+&lt;main class="container my-5"&gt;
+  &lt;!-- justify-content-center centra la columna dentro de la fila. --&gt;
+  &lt;div class="row justify-content-center"&gt;
+    &lt;!-- La anchura aumenta de forma progresiva según la pantalla. --&gt;
+    &lt;div class="col-12 col-md-8 col-lg-6"&gt;
+      &lt;h1&gt;Enviar solicitud&lt;/h1&gt;
+      &lt;form&gt;
+        &lt;div class="mb-3"&gt;
+          &lt;label for="asunto" class="form-label"&gt;Asunto&lt;/label&gt;
+          &lt;input id="asunto" class="form-control" type="text" required&gt;
+        &lt;/div&gt;
+        &lt;button class="btn btn-primary" type="submit"&gt;Enviar solicitud&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;</code></pre>
 
     <h2>Procesos por pasos y paneles</h2>
     <p>
       Un proceso largo puede dividirse en pasos claros. Los paneles son más adecuados cuando hay
       varios grupos de información que deben consultarse o compararse a la vez.
     </p>
-    <pre class="course-code"><code>&lt;!-- La navegación indica que el listado representa el progreso. --&gt;
+    <CodeTabs label="Implementación de procesos por pasos y paneles">
+      <template #js>
+        <pre class="course-code"><code>&lt;!-- La navegación indica que el listado representa el progreso. --&gt;
 &lt;nav aria-label="Progreso de la solicitud"&gt;
   &lt;ol class="nav nav-pills gap-2 mb-4"&gt;
     &lt;li class="nav-item"&gt;
@@ -109,8 +134,8 @@ const resultado = computed(() =&gt; texto.value.trim().toUpperCase())
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/nav&gt;</code></pre>
-    <p>Para un panel de seguimiento puede utilizarse la misma cuadrícula:</p>
-    <pre class="course-code"><code>&lt;!-- Cada estado se muestra como una columna del panel. --&gt;
+        <p>Para un panel de seguimiento puede utilizarse la misma cuadrícula:</p>
+        <pre class="course-code"><code>&lt;!-- Cada estado se muestra como una columna del panel. --&gt;
 &lt;div class="row g-3"&gt;
   &lt;!-- La sección tiene un encabezado que identifica su contenido. --&gt;
   &lt;section class="col-12 col-lg-4" aria-labelledby="pendientes"&gt;
@@ -141,13 +166,14 @@ const resultado = computed(() =&gt; texto.value.trim().toUpperCase())
     &lt;/div&gt;
   &lt;/section&gt;
 &lt;/div&gt;</code></pre>
+      </template>
 
-    <h3>Pasos y paneles generados con Vue y TypeScript</h3>
-    <p>
-      Si los pasos o los paneles proceden del estado de la aplicación, pueden generarse con
-      <code>v-for</code> y actualizarse de forma reactiva.
-    </p>
-    <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+      <template #vue>
+        <p>
+          Si los pasos o los paneles proceden del estado de la aplicación, pueden generarse con
+          <code>v-for</code> y actualizarse de forma reactiva.
+        </p>
+        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
 // Define los pasos en el mismo orden en que se realizan.
@@ -205,13 +231,21 @@ const paneles = [
     &lt;/section&gt;
   &lt;/div&gt;
 &lt;/template&gt;</code></pre>
+      </template>
+    </CodeTabs>
 
     <h2>Avisar antes de salir</h2>
     <p>
       Si hay cambios sin guardar, puede mostrarse el aviso estándar del navegador antes de
       abandonar la página. Los navegadores actuales no permiten personalizar el texto del diálogo.
     </p>
-    <pre class="course-code"><code>// Localiza el formulario que puede contener cambios pendientes.
+    <CodeTabs label="Implementación del aviso de cambios sin guardar">
+      <template #js>
+        <p>
+          En una página convencional, <code>beforeunload</code> controla el cierre, la recarga o la
+          salida del documento.
+        </p>
+        <pre class="course-code"><code>// Localiza el formulario que puede contener cambios pendientes.
 const formulario = document.querySelector('#solicitud')
 
 // Registra si el usuario ha modificado algún dato.
@@ -234,14 +268,15 @@ window.addEventListener('beforeunload', (evento) =&gt; {
   evento.preventDefault()
   evento.returnValue = ''
 })</code></pre>
+      </template>
 
-    <h3>Aviso de salida en una SPA con Vue 3</h3>
-    <p>
-      En una SPA hay que controlar dos salidas distintas. El evento <code>beforeunload</code> se
-      ocupa de cerrar o recargar la página. <code>onBeforeRouteLeave</code> controla la navegación
-      interna de Vue Router.
-    </p>
-    <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+      <template #vue>
+        <p>
+          En una SPA hay que controlar dos salidas distintas. <code>beforeunload</code> se ocupa de
+          cerrar o recargar la página y <code>onBeforeRouteLeave</code> de Vue Router controla la
+          navegación interna.
+        </p>
+        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 
@@ -286,5 +321,7 @@ function guardar() {
     &lt;button class="btn btn-primary mt-3" type="submit"&gt;Guardar cambios&lt;/button&gt;
   &lt;/form&gt;
 &lt;/template&gt;</code></pre>
+      </template>
+    </CodeTabs>
   </div>
 </template>

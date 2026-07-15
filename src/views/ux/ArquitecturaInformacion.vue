@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import CodeTabs from '../../components/CodeTabs.vue'
+</script>
+
 <template>
   <div>
     <p>
@@ -48,8 +52,10 @@
       El patrón elegido debe ayudar a orientarse, no añadir capas innecesarias. Si una navegación
       requiere demasiados clics o demasiada memoria, probablemente está mal resuelta.
     </p>
-    <p>Por ejemplo, unas migas de pan pueden marcar la jerarquía y la página actual:</p>
-    <pre class="course-code"><code>&lt;!-- La navegación tiene un nombre que indica su finalidad. --&gt;
+    <CodeTabs label="Implementación de la navegación de una sección">
+      <template #js>
+        <p>Por ejemplo, unas migas de pan pueden marcar la jerarquía y la página actual:</p>
+        <pre class="course-code"><code>&lt;!-- La navegación tiene un nombre que indica su finalidad. --&gt;
 &lt;nav aria-label="Migas de pan"&gt;
   &lt;ol class="breadcrumb"&gt;
     &lt;!-- Los niveles anteriores son enlaces. --&gt;
@@ -61,8 +67,8 @@
   &lt;/ol&gt;
 &lt;/nav&gt;</code></pre>
 
-    <p>En una navegación local, el enlace activo también debe identificarse en el código:</p>
-    <pre class="course-code"><code>&lt;!-- Esta navegación solo contiene apartados de la solicitud. --&gt;
+        <p>En una navegación local, el enlace activo también debe identificarse en el código:</p>
+        <pre class="course-code"><code>&lt;!-- Esta navegación solo contiene apartados de la solicitud. --&gt;
 &lt;nav aria-label="Apartados de la solicitud"&gt;
   &lt;ul class="nav nav-pills"&gt;
     &lt;li class="nav-item"&gt;
@@ -74,13 +80,14 @@
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;</code></pre>
+      </template>
 
-    <h3>Navegación SPA con Vue Router</h3>
-    <p>
-      En una SPA se utiliza <code>RouterLink</code> para cambiar de vista sin recargar la página.
-      La ruta actual permite aplicar el estilo activo y el atributo <code>aria-current</code>.
-    </p>
-    <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+      <template #vue>
+        <p>
+          En una SPA se utiliza <code>RouterLink</code> para cambiar de vista sin recargar la página.
+          La ruta actual permite aplicar el estilo activo y <code>aria-current</code>.
+        </p>
+        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
 import { useRoute } from 'vue-router'
 
 // Obtiene la ruta reactiva que está mostrando la aplicación.
@@ -119,6 +126,8 @@ function esPaginaActual(nombre: string) {
     &lt;/ul&gt;
   &lt;/nav&gt;
 &lt;/template&gt;</code></pre>
+      </template>
+    </CodeTabs>
 
     <h2>Consistencia entre pantallas</h2>
     <p>

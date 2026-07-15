@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import CodeTabs from '../../components/CodeTabs.vue'
+</script>
+
 <template>
   <div>
     <p>
@@ -24,7 +28,10 @@
       Si estos estados no están pensados desde el principio, es frecuente acabar mostrando mensajes
       ambiguos, pantallas vacías o cambios de interfaz que el usuario no entiende.
     </p>
-    <pre class="course-code"><code>&lt;!-- Estado de carga: informa sin interrumpir --&gt;
+    <CodeTabs label="Implementación de los estados de una interfaz">
+      <template #js>
+        <p>En HTML y JavaScript, los mensajes se incorporan o actualizan al cambiar el estado:</p>
+        <pre class="course-code"><code>&lt;!-- Estado de carga: informa sin interrumpir --&gt;
 &lt;div class="alert alert-info" role="status"&gt;
   Cargando solicitudes…
 &lt;/div&gt;
@@ -38,13 +45,14 @@
 &lt;div class="alert alert-danger" role="alert"&gt;
   No se ha podido guardar. Revisa los campos marcados.
 &lt;/div&gt;</code></pre>
+      </template>
 
-    <h3>Estados reactivos en Vue 3 y TypeScript</h3>
-    <p>
-      En Vue, estos mensajes pueden mostrarse según el estado de la petición. El marcado Bootstrap
-      sigue siendo el mismo, pero el contenido se actualiza mediante variables reactivas.
-    </p>
-    <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+      <template #vue>
+        <p>
+          En Vue, los mensajes se muestran según el estado reactivo de la petición. Bootstrap sigue
+          controlando su presentación.
+        </p>
+        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
 // Controla si la petición está en curso.
@@ -89,6 +97,14 @@ async function guardarSolicitud() {
   &lt;p v-if="mensajeError" class="alert alert-danger" role="alert"
     v-text="mensajeError"&gt;&lt;/p&gt;
 &lt;/template&gt;</code></pre>
+      </template>
+
+      <template #preview>
+        <p class="alert alert-info">Cargando solicitudes…</p>
+        <p class="alert alert-success">La solicitud se ha guardado correctamente.</p>
+        <p class="alert alert-danger mb-0">No se ha podido guardar. Revisa los campos marcados.</p>
+      </template>
+    </CodeTabs>
 
     <h2>Feedback inmediato</h2>
     <p>
