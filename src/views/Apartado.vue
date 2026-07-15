@@ -61,6 +61,9 @@ const subtitulos = computed(() => subtitulosDetectados.value)
 const hashActual = computed(() => route.hash.replace('#', ''))
 const idIndiceMovil = computed(() => `indice-apartado-${props.bloqueSlug}-${props.apartadoId}`)
 
+const rutaPublica = (ruta: string) =>
+  ruta.startsWith('/') ? `${import.meta.env.BASE_URL}${ruta.slice(1)}` : ruta
+
 const normalizarPreviewHtml = (html: string) =>
   html.replace(
     '<h3 class="h4 mb-3">Lista de Solicitudes</h3>',
@@ -128,7 +131,7 @@ onMounted(() => {
           <div v-if="apartado.figure" class="mb-4">
             <figure class="figure mb-0">
               <img
-                :src="apartado.figure.src"
+                :src="rutaPublica(apartado.figure.src)"
                 :alt="apartado.figure.alt"
                 class="figure-img img-fluid rounded-4 border shadow-sm"
                 loading="lazy"
@@ -193,7 +196,7 @@ onMounted(() => {
                   class="col-lg-6"
                 >
                   <a
-                    :href="example.href"
+                    :href="rutaPublica(example.href)"
                     class="card h-100 border text-decoration-none text-body"
                     target="_blank"
                     rel="noreferrer"
@@ -217,7 +220,7 @@ onMounted(() => {
               <div v-for="figure in apartado.gallery" :key="figure.src" class="col-md-6">
                 <figure class="figure mb-0">
                   <img
-                    :src="figure.src"
+                    :src="rutaPublica(figure.src)"
                     :alt="figure.alt"
                     class="figure-img img-fluid rounded-4 border shadow-sm mb-2"
                     loading="lazy"

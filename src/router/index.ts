@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import { bloquesCurso } from '../curso'
 
 const rutasBloque = bloquesCurso.map((bloque) => ({
@@ -17,8 +17,12 @@ const rutasApartado = bloquesCurso.flatMap((bloque) =>
   })),
 )
 
+const history = import.meta.env.MODE === 'ua'
+  ? createWebHashHistory(import.meta.env.BASE_URL)
+  : createWebHistory(import.meta.env.BASE_URL)
+
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
