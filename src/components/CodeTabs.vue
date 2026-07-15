@@ -53,7 +53,7 @@ function manejarTeclado(evento: KeyboardEvent, actual: TipoPestana) {
 </script>
 
 <template>
-  <div class="mb-4">
+  <div class="code-tabs mb-4">
     <div class="nav nav-tabs" role="tablist" :aria-label="label">
       <button
         :id="`${idBase}-tab-js`"
@@ -68,7 +68,7 @@ function manejarTeclado(evento: KeyboardEvent, actual: TipoPestana) {
         @click="activarPestana('js')"
         @keydown="manejarTeclado($event, 'js')"
       >
-        JavaScript
+        JS
       </button>
       <button
         :id="`${idBase}-tab-vue`"
@@ -83,7 +83,7 @@ function manejarTeclado(evento: KeyboardEvent, actual: TipoPestana) {
         @click="activarPestana('vue')"
         @keydown="manejarTeclado($event, 'vue')"
       >
-        Vue.js + TypeScript
+        Vue
       </button>
       <button
         v-if="slots.preview"
@@ -136,3 +136,16 @@ function manejarTeclado(evento: KeyboardEvent, actual: TipoPestana) {
     </div>
   </div>
 </template>
+
+<style scoped>
+.code-tabs .nav-link.active {
+  border-color: var(--bs-primary);
+  background-color: var(--bs-primary);
+  color: #fff;
+}
+
+.code-tabs .nav-link.active:hover,
+.code-tabs .nav-link.active:focus-visible {
+  color: #fff;
+}
+</style>
