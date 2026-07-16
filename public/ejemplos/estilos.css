@@ -6,6 +6,15 @@ body {
   background-color: #ededed;
 }
 
+.text-muted,
+.form-text {
+  color: #4a4a4a !important;
+}
+
+.text-danger {
+  color: #9f1239 !important;
+}
+
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, span {
   word-break: break-word;
 }
@@ -46,7 +55,7 @@ button.btn-primary {
 /* Tablas */
 caption {
   caption-side: top;
-  color: #656565;
+  color: #4a4a4a;
 }
 table.table thead tr th {
   background-color: #005682;
@@ -67,7 +76,7 @@ table.table thead tr th {
 }
 
 .table{
-  border-color: #cccccc;
+  border-color: #7f7f7f;
 }
 
 /* Foco en formularios */

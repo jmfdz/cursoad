@@ -40,6 +40,11 @@ const router = createRouter({
       name: 'home',
       component: () => import('../views/Inicio.vue'),
     },
+    {
+      path: '/ejemplos',
+      name: 'ejemplos',
+      component: () => import('../views/ejemplos/Ejemplos.vue'),
+    },
     ...rutasBloque,
     ...rutasApartado,
   ],
