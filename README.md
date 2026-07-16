@@ -1,5 +1,41 @@
-# Vue 3 + TypeScript + Vite
+# Curso de accesibilidad, usabilidad y UX
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Generar la web estática
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+El proyecto está configurado para publicarse en:
+
+```text
+https://web.ua.es/accesibilidad/docx/
+```
+
+Instala las dependencias y genera la versión para la web de la UA:
+
+```sh
+pnpm install
+pnpm run build:ua
+```
+
+Vite crea el resultado en `dist/`. Hay que copiar **el contenido de esa carpeta**
+al directorio `accesibilidad/docx/` del servidor, de modo que el fichero principal
+quede publicado como `accesibilidad/docx/index.html`.
+
+Las rutas internas usan `#` para que todas las páginas funcionen en un alojamiento
+estático sin reglas de reescritura. Por ejemplo:
+
+```text
+https://web.ua.es/accesibilidad/docx/#/documentos/word
+```
+
+## Generar y desplegar en Cloudflare
+
+El perfil predeterminado conserva la publicación en la raíz del dominio de
+Cloudflare y sus rutas sin `#`:
+
+```sh
+pnpm run build
+pnpm run deploy
+```
+
+Cada compilación vuelve a crear `dist/`. Por tanto, antes de copiar los ficheros
+a la web de la UA hay que ejecutar `pnpm run build:ua`; antes de desplegar en
+Cloudflare, `pnpm run deploy` genera de nuevo la versión adecuada automáticamente.

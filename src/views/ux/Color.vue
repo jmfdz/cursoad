@@ -36,9 +36,9 @@
       <li>14 puntos son 18,666px.</li>
     </ul>
     <p>
-      Podemos decir que a mayor contraste, mayor facilidad de lectura del texto, con independencia
-      de la combinación de colores. En la mayoría de las situaciones, lo más recomendable es texto
-      negro sobre fondo blanco o colores muy cercanos a estos, como gris oscuro y tonos sepia.
+      Un contraste suficiente facilita la lectura, pero no existe una única combinación adecuada
+      para todas las personas. Además de cumplir los mínimos, conviene comprobar el resultado con
+      los colores, tamaños y estados reales de la interfaz.
     </p>
     <p>
       Como podemos observar en los ejemplos del curso, las combinaciones con poco contraste son de
@@ -57,6 +57,15 @@
       contraste entre colores con el objetivo de hacer un buen uso del color en tu web o documento.
       Solo tienes que introducir el color de fondo y el color del texto y aparecerá el resultado.
     </p>
+    <figure class="my-4">
+      <img
+        src="/curso-media/image7.png"
+        alt="Herramienta de contraste de color con ratio 3.83, insuficiente."
+        class="figure-img img-fluid rounded-4 border shadow-sm"
+        loading="lazy"
+      />
+      <figcaption>Ejemplo de una combinación que no alcanza el contraste mínimo.</figcaption>
+    </figure>
     <p>
       Si la ratio alcanza 4.5:1, la combinación cumple el mínimo para texto normal. Para texto
       grande o componentes no textuales el mínimo es 3:1. En caso contrario, tendrás que
@@ -75,27 +84,30 @@
     <p>Veamos un ejemplo incorrecto:</p>
     <p>Nota: La respuesta correcta está en color rojo.</p>
     <p>Pregunta 1: Debemos transmitir información únicamente mediante el color.</p>
-    <p>a) Verdadero</p>
-    <p>b) Falso</p>
+    <ol type="a">
+      <li>Verdadero</li>
+      <li class="text-danger">Falso</li>
+    </ol>
     <p>
       En este ejemplo, una persona ciega será incapaz de saber cuáles son las respuestas correctas,
       puesto que su lector de pantalla no puede interpretar los colores. Lo mismo ocurriría con una
       persona con dificultades para distinguir los colores.
     </p>
     <p>Veamos ahora el mismo ejemplo utilizando una forma alternativa de transmitir la información:</p>
-    <p>Nota: La respuesta correcta está marcada con una X.</p>
+    <p>Nota: La respuesta correcta se indica también mediante texto.</p>
     <p>Pregunta 1: Debemos transmitir información únicamente mediante el color.</p>
-    <p>a) Verdadero</p>
-    <p>b) X Falso</p>
+    <ol type="a">
+      <li>Verdadero</li>
+      <li><strong>Respuesta correcta:</strong> Falso</li>
+    </ol>
     <p>
-      En este ejemplo una persona ciega conocerá las respuestas correctas cuando su lector lea la
-      letra equis.
+      En este ejemplo, la respuesta puede identificarse sin necesidad de percibir el color.
     </p>
 
     <h2>Movimiento y parpadeos</h2>
     <p>
-      Debemos evitar imágenes parpadeantes o con más de tres destellos por segundo, ya que pueden
-      afectar a personas que sufran epilepsia fotosensitiva.
+      Debemos evitar contenidos con más de tres destellos en un segundo, ya que pueden afectar a
+      personas con epilepsia fotosensible.
     </p>
     <p>
       Además, cuando se utilicen animaciones que se inician automáticamente y duran más de cinco
@@ -116,8 +128,9 @@
       diferentes problemas de visión.
     </p>
     <p>
-      Aunque se pueden probar todos, el curso se centra en la categoría “Deuteranomaly”, por ser
-      una de las más extendidas, por ejemplo la variante “Green blind”.
+      Conviene probar varios filtros, por ejemplo los relacionados con la dificultad para percibir
+      determinados tonos verdes. Estas simulaciones ayudan a detectar problemas, pero no sustituyen
+      las pruebas con personas usuarias.
     </p>
     <p>
       En los ejemplos de Bootstrap del curso se puede observar cómo, bajo este tipo de simulación,

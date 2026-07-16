@@ -10,8 +10,9 @@
     <p>
       El diseño inclusivo busca aprovechar toda la diversidad humana al concebir productos y
       servicios, de modo que funcionen para personas con diferentes capacidades, contextos y
-      experiencias. Microsoft lo impulsó públicamente en 2015 al publicar su <i>Inclusive Design
-      Toolkit</i>, que se ha convertido en una referencia para muchos equipos y universidades.
+      experiencias. Microsoft lo ha desarrollado y difundido mediante su
+      <a href="https://devblogs.microsoft.com/premier-developer/microsoft-inclusive-design/" target="_blank" rel="noreferrer">metodología de diseño inclusivo (Inglés)</a>,
+      que se ha convertido en una referencia para muchos equipos y universidades.
     </p>
     <p>
       La propuesta parte de entender la discapacidad como un desajuste entre la persona y el
@@ -64,6 +65,25 @@
       Dicho de otro modo, una interfaz puede ser usable en términos funcionales y, sin embargo,
       generar una mala experiencia si resulta confusa, poco creíble, visualmente descuidada o
       excesivamente fría en la interacción.
+    </p>
+
+    <h2>Cómo evaluar la usabilidad y la experiencia</h2>
+    <p>
+      Para comprobar si nuestros diseños son usables y ofrecen una buena experiencia de usuario,
+      podemos utilizar diferentes técnicas y herramientas:
+    </p>
+    <ul>
+      <li><strong>Tests de usuario</strong>: observar cómo personas reales interactúan con el sitio.</li>
+      <li><strong>Análisis de tareas</strong>: identificar los pasos necesarios para completar una tarea.</li>
+      <li><strong>Prototipos</strong>: probar la estructura antes de desarrollar.</li>
+      <li><strong>Mapas de calor</strong>: visualizar patrones de clic o desplazamiento; no sustituyen la observación directa.</li>
+      <li><strong>Encuestas y entrevistas</strong>: recopilar opiniones y emociones.</li>
+      <li><strong>Pruebas A/B</strong>: comparar dos versiones según un objetivo medible.</li>
+      <li><strong>Personas</strong>: representar necesidades y comportamientos detectados mediante investigación.</li>
+    </ul>
+    <p>
+      No es necesario utilizar todas las técnicas en todos los proyectos. Conviene elegirlas según
+      el objetivo, la fase del diseño y los recursos disponibles.
     </p>
   </div>
 </template>

@@ -6,6 +6,10 @@
       visión para acceder al ordenador, las aplicaciones y la web.
     </p>
     <p>
+      NVDA no se limita a leer el texto visible: también comunica la estructura y la información
+      semántica que recibe del navegador, como encabezados, botones, etiquetas o estados.
+    </p>
+    <p>
       Su interés en este curso no es aprender a usarlo a fondo, sino entender qué información
       recibe una persona cuando la interfaz está bien o mal construida.
     </p>
@@ -38,7 +42,8 @@
       <li>si los enlaces y botones tienen nombres comprensibles,</li>
       <li>si los campos del formulario anuncian su etiqueta, estado y errores,</li>
       <li>si las tablas y regiones se identifican correctamente,</li>
-      <li>y si el recorrido completo puede hacerse sin depender del ratón.</li>
+      <li>si los mensajes o cambios que aparecen sin recargar la página se anuncian,</li>
+      <li>y si una tarea completa puede hacerse sin depender del ratón ni de información exclusivamente visual.</li>
     </ul>
     <p>
       Un lector de pantalla permite descubrir enseguida cuándo una interfaz está pensada solo

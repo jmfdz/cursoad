@@ -29,6 +29,8 @@ Solemos agrupar las necesidades de accesibilidad en cuatro grandes bloques, aunq
 
 Pero también beneficia a muchas situaciones de uso no permanentes: personas mayores cuyas capacidades cambian con la edad, personas con limitaciones temporales, personas con limitaciones situacionales y personas con mala conexión, pantallas pequeñas o dispositivos de entrada distintos al teclado y ratón tradicionales.
 
+Las personas con discapacidad pueden utilizar productos de apoyo, como lectores de pantalla, líneas braille o conmutadores. Estas herramientas necesitan que el contenido y la interfaz estén bien construidos para poder transmitir la información o permitir la interacción.
+
 ## Legislación aplicable
 
 Existe numerosa legislación española, europea e internacional relacionada con la accesibilidad, pero en este curso nos centraremos en las referencias más relevantes para entender por qué la accesibilidad digital no es solo una buena práctica técnica, sino también una cuestión de derechos y de cumplimiento.

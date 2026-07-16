@@ -27,22 +27,22 @@
     <p><strong>Ejemplo:</strong> en una navegación principal conviene colocar las acciones clave al principio o al final.</p>
     <p><strong>Referencias:</strong> <a href="https://lawsofux.com/es/efecto-de-posicion-en-serie/" target="_blank" rel="noreferrer">Laws of UX: Efecto de posición en serie</a>.</p>
 
-    <h3>Efecto Von Restorff</h3>
+    <h3>Efecto von Restorff</h3>
     <p>Un elemento distinto del resto tiene más probabilidades de ser percibido y recordado.</p>
     <p><strong>Ejemplo:</strong> un botón de “Guardar” puede destacar claramente frente a otras acciones secundarias.</p>
     <p><strong>Referencias:</strong> <a href="https://lawsofux.com/es/efecto-von-restorff/" target="_blank" rel="noreferrer">Laws of UX: Efecto Von Restorff</a>.</p>
 
-    <h3>Ley de Conectividad Uniforme</h3>
+    <h3>Ley de conectividad uniforme</h3>
     <p>Los elementos conectados visualmente se perciben como relacionados.</p>
     <p><strong>Ejemplo:</strong> una línea entre pasos de un proceso ayuda a entender que forman parte de un flujo único.</p>
     <p><strong>Referencias:</strong> <a href="https://lawsofux.com/es/ley-de-conectividad-uniforme/" target="_blank" rel="noreferrer">Laws of UX: Ley de Conectividad Uniforme</a>.</p>
 
-    <h3>Ley de la Semejanza</h3>
+    <h3>Ley de la semejanza</h3>
     <p>Los elementos con apariencia similar se interpretan como pertenecientes al mismo grupo o función.</p>
     <p><strong>Ejemplo:</strong> si todos los enlaces comparten color y subrayado, el usuario aprende rápido qué puede pulsar.</p>
     <p><strong>Referencias:</strong> <a href="https://lawsofux.com/es/ley-de-la-semejanza/" target="_blank" rel="noreferrer">Laws of UX: Ley de la Semejanza</a>.</p>
 
-    <h3>Ley de Proximidad</h3>
+    <h3>Ley de proximidad</h3>
     <p>Los elementos cercanos entre sí tienden a percibirse como relacionados.</p>
     <p><strong>Ejemplo:</strong> la ayuda de un campo debe estar junto al campo y no separada en otra zona de la pantalla.</p>
     <p><strong>Referencias:</strong> <a href="https://lawsofux.com/es/ley-de-proximidad/" target="_blank" rel="noreferrer">Laws of UX: Ley de Proximidad</a>.</p>
@@ -52,7 +52,7 @@
     <p><strong>Ejemplo:</strong> una interfaz con alineaciones claras y pocos adornos se entiende antes que otra recargada.</p>
     <p><strong>Referencias:</strong> <a href="https://lawsofux.com/es/ley-de-pragnanz/" target="_blank" rel="noreferrer">Laws of UX: Ley de Prägnanz</a>.</p>
 
-    <h3>Ley de Región Común</h3>
+    <h3>Ley de región común</h3>
     <p>Los elementos encerrados dentro de un mismo límite visual se perciben como un grupo.</p>
     <p><strong>Ejemplo:</strong> agrupar filtros relacionados en una tarjeta ayuda a entenderlos como una sola unidad.</p>
     <p><strong>Referencias:</strong> <a href="https://lawsofux.com/es/ley-de-region-comun/" target="_blank" rel="noreferrer">Laws of UX: Ley de Región Común</a>.</p>

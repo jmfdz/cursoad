@@ -8,13 +8,13 @@ Además, es mucho más eficiente incorporar la accesibilidad desde el principio 
 
 ## Pruebas automáticas
 
-Las herramientas automáticas detectan con rapidez ciertos errores frecuentes: imágenes sin texto alternativo, campos de formulario sin etiqueta, problemas de contraste, estructura deficiente de encabezados o usos incorrectos de ARIA.
+Una prueba automática analiza el código y la página ya cargada aplicando una colección de reglas. En pocos segundos puede localizar ciertos errores frecuentes: imágenes sin texto alternativo, campos de formulario sin etiqueta, problemas de contraste, estructura deficiente de encabezados o usos incorrectos de ARIA.
 
-Son muy útiles para una primera revisión y para integrar comprobaciones recurrentes en desarrollo, pero no pueden determinar por sí solas si una página es accesible. Que una herramienta no marque errores no significa que la experiencia sea correcta.
+Son muy útiles para una primera revisión y para integrar comprobaciones recurrentes en desarrollo, pero no pueden determinar por sí solas si una página es accesible. Por ejemplo, pueden detectar que una imagen tiene texto alternativo, pero no siempre si ese texto explica correctamente la información que transmite.
 
 ## Pruebas manuales
 
-La revisión manual es imprescindible para comprobar aspectos que una herramienta no puede valorar bien, por ejemplo:
+En una prueba manual, una persona recorre la página y realiza tareas como lo haría un usuario: navega con teclado, amplía el contenido, revisa los textos o utiliza un lector de pantalla. Es imprescindible para comprobar aspectos que una herramienta no puede valorar bien, por ejemplo:
 
 - si un texto alternativo describe de verdad lo que la imagen aporta,
 - si una tabla se entiende y no solo valida,
@@ -26,9 +26,22 @@ Por eso, las pruebas automáticas deben verse como ayuda y apoyo al análisis, n
 
 ## Ejemplo: extensión de CADUA
 
-La extensión de navegador de CADUA para Chrome, Edge, Brave o cualquier navegador Chromium comparte la base de comprobaciones de la aplicación web CADUA, pero añade pruebas que solo pueden ejecutarse desde el propio navegador.
+La extensión de CADUA permite comprobar la página abierta directamente desde Chrome y otros navegadores basados en Chromium. Al ejecutarse en el navegador, también puede revisar contenido generado con JavaScript o disponible después de iniciar sesión.
 
-Al ejecutarse sobre la página ya renderizada, permite revisar estados generados por JavaScript, contraste de color, visibilidad real de elementos o contenidos accesibles solo tras autenticación. Además, puede marcar visualmente sobre la propia interfaz qué elementos presentan errores, lo que agiliza mucho su localización y corrección.
+### Instalar y utilizar la extensión
+
+1. Abre la ficha de CADUA en Chrome Web Store.
+2. Pulsa **Añadir a Chrome** y confirma la instalación cuando el navegador lo solicite.
+3. Abre la página que quieras revisar y pulsa el icono de CADUA para mostrar el panel con los resultados.
+
+### Herramientas de la extensión
+
+Además de la comprobación automática, puedes utilizar estas herramientas de apoyo:
+
+- Jerarquía de encabezados.
+- Imágenes para revisión manual.
+- Enlaces.
+- Atajos de teclado.
 
 ## Revisión mínima recomendable
 
@@ -48,6 +61,8 @@ En este sentido, conviene recordar una idea importante: que una página cumpla p
 ## Uso de un lector de pantalla
 
 NVDA es un lector de pantalla gratuito para Windows utilizado por personas ciegas y con baja visión para acceder al ordenador, las aplicaciones y la web.
+
+NVDA no se limita a leer el texto visible: también comunica la estructura y la información semántica que recibe del navegador, como encabezados, botones, etiquetas o estados.
 
 Su interés en este curso no es aprender a usarlo a fondo, sino entender qué información recibe una persona cuando la interfaz está bien o mal construida.
 
@@ -72,7 +87,8 @@ Al hacer una prueba rápida con lector de pantalla conviene comprobar al menos l
 - si los enlaces y botones tienen nombres comprensibles,
 - si los campos del formulario anuncian su etiqueta, estado y errores,
 - si las tablas y regiones se identifican correctamente,
-- y si el recorrido completo puede hacerse sin depender del ratón.
+- si los mensajes o cambios que aparecen sin recargar la página se anuncian,
+- y si una tarea completa puede hacerse sin depender del ratón ni de información exclusivamente visual.
 
 Un lector de pantalla permite descubrir enseguida cuándo una interfaz está pensada solo visualmente: encabezados simulados, iconos sin nombre, cambios dinámicos no anunciados o formularios que visualmente parecen claros, pero semánticamente no lo son.
 

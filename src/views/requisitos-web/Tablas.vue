@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Las tablas son para estructurar datos, no para maquetar contenido. Para eso están los `div`.</p>
+    <p>Las tablas son para estructurar datos, no para maquetar o colocar contenido visualmente.</p>
     <p>Conviene evitar dividir o combinar celdas cuando no sea necesario, para mantener las tablas sencillas de entender.</p>
     <p>
       Deben tener un título que las titule con la etiqueta `caption`. Por defecto, la etiqueta
@@ -8,8 +8,9 @@
       ajustar su posición con CSS sin perder esa asociación.
     </p>
     <p>
-      Debe diferenciarse claramente cuáles son los encabezados de fila o columna, a poder ser con
-      contraste más alto.
+      Los encabezados de fila o columna deben marcarse con <code>th</code> y asociarse mediante
+      <code>scope="row"</code> o <code>scope="col"</code>. También deben diferenciarse visualmente
+      con contraste suficiente.
     </p>
 
     <h2>Ejemplo de tabla</h2>
@@ -37,9 +38,11 @@
     <h2>Tablas adaptables</h2>
     <p>
       Si la tabla es muy ancha, se recomienda hacerla adaptable con la clase de Bootstrap
-      `table-responsive` para poder desplazarnos con scroll horizontal en dispositivos móviles:
+      <code>table-responsive</code> para poder desplazarnos con scroll horizontal en dispositivos
+      móviles. El contenedor debe poder recibir el foco para que también pueda desplazarse con
+      teclado:
     </p>
-    <pre class="course-code"><code>&lt;div class="table-responsive"&gt;
+    <pre class="course-code"><code>&lt;div class="table-responsive" tabindex="0" role="region" aria-label="Notas de la asignatura"&gt;
   &lt;table&gt;
     ...
   &lt;/table&gt;

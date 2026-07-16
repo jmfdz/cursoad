@@ -28,34 +28,26 @@
     </p>
     <p>Veamos cómo definir la fuente con CSS para toda una página web:</p>
     <pre class="course-code"><code>body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 }</code></pre>
     <p>
-      El <strong>tamaño de la fuente</strong> debe ser suficiente, no aconsejándose bajar de
-      12 puntos y recomendándose utilizar el tamaño de <strong>14 puntos</strong>.
+      El <strong>tamaño de la fuente</strong> debe ser suficiente y permitir que el usuario amplíe
+      el contenido sin perder información ni funcionalidad.
     </p>
     <p>
-      En el desarrollo web debemos utilizar siempre <strong>unidades relativas</strong> para
-      especificar el tamaño. De esta forma el contenido escalará de forma proporcional y se
-      respetará la configuración que pueda tener el usuario.
+      En el desarrollo web conviene utilizar <strong>unidades relativas</strong>, como
+      <code>rem</code>, <code>em</code> o porcentajes, para que el contenido pueda escalar y respete
+      la configuración del usuario.
     </p>
     <p>
       En la mayoría de navegadores actuales el tamaño por defecto es de 16px. Si el tamaño de la
-      raíz no se ha modificado, equivale a `1rem`; `1em` depende en cambio del tamaño del elemento
-      padre.
+      raíz no se ha modificado, equivale a <code>1rem</code>; <code>1em</code> depende en cambio del
+      tamaño del elemento padre.
     </p>
-    <p>
-      Como hemos dicho, si quisiéramos cambiar el tamaño y subirlo a 14 puntos, serían
-      aproximadamente 18px, pero especificando en unidades relativas serían `1.166rem` o `1.166em`.
-    </p>
-    <p>Veamos cómo definir el tamaño para todo el contenido:</p>
-    <pre class="course-code"><code>html {
-  font-size: 1.166rem; /* 14 puntos */
+    <p>Por ejemplo, para aumentar ligeramente el tamaño base del contenido:</p>
+    <pre class="course-code"><code>body {
+  font-size: 1.125rem;
 }</code></pre>
-    <p>
-      Si por ejemplo utilizamos una librería CSS como Bootstrap, al aplicar esta regla todos los
-      tamaños de encabezados, listas y demás elementos escalarán al mismo tiempo.
-    </p>
     <p>
       Por otro lado, <strong>no es aconsejable abusar del texto en mayúsculas</strong>, debido a
       que su legibilidad es más baja y además, en casos de usuarios de líneas braille como personas
@@ -69,22 +61,32 @@
 
     <h2>Formato de párrafo</h2>
     <p>
-      Lo primero que tener en cuenta es que todo texto debe estar incluido en una etiqueta
-      semántica, ya sean botones, enlaces, párrafos, encabezados, etc. Esto quiere decir que
-      etiquetas de maquetación no deben tener texto directamente, ya que su función es maquetar
-      contenido, no texto. Veamos un ejemplo:
+      Lo primero que debemos tener en cuenta es que cada texto debe incluirse en el elemento que
+      corresponda a su función: párrafo, encabezado, enlace, botón, etc. Un <code>div</code> puede
+      contener texto, pero no indica que ese texto sea un párrafo. Veamos un ejemplo:
     </p>
-    <pre class="course-code"><code>&lt;div&gt;¡Hola mundo!&lt;/div&gt; &lt;!-- Mal --&gt;
-&lt;div&gt;&lt;p&gt;¡Hola mundo!&lt;/p&gt;&lt;/div&gt; &lt;!-- Bien --&gt;</code></pre>
+    <pre class="course-code"><code>&lt;div&gt;¡Hola mundo!&lt;/div&gt; &lt;!-- Sin semántica de párrafo --&gt;
+&lt;p&gt;¡Hola mundo!&lt;/p&gt; &lt;!-- Párrafo --&gt;</code></pre>
     <p>
-      Tampoco debemos utilizar las etiquetas `&lt;br&gt;` para incluir saltos de línea, ya que
-      debemos estructurar el texto con párrafos, listas y otros elementos semánticos. En el caso
-      de querer incluir márgenes, debemos realizarlos con reglas CSS.
+      No debemos utilizar <code>&lt;br&gt;</code> para separar párrafos o crear márgenes. Para ello
+      utilizaremos elementos semánticos y reglas CSS. El salto de línea sí puede emplearse cuando
+      forma parte del contenido, por ejemplo en una dirección postal.
     </p>
     <p>
       Respecto a la <strong>alineación del texto</strong> debemos tener en cuenta una serie de
       consideraciones:
     </p>
+    <figure class="my-4">
+      <img
+        src="/curso-media/image4.jpeg"
+        alt="Ejemplo de texto incorrecto justificado y otro correcto alineado a la izquierda."
+        class="figure-img img-fluid rounded-4 border shadow-sm"
+        loading="lazy"
+      />
+      <figcaption>
+        Comparación entre texto justificado y texto alineado a la izquierda.
+      </figcaption>
+    </figure>
     <ul>
       <li>Si pensamos centrar contenido, este debe ser corto y no ocupar más de un par de líneas. En caso contrario puede resultar más difícil su lectura.</li>
       <li><strong>No se debe justificar el texto del contenido a ambos lados de la pantalla</strong>, este formato dificulta su lectura y por tanto su legibilidad.</li>
@@ -100,18 +102,15 @@
     <h2>Texto en imágenes</h2>
     <p>
       <strong>No es aconsejable incluir texto en imágenes</strong> debido a que dificulta su
-      legibilidad. En este caso podríamos tener problemas con el contraste entre colores de fondo y
-      texto de la imagen cuando la imagen se amplía, y por tanto resultará más complicada su
-      lectura para personas con baja visión que utilicen un magnificador de pantalla a niveles
-      altos de ampliación.
+      adaptación y ampliación. También puede impedir que el usuario cambie su presentación o que
+      un lector de pantalla acceda al texto si no se proporciona una alternativa.
     </p>
 
     <h2>Idioma del contenido</h2>
     <p>
-      Tanto si trabajamos páginas web con varios idiomas o tan solo aparecen términos de otra
-      lengua, deberemos <strong>marcar siempre el idioma al que pertenece cada parte del texto</strong>.
-      Esto es de vital importancia debido a que los lectores de pantalla necesitan conocer el idioma
-      del texto para realizar una correcta pronunciación.
+      Tanto si trabajamos con páginas web en varios idiomas como si aparecen fragmentos en otra
+      lengua, deberemos <strong>marcar el idioma al que pertenece cada parte del texto</strong>.
+      Los lectores de pantalla necesitan conocerlo para realizar una pronunciación correcta.
     </p>
     <p>
       Es el caso también de los buscadores como Google, que necesitan saber el idioma de la página
@@ -119,16 +118,15 @@
     </p>
     <p>
       Pongamos el ejemplo de que escribiendo un texto en castellano introducimos la palabra
-      <i>People</i>, para referirnos a la revista con dicho nombre. Si no indicamos de una manera
-      correcta que ese texto está en inglés, el lector de pantalla pronunciará la palabra como si
-      fuera castellano. Si lo hemos marcado correctamente, la pronunciación será la adecuada.
+      <span lang="en">People</span>. Si no indicamos que ese texto está en inglés, el lector de
+      pantalla puede pronunciar la palabra como si fuera castellano.
     </p>
 
     <h2>Establecer el idioma por defecto</h2>
     <p>
-      Para especificar los idiomas en HTML5 disponemos del atributo `lang`, que se puede aplicar a
-      cualquier etiqueta. En la etiqueta debemos pasarle el código del idioma o el locale, por
-      ejemplo `es-ES` para español de España.
+      Para especificar los idiomas en HTML5 disponemos del atributo <code>lang</code>, que se puede
+      aplicar a cualquier etiqueta. Como valor utilizaremos el código de idioma, por ejemplo
+      <code>es</code> para español o <code>es-ES</code> para español de España.
     </p>
     <p>Para indicar que el contenido de la web es en español, escribiríamos:</p>
     <pre class="course-code"><code>&lt;!DOCTYPE html&gt;
@@ -140,7 +138,7 @@
     <h2>Cambios de idioma dentro de la página</h2>
     <p>
       Para marcar que un fragmento de texto está en otro idioma, lo hacemos directamente en el
-      texto deseado. Por ejemplo, marcando la palabra <i>People</i> como palabra inglesa:
+      texto deseado. Por ejemplo, marcando la palabra <span lang="en">People</span> como inglesa:
     </p>
     <pre class="course-code"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;

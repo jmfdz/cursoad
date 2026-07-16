@@ -34,11 +34,23 @@
       al teclado, indicar su estado y permitir que el usuario entienda qué acaba de cambiar en la
       interfaz.
     </p>
+    <ul>
+      <li><strong>Modal</strong>: debe tener un título, mantener el foco dentro mientras está abierto y devolverlo al control que lo abrió al cerrar.</li>
+      <li><strong>Desplegable o acordeón</strong>: el botón debe indicar si está abierto y qué panel controla.</li>
+      <li><strong>Pestañas</strong>: deben identificar la pestaña seleccionada, su panel asociado y permitir la navegación por teclado.</li>
+    </ul>
+    <p>Por ejemplo, el botón de un panel desplegable debe exponer su estado:</p>
+    <pre class="course-code"><code>&lt;button type="button" aria-expanded="false" aria-controls="panel-ayuda"&gt;
+  Mostrar ayuda
+&lt;/button&gt;
+&lt;div id="panel-ayuda" hidden&gt;
+  ...
+&lt;/div&gt;</code></pre>
 
     <h2>Errores frecuentes</h2>
     <ul>
       <li>iconos sin nombre accesible,</li>
-      <li>botones o enlaces que visualmente parecen correctos, pero no reciben foco,</li>
+      <li>controles simulados que no reciben foco o no funcionan con teclado,</li>
       <li>paneles que se abren sin gestionar bien el foco,</li>
       <li>estados de carga, éxito o error que solo se perciben visualmente,</li>
       <li>y componentes que cambian el contenido, pero no dejan claro qué ha ocurrido.</li>

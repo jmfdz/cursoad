@@ -34,9 +34,19 @@ Otra mala práctica es crear títulos cambiando el aspecto visual, por ejemplo a
 
 Siguiendo con la función semántica de las etiquetas HTML, deberíamos especificar un esqueleto de nuestra página web que separe las diferentes secciones y elementos de la página.
 
-Es imprescindible, al menos, incluir las secciones de cabecera y contenido principal con las etiquetas `header` y `main`. También se pueden incluir otras etiquetas como `footer` para el pie de página.
+El contenido principal debe identificarse con la etiqueta `main`. Si la página tiene una cabecera común, conviene marcarla con `header`; también se pueden incluir otras etiquetas como `footer` para el pie de página.
 
 Además, si utilizamos menús de navegación, también deberíamos utilizar etiquetas `nav` para especificar que es un menú de navegación.
+
+En la etiqueta `html` también debemos indicar el idioma principal de la página, por ejemplo `<html lang="es">` para español. Este requisito se explicará con más detalle en el apartado de idioma.
+
+### Título de página
+
+Otro requisito de accesibilidad es que todo documento web tenga definido un título con la etiqueta `<title>` dentro del `<head>`. Este título se aconseja que:
+
+- sea descriptivo y conciso, para no tener que leer mucho contenido,
+- sea único en las diferentes páginas del sitio, para saber en qué página estamos,
+- coincida con el `h1` de la página, para evitar confusiones.
 
 Veamos un ejemplo completo con título, cabecera, contenido principal y pie de página:
 
@@ -70,23 +80,15 @@ Veamos un ejemplo completo con título, cabecera, contenido principal y pie de p
 </html>
 ```
 
-### Título de página
-
-Otro requisito de accesibilidad es que todo documento web tenga definido un título con la etiqueta `<title>` dentro del `<head>`. Este título se aconseja que:
-
-- sea descriptivo y conciso, para no tener que leer mucho contenido,
-- sea único en las diferentes páginas del sitio, para saber en qué página estamos,
-- coincida con el `h1` de la página, para evitar confusiones.
-
 ### Encabezados
 
 Los encabezados son uno de los elementos más importantes para darle una estructura coherente a una página web.
 
 Hablamos de las etiquetas `h1`, `h2`, `h3`, `h4`, `h5` y `h6`. Debe fomentarse su uso en lugar de otros elementos para marcar las diferentes secciones de una web.
 
-Como comentábamos en la sección anterior, toda página debe tener un `h1` único dentro de la propia página web y a partir de ahí deberíamos incluir diferentes apartados usando los siguientes niveles, por ejemplo el segundo nivel `h2`.
+Como comentábamos en la sección anterior, conviene que cada página tenga un `h1` que identifique su tema principal y, a partir de ahí, incluir los diferentes apartados usando los siguientes niveles, por ejemplo el segundo nivel `h2`.
 
-No se deben saltar niveles, es decir, si tenemos un `h1`, no podemos poner como siguiente nivel un `h3`.
+Conviene no saltar niveles sin una relación clara entre apartados. Por ejemplo, después de un `h1` normalmente aparecerá un `h2`, no un `h3`.
 
 Tampoco se deben crear encabezados consecutivos del mismo nivel y que no tengan elementos entre ellos, pues su función es encabezar una sección.
 
@@ -111,16 +113,14 @@ Ahora veamos una estructura de la web de la UA, con la sección de noticias y ev
 <p>Descripción noticia 2</p>
 <h3>Enlace a noticia 3</h3>
 <p>Descripción noticia 3</p>
-```
-
-```html
 <h2>Eventos</h2>
 <ul>
   <li>Evento 1</li>
   <li>Evento 2</li>
   <li>Evento 3</li>
 </ul>
-<h2>La UA en Cifras</h2>
+<h2>La UA en cifras</h2>
+<p>Datos destacados de la Universidad de Alicante.</p>
 ```
 
 En definitiva, nunca debemos simular elementos y deberemos crearlos de la forma correcta para que todos los elementos tengan un significado más allá del contenido que contienen.
@@ -131,14 +131,14 @@ Antes de comenzar a elaborar un contenido, debemos pensar en el tipo de personas
 
 ### Formato de párrafo
 
-Lo primero que tener en cuenta es que todo texto debe estar incluido en una etiqueta semántica, ya sean botones, enlaces, párrafos, encabezados, etc. Esto quiere decir que etiquetas de maquetación no deben tener texto directamente, ya que su función es maquetar contenido, no texto. Veamos un ejemplo:
+Lo primero que debemos tener en cuenta es que cada texto debe incluirse en el elemento que corresponda a su función: párrafo, encabezado, enlace, botón, etc. Un `div` puede contener texto, pero no indica que ese texto sea un párrafo. Veamos un ejemplo:
 
 ```html
-<div>¡Hola mundo!</div> <!-- Mal -->
-<div><p>¡Hola mundo!</p></div> <!-- Bien -->
+<div>¡Hola mundo!</div> <!-- Sin semántica de párrafo -->
+<p>¡Hola mundo!</p> <!-- Párrafo -->
 ```
 
-Tampoco debemos utilizar las etiquetas `<br>` para incluir saltos de línea, ya que debemos estructurar el texto con párrafos, listas y otros elementos semánticos. En el caso de querer incluir márgenes, debemos realizarlos con reglas CSS.
+No debemos utilizar `<br>` para separar párrafos o crear márgenes. Para ello utilizaremos elementos semánticos y reglas CSS. El salto de línea sí puede emplearse cuando forma parte del contenido, por ejemplo en una dirección postal.
 
 Respecto a la **alineación del texto** debemos tener en cuenta una serie de consideraciones:
 
@@ -157,11 +157,11 @@ p {
 
 ### Idioma del contenido
 
-Tanto si trabajamos páginas web con varios idiomas o tan solo aparecen términos de otra lengua, deberemos **marcar siempre el idioma al que pertenece cada parte del texto**. Esto es de vital importancia debido a que los lectores de pantalla necesitan conocer el idioma del texto para realizar una correcta pronunciación.
+Tanto si trabajamos con páginas web en varios idiomas como si aparecen fragmentos en otra lengua, deberemos **marcar el idioma al que pertenece cada parte del texto**. Los lectores de pantalla necesitan conocerlo para realizar una pronunciación correcta.
 
 Es el caso también de los buscadores como Google, que necesitan saber el idioma de la página para una mejor comprensión e indexación de los contenidos.
 
-Para especificar los idiomas en HTML5 disponemos del atributo `lang`, que se puede aplicar a cualquier etiqueta. En la etiqueta debemos pasarle el código del idioma o el locale, por ejemplo `es-ES` para español de España.
+Para especificar los idiomas en HTML5 disponemos del atributo `lang`, que se puede aplicar a cualquier etiqueta. Como valor utilizaremos el código de idioma, por ejemplo `es` para español o `es-ES` para español de España.
 
 Para indicar que el contenido de la web es en español, escribiríamos:
 
@@ -187,9 +187,9 @@ Para marcar que un fragmento de texto está en otro idioma, lo hacemos directame
 
 ## Imágenes y elementos no textuales
 
-Todos los elementos no textuales como imágenes, gráficos, fórmulas matemáticas, cuadros de texto, etc. deben disponer de un texto alternativo que describa el contenido o lo que queremos transmitir con ellos, ya que estos elementos no son accesibles mediante los productos de apoyo que utilizan personas con discapacidad.
+Los elementos no textuales, como imágenes, gráficos o fórmulas matemáticas, deben disponer de una alternativa que transmita su información o su función a quienes no pueden percibirlos.
 
-Debemos introducir una alternativa textual a la imagen, como si estuviésemos describiendo la imagen a otra persona, incluso aquello que nos transmite esa imagen.
+En una imagen, el texto alternativo debe explicar lo que aporta dentro de ese contexto, sin limitarse a enumerar todo lo que aparece visualmente.
 
 En el caso de que un elemento sea meramente decorativo, se deberá dejar la etiqueta de texto alternativo vacía.
 
@@ -198,34 +198,62 @@ En el caso de que un elemento sea meramente decorativo, se deberá dejar la etiq
 Para incluir la descripción de una imagen en una web debemos incluir el atributo `alt`, que es obligatorio. Veamos dos ejemplos, una imagen con descripción y otra decorativa:
 
 ```html
-<img src="mano-ua.png" alt="Estatua de una mano que sostiene un lápiz apuntando al cielo es un símbolo de la libertad de expresión de la UA" />
+<img src="mano-ua.png" alt="Estatua de una mano con un lápiz que simboliza la libertad de expresión de la UA" />
 <!-- Imagen decorativa -->
 <img src="fondo-decorativo.png" alt="" />
 ```
 
-No se deben superar los 150 caracteres en el texto alternativo. Si la descripción es muy larga, debemos valorar si incluirla dentro del contenido de la página.
+No existe un límite fijo de caracteres, pero el texto alternativo debe ser conciso. Si la descripción necesaria es muy larga, conviene incluirla dentro del contenido de la página.
 
 Otra forma de incluir una descripción larga es mediante la etiqueta `figcaption` dentro de `figure` en HTML5. Veamos un ejemplo:
 
 ```html
 <figure>
-  <img src="mano-ua.png" alt="Estatua de una mano que sostiene un lápiz apuntando al cielo en el campus de la UA" />
-  <figcaption>Descripción larga</figcaption>
+  <img src="mano-ua.png" alt="Estatua de la Mano de la UA" />
+  <figcaption>La Mano de la UA simboliza la libertad de expresión y sostiene un lápiz que apunta al cielo.</figcaption>
 </figure>
 ```
 
 ### Iconos
 
-Los iconos, como otro elemento no textual, deben describirse para proporcionar indicaciones claras de qué propósito tienen, ya sea incluyéndolos con una etiqueta `<i>`, `<svg>` o `<img>`.
+Cuando un icono transmite información o permite realizar una acción, debe comunicarse su propósito. Si es decorativo o repite un texto visible, debe ocultarse a los productos de apoyo.
 
 En este caso no hace falta describir, por ejemplo, “icono de un lápiz” si el icono tiene la acción de editar, por lo que su descripción será “Editar”.
 
-En ningún caso podemos dejar solamente el atributo `title` y ninguna información más, ya que no todos los lectores de pantalla leen ese contenido. Además, obtendremos en los validadores de accesibilidad un error de elemento vacío.
+Si el icono se encuentra dentro de un botón, el nombre accesible debe aplicarse al botón y el icono debe ocultarse a los productos de apoyo. Siempre que sea posible, es preferible incluir texto visible. Si el diseño utiliza únicamente el icono, podemos proporcionar el nombre mediante `aria-label`.
 
-Veamos un ejemplo de un icono de editar:
+Veamos un ejemplo de un botón con un icono de editar:
 
 ```html
-<i class="icon icon-edit" aria-label="Editar" title="Editar"></i>
+<button type="button" aria-label="Editar">
+  <i class="icon icon-edit" aria-hidden="true"></i>
+</button>
+```
+
+En ningún caso podemos dejar solamente el atributo `title` y ninguna información más, ya que no todos los lectores de pantalla leen ese contenido.
+
+### Imágenes SVG
+
+Si un SVG funciona como una imagen informativa, debemos marcarlo con `role="img"` y proporcionarle un nombre accesible mediante un elemento `title` interno o con `aria-label` en el propio SVG. No existe el rol `image`; el valor correcto es `img`.
+
+Si el SVG es decorativo, o ya está acompañado por un texto que transmite la misma información, utilizaremos `aria-hidden="true"`.
+
+```html
+<!-- SVG informativo con title -->
+<svg role="img" focusable="false">
+  <title>Estado completado</title>
+  ...
+</svg>
+
+<!-- Alternativa con aria-label -->
+<svg role="img" aria-label="Estado completado" focusable="false">
+  ...
+</svg>
+
+<!-- SVG decorativo -->
+<svg aria-hidden="true" focusable="false">
+  ...
+</svg>
 ```
 
 ## Enlaces y botones
@@ -234,13 +262,50 @@ Los enlaces y botones deben transmitir claramente qué ocurrirá cuando pulsemos
 
 No podemos utilizar como texto de enlaces palabras como “aquí”, “pulsa aquí”, “enlace”, etc.
 
-Si van a provocar un cambio de contexto deberíamos indicarlo en el `title`; por ejemplo, si es un enlace de YouTube, ponerle `title="Se abrirá en YouTube"`.
+Si van a provocar un cambio de contexto debemos indicarlo en el texto del enlace o en su nombre accesible.
+
+```html
+<!-- Texto poco descriptivo -->
+<a href="admision.html">Pulsa aquí</a>
+
+<!-- El destino se entiende de forma aislada -->
+<a href="admision.html">Consultar información de admisión</a>
+
+<a href="video.html" target="_blank" rel="noreferrer">
+  Ver el vídeo de presentación (se abre en una ventana nueva)
+</a>
+```
+
+### Enlaces a descargas
+
+Si el enlace descarga un fichero, conviene indicar su formato y tamaño:
+
+```html
+<a href="video.mp4" download>
+  Vídeo de presentación (MP4, 300 MB)
+</a>
+```
 
 ### Texto accesible
 
 Los enlaces y botones no pueden estar vacíos, siempre deben tener un texto, ya sea visible o no. En este sentido, si el enlace o botón solo incluye una imagen o icono, deben tener texto alternativo o `aria-label`.
 
+```html
+<a href="inicio.html">
+  <img src="logo-ua.svg" alt="Ir a la página de inicio de la UA">
+</a>
+
+<a href="configuracion.html" aria-label="Abrir configuración">
+  <svg aria-hidden="true" focusable="false">...</svg>
+</a>
+```
+
 Por último, en aplicaciones que tienen un alto uso de peticiones Ajax, debemos considerar que los botones deben utilizarse en estos casos y utilizar siempre botones para recargar páginas o procesar información. Los enlaces, sin embargo, están pensados para provocar cambio de página.
+
+```html
+<a href="resultados.html">Consultar resultados</a>
+<button type="button">Actualizar resultados</button>
+```
 
 ## Navegación por teclado y foco
 
@@ -252,17 +317,39 @@ Al pulsar la tecla `TAB`, el foco del teclado va avanzando por los enlaces, boto
 
 En general, el orden del foco debería corresponderse con el orden natural del contenido en la página. Si el usuario ve una secuencia y el teclado sigue otra distinta, la navegación se vuelve confusa.
 
+Los enlaces de salto permiten ir directamente al contenido principal:
+
+```html
+<a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+<main id="contenido">...</main>
+```
+
 ### Foco visible
 
 No basta con que el foco exista, también debe verse con claridad. El usuario necesita saber en todo momento sobre qué elemento está situado para poder continuar la navegación o activar una acción.
 
 Por este motivo, no se debe eliminar el contorno de foco que trae el navegador salvo que se sustituya por otro estilo claramente visible y con contraste suficiente.
 
+```css
+:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 3px;
+}
+```
+
 ### Controles interactivos reales
 
 Los elementos que realizan acciones o cambian de pantalla deben construirse con los controles adecuados: enlaces para navegar y botones para ejecutar acciones. No deberíamos usar `div`, `span` u otros elementos de maquetación para simular su comportamiento.
 
 Si un elemento parece interactivo, pero no recibe foco, no puede activarse con teclado o no muestra su estado de forma clara, parte de los usuarios quedará fuera.
+
+```html
+<!-- Evitar -->
+<div onclick="guardar()">Guardar</div>
+
+<!-- Correcto -->
+<button type="button" onclick="guardar()">Guardar</button>
+```
 
 ### Problemas habituales
 
@@ -284,7 +371,7 @@ En este apartado nos centramos en los requisitos de accesibilidad del formulario
 
 ### Campos de formulario con etiqueta asociada
 
-Todo campo de formulario debe estar dentro de una etiqueta de formulario `<form>`, de la misma forma que un elemento de lista `<li>` debe estar dentro de una etiqueta de lista `<ul>`.
+Cuando los campos forman parte de un envío o una operación conjunta, deben estar dentro de una etiqueta `<form>`. Hay controles autónomos, como algunos filtros que se aplican al cambiar su valor, que no necesitan enviar un formulario.
 
 ```html
 <form>
@@ -365,19 +452,19 @@ Ejemplo de campos `checkbox` o `radio` agrupados:
     <legend>Colectivo UA</legend>
     <div class="mb-3">
       <div class="form-check">
-        <input class="form-check-input" type="radio" id="ptgas" />
+        <input class="form-check-input" type="radio" id="ptgas" name="colectivo" />
         <label class="form-check-label" for="ptgas">PTGAS</label>
       </div>
     </div>
     <div class="mb-3">
       <div class="form-check">
-        <input class="form-check-input" type="radio" id="pdi" />
+        <input class="form-check-input" type="radio" id="pdi" name="colectivo" />
         <label class="form-check-label" for="pdi">PDI</label>
       </div>
     </div>
     <div class="mb-3">
       <div class="form-check">
-        <input class="form-check-input" type="radio" id="alu" />
+        <input class="form-check-input" type="radio" id="alu" name="colectivo" />
         <label class="form-check-label" for="alu">Alumno/a</label>
       </div>
     </div>
@@ -396,12 +483,12 @@ En general, según los estudios, hay dos enfoques:
 
 En general, se recomienda la segunda aproximación cuando hay pocos campos o la mayoría son obligatorios. De esta forma, se reduce la carga cognitiva a los usuarios. Además, el `*` a un lector de pantalla solo se lee como “asterisco”.
 
-En esta línea, es recomendable utilizar el atributo `required` en los campos de formulario, ya que indica la semántica a un lector de pantalla. Aunque usemos el atributo `novalidate`, hay que volver a validar siempre los datos de los campos del formulario, ya que el atributo `required` puede eliminarse desde el navegador y nos podría ocasionar un problema de seguridad.
+En esta línea, es recomendable utilizar el atributo `required` en los campos de formulario, ya que indica la semántica a un lector de pantalla. Aunque usemos el atributo `novalidate`, hay que validar siempre los datos también en el servidor. La validación realizada en el navegador mejora la experiencia, pero no es una medida de seguridad.
 
 Finalmente, la forma de mostrar los mensajes de error de la validación depende de la tipología de la petición:
 
-- Si es una petición Ajax, se recomienda mostrar los errores entre el último campo del formulario y el botón de enviar.
-- Si la petición se procesará en el servidor, los errores deben mostrarse al principio del formulario.
+- Si es una petición Ajax, se recomienda mostrar el resumen de errores después del botón de enviar y anunciarlo con `role="alert"`.
+- Si la petición se procesa en el servidor y recarga la página, los errores deben mostrarse antes del formulario.
 
 De esta forma, nos aseguramos de que siempre se muestran los errores en primer plano.
 
@@ -415,21 +502,21 @@ Veamos un ejemplo de validación de un formulario mediante Ajax que efectúa los
 <form novalidate id="mi-form">
   <div class="mb-3">
     <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" name="nombre" class="form-control" />
+    <input type="text" id="nombre" name="nombre" class="form-control" required />
   </div>
   <div class="mb-3">
     <label for="apellidos">Apellidos</label>
-    <input type="text" id="apellidos" name="apellidos" class="form-control" />
+    <input type="text" id="apellidos" name="apellidos" class="form-control" required />
   </div>
   <div class="mb-3">
     <label for="email">E-mail (opcional)</label>
     <input type="email" id="email" name="email" class="form-control" />
   </div>
-  <!-- Con role="alert" un lector de pantalla lee el contenido automáticamente cuando se inserte -->
-  <div id="mensajealerta" role="alert"></div>
   <div class="mb-3">
     <button type="submit" class="btn btn-primary">Enviar</button>
   </div>
+  <!-- Con role="alert" un lector de pantalla lee el contenido automáticamente cuando se inserte -->
+  <div id="mensajealerta" role="alert" tabindex="-1"></div>
 </form>
 ```
 
@@ -445,10 +532,18 @@ document.getElementById("mi-form").addEventListener("submit", (event) => {
   const mensajeAlerta = document.getElementById("mensajealerta");
   mensajeAlerta.classList.remove("alert", "alert-danger");
   mensajeAlerta.textContent = "";
+  formulario.nombre.removeAttribute("aria-invalid");
+  formulario.apellidos.removeAttribute("aria-invalid");
 
   const errores = [];
-  if (!nombre) errores.push("El campo 'Nombre' es obligatorio.");
-  if (!apellidos) errores.push("El campo 'Apellidos' es obligatorio.");
+  if (!nombre) {
+    errores.push("El campo 'Nombre' es obligatorio.");
+    formulario.nombre.setAttribute("aria-invalid", "true");
+  }
+  if (!apellidos) {
+    errores.push("El campo 'Apellidos' es obligatorio.");
+    formulario.apellidos.setAttribute("aria-invalid", "true");
+  }
 
   if (errores.length > 0) {
     mensajeAlerta.classList.add("alert", "alert-danger");
@@ -458,6 +553,7 @@ document.getElementById("mi-form").addEventListener("submit", (event) => {
     });
     texto += "</ul>";
     mensajeAlerta.innerHTML = texto;
+    mensajeAlerta.focus();
   } else {
     alert("¡Enviado! Hacer algo...");
   }
@@ -467,13 +563,13 @@ document.getElementById("mi-form").addEventListener("submit", (event) => {
 
 ## Tablas
 
-Las tablas son para estructurar datos, no para maquetar contenido. Para eso están los `div`.
+Las tablas son para estructurar datos, no para maquetar o colocar contenido visualmente.
 
-No hay que dividir ni combinar celdas, por lo que las tablas deben ser uniformes.
+Conviene evitar dividir o combinar celdas cuando no sea necesario, para mantener las tablas sencillas de entender.
 
-Deben tener un título que las titule con la etiqueta `caption`. Por defecto, la etiqueta `caption` se muestra visualmente debajo de la tabla, pero es mejor tocar el CSS para que el título salga encima de la tabla.
+Deben tener un título con la etiqueta `caption`, que se muestra visualmente asociado a la tabla. Si el diseño lo necesita, se puede ajustar su posición con CSS sin perder esa asociación.
 
-Debe diferenciarse claramente cuáles son los encabezados de fila o columna, a poder ser con contraste más alto.
+Los encabezados de fila o columna deben marcarse con `th` y asociarse mediante `scope="row"` o `scope="col"`. También deben diferenciarse visualmente con contraste suficiente.
 
 ### Ejemplo de tabla
 
@@ -483,18 +579,18 @@ Debe diferenciarse claramente cuáles son los encabezados de fila o columna, a p
   <thead>
     <!-- Cabecera en azul con texto blanco para resaltar -->
     <tr style="background: blue; color: white;">
-      <th>Nombre</th>
-      <th>Nota</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Nota</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Alberto</th>
-      <th>8</th>
+      <th scope="row">Alberto</th>
+      <td>8</td>
     </tr>
     <tr>
-      <th>Alba</th>
-      <th>9</th>
+      <th scope="row">Alba</th>
+      <td>9</td>
     </tr>
   </tbody>
 </table>
@@ -502,10 +598,10 @@ Debe diferenciarse claramente cuáles son los encabezados de fila o columna, a p
 
 ### Tablas adaptables
 
-Si la tabla es muy ancha, se recomienda hacerla adaptable con la clase de Bootstrap `table-responsive` para poder desplazarnos con scroll horizontal en dispositivos móviles:
+Si la tabla es muy ancha, se recomienda hacerla adaptable con la clase de Bootstrap `table-responsive`. El contenedor debe poder recibir el foco para que también pueda desplazarse con teclado:
 
 ```html
-<div class="table-responsive">
+<div class="table-responsive" tabindex="0" role="region" aria-label="Notas de la asignatura">
   <table>
     ...
   </table>
@@ -522,7 +618,7 @@ Ejemplos de componentes que necesitan atributos WAI-ARIA son los cuadros modales
 
 ### Tabindex
 
-Es conveniente recordar que en HTML solo pueden recibir el foco del teclado los enlaces, botones y elementos de formulario.
+Es conveniente recordar que los enlaces, botones y elementos de formulario, entre otros controles nativos, pueden recibir el foco del teclado sin añadir `tabindex`.
 
 Por el contrario, elementos HTML como listas, párrafos, capas `div` o `span` nunca reciben el foco del teclado al tratarse de elementos con un propósito diferente: marcar y maquetar el contenido.
 
@@ -536,17 +632,20 @@ Veamos un ejemplo:
 
 Lo que estamos haciendo es crear una capa `div` que simula el comportamiento de un enlace o un botón, que no es su propósito y además jamás se podrá acceder por teclado ya que este elemento nunca recibirá el foco.
 
-En ocasiones se hace necesario utilizar elementos de marca y maquetación como `div` o `li` para realizar acciones dinámicas. En estos casos podemos utilizar el atributo `tabindex` para informar a los navegadores web de que ese elemento puede recibir el foco.
+Si por compatibilidad no podemos sustituir un elemento simulado por un control nativo, hay que completar manualmente su comportamiento: foco, rol y activación con teclado. Por eso se debe preferir un enlace o botón nativo siempre que sea posible.
 
 ```html
-<div onclick="alert('¡Saludo!');" tabindex="0">Púlsame</div>
+<div role="button" tabindex="0" onclick="saludar()"
+  onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); saludar(); }">
+  Púlsame
+</div>
 ```
 
 El atributo `tabindex` puede utilizarse para varios cometidos dependiendo del valor asignado:
 
 - `tabindex="0"` permite que un elemento que no puede recibir el foco por defecto pueda recibirlo siguiendo el orden natural del HTML.
 - `tabindex="-1"` permite que el elemento pueda coger el foco mediante JavaScript con la función `focus()`, aunque no podamos llegar a él con tabulación normal.
-- `tabindex="x"` donde `x` es un número entero define un orden de tabulación explícito. No se recomienda su uso porque puede crear confusión.
+- Un valor positivo, como `tabindex="1"`, define un orden de tabulación explícito. No se recomienda su uso porque puede crear confusión.
 
 ### Roles
 
@@ -555,10 +654,13 @@ Incluir información sobre el rol o función de un elemento de nuestra página m
 Por ejemplo:
 
 ```html
-<div role="progressbar">
-<ul role="tree">
-<li role="treeitem">
-<div role="application">
+<div role="progressbar" aria-label="Progreso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">
+  60 %
+</div>
+
+<ul role="tree" aria-label="Contenido">
+  <li role="treeitem" aria-level="1">Tema 1</li>
+</ul>
 ```
 
 No se debe cambiar dinámicamente el rol de un elemento, este es fijo. Si se quiere cambiar habría que eliminar del DOM el elemento y crear uno nuevo con el nuevo rol.
@@ -575,7 +677,7 @@ Los roles de estructura y su función son:
 - `role="complementary"` para contenidos no imprescindibles, por ejemplo una barra lateral.
 - `role="contentinfo"` para la información repetida del pie.
 - `role="search"` para las zonas donde hay un buscador.
-- `role="form"` para las zonas donde hay formularios.
+- `role="form"` para una zona de formulario identificada con un nombre accesible.
 - `role="application"` si hay una aplicación web interactiva que cambia las reglas normales de teclado.
 
 En general, es recomendable utilizar las etiquetas nativas de HTML5 para marcar zonas de un sitio web como `nav`, `header` o `main`. Si las utilizamos, no se debe poner etiqueta nativa y `role` juntos por redundancia.
@@ -599,21 +701,36 @@ Estos atributos nos permiten dar un nombre accesible, etiquetar o dar una descri
 `aria-label` sirve para dar nombre accesible a un elemento. Debe usarse solo en ocasiones que lo requieran; por defecto, el nombre de un elemento debe ser su contenido.
 
 ```html
-<a href="#" aria-label="Cerrar">x</a>
+<button type="button" aria-label="Cerrar">×</button>
 ```
 
 `aria-labelledby` también sirve para dar un nombre a un elemento HTML, con la diferencia de que aquí referenciamos el `id` de otro elemento que actúa como etiqueta.
 
+```html
+<section aria-labelledby="titulo-informe">
+  <h3 id="titulo-informe">Informe de accesibilidad</h3>
+  ...
+</section>
+```
+
 `aria-describedby` permite asociar una descripción larga a un elemento indicando el `id` del elemento que proporciona la descripción.
+
+```html
+<label for="usuario">Usuario</label>
+<input id="usuario" aria-describedby="ayuda-usuario">
+<p id="ayuda-usuario">Escribe tu dirección de correo sin @ua.es.</p>
+```
 
 ### Estados y propiedades
 
 Los elementos dinámicos cambian de estado, por ejemplo un menú desplegable puede estar plegado o desplegado. ARIA permite definir las propiedades y estados de los elementos.
 
 ```html
-<li role="treeitem" aria-expanded="false" tabindex="0" onclick="a()" onkeypress="a()">
-  Lenguajes
-</li>
+<ul role="tree" aria-label="Categorías">
+  <li role="treeitem" aria-expanded="false" tabindex="0">
+    Lenguajes
+  </li>
+</ul>
 ```
 
 En este ejemplo se indica que el elemento del árbol “Lenguajes” está plegado. Cuando el usuario lo despliegue deberás cambiar dinámicamente su estado mediante JavaScript para que los productos de apoyo puedan transmitir el cambio al usuario.
@@ -632,7 +749,7 @@ Veamos un ejemplo del típico desplegable:
 <button id="toggleButton" aria-expanded="false" aria-controls="panel">
   Mostrar panel
 </button>
-<div id="panel">
+<div id="panel" hidden>
   <p>Este es el contenido del panel desplegable.</p>
 </div>
 <script>
@@ -642,7 +759,7 @@ const panel = document.getElementById('panel');
 button.addEventListener('click', () => {
   const isExpanded = button.getAttribute('aria-expanded') === 'true';
   button.setAttribute('aria-expanded', String(!isExpanded));
-  panel.setAttribute('aria-hidden', String(isExpanded));
+  panel.hidden = isExpanded;
 });
 </script>
 ```
@@ -651,13 +768,21 @@ button.addEventListener('click', () => {
 
 `aria-live` permite identificar una zona dinámica de nuestro contenido que se actualiza automáticamente. De esta manera los cambios se anunciarán al usuario de los productos de apoyo. En función de su valor (`off`, `polite`, `assertive`) indicaremos cuándo queremos que se anuncie la actualización.
 
-También se puede utilizar la versión moderna e integrada de `role="alert"`, que es equivalente a `aria-live="assertive"`.
+`role="alert"` crea una región de aviso urgente con un comportamiento equivalente a `aria-live="assertive"`.
+
+```html
+<!-- Mensaje informativo: se anuncia cuando cambia -->
+<p id="estado" aria-live="polite"></p>
+
+<!-- Error urgente insertado dinámicamente -->
+<div role="alert">No se ha podido guardar el formulario.</div>
+```
 
 En cualquier caso, esto debe aplicarse sobre componentes que además sean utilizables con teclado, tengan foco visible y una estructura correcta. ARIA complementa la interacción, pero no sustituye una base bien construida.
 
 ## Componentes interactivos
 
-Como hemos visto en el apartado anterior, crear componentes interactivos accesibles tiene una gran complejidad. En nuestro caso, tenemos la suerte de utilizar la librería Bootstrap, que proporciona unos componentes muy accesibles desde la base.
+Como hemos visto en el apartado anterior, crear componentes interactivos accesibles tiene una gran complejidad. Utilizar una librería como Bootstrap aporta componentes con una buena base, pero hay que mantener su estructura y comprobar su uso en cada caso.
 
 En el repositorio de GitHub del curso se puede consultar el fichero `componentes.html` con ejemplos de cuadros modales, acordeones, desplegables, pestañas, etc.
 
@@ -677,10 +802,25 @@ Entre los componentes que suelen exigir más cuidado están los cuadros modales,
 
 En todos estos casos no basta con que el componente se vea bien. También debe responder bien al teclado, indicar su estado y permitir que el usuario entienda qué acaba de cambiar en la interfaz.
 
+- **Modal**: debe tener un título, mantener el foco dentro mientras está abierto y devolverlo al control que lo abrió al cerrar.
+- **Desplegable o acordeón**: el botón debe indicar si está abierto y qué panel controla.
+- **Pestañas**: deben identificar la pestaña seleccionada, su panel asociado y permitir la navegación por teclado.
+
+Por ejemplo, el botón de un panel desplegable debe exponer su estado:
+
+```html
+<button type="button" aria-expanded="false" aria-controls="panel-ayuda">
+  Mostrar ayuda
+</button>
+<div id="panel-ayuda" hidden>
+  ...
+</div>
+```
+
 ### Errores frecuentes
 
 - iconos sin nombre accesible,
-- botones o enlaces que visualmente parecen correctos, pero no reciben foco,
+- controles simulados que no reciben foco o no funcionan con teclado,
 - paneles que se abren sin gestionar bien el foco,
 - estados de carga, éxito o error que solo se perciben visualmente,
 - y componentes que cambian el contenido, pero no dejan claro qué ha ocurrido.

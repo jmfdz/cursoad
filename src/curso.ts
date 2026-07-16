@@ -27,7 +27,6 @@ import LeyesUxCargaDecision from './views/ux/LeyesUxCargaDecision.vue'
 import LeyesUxInteraccion from './views/ux/LeyesUxInteraccion.vue'
 import LeyesUxPercepcion from './views/ux/LeyesUxPercepcion.vue'
 import PatronesUsabilidad from './views/ux/PatronesUsabilidad.vue'
-import Tecnicas from './views/ux/Tecnicas.vue'
 
 export type Figura = {
   src: string
@@ -177,22 +176,12 @@ export const bloquesCurso: BloqueCurso[] = [
         title: 'Estructura semántica de una página web',
         component: markRaw(EstructuraSemantica),
         toc: 'h2',
-        figure: {
-          src: '/curso-media/image5.png',
-          alt: 'Captura de Chrome con dos pestañas con títulos diferentes.',
-          caption: 'Ejemplo usado para explicar por qué cada página debe tener un título único.',
-        },
       },
       {
         id: 'texto-idioma',
         title: 'Texto e idioma',
         component: markRaw(TextoIdioma),
         toc: 'h2',
-        figure: {
-          src: '/curso-media/image4.jpeg',
-          alt: 'Ejemplo de texto incorrecto justificado y otro correcto alineado a la izquierda.',
-          caption: 'Comparativa del documento sobre maquetación de texto incorrecta y correcta.',
-        },
       },
       {
         id: 'imagenes',
@@ -287,12 +276,6 @@ export const bloquesCurso: BloqueCurso[] = [
         toc: 'h2',
       },
       {
-        id: 'tecnicas',
-        title: 'Técnicas de usabilidad y UX',
-        component: markRaw(Tecnicas),
-        toc: 'h2',
-      },
-      {
         id: 'estados-feedback',
         title: 'Estados, feedback y microcopy',
         component: markRaw(EstadosFeedback),
@@ -313,33 +296,10 @@ export const bloquesCurso: BloqueCurso[] = [
         ],
       },
       {
-        id: 'leyes-ux-percepcion',
-        title: 'Leyes UX: percepción y organización',
-        component: markRaw(LeyesUxPercepcion),
-        toc: 'h2-h3',
-      },
-      {
-        id: 'leyes-ux-carga-decision',
-        title: 'Leyes UX: carga mental y decisión',
-        component: markRaw(LeyesUxCargaDecision),
-        toc: 'h2-h3',
-      },
-      {
-        id: 'leyes-ux-interaccion',
-        title: 'Leyes UX: interacción y rendimiento',
-        component: markRaw(LeyesUxInteraccion),
-        toc: 'h2-h3',
-      },
-      {
         id: 'color',
         title: 'Color, contraste y percepción visual',
         component: markRaw(Color),
         toc: 'h2',
-        figure: {
-          src: '/curso-media/image7.png',
-          alt: 'Herramienta de contraste de color con ratio 3.83, insuficiente.',
-          caption: 'Captura de la herramienta de comprobación del contraste entre colores.',
-        },
         gallery: [
           {
             src: '/curso-media/image6.png',
@@ -397,7 +357,7 @@ export const bloquesCurso: BloqueCurso[] = [
       },
       {
         id: 'patrones-usabilidad',
-        title: 'Patrones de diseño y usabilidad',
+        title: 'Plantillas y patrones de diseño',
         component: markRaw(PatronesUsabilidad),
         toc: 'h2',
         gallery: [
@@ -432,43 +392,24 @@ export const bloquesCurso: BloqueCurso[] = [
             caption: 'Captura incluida en el documento para mostrar cómo podría ser Vértice.',
           },
         ],
-        examples: [
-          {
-            title: 'Ejemplo de formularios usables',
-            href: '/ejemplos/formularios.html',
-            description:
-              'Ejemplo relacionado con foco inicial, alertas, validación y otras mejoras de usabilidad en formularios.',
-          },
-          {
-            title: 'Diseño a dos columnas',
-            href: '/ejemplos/2columnas.html',
-            description:
-              'Patrón de escritorio con interacción a la izquierda y resultado a la derecha, colapsando a una columna en móvil.',
-          },
-          {
-            title: 'Formulario centrado',
-            href: '/ejemplos/centrado.html',
-            description:
-              'Composición de anchura limitada para mejorar legibilidad y reducir la longitud de línea de los campos.',
-          },
-          {
-            title: 'Asistente por pasos',
-            href: '/ejemplos/pasos.html',
-            description: 'Ejemplo de flujo guiado por pasos con progresión visual.',
-          },
-          {
-            title: 'Paneles tipo Trello',
-            href: '/ejemplos/paneles.html',
-            description:
-              'Distribución en paneles para trabajo operativo y seguimiento de solicitudes.',
-          },
-          {
-            title: 'Propuesta de Vértice',
-            href: '/ejemplos/vertice.html',
-            description:
-              'Captura navegable del concepto visual utilizado para explorar una posible evolución de Vértice.',
-          },
-        ],
+      },
+      {
+        id: 'leyes-ux-percepcion',
+        title: 'Leyes UX: percepción y organización',
+        component: markRaw(LeyesUxPercepcion),
+        toc: 'h2-h3',
+      },
+      {
+        id: 'leyes-ux-carga-decision',
+        title: 'Leyes UX: carga mental y decisión',
+        component: markRaw(LeyesUxCargaDecision),
+        toc: 'h2-h3',
+      },
+      {
+        id: 'leyes-ux-interaccion',
+        title: 'Leyes UX: interacción y rendimiento',
+        component: markRaw(LeyesUxInteraccion),
+        toc: 'h2-h3',
       },
     ],
   },
