@@ -5,6 +5,6 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'ua' ? '/accesibilidad/docx/' : '/',
+  base: mode === 'ua' ? '/accesibilidad/docs/' : '/',
   plugins: mode === 'ua' ? [vue()] : [vue(), cloudflare()],
 }))

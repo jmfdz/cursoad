@@ -15,7 +15,11 @@ import { bloquesCurso, getRutaApartado, tituloCurso } from '../curso'
     </div>
 
     <div class="row g-4">
-      <div v-for="block in bloquesCurso" :key="block.slug" class="col-md-6">
+      <div
+        v-for="(block, index) in bloquesCurso"
+        :key="block.slug"
+        :class="index < 3 ? 'col-md-4' : 'col-md-6'"
+      >
         <article class="card h-100 border-0 shadow-sm">
           <div class="card-body p-4 d-flex flex-column">
             <h2 class="mb-3">{{ block.title }}</h2>

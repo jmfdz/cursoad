@@ -49,6 +49,22 @@ const router = createRouter({
       name: 'ejemplos',
       component: () => import('../views/ejemplos/Ejemplos.vue'),
     },
+    {
+      path: '/fundamentos',
+      redirect: '/accesibilidad-digital',
+    },
+    {
+      path: '/fundamentos/cadua',
+      redirect: '/herramientas/revision-accesibilidad',
+    },
+    {
+      path: '/fundamentos/lector',
+      redirect: '/herramientas/lector-pantalla',
+    },
+    {
+      path: '/fundamentos/:apartadoId',
+      redirect: (to) => `/accesibilidad-digital/${String(to.params.apartadoId)}`,
+    },
     ...rutasBloque,
     ...rutasApartado,
   ],

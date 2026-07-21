@@ -1,18 +1,18 @@
-# Herramientas y comprobación
+# Herramientas
 
-## Pruebas automáticas y manuales
+## Revisión de accesibilidad
 
 Para comprobar la accesibilidad no basta con una sola herramienta. Lo habitual es combinar pruebas automáticas, revisión manual y, cuando sea posible, alguna prueba con tecnologías de apoyo como un lector de pantalla.
 
 Además, es mucho más eficiente incorporar la accesibilidad desde el principio del proyecto que intentar corregirla al final, cuando ya hay que rehacer diseño, contenidos o desarrollo.
 
-## Pruebas automáticas
+### Pruebas automáticas
 
 Una prueba automática analiza el código y la página ya cargada aplicando una colección de reglas. En pocos segundos puede localizar ciertos errores frecuentes: imágenes sin texto alternativo, campos de formulario sin etiqueta, problemas de contraste, estructura deficiente de encabezados o usos incorrectos de ARIA.
 
 Son muy útiles para una primera revisión y para integrar comprobaciones recurrentes en desarrollo, pero no pueden determinar por sí solas si una página es accesible. Por ejemplo, pueden detectar que una imagen tiene texto alternativo, pero no siempre si ese texto explica correctamente la información que transmite.
 
-## Pruebas manuales
+### Pruebas manuales
 
 En una prueba manual, una persona recorre la página y realiza tareas como lo haría un usuario: navega con teclado, amplía el contenido, revisa los textos o utiliza un lector de pantalla. Es imprescindible para comprobar aspectos que una herramienta no puede valorar bien, por ejemplo:
 
@@ -24,7 +24,7 @@ En una prueba manual, una persona recorre la página y realiza tareas como lo ha
 
 Por eso, las pruebas automáticas deben verse como ayuda y apoyo al análisis, no como validación completa.
 
-## Ejemplo: extensión de CADUA
+## Extensión de CADUA
 
 La extensión de CADUA permite comprobar la página abierta directamente desde Chrome y otros navegadores basados en Chromium. Al ejecutarse en el navegador, también puede revisar contenido generado con JavaScript o disponible después de iniciar sesión.
 
@@ -43,7 +43,7 @@ Además de la comprobación automática, puedes utilizar estas herramientas de a
 - Enlaces.
 - Atajos de teclado.
 
-## Revisión mínima recomendable
+### Revisión mínima recomendable
 
 Como pauta práctica, una revisión básica debería combinar al menos:
 
@@ -66,7 +66,7 @@ NVDA no se limita a leer el texto visible: también comunica la estructura y la 
 
 Su interés en este curso no es aprender a usarlo a fondo, sino entender qué información recibe una persona cuando la interfaz está bien o mal construida.
 
-## Cómo hacer una prueba rápida
+### Cómo hacer una prueba rápida
 
 Para una primera toma de contacto, basta con activar el lector y hacer una navegación básica por teclado:
 
@@ -79,7 +79,7 @@ Para una primera toma de contacto, basta con activar el lector y hacer una naveg
 
 No hace falta dominar todos los comandos para que la prueba sea útil. Con muy poco ya pueden detectarse bastantes problemas.
 
-## Qué revisar con un lector de pantalla
+### Qué revisar con un lector de pantalla
 
 Al hacer una prueba rápida con lector de pantalla conviene comprobar al menos lo siguiente:
 

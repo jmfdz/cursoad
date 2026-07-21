@@ -55,7 +55,7 @@
       detectar problemas reales de semántica, navegación y etiquetado.
     </p>
 
-    <h3>Referencias</h3>
+    <h2>Referencias</h2>
     <ul>
       <li><a href="https://www.nvaccess.org/download/" target="_blank" rel="noreferrer">NV Access: Descargar NVDA (Inglés)</a></li>
     </ul>

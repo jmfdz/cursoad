@@ -5,7 +5,7 @@
 El proyecto está configurado para publicarse en:
 
 ```text
-https://web.ua.es/accesibilidad/docx/
+https://web.ua.es/accesibilidad/docs/
 ```
 
 Instala las dependencias y genera la versión para la web de la UA:
@@ -16,14 +16,14 @@ pnpm run build:ua
 ```
 
 Vite crea el resultado en `dist/`. Hay que copiar **el contenido de esa carpeta**
-al directorio `accesibilidad/docx/` del servidor, de modo que el fichero principal
-quede publicado como `accesibilidad/docx/index.html`.
+al directorio `accesibilidad/docs/` del servidor, de modo que el fichero principal
+quede publicado como `accesibilidad/docs/index.html`.
 
 Las rutas internas usan `#` para que todas las páginas funcionen en un alojamiento
 estático sin reglas de reescritura. Por ejemplo:
 
 ```text
-https://web.ua.es/accesibilidad/docx/#/documentos/word
+https://web.ua.es/accesibilidad/docs/#/documentos/word
 ```
 
 ## Generar y desplegar en Cloudflare

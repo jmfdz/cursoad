@@ -1,4 +1,4 @@
-# Fundamentos
+# Accesibilidad digital
 
 ## Qué es la accesibilidad digital
 

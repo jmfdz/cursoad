@@ -2,10 +2,11 @@ import { markRaw } from 'vue'
 import type { Component } from 'vue'
 import IntroduccionFundamentos from './views/fundamentos/Introduccion.vue'
 import Legislacion from './views/fundamentos/Legislacion.vue'
-import LectorPantalla from './views/fundamentos/LectorPantalla.vue'
-import PruebasAccesibilidad from './views/fundamentos/PruebasAccesibilidad.vue'
 import TecnologiasAccesibilidad from './views/fundamentos/TecnologiasAccesibilidad.vue'
 import Wcag from './views/fundamentos/Wcag.vue'
+import ExtensionCadua from './views/herramientas/ExtensionCadua.vue'
+import LectorPantalla from './views/herramientas/LectorPantalla.vue'
+import RevisionAccesibilidad from './views/herramientas/RevisionAccesibilidad.vue'
 import Multimedia from './views/documentos/Multimedia.vue'
 import Pdf from './views/documentos/Pdf.vue'
 import Powerpoint from './views/documentos/Powerpoint.vue'
@@ -96,14 +97,14 @@ export const enlacesCurso = [
 
 export const bloquesCurso: BloqueCurso[] = [
   {
-    slug: 'fundamentos',
-    shortTitle: 'Fundamentos',
-    title: 'Fundamentos',
-    menuDescription: 'Conceptos básicos, WCAG, legislación y comprobación de accesibilidad.',
+    slug: 'accesibilidad-digital',
+    shortTitle: 'Accesibilidad digital',
+    title: 'Accesibilidad digital',
+    menuDescription: 'Conceptos básicos, tecnologías de apoyo, WCAG y legislación.',
     homeSummary:
-      'Introduce la accesibilidad digital, a quién beneficia, las WCAG, la legislación aplicable y las bases para validar con herramientas y lector de pantalla.',
+      'Introduce la accesibilidad digital, a quién beneficia, las tecnologías y funciones de accesibilidad, las WCAG y la legislación aplicable.',
     intro: [
-      'En este bloque se presenta la base de trabajo del curso: qué entendemos por accesibilidad digital, a quién beneficia, qué marco técnico y normativo la sostiene y cómo empezar a revisarla en la práctica.',
+      'En este bloque se presenta la base de trabajo del curso: qué entendemos por accesibilidad digital, a quién beneficia y qué marco técnico y normativo la sostiene.',
       'La idea es dejar claro desde el principio que accesibilidad, usabilidad y experiencia de uso están relacionadas, pero no son exactamente lo mismo: una interfaz puede ser vistosa o cómoda para parte de sus usuarios y seguir excluyendo a otros si no cumple unos mínimos de percepción, manejo y comprensión.',
     ],
     sections: [
@@ -139,23 +140,6 @@ export const bloquesCurso: BloqueCurso[] = [
         id: 'tecnologias-accesibilidad',
         title: 'Tecnologías y funciones de accesibilidad',
         component: markRaw(TecnologiasAccesibilidad),
-        toc: 'h2',
-      },
-      {
-        id: 'cadua',
-        title: 'Pruebas de accesibilidad: automáticas y manuales',
-        component: markRaw(PruebasAccesibilidad),
-        toc: 'h2',
-        figure: {
-          src: '/curso-media/extension-accesibilidad.png',
-          alt: 'Ficha de CADUA en Chrome Web Store y panel de la extensión mostrando resultados de accesibilidad.',
-          caption: 'La extensión de navegador de CADUA está disponible en Chrome Web Store.',
-        },
-      },
-      {
-        id: 'lector',
-        title: 'Uso de un lector de pantalla',
-        component: markRaw(LectorPantalla),
         toc: 'h2',
       },
     ],
@@ -447,6 +431,43 @@ export const bloquesCurso: BloqueCurso[] = [
         id: 'multimedia',
         title: 'Vídeo y audio',
         component: markRaw(Multimedia),
+        toc: 'h2',
+      },
+    ],
+  },
+  {
+    slug: 'herramientas',
+    shortTitle: 'Herramientas',
+    title: 'Herramientas',
+    menuDescription: 'Revisión de accesibilidad, extensión de CADUA y lector de pantalla.',
+    homeSummary:
+      'Explica cómo combinar pruebas automáticas y manuales, utilizar la extensión de CADUA y hacer una comprobación básica con lector de pantalla.',
+    intro: [
+      'En este bloque se explica cómo revisar la accesibilidad en la práctica combinando herramientas automáticas, comprobaciones manuales y tecnologías de apoyo.',
+      'Ninguna herramienta puede determinar por sí sola si una página es accesible. Por eso se propone un proceso de revisión que permita detectar errores técnicos sin perder de vista la experiencia real de uso.',
+    ],
+    sections: [
+      {
+        id: 'revision-accesibilidad',
+        title: 'Revisión de accesibilidad',
+        component: markRaw(RevisionAccesibilidad),
+        toc: 'h2',
+      },
+      {
+        id: 'extension-cadua',
+        title: 'Extensión de CADUA',
+        component: markRaw(ExtensionCadua),
+        toc: 'h2',
+        figure: {
+          src: '/curso-media/extension-accesibilidad.png',
+          alt: 'Ficha de CADUA en Chrome Web Store y panel de la extensión mostrando resultados de accesibilidad.',
+          caption: 'La extensión de navegador de CADUA está disponible en Chrome Web Store.',
+        },
+      },
+      {
+        id: 'lector-pantalla',
+        title: 'Uso de un lector de pantalla',
+        component: markRaw(LectorPantalla),
         toc: 'h2',
       },
     ],
