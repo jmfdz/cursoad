@@ -45,13 +45,15 @@ Esto deja clara una idea de fondo: la accesibilidad digital no es un extra técn
 
 En el ámbito público, la referencia central es la Directiva (UE) 2016/2102, trasladada al ordenamiento español mediante el Real Decreto 1112/2018.
 
-Esta norma regula la accesibilidad de sitios web y aplicaciones móviles del sector público y, además del cumplimiento técnico, exige también una serie de obligaciones organizativas. Entre ellas:
+Esta norma regula la accesibilidad de sitios web y aplicaciones móviles del sector público, con exclusiones concretas, y exige también una serie de obligaciones organizativas. Entre ellas:
 
 - cumplir los requisitos de accesibilidad aplicables,
 - publicar una declaración de accesibilidad,
 - ofrecer un mecanismo de comunicación y reclamación,
 - realizar revisiones periódicas,
 - y articular responsabilidades internas en materia de accesibilidad.
+
+La carga desproporcionada debe estar motivada, no puede afectar a contenidos esenciales y requiere una alternativa accesible cuando proceda.
 
 ### Norma europea EN 301 549
 

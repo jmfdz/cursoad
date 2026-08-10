@@ -26,9 +26,9 @@
       ordenamiento español mediante el Real Decreto 1112/2018.
     </p>
     <p>
-      Esta norma regula la accesibilidad de sitios web y aplicaciones móviles del sector público y,
-      además del cumplimiento técnico, exige también una serie de obligaciones organizativas.
-      Entre ellas:
+      Esta norma regula la accesibilidad de sitios web y aplicaciones móviles del sector público,
+      con exclusiones concretas, y exige también una serie de obligaciones organizativas. Entre
+      ellas:
     </p>
     <ul>
       <li>cumplir los requisitos de accesibilidad aplicables,</li>
@@ -37,6 +37,10 @@
       <li>realizar revisiones periódicas,</li>
       <li>y articular responsabilidades internas en materia de accesibilidad.</li>
     </ul>
+    <p>
+      La carga desproporcionada debe estar motivada, no puede afectar a contenidos esenciales y
+      requiere una alternativa accesible cuando proceda.
+    </p>
 
     <h2>Norma europea EN 301 549</h2>
     <p>
