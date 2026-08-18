@@ -18,6 +18,12 @@
       vuelve confusa.
     </p>
     <p>
+      Cuidado especialmente con los frameworks CSS que permiten reordenar elementos visualmente
+      (por ejemplo, con clases de utilidad de orden en Bootstrap) sin tocar el HTML: el foco sigue
+      el orden del documento, no el orden visual aplicado por CSS. El apartado «CSS, maquetación y
+      color» explica este caso con un ejemplo.
+    </p>
+    <p>
       Los enlaces de salto permiten ir directamente al contenido principal. Los botones se activan
       con <strong>Espacio</strong> o <strong>INTRO</strong>; los enlaces, con <strong>INTRO</strong>.
     </p>

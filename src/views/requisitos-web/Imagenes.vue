@@ -36,6 +36,13 @@
   &lt;figcaption&gt;La Mano de la UA simboliza la libertad de expresión y sostiene un lápiz que apunta al cielo.&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
 
+    <h2>Texto en imágenes</h2>
+    <p>
+      <strong>No es aconsejable incluir texto en imágenes</strong> debido a que dificulta su
+      adaptación y ampliación. También puede impedir que el usuario cambie su presentación o que
+      un lector de pantalla acceda al texto si no se proporciona una alternativa.
+    </p>
+
     <h2>Iconos</h2>
     <p>
       Cuando un icono transmite información o permite realizar una acción, debe comunicarse su
@@ -91,5 +98,18 @@
 &lt;svg aria-hidden="true" focusable="false"&gt;
   ...
 &lt;/svg&gt;</code></pre>
+
+    <h2>Movimiento, destellos y contenido animado</h2>
+    <p>
+      Deben evitarse los contenidos con más de tres destellos por segundo, porque pueden afectar a
+      personas con epilepsia fotosensible.
+    </p>
+    <p>
+      Además, las animaciones que arrancan solas y duran más de cinco segundos (incluidos GIF y
+      contenido que se actualiza automáticamente) deben poder pausarse, detenerse u ocultarse,
+      salvo que el movimiento sea imprescindible para la actividad. En CSS, esto se apoya en la
+      preferencia <code>prefers-reduced-motion</code>, explicada en el apartado «CSS, maquetación
+      y color».
+    </p>
   </div>
 </template>

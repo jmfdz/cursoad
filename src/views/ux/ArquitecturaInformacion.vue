@@ -136,6 +136,11 @@ function esPaginaActual(nombre: string) {
       experiencia se vuelve impredecible.
     </p>
     <p>
+      Las WCAG respaldan esto con dos criterios: la navegación repetida debe mantener siempre el
+      mismo orden relativo, y los componentes con la misma función deben identificarse siempre
+      igual (por ejemplo, llamar siempre igual al botón que guarda un formulario).
+    </p>
+    <p>
       Una buena organización de contenidos y navegación reduce errores, mejora la orientación y
       facilita que el usuario complete tareas con menor esfuerzo.
     </p>

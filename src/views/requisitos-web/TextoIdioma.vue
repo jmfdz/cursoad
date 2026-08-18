@@ -99,13 +99,6 @@
   margin-bottom: 1rem;
 }</code></pre>
 
-    <h2>Texto en imágenes</h2>
-    <p>
-      <strong>No es aconsejable incluir texto en imágenes</strong> debido a que dificulta su
-      adaptación y ampliación. También puede impedir que el usuario cambie su presentación o que
-      un lector de pantalla acceda al texto si no se proporciona una alternativa.
-    </p>
-
     <h2>Idioma del contenido</h2>
     <p>
       Tanto si trabajamos con páginas web en varios idiomas como si aparecen fragmentos en otra

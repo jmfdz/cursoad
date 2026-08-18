@@ -12,6 +12,7 @@ import Pdf from './views/documentos/Pdf.vue'
 import Powerpoint from './views/documentos/Powerpoint.vue'
 import Word from './views/documentos/Word.vue'
 import ComponentesEjemplos from './views/requisitos-web/ComponentesEjemplos.vue'
+import CssMaquetacion from './views/requisitos-web/CssMaquetacion.vue'
 import EnlacesBotones from './views/requisitos-web/EnlacesBotones.vue'
 import EstructuraSemantica from './views/requisitos-web/EstructuraSemantica.vue'
 import Formularios from './views/requisitos-web/Formularios.vue'
@@ -20,8 +21,8 @@ import Tablas from './views/requisitos-web/Tablas.vue'
 import TecladoFoco from './views/requisitos-web/TecladoFoco.vue'
 import TextoIdioma from './views/requisitos-web/TextoIdioma.vue'
 import WaiAria from './views/requisitos-web/WaiAria.vue'
-import Color from './views/ux/Color.vue'
 import ArquitecturaInformacion from './views/ux/ArquitecturaInformacion.vue'
+import CargaAccesibilidadCognitiva from './views/ux/CargaAccesibilidadCognitiva.vue'
 import EstadosFeedback from './views/ux/EstadosFeedback.vue'
 import FundamentosUx from './views/ux/FundamentosUx.vue'
 import LeyesUxCargaDecision from './views/ux/LeyesUxCargaDecision.vue'
@@ -148,9 +149,9 @@ export const bloquesCurso: BloqueCurso[] = [
     slug: 'requisitos-web',
     shortTitle: 'Requisitos web',
     title: 'Requisitos web',
-    menuDescription: 'Texto, semántica, formularios, tablas, componentes y ARIA.',
+    menuDescription: 'Texto, semántica, CSS, color, formularios, tablas, componentes y ARIA.',
     homeSummary:
-      'Recoge los requisitos técnicos que deben cumplir las páginas y aplicaciones web: texto, idioma, estructura, imágenes, enlaces, tablas, formularios y componentes accesibles.',
+      'Recoge los requisitos técnicos que deben cumplir las páginas y aplicaciones web: texto, idioma, estructura, CSS, color, imágenes, enlaces, tablas, formularios y componentes accesibles.',
     intro: [
       'En este bloque se reúnen los requisitos técnicos de accesibilidad aplicados a la web: contenido, estructura, interacción y componentes.',
     ],
@@ -160,6 +161,52 @@ export const bloquesCurso: BloqueCurso[] = [
         title: 'Estructura semántica de una página web',
         component: markRaw(EstructuraSemantica),
         toc: 'h2',
+      },
+      {
+        id: 'css-maquetacion',
+        title: 'CSS, maquetación y color',
+        component: markRaw(CssMaquetacion),
+        toc: 'h2-h3',
+        gallery: [
+          {
+            src: '/curso-media/image6.png',
+            alt: 'Cinco ejemplos de combinaciones de color con distintos ratios de contraste.',
+            caption: 'Ejemplos de combinaciones de color y su ratio de contraste.',
+          },
+          {
+            src: '/curso-media/image8.png',
+            alt: 'Listado de colores alternativos que sí cumplen contraste mínimo.',
+            caption: 'Propuesta de colores alternativos accesibles.',
+          },
+          {
+            src: '/curso-media/image9.png',
+            alt: 'Herramienta de contraste con combinación ajustada que alcanza ratio 4.50.',
+            caption: 'La misma herramienta tras elegir una combinación accesible.',
+          },
+          {
+            src: '/curso-media/image10.png',
+            alt: 'Extensión Colorblindly con la opción Green-Blind seleccionada.',
+            caption: 'Simulación de ceguera al color con Colorblindly.',
+          },
+          {
+            src: '/curso-media/image11.png',
+            alt: 'Botones de Bootstrap con visión estándar.',
+            caption: 'Esquema de color típico de Bootstrap 5 sin patologías de visión cromática.',
+          },
+          {
+            src: '/curso-media/image12.png',
+            alt: 'Botones de Bootstrap simulando problemas de ceguera al color.',
+            caption: 'Comparativa de botones con problemas de ceguera al color.',
+          },
+        ],
+        examples: [
+          {
+            title: 'Ejemplo de contraste y estilos corporativos',
+            href: '/ejemplos/bs3/colores.html',
+            description:
+              'Ejemplo con colores corporativos y ajustes de contraste sobre Bootstrap 3.',
+          },
+        ],
       },
       {
         id: 'texto-idioma',
@@ -246,17 +293,24 @@ export const bloquesCurso: BloqueCurso[] = [
     slug: 'ux',
     shortTitle: 'Usabilidad y UX',
     title: 'Usabilidad y UX',
-    menuDescription: 'Conceptos base, técnicas, leyes UX, color y patrones de diseño.',
+    menuDescription:
+      'Conceptos base, técnicas, carga y accesibilidad cognitiva, leyes UX y patrones de diseño.',
     homeSummary:
-      'Reúne fundamentos de diseño inclusivo, usabilidad y experiencia de usuario, junto con técnicas de evaluación, leyes UX, color y patrones aplicados al diseño de interfaces.',
+      'Reúne fundamentos de diseño inclusivo, usabilidad y experiencia de usuario, junto con técnicas de evaluación, carga y accesibilidad cognitiva, leyes UX y patrones aplicados al diseño de interfaces.',
     intro: [
-      'En este bloque se trabajan los conceptos de diseño inclusivo, usabilidad y experiencia de usuario, así como el uso del color y varios patrones de diseño.',
+      'En este bloque se trabajan los conceptos de diseño inclusivo, usabilidad y experiencia de usuario, así como varios patrones de diseño.',
     ],
     sections: [
       {
         id: 'fundamentos-ux',
         title: 'Fundamentos de usabilidad y UX',
         component: markRaw(FundamentosUx),
+        toc: 'h2',
+      },
+      {
+        id: 'carga-accesibilidad-cognitiva',
+        title: 'Carga y accesibilidad cognitiva',
+        component: markRaw(CargaAccesibilidadCognitiva),
         toc: 'h2',
       },
       {
@@ -276,52 +330,6 @@ export const bloquesCurso: BloqueCurso[] = [
             href: '/ejemplos/feedback.html',
             description:
               'Ejemplo de carga, éxito y error con mensajes visibles y jerarquía clara de respuesta.',
-          },
-        ],
-      },
-      {
-        id: 'color',
-        title: 'Color, contraste y percepción visual',
-        component: markRaw(Color),
-        toc: 'h2',
-        gallery: [
-          {
-            src: '/curso-media/image6.png',
-            alt: 'Cinco ejemplos de combinaciones de color con distintos ratios de contraste.',
-            caption: 'Ejemplos de combinaciones de color y su ratio de contraste.',
-          },
-          {
-            src: '/curso-media/image8.png',
-            alt: 'Listado de colores alternativos que sí cumplen contraste mínimo.',
-            caption: 'Propuesta de colores alternativos accesibles.',
-          },
-          {
-            src: '/curso-media/image9.png',
-            alt: 'Herramienta de contraste con combinación ajustada que alcanza ratio 4.50.',
-            caption: 'La misma herramienta tras elegir una combinación accesible.',
-          },
-          {
-            src: '/curso-media/image10.png',
-            alt: 'Extensión Colorblindly con la opción Green-Blind seleccionada.',
-            caption: 'Simulación de ceguera al color con Colorblindly.',
-          },
-          {
-            src: '/curso-media/image11.png',
-            alt: 'Botones de Bootstrap con visión estándar.',
-            caption: 'Esquema de color típico de Bootstrap 5 sin patologías de visión cromática.',
-          },
-          {
-            src: '/curso-media/image12.png',
-            alt: 'Botones de Bootstrap simulando problemas de ceguera al color.',
-            caption: 'Comparativa de botones con problemas de ceguera al color.',
-          },
-        ],
-        examples: [
-          {
-            title: 'Ejemplo de contraste y estilos corporativos',
-            href: '/ejemplos/bs3/colores.html',
-            description:
-              'Ejemplo con colores corporativos y ajustes de contraste sobre Bootstrap 3.',
           },
         ],
       },

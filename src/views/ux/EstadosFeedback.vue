@@ -148,8 +148,119 @@ async function guardarSolicitud() {
       <li>Los mensajes de éxito deben confirmar la acción realizada y, si procede, orientar sobre el siguiente paso.</li>
       <li>Los mensajes de error deben explicar qué ha fallado y cómo corregirlo.</li>
       <li>Las alertas importantes deben percibirse con facilidad, pero sin interrumpir de manera innecesaria.</li>
-      <li>En acciones reversibles, muchas veces es preferible ofrecer una opción de deshacer antes que pedir confirmación previa.</li>
     </ul>
+    <p>
+      Esto conecta con el criterio WCAG de mensajes de estado: cuando un mensaje aparece sin
+      recargar la página y sin mover el foco (por ejemplo, un aviso de «Guardado correctamente»
+      tras enviar un formulario), quien usa un lector de pantalla y tiene el foco en otro punto de
+      la página no se enterará del cambio salvo que se anuncie de forma programática, como ya
+      hacen los ejemplos anteriores con <code>role="status"</code> y <code>role="alert"</code>.
+    </p>
+
+    <h2>Etiquetas de acciones repetidas en listas y CRUD</h2>
+    <p>
+      En un listado de tipo CRUD (cursos, expedientes, convocatorias...) es habitual repetir la
+      misma acción en cada fila: <em>Crear</em>, <em>Editar</em>, <em>Eliminar</em> o <em>Ver</em>.
+      Si el texto es siempre igual de genérico, quien navega con un lector de pantalla por una
+      lista de controles escucha elementos idénticos, uno tras otro, sin saber a qué fila se
+      refiere cada uno.
+    </p>
+    <p>
+      Por eso el botón debe incluir el nombre del elemento al que afecta: mejor
+      <strong>Crear convocatoria</strong> que <strong>Crear</strong>, mejor
+      <strong>Editar Aula 12</strong> que <strong>Editar</strong>. Cuando el diseño no permite un
+      texto tan largo en cada fila, la forma más simple de dar ese contexto sin cambiar el aspecto
+      visual es un <code>aria-label</code> en el propio botón o enlace: el lector de pantalla
+      anuncia el <code>aria-label</code> en lugar del texto visible, así que basta con una
+      etiqueta para resolverlo, sin necesidad de tocar el HTML visible.
+    </p>
+    <pre class="course-code"><code>&lt;!-- El lector de pantalla anuncia "Editar Aula 12", no solo "Editar" --&gt;
+&lt;button type="button" class="btn btn-sm btn-outline-primary" aria-label="Editar Aula 12"&gt;
+  Editar
+&lt;/button&gt;</code></pre>
+    <p>
+      Esto conecta con los criterios WCAG que exigen que las etiquetas describan su propósito y
+      que el destino de cada enlace pueda determinarse por su propio texto o contexto.
+    </p>
+
+    <h2>Mensajes de error de formulario</h2>
+    <p>
+      Los requisitos técnicos de validación accesible se han tratado en el apartado de
+      formularios. Aquí nos centramos en la redacción: los mensajes de error deben ser
+      instrucciones positivas y accionables, no descripciones del fallo.
+    </p>
+    <ul>
+      <li><strong>Introduce el nombre</strong>, mejor que <strong>El campo nombre no puede estar vacío</strong>.</li>
+      <li><strong>Introduce un email válido</strong>, mejor que <strong>Formato de email incorrecto</strong>.</li>
+    </ul>
+    <p>
+      Deben sonar a lenguaje humano y evitar términos genéricos como <strong>Entrada no
+      válida</strong> cuando se puede indicar cómo corregir el dato. Si el formato esperado ya
+      aparece en el texto de ayuda del campo, no hace falta repetir el mismo ejemplo en el error.
+      El mensaje junto al campo y el del resumen de errores deben coincidir exactamente. Esto está
+      respaldado por los criterios WCAG de identificación de errores (detectar el error y señalar
+      el campo en texto) y sugerencia ante errores (indicar cómo corregirlo cuando se conoce la
+      solución).
+    </p>
+
+    <h2>Prevención y recuperación de errores</h2>
+    <p>
+      Tres ideas resumen cómo prevenir errores y facilitar su corrección sin que se pierda el
+      trabajo ya hecho:
+    </p>
+    <ul>
+      <li>
+        <strong>Validación temprana no invasiva.</strong> Avisar del error en cuanto se puede
+        detectar con seguridad, pero sin interrumpir mientras la persona todavía está escribiendo
+        (por ejemplo, validar un email al perder el foco del campo, no letra a letra).
+      </li>
+      <li>
+        <strong>Sugerencias de corrección.</strong> Si el sistema puede deducir qué se quiso decir
+        o qué formato se esperaba, ofrecerlo en el propio mensaje de error.
+      </li>
+      <li>
+        <strong>Revisión antes de envío irreversible.</strong> En trámites largos o con
+        consecuencias legales o económicas, mostrar un resumen final editable antes de confirmar,
+        para poder corregir datos antes de que dejen de poder cambiarse.
+      </li>
+    </ul>
+
+    <h2>Acciones reversibles y operaciones destructivas</h2>
+    <p>
+      La revisión antes del envío no siempre basta. Cuando la acción es irreversible —borrar,
+      archivar, enviar un documento de forma definitiva— conviene pedir confirmación explícita
+      antes de ejecutarla. En cambio, para una acción reversible suele ser mejor ofrecer un
+      «deshacer» justo después de ejecutarla que interrumpir con una confirmación previa:
+      interrumpe menos y da el mismo margen de reacción.
+    </p>
+    <p>
+      El texto de los botones en una confirmación debe dejar clara la acción sin necesidad de leer
+      nada más:
+    </p>
+    <ul>
+      <li><strong>Crear</strong>: el botón principal dice el verbo y el elemento, por ejemplo «Crear convocatoria», nunca un genérico «Aceptar».</li>
+      <li><strong>Guardar cambios</strong>: el botón principal dice «Guardar cambios», no «Aceptar» ni «Continuar».</li>
+      <li><strong>Eliminar</strong>: el título del propio diálogo ya identifica el elemento («¿Eliminar Aula 12?»), así que el botón no necesita repetirlo; basta con «Eliminar», destacado visualmente como acción destructiva.</li>
+    </ul>
+    <p>
+      En los tres casos, el botón de cancelar se queda simplemente en «Cancelar», sin ningún aviso
+      adicional: si la persona cancela, no ha pasado nada, y avisar de algo que no ha ocurrido solo
+      añade ruido.
+    </p>
+    <p>
+      Otras buenas prácticas en confirmaciones: ser específico en el título («¿Eliminar Aula 12?»
+      se entiende de un vistazo, «¿Eliminar?» obliga a leer también el cuerpo del mensaje),
+      resaltar en el cuerpo lo irreversible («Esta acción no se puede deshacer» o «Se perderán las
+      reservas asociadas») y no abusar de la confirmación, porque pedirla para cualquier clic acaba
+      entrenando a la persona a pulsar «Aceptar» sin leer.
+    </p>
+    <p>
+      Este patrón —confirmación, revisión o posibilidad de deshacer antes de una operación
+      irreversible— es lo que exige el criterio WCAG de prevención de errores para los envíos que
+      eliminan o modifican datos de forma permanente: la operación debe ser reversible, o los
+      datos deben poder revisarse antes de confirmarla, o debe existir un mecanismo de confirmación
+      previo.
+    </p>
 
     <h2>Relación con accesibilidad</h2>
     <p>

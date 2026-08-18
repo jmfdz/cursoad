@@ -56,6 +56,36 @@
       detalle en el apartado de idioma.
     </p>
 
+    <h2>Regiones y landmarks</h2>
+    <p>
+      Más allá de elegir el elemento adecuado para cada fragmento de texto, HTML5 incorpora
+      elementos de sectioning para describir las grandes regiones de una página: cabecera
+      (<code>header</code>), navegación (<code>nav</code>), contenido principal (<code>main</code>),
+      contenido autónomo (<code>article</code>), agrupaciones temáticas (<code>section</code>),
+      contenido complementario (<code>aside</code>) y pie (<code>footer</code>). Cada uno expone
+      automáticamente un rol de landmark, sin que haga falta añadirlo a mano, lo que permite que
+      una persona que navega con lector de pantalla salte directamente entre regiones en lugar de
+      recorrer todo el contenido de forma lineal.
+    </p>
+    <p>Algunas reglas prácticas de uso:</p>
+    <ul>
+      <li>debe haber un único <code>main</code> por página;</li>
+      <li>
+        si hay varios <code>nav</code> (por ejemplo, navegación principal y migas de pan), cada
+        uno necesita un nombre distinto mediante <code>aria-label</code> para poder diferenciarlos;
+      </li>
+      <li>
+        <code>header</code> y <code>footer</code> solo son landmarks de página cuando son hijos
+        directos de <code>body</code>, no cuando están anidados dentro de un <code>article</code>
+        o una <code>section</code>;
+      </li>
+      <li>
+        <code>article</code> se reserva para contenido que tendría sentido por sí solo fuera de la
+        página, mientras que <code>section</code> agrupa contenido relacionado dentro de un mismo
+        documento.
+      </li>
+    </ul>
+
     <h2>Título de página</h2>
     <p>
       Otro requisito de accesibilidad es que todo documento web tenga definido un título con la
