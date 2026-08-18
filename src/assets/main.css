@@ -96,6 +96,12 @@ h6 {
   --bs-nav-pills-link-active-bg: var(--bs-primary);
 }
 
+.course-page-index {
+  top: 5.5rem;
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+}
+
 .btn-primary {
   --bs-btn-bg: var(--bs-primary);
   --bs-btn-border-color: var(--bs-primary);

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Presentaciones accesibles</h2>
+    <h2 id="preparar-presentacion">Preparar una presentación accesible</h2>
     <p>Una presentación accesible se prepara igual que un documento, pero hay que revisar además el orden de lectura de cada diapositiva.</p>
     <ul>
       <li>Usar los diseños predefinidos de PowerPoint y poner un título único a cada diapositiva, incluso cuando no se muestre visualmente.</li>
@@ -10,7 +10,8 @@
       <li>Pasar el Comprobador de accesibilidad antes de compartir la presentación.</li>
     </ul>
 
-    <h3>Comprobar accesibilidad</h3>
+    <h2 id="comprobar-accesibilidad">Comprobar la accesibilidad</h2>
+    <p>Antes de compartir la presentación, hay que ejecutar el Comprobador de accesibilidad y revisar los problemas detectados.</p>
     <figure class="my-4">
       <img
         class="img-fluid"
@@ -25,6 +26,7 @@
         alt="Resultados del Comprobador de accesibilidad de Office."
       />
     </figure>
-    <p>Más información en la <a href="https://support.microsoft.com/es-ES/accessibility/powerpoint/make-your-powerpoint-presentations-accessible-to-people-with-disabilities">guía de Microsoft para crear presentaciones accesibles</a>.</p>
+    <h2 id="mas-informacion">Más información</h2>
+    <p>Consulta la <a href="https://support.microsoft.com/es-ES/accessibility/powerpoint/make-your-powerpoint-presentations-accessible-to-people-with-disabilities">guía de Microsoft para crear presentaciones accesibles</a>.</p>
   </div>
 </template>

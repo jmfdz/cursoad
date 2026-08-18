@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h2>¿Cómo crear contenidos accesibles?</h2>
+    <h2 id="contenido-formato">Contenido y formato</h2>
+    <p>El contenido debe ser claro, legible y estar correctamente identificado.</p>
 
     <h3>Texto claro</h3>
     <ul>
@@ -42,6 +43,9 @@
       />
     </figure>
 
+    <h2 id="estructura-navegacion">Estructura y navegación</h2>
+    <p>Una estructura clara mejora la comprensión y permite desplazarse por el documento con facilidad.</p>
+
     <h3>Títulos y estructura</h3>
     <ul>
       <li>Estructura el contenido en apartados, mejora la comprensión y facilita la navegación.</li>
@@ -55,7 +59,10 @@
       <li>Navegamos por él con facilidad</li>
     </ol>
 
-    <h3>Imágenes y elementos no textuales</h3>
+    <h2 id="elementos-no-textuales">Imágenes y elementos no textuales</h2>
+    <p>Los elementos visuales que aportan información deben tener una alternativa textual adecuada.</p>
+
+    <h3>Descripción de los elementos no textuales</h3>
     <ul>
       <li>Incluye una descripción textual en imágenes y elementos no textuales.</li>
       <li>La descripción no debe ser superficial y debe responder a estas preguntas:</li>
@@ -103,7 +110,7 @@
       />
     </figure>
 
-    <h3>Tablas</h3>
+    <h2 id="tablas">Tablas</h2>
     <p>¿Es accesible esta tabla?</p>
 
     <h3>Tablas bien estructuradas</h3>
@@ -140,6 +147,9 @@
         alt="Tabla accesible y gráfica de ejemplo."
       />
     </figure>
+
+    <h2 id="graficas-color">Gráficas y uso del color</h2>
+    <p>Las gráficas deben poder comprenderse sin depender únicamente de su representación visual.</p>
 
     <h3>Gráficas</h3>
     <p>¿Es accesible esta gráfica?</p>
@@ -188,7 +198,7 @@
       />
     </figure>
 
-    <h3>Enlaces</h3>
+    <h2 id="enlaces">Enlaces</h2>
     <ul>
       <li>El texto de un enlace debe transmitir claramente su propósito, incluso fuera del contexto del texto que lo rodea.</li>
       <li>Prohibido: Haz click aquí, En este enlace, etc.</li>

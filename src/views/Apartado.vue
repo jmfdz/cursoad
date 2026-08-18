@@ -114,8 +114,7 @@ onMounted(() => {
 
     <div v-if="subtitulos.length" class="col-lg-4 col-xl-3 d-none d-lg-block">
       <nav
-        class="card border-0 shadow-sm sticky-lg-top"
-        style="top: 5.5rem"
+        class="course-page-index card border-0 shadow-sm sticky-lg-top"
         aria-label="Índice de la página"
       >
         <div class="card-body">

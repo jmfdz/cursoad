@@ -413,19 +413,19 @@ export const bloquesCurso: BloqueCurso[] = [
         id: 'word',
         title: 'Word',
         component: markRaw(Word),
-        toc: 'h2',
+        toc: 'h2-h3',
       },
       {
         id: 'powerpoint',
         title: 'PowerPoint',
         component: markRaw(Powerpoint),
-        toc: 'h2',
+        toc: 'h2-h3',
       },
       {
         id: 'pdf',
         title: 'PDF',
         component: markRaw(Pdf),
-        toc: 'h2',
+        toc: 'h2-h3',
       },
       {
         id: 'multimedia',
