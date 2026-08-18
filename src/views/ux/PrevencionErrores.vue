@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import CodeTabs from '../../components/CodeTabs.vue'
+</script>
+
 <template>
   <div>
     <p>
@@ -63,6 +67,118 @@
       eliminan o modifican datos de forma permanente: la operación debe ser reversible, o los
       datos deben poder revisarse antes de confirmarla, o debe existir un mecanismo de confirmación
       previo.
+    </p>
+
+    <h2>Ejemplo: eliminar con «deshacer» en lugar de confirmación previa</h2>
+    <p>
+      Veamos cómo se aplica en la práctica el caso más habitual de acción reversible: eliminar un
+      elemento de una lista. En lugar de interrumpir con un cuadro de confirmación, ocultamos el
+      elemento de inmediato y ofrecemos unos segundos para deshacer antes de eliminarlo de verdad.
+      El aviso usa <code>role="status"</code>, el mismo patrón de mensaje de estado ya visto en
+      «SPA en Vue.js (II)», dentro de requisitos web.
+    </p>
+    <CodeTabs label="Implementación de eliminar con deshacer">
+      <template #js>
+        <pre class="course-code"><code>&lt;li id="fila-1248" class="list-group-item d-flex justify-content-between align-items-center"&gt;
+  Solicitud 1248
+  &lt;button type="button" class="btn btn-sm btn-outline-danger" data-id="1248"&gt;
+    Eliminar
+  &lt;/button&gt;
+&lt;/li&gt;
+
+&lt;div id="avisoDeshacer" role="status" class="mt-2"&gt;&lt;/div&gt;</code></pre>
+        <pre class="course-code"><code>&lt;script&gt;
+let temporizador;
+
+document.querySelectorAll("[data-id]").forEach((boton) =&gt; {
+  boton.addEventListener("click", () =&gt; {
+    const id = boton.dataset.id;
+    const fila = document.getElementById(`fila-${id}`);
+    const aviso = document.getElementById("avisoDeshacer");
+
+    fila.hidden = true;
+    aviso.innerHTML = `Solicitud ${id} eliminada. &lt;button type="button" class="btn btn-link p-0" id="deshacer-${id}"&gt;Deshacer&lt;/button&gt;`;
+
+    document.getElementById(`deshacer-${id}`).addEventListener("click", () =&gt; {
+      clearTimeout(temporizador);
+      fila.hidden = false;
+      aviso.textContent = "";
+    });
+
+    temporizador = setTimeout(() =&gt; {
+      fila.remove();
+      aviso.textContent = "";
+    }, 6000);
+  });
+});
+&lt;/script&gt;</code></pre>
+      </template>
+      <template #vue>
+        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+import { ref } from 'vue'
+
+const solicitudes = ref([
+  { id: '1248', oculta: false },
+  { id: '1251', oculta: false },
+])
+const mensaje = ref('')
+const idEnCurso = ref('')
+let temporizador: ReturnType&lt;typeof setTimeout&gt;
+
+function eliminar(id: string) {
+  const solicitud = solicitudes.value.find((s) =&gt; s.id === id)
+  if (!solicitud) return
+
+  solicitud.oculta = true
+  mensaje.value = `Solicitud ${id} eliminada.`
+  idEnCurso.value = id
+
+  temporizador = setTimeout(() =&gt; {
+    solicitudes.value = solicitudes.value.filter((s) =&gt; s.id !== id)
+    mensaje.value = ''
+  }, 6000)
+}
+
+function deshacer() {
+  clearTimeout(temporizador)
+  const solicitud = solicitudes.value.find((s) =&gt; s.id === idEnCurso.value)
+  if (solicitud) solicitud.oculta = false
+  mensaje.value = ''
+}
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;ul class="list-group"&gt;
+    &lt;li
+      v-for="solicitud in solicitudes.filter((s) =&gt; !s.oculta)"
+      :key="solicitud.id"
+      class="list-group-item d-flex justify-content-between align-items-center"
+    &gt;
+      &lt;span v-text="`Solicitud ${solicitud.id}`"&gt;&lt;/span&gt;
+      &lt;button
+        type="button"
+        class="btn btn-sm btn-outline-danger"
+        @click="eliminar(solicitud.id)"
+      &gt;
+        Eliminar
+      &lt;/button&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;div role="status" class="mt-2"&gt;
+    &lt;p v-if="mensaje" class="mb-0"&gt;
+      &lt;span v-text="mensaje"&gt;&lt;/span&gt;
+      &lt;button type="button" class="btn btn-link p-0" @click="deshacer"&gt;Deshacer&lt;/button&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;</code></pre>
+      </template>
+    </CodeTabs>
+    <p>
+      El contenedor con <code>role="status"</code> permanece montado desde el principio y solo
+      cambia su contenido, para que el aviso y el botón «Deshacer» se anuncien sin necesidad de
+      mover el foco. Pasado el tiempo de margen, el elemento se elimina definitivamente y el aviso
+      desaparece.
     </p>
   </div>
 </template>

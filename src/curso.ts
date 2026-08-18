@@ -18,11 +18,12 @@ import EstructuraSemantica from './views/requisitos-web/EstructuraSemantica.vue'
 import Formularios from './views/requisitos-web/Formularios.vue'
 import Imagenes from './views/requisitos-web/Imagenes.vue'
 import Tablas from './views/requisitos-web/Tablas.vue'
+import SpaVueContenidoDinamico from './views/requisitos-web/SpaVueContenidoDinamico.vue'
+import SpaVueEstructura from './views/requisitos-web/SpaVueEstructura.vue'
 import TecladoFoco from './views/requisitos-web/TecladoFoco.vue'
 import TextoIdioma from './views/requisitos-web/TextoIdioma.vue'
 import WaiAria from './views/requisitos-web/WaiAria.vue'
 import ArquitecturaInformacion from './views/ux/ArquitecturaInformacion.vue'
-import CargaAccesibilidadCognitiva from './views/ux/CargaAccesibilidadCognitiva.vue'
 import EstadosFeedback from './views/ux/EstadosFeedback.vue'
 import FundamentosUx from './views/ux/FundamentosUx.vue'
 import LeyesUxCargaDecision from './views/ux/LeyesUxCargaDecision.vue'
@@ -150,9 +151,10 @@ export const bloquesCurso: BloqueCurso[] = [
     slug: 'requisitos-web',
     shortTitle: 'Requisitos web',
     title: 'Requisitos web',
-    menuDescription: 'Texto, semántica, CSS, color, formularios, tablas, componentes y ARIA.',
+    menuDescription:
+      'Texto, semántica, CSS, color, formularios, tablas, componentes, ARIA y accesibilidad en SPA con Vue.js.',
     homeSummary:
-      'Recoge los requisitos técnicos que deben cumplir las páginas y aplicaciones web: texto, idioma, estructura, CSS, color, imágenes, enlaces, tablas, formularios y componentes accesibles.',
+      'Recoge los requisitos técnicos que deben cumplir las páginas y aplicaciones web: texto, idioma, estructura, CSS, color, imágenes, enlaces, tablas, formularios, componentes accesibles y su implementación en una SPA con Vue.js.',
     intro: [
       'En este bloque se reúnen los requisitos técnicos de accesibilidad aplicados a la web: contenido, estructura, interacción y componentes.',
     ],
@@ -288,6 +290,18 @@ export const bloquesCurso: BloqueCurso[] = [
           },
         ],
       },
+      {
+        id: 'spa-vue-estructura',
+        title: 'SPA en Vue.js (I): estructura y navegación accesible',
+        component: markRaw(SpaVueEstructura),
+        toc: 'h2-h3',
+      },
+      {
+        id: 'spa-vue-contenido-dinamico',
+        title: 'SPA en Vue.js (II): contenido dinámico y mensajes de estado',
+        component: markRaw(SpaVueContenidoDinamico),
+        toc: 'h2',
+      },
     ],
   },
   {
@@ -304,14 +318,8 @@ export const bloquesCurso: BloqueCurso[] = [
     sections: [
       {
         id: 'fundamentos-ux',
-        title: 'Fundamentos de usabilidad y UX',
+        title: 'Fundamentos, carga y accesibilidad cognitiva',
         component: markRaw(FundamentosUx),
-        toc: 'h2',
-      },
-      {
-        id: 'carga-accesibilidad-cognitiva',
-        title: 'Carga y accesibilidad cognitiva',
-        component: markRaw(CargaAccesibilidadCognitiva),
         toc: 'h2',
       },
       {
