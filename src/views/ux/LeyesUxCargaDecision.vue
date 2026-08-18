@@ -1,5 +1,17 @@
 <template>
   <div>
+    <p>
+      <i>Laws of UX</i> es una colección de principios psicológicos y heurísticas de diseño
+      aplicables a interfaces digitales. En este bloque se recogen agrupadas por tema, con una
+      explicación breve y un ejemplo orientado a desarrollo web e interfaces; la referencia
+      original puede consultarse en <a href="https://lawsofux.com/es/" target="_blank" rel="noreferrer">Laws of UX</a>.
+    </p>
+    <p>
+      Muchas de estas leyes explican por qué funcionan las recomendaciones del apartado «Carga y
+      accesibilidad cognitiva»: dividir procesos largos, agrupar información relacionada o evitar
+      demasiadas opciones a la vez tiene aquí su fundamento psicológico.
+    </p>
+
     <h2>Memoria, aprendizaje y carga mental</h2>
 
     <h3>Carga cognitiva</h3>

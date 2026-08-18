@@ -1,5 +1,12 @@
 <template>
   <div>
+    <p>
+      <i>Laws of UX</i> es una colección de principios psicológicos y heurísticas de diseño
+      aplicables a interfaces digitales. En este bloque se recogen agrupadas por tema, con una
+      explicación breve y un ejemplo orientado a desarrollo web e interfaces; la referencia
+      original puede consultarse en <a href="https://lawsofux.com/es/" target="_blank" rel="noreferrer">Laws of UX</a>.
+    </p>
+
     <h2>Interacción y rendimiento</h2>
 
     <h3>Fluir</h3>

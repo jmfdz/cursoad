@@ -29,6 +29,7 @@ import LeyesUxCargaDecision from './views/ux/LeyesUxCargaDecision.vue'
 import LeyesUxInteraccion from './views/ux/LeyesUxInteraccion.vue'
 import LeyesUxPercepcion from './views/ux/LeyesUxPercepcion.vue'
 import PatronesUsabilidad from './views/ux/PatronesUsabilidad.vue'
+import PrevencionErrores from './views/ux/PrevencionErrores.vue'
 
 export type Figura = {
   src: string
@@ -294,9 +295,9 @@ export const bloquesCurso: BloqueCurso[] = [
     shortTitle: 'Usabilidad y UX',
     title: 'Usabilidad y UX',
     menuDescription:
-      'Conceptos base, técnicas, carga y accesibilidad cognitiva, leyes UX y patrones de diseño.',
+      'Conceptos base, carga y accesibilidad cognitiva, arquitectura, feedback, prevención de errores, leyes UX y patrones de diseño.',
     homeSummary:
-      'Reúne fundamentos de diseño inclusivo, usabilidad y experiencia de usuario, junto con técnicas de evaluación, carga y accesibilidad cognitiva, leyes UX y patrones aplicados al diseño de interfaces.',
+      'Reúne fundamentos de diseño inclusivo, usabilidad y experiencia de usuario, carga y accesibilidad cognitiva, arquitectura de información, estados y feedback, prevención de errores, leyes UX y patrones aplicados al diseño de interfaces.',
     intro: [
       'En este bloque se trabajan los conceptos de diseño inclusivo, usabilidad y experiencia de usuario, así como varios patrones de diseño.',
     ],
@@ -312,6 +313,20 @@ export const bloquesCurso: BloqueCurso[] = [
         title: 'Carga y accesibilidad cognitiva',
         component: markRaw(CargaAccesibilidadCognitiva),
         toc: 'h2',
+      },
+      {
+        id: 'arquitectura-informacion',
+        title: 'Arquitectura de información y navegación',
+        component: markRaw(ArquitecturaInformacion),
+        toc: 'h2',
+        examples: [
+          {
+            title: 'Navegación y arquitectura',
+            href: '/ejemplos/navegacion.html',
+            description:
+              'Ejemplo con migas, navegación local y pestañas para orientar al usuario dentro de una sección.',
+          },
+        ],
       },
       {
         id: 'estados-feedback',
@@ -334,18 +349,10 @@ export const bloquesCurso: BloqueCurso[] = [
         ],
       },
       {
-        id: 'arquitectura-informacion',
-        title: 'Arquitectura de información y navegación',
-        component: markRaw(ArquitecturaInformacion),
+        id: 'prevencion-errores',
+        title: 'Prevención y recuperación de errores',
+        component: markRaw(PrevencionErrores),
         toc: 'h2',
-        examples: [
-          {
-            title: 'Navegación y arquitectura',
-            href: '/ejemplos/navegacion.html',
-            description:
-              'Ejemplo con migas, navegación local y pestañas para orientar al usuario dentro de una sección.',
-          },
-        ],
       },
       {
         id: 'patrones-usabilidad',
