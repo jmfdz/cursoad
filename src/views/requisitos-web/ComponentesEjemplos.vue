@@ -70,6 +70,15 @@
       preferible mantener el HTML estándar, como en el ejemplo anterior, salvo que realmente
       estemos desarrollando un verdadero widget de tipo menú.
     </p>
+    <p>
+      Nótese que el botón que abre el dropdown es un <code>&lt;button&gt;</code> nativo, no un
+      <code>div</code> con un manejador de clic. Por eso el mismo control ya responde tanto a un
+      clic de ratón como a un toque en pantalla táctil, y recibe foco y se activa con
+      <strong>Espacio</strong> o <strong>Intro</strong> sin tener que programarlo aparte. Si en su
+      lugar se simulara el desencadenante con un <code>div</code> u otro elemento no interactivo,
+      habría que añadir manualmente <code>tabindex="0"</code>, el manejo de teclado y comprobar
+      que también responde al toque, con el riesgo de dejar alguna vía de acceso sin cubrir.
+    </p>
 
     <h2>Collapse y Accordion</h2>
     <p>

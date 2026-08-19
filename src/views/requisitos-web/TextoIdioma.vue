@@ -44,9 +44,20 @@
       raíz no se ha modificado, equivale a <code>1rem</code>; <code>1em</code> depende en cambio del
       tamaño del elemento padre.
     </p>
-    <p>Por ejemplo, para aumentar ligeramente el tamaño base del contenido:</p>
+    <p>
+      Como referencia de partida, partiendo de esos 16px base: el tamaño <strong>mínimo</strong>
+      recomendable para el texto de cuerpo es de <strong>12 puntos</strong>, equivalente
+      aproximadamente a 16px o <code>1rem</code>. Sin embargo, es <strong>altamente recomendable
+      no quedarse en ese mínimo</strong> y partir de <strong>14 puntos</strong>, equivalente
+      aproximadamente a 18px o <code>1.125rem</code>, como tamaño base del texto de cuerpo.
+    </p>
+    <p>Por ejemplo, para partir del tamaño recomendado de 14 puntos como base del contenido:</p>
     <pre class="course-code"><code>body {
-  font-size: 1.125rem;
+  font-size: 1.125rem; /* ≈ 14 puntos / 18px, tamaño recomendado como base */
+}
+
+small, .texto-secundario {
+  font-size: 1rem; /* ≈ 12 puntos / 16px, tamaño mínimo recomendable */
 }</code></pre>
     <p>
       Por otro lado, <strong>no es aconsejable abusar del texto en mayúsculas</strong>, debido a
