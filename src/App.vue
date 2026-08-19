@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { nextTick, onMounted, ref, watch } from 'vue'
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { bloquesCurso, getRutaApartado } from './curso'
 
@@ -11,26 +11,11 @@ const closeMainNav = () => {
   menuAbierto.value = false
 }
 
-const actualizarTituloPagina = async () => {
-  await nextTick()
-  const titulo = document.querySelector('main h1')?.textContent?.trim()
-  document.title = titulo ? `${titulo} | ${navbarTitle}` : navbarTitle
+const esBloqueActual = (slug: string) =>
+  route.name === slug || String(route.name ?? '').startsWith(`${slug}-`)
 
-  document.querySelectorAll<HTMLAnchorElement>('a[target="_blank"]').forEach((enlace) => {
-    const nombre = enlace.getAttribute('aria-label') ?? enlace.textContent?.trim()
-    if (nombre && !nombre.includes('se abre en una ventana nueva')) {
-      enlace.setAttribute('aria-label', `${nombre} (se abre en una ventana nueva)`)
-    }
-  })
-}
-
-watch(() => route.fullPath, () => {
-  void actualizarTituloPagina()
-})
-
-onMounted(() => {
-  void actualizarTituloPagina()
-})
+const esApartadoActual = (slug: string, apartadoId: string) =>
+  route.name === `${slug}-${apartadoId}`
 </script>
 
 <template>
@@ -39,7 +24,12 @@ onMounted(() => {
 
     <nav class="navbar navbar-expand-xl bg-white border-bottom shadow-sm sticky-top" aria-label="Navegación principal">
       <div class="container">
-        <RouterLink class="navbar-brand d-inline-block fw-semibold text-wrap lh-sm" to="/" @click="closeMainNav">
+        <RouterLink
+          class="navbar-brand d-inline-block fw-semibold text-wrap lh-sm"
+          to="/"
+          :aria-current="route.name === 'home' ? 'page' : undefined"
+          @click="closeMainNav"
+        >
           {{ navbarTitle }}
         </RouterLink>
         <button
@@ -60,6 +50,7 @@ onMounted(() => {
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                :class="{ active: esBloqueActual(block.slug) }"
               >
                 {{ block.shortTitle }}
               </button>
@@ -68,6 +59,8 @@ onMounted(() => {
                   <RouterLink
                     class="dropdown-item"
                     :to="getRutaApartado(block.slug, section.id)"
+                    :class="{ active: esApartadoActual(block.slug, section.id) }"
+                    :aria-current="esApartadoActual(block.slug, section.id) ? 'page' : undefined"
                     @click="closeMainNav"
                   >
                     {{ section.title }}

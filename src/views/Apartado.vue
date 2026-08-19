@@ -85,7 +85,7 @@ onMounted(() => {
       <header class="border-bottom px-1 px-lg-0">
         <div class="py-3 py-xl-4">
           <p class="mb-2">{{ bloque.title }}</p>
-          <h1 class="mb-0">{{ apartado.title }}</h1>
+          <h1 class="mb-0" tabindex="-1">{{ apartado.title }}</h1>
 
           <div v-if="subtitulos.length" class="d-lg-none mt-4">
             <button

@@ -8,7 +8,7 @@ import { bloquesCurso, getRutaApartado, tituloCurso } from '../curso'
       <div class="row g-0">
         <div class="col-12">
           <div class="card-body p-4 p-md-5">
-            <h1 class="mb-3">{{ tituloCurso }}</h1>
+            <h1 class="mb-3" tabindex="-1">{{ tituloCurso }}</h1>
           </div>
         </div>
       </div>

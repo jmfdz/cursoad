@@ -1,7 +1,7 @@
 <template>
   <section class="d-flex flex-column gap-5">
     <header>
-      <h1>Ejemplos</h1>
+      <h1 tabindex="-1">Ejemplos</h1>
       <p class="lead mb-0">
         Esta página agrupa ejemplos básicos del curso: imágenes, enlaces, botones, formularios y
         tablas.

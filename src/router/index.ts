@@ -1,11 +1,21 @@
+import { nextTick } from 'vue'
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
-import { bloquesCurso } from '../curso'
+import { bloquesCurso, tituloCurso } from '../curso'
+
+declare module 'vue-router' {
+  interface RouteMeta {
+    TITULO?: string
+  }
+}
+
+const nombreSitio = 'Accesibilidad, Usabilidad y UX'
 
 const rutasBloque = bloquesCurso.map((bloque) => ({
   path: `/${bloque.slug}`,
   name: bloque.slug,
   component: () => import('../views/Bloque.vue'),
   props: { slug: bloque.slug },
+  meta: { TITULO: bloque.title },
 }))
 
 const rutasApartado = bloquesCurso.flatMap((bloque) =>
@@ -14,6 +24,7 @@ const rutasApartado = bloquesCurso.flatMap((bloque) =>
     name: `${bloque.slug}-${apartado.id}`,
     component: () => import('../views/Apartado.vue'),
     props: { bloqueSlug: bloque.slug, apartadoId: apartado.id },
+    meta: { TITULO: apartado.title },
   })),
 )
 
@@ -43,11 +54,13 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('../views/Inicio.vue'),
+      meta: { TITULO: tituloCurso },
     },
     {
       path: '/ejemplos',
       name: 'ejemplos',
       component: () => import('../views/ejemplos/Ejemplos.vue'),
+      meta: { TITULO: 'Ejemplos' },
     },
     {
       path: '/fundamentos',
@@ -68,6 +81,35 @@ const router = createRouter({
     ...rutasBloque,
     ...rutasApartado,
   ],
+})
+
+let esCargaInicial = true
+
+router.afterEach(async (to) => {
+  document.title = to.meta.TITULO ? `${to.meta.TITULO} | ${nombreSitio}` : nombreSitio
+
+  await nextTick()
+
+  document.querySelectorAll<HTMLAnchorElement>('a[target="_blank"]').forEach((enlace) => {
+    const nombre = enlace.getAttribute('aria-label') ?? enlace.textContent?.trim()
+    if (nombre && !nombre.includes('se abre en una ventana nueva')) {
+      enlace.setAttribute('aria-label', `${nombre} (se abre en una ventana nueva)`)
+    }
+  })
+
+  if (esCargaInicial) {
+    esCargaInicial = false
+    return
+  }
+
+  const foco =
+    document.querySelector<HTMLElement>('main h1, [role="main"] h1') ??
+    document.querySelector<HTMLElement>('main, [role="main"]')
+
+  if (foco) {
+    if (!foco.hasAttribute('tabindex')) foco.setAttribute('tabindex', '-1')
+    foco.focus()
+  }
 })
 
 export default router

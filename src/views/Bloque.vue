@@ -15,7 +15,7 @@ const bloque = computed(() => getBloquePorSlug(props.slug))
       <header class="rounded-4 border bg-white p-4 p-lg-5 shadow-sm">
         <div class="d-flex flex-column flex-lg-row justify-content-between gap-4">
           <div class="pe-lg-4">
-            <h1 class="mb-3">{{ bloque.title }}</h1>
+            <h1 class="mb-3" tabindex="-1">{{ bloque.title }}</h1>
             <div>
               <p
                 v-for="(paragraph, index) in bloque.intro"
