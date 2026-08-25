@@ -13,13 +13,9 @@
       Algunas son tecnologías de apoyo propiamente dichas, como los lectores de pantalla. Otras son
       funciones o ajustes incluidos en el sistema operativo o en el navegador, como el zoom, el alto
       contraste o el control por voz. Todas ellas tienen algo en común: dependen de que la interfaz
-      esté bien construida.
-    </p>
-
-    <p>
-      Un producto de apoyo puede ser un programa, como un lector de pantalla, o un dispositivo,
-      como una línea braille o un conmutador. Estas herramientas no corrigen una página mal
-      construida: necesitan que la interfaz proporcione la información adecuada.
+      esté bien construida. Ninguna de estas herramientas corrige una página mal hecha; lo que hacen
+      es transmitir la información que la página les proporcione, y si no hay información, no hay
+      nada que transmitir.
     </p>
 
     <h2>Dónde encontrar estas funciones en sistemas y navegadores</h2>

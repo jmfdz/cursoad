@@ -1,4 +1,11 @@
 <template>
+    <p>
+      Este apartado sienta la base del curso: qué entendemos por accesibilidad digital, por qué
+      importa, a quién beneficia y cómo accede realmente la gente al contenido. Termina con datos
+      sobre el estado actual de la web, que explican por qué el resto del curso insiste tanto en
+      unos pocos errores repetidos.
+    </p>
+
     <h2>Qué es la accesibilidad digital</h2>
     <p>
       Podemos definir la accesibilidad digital como el grado en el que todas las personas pueden
@@ -122,7 +129,7 @@
       principio.
     </p>
 
-    <h3>Referencias</h3>
+    <p>Para ampliar:</p>
     <ul>
       <li><a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es" target="_blank" rel="noreferrer">W3C: Introducción a la accesibilidad web</a></li>
       <li><a href="https://webaim.org/projects/million/?locale=en_GB" target="_blank" rel="noreferrer">WebAIM Million 2026 (Inglés)</a></li>

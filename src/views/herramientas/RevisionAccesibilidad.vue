@@ -24,6 +24,33 @@
       puede detectar que una imagen tiene texto alternativo, pero no siempre si ese texto explica
       correctamente la información que transmite.
     </p>
+    <p>
+      Conviene tener una idea del alcance real: las estimaciones habituales sitúan la cobertura de
+      las herramientas automáticas <strong>en torno a un tercio</strong> de los criterios de
+      conformidad. No es poco, y además es la parte más barata de arreglar, pero deja fuera dos
+      tercios que solo se detectan mirando.
+    </p>
+    <p>Además de la extensión de CADUA, las herramientas más habituales son:</p>
+    <ul>
+      <li>
+        <strong>axe DevTools</strong> y <strong>WAVE</strong>, extensiones de navegador que señalan
+        los errores sobre la propia página.
+      </li>
+      <li>
+        <strong>Lighthouse</strong>, integrado en las herramientas de desarrollo de Chrome, que da
+        una puntuación orientativa junto con las métricas de rendimiento.
+      </li>
+      <li>
+        <strong>axe-core</strong> u otras bibliotecas equivalentes, que permiten integrar las
+        comprobaciones en las pruebas automatizadas del proyecto y detectar regresiones antes de
+        publicar.
+      </li>
+    </ul>
+    <p>
+      Distintas herramientas aplican reglas distintas, así que no es raro que dos den resultados
+      diferentes sobre la misma página. Lo importante no es cuál se elige, sino usarla siempre y
+      completarla con lo que viene a continuación.
+    </p>
 
     <h2>Pruebas manuales</h2>
     <p>
@@ -61,9 +88,9 @@
       revisión manual ni la comprobación de tareas reales.
     </p>
 
-    <h2>Referencias</h2>
-    <ul>
-      <li><a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es" target="_blank" rel="noreferrer">W3C: Introducción a la accesibilidad web</a></li>
-    </ul>
+    <p>
+      Más información en
+      <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es" target="_blank" rel="noreferrer">W3C: Introducción a la accesibilidad web</a>.
+    </p>
   </div>
 </template>

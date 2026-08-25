@@ -585,42 +585,35 @@ h1, h2, h3 {
       leerlo con las reglas del idioma principal: una cita, el título de una obra o el nombre de
       una asignatura en otra lengua.
     </p>
-    <h2>Resumen de comprobaciones</h2>
+    <h2>Cómo comprobarlo</h2>
     <p>
-      Todo lo anterior se puede verificar sin herramientas especiales. Estas son las comprobaciones
-      que conviene hacer sobre cualquier página antes de darla por buena:
+      Todo lo anterior se puede verificar sobre una página terminada sin instalar nada. Estas cinco
+      comprobaciones cubren los fallos más frecuentes, y cada una delata un problema distinto:
     </p>
     <ol>
       <li>
-        <strong>La fuente se lee y carga siempre.</strong> Es sans serif, distingue la I de la l y
-        del 1, y la declaración lleva <code>font-display: swap</code> y una lista de alternativas
-        detrás.
+        <strong>Amplía al 400 % con <kbd>Ctrl</kbd>+<kbd>+</kbd>.</strong> No debe aparecer barra de
+        desplazamiento horizontal, ni solaparse el texto, ni desaparecer ningún control. Delata
+        anchuras y alturas fijas.
       </li>
       <li>
-        <strong>Los tamaños respetan al usuario.</strong> No hay ningún <code>font-size</code> fijo
-        en <code>html</code>, el cuerpo parte de 14 puntos y ningún texto baja de 12, ni siquiera
-        los pies, las etiquetas o los mensajes de error.
+        <strong>Cambia el tamaño de letra por defecto del navegador</strong>, de 16 a 20 píxeles, en
+        sus preferencias. Todo el texto debe crecer. Lo que no se mueva está en píxeles fijos, o hay
+        un <code>font-size</code> absoluto en <code>html</code>.
       </li>
       <li>
-        <strong>Aguanta la ampliación.</strong> Al 400 % de zoom no aparece scroll horizontal, no
-        se solapa el texto y no desaparece ningún control.
+        <strong>Busca el texto más pequeño de la página</strong> e inspecciónalo: los pies, las
+        etiquetas de los campos, los mensajes de error y el pie de página. Ninguno debe bajar de 12
+        puntos, es decir, 16 píxeles.
       </li>
       <li>
-        <strong>Los párrafos respiran.</strong> Interlineado de 1,5, sin texto justificado, y las
-        líneas no superan los 80 caracteres.
+        <strong>Desactiva la hoja de estilos</strong> desde las herramientas de desarrollo. No debe
+        perderse ninguna información. Delata el texto generado con <code>content</code> y el texto
+        incrustado en imágenes.
       </li>
       <li>
-        <strong>El significado está en las etiquetas.</strong> Las mayúsculas se aplican con
-        <code>text-transform</code>, y <code>strong</code> y <code>em</code> se usan por lo que
-        significan, no por cómo se ven.
-      </li>
-      <li>
-        <strong>Nada informativo se pierde al quitar los estilos.</strong> Si al desactivar la hoja
-        de estilos desaparece información, ese texto estaba en el sitio equivocado.
-      </li>
-      <li>
-        <strong>El idioma está declarado.</strong> Hay un <code>lang</code> en
-        <code>&lt;html&gt;</code> y los fragmentos en otra lengua están marcados.
+        <strong>Mira el código fuente.</strong> Debe haber un <code>lang</code> en
+        <code>&lt;html&gt;</code>, y los fragmentos en otra lengua deben llevar el suyo.
       </li>
     </ol>
   </div>

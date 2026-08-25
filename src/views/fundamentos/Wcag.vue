@@ -28,7 +28,7 @@
     <h2>Pautas</h2>
     <p>Dentro de esos principios, WCAG 2.2 agrupa <strong>13 pautas</strong>. Son los grandes bloques en los que se organiza esta norma.</p>
 
-    <p><strong>Perceptible</strong></p>
+    <h3>Perceptible</h3>
     <ul>
       <li><strong>1.1 Alternativas textuales</strong>: ofrecer texto equivalente para imágenes y otros elementos no textuales.</li>
       <li><strong>1.2 Medios basados en el tiempo</strong>: hacer accesibles vídeos, audios y multimedia.</li>
@@ -36,7 +36,7 @@
       <li><strong>1.4 Distinguible</strong>: facilitar que el contenido se vea y se escuche bien, por ejemplo con contraste suficiente.</li>
     </ul>
 
-    <p><strong>Utilizable</strong></p>
+    <h3>Utilizable</h3>
     <ul>
       <li><strong>2.1 Accesible por teclado</strong>: permitir el uso completo sin depender del ratón.</li>
       <li><strong>2.2 Tiempo suficiente</strong>: dar tiempo suficiente para leer, completar tareas o responder.</li>
@@ -45,14 +45,14 @@
       <li><strong>2.5 Modalidades de entrada</strong>: contemplar distintas formas de interacción además del teclado clásico y el ratón.</li>
     </ul>
 
-    <p><strong>Comprensible</strong></p>
+    <h3>Comprensible</h3>
     <ul>
       <li><strong>3.1 Legible</strong>: ayudar a que el contenido se lea y se entienda.</li>
       <li><strong>3.2 Predecible</strong>: hacer que la interfaz se comporte de forma esperable.</li>
       <li><strong>3.3 Asistencia en la entrada de datos</strong>: ayudar al usuario al rellenar formularios y corregir errores.</li>
     </ul>
 
-    <p><strong>Robusto</strong></p>
+    <h3>Robusto</h3>
     <ul>
       <li><strong>4.1 Compatible</strong>: asegurar que el código y los componentes puedan ser interpretados correctamente por navegadores y productos de apoyo.</li>
     </ul>
@@ -87,7 +87,7 @@
       alternativa.
     </p>
 
-    <h3>Referencias</h3>
+    <p>Para ampliar:</p>
     <ul>
       <li><a href="https://www.youtube.com/watch?v=20SHvU2PKsM" target="_blank" rel="noreferrer">W3C: Introducción a la accesibilidad y WCAG (vídeo)</a></li>
       <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/es" target="_blank" rel="noreferrer">W3C: Sumario de WCAG 2</a></li>
