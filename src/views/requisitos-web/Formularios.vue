@@ -11,7 +11,7 @@ import CodeTabs from '../../components/CodeTabs.vue'
     </p>
     <p>
       En este apartado nos centramos en los requisitos de accesibilidad del formulario, tanto en
-      HTML y JavaScript sencillo como en Vue con `v-model`. Más adelante, en usabilidad y UX,
+      HTML y JavaScript sencillo como en Vue con <code>v-model</code>. Más adelante, en usabilidad y UX,
       veremos patrones y decisiones de diseño orientadas a mejorar también la experiencia de uso.
     </p>
 
@@ -21,24 +21,24 @@ import CodeTabs from '../../components/CodeTabs.vue'
       formularios del curso, los escribamos en HTML plano o en un componente Vue:
     </p>
     <ul>
-      <li>Los eventos de interacción (`click`, `keyup`...) van solo sobre controles interactivos, nunca sobre un `&lt;div&gt;` que simula un botón.</li>
-      <li>Los campos que forman parte de una misma operación se agrupan dentro de un `&lt;form&gt;`.</li>
-      <li>Cada campo lleva su `&lt;label&gt;` asociado mediante `for`/`id`. `v-model` no da nombre accesible por sí mismo: la asociación label/for/id sigue siendo necesaria en Vue.</li>
-      <li>El formulario tiene una acción por defecto con un botón `type="submit"`; los botones secundarios llevan `type="button"` para no enviarlo. En JavaScript se evita la recarga con `event.preventDefault()`; en Vue, con `@submit.prevent`.</li>
+      <li>Los eventos de interacción (<code>click</code>, <code>keyup</code>...) van solo sobre controles interactivos, nunca sobre un <code>&lt;div&gt;</code> que simula un botón.</li>
+      <li>Los campos que forman parte de una misma operación se agrupan dentro de un <code>&lt;form&gt;</code>.</li>
+      <li>Cada campo lleva su <code>&lt;label&gt;</code> asociado mediante <code>for</code>/<code>id</code>. <code>v-model</code> no da nombre accesible por sí mismo: la asociación label/for/id sigue siendo necesaria en Vue.</li>
+      <li>El formulario tiene una acción por defecto con un botón <code>type="submit"</code>; los botones secundarios llevan <code>type="button"</code> para no enviarlo. En JavaScript se evita la recarga con <code>event.preventDefault()</code>; en Vue, con <code>@submit.prevent</code>.</li>
     </ul>
     <p>Los apartados siguientes desarrollan estas reglas con ejemplos, mostrando primero la versión en HTML/JavaScript y después su equivalente en Vue.</p>
 
     <h2>Campos de formulario con etiqueta asociada</h2>
     <p>
       Cuando los campos forman parte de un envío o una operación conjunta, deben estar dentro de
-      una etiqueta de formulario `&lt;form&gt;`. Hay controles autónomos, como algunos filtros que se
+      una etiqueta de formulario <code>&lt;form&gt;</code>. Hay controles autónomos, como algunos filtros que se
       aplican al cambiar su valor, que no necesitan enviar un formulario.
     </p>
     <p>
-      Todo campo de formulario debe estar asociado con una etiqueta `&lt;label&gt;` que lo
-      describa. Para ello, debemos incluir un atributo `id="nombreCampoFormulario"` en el campo de
-      formulario y luego en una etiqueta `&lt;label&gt;` referenciarla en el atributo
-      `for="nombreCampoFormulario"`. Veamos varios ejemplos:
+      Todo campo de formulario debe estar asociado con una etiqueta <code>&lt;label&gt;</code> que lo
+      describa. Para ello, debemos incluir un atributo <code>id="nombreCampoFormulario"</code> en el campo de
+      formulario y luego en una etiqueta <code>&lt;label&gt;</code> referenciarla en el atributo
+      <code>for="nombreCampoFormulario"</code>. Veamos varios ejemplos:
     </p>
     <CodeTabs label="Implementación de campos con etiqueta asociada">
       <template #js>
@@ -58,7 +58,7 @@ import CodeTabs from '../../components/CodeTabs.vue'
 &lt;/form&gt;</code></pre>
       </template>
       <template #vue>
-        <p>La etiqueta se relaciona con el campo exactamente igual; lo único que cambia es que el valor queda enlazado con `v-model` en lugar de leerse del DOM al enviar:</p>
+        <p>La etiqueta se relaciona con el campo exactamente igual; lo único que cambia es que el valor queda enlazado con <code>v-model</code> en lugar de leerse del DOM al enviar:</p>
         <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
@@ -86,10 +86,10 @@ const colectivo = ref('alumno')
     </CodeTabs>
 
     <h2>Agrupar campos de formulario</h2>
-    <p>Hay dos ocasiones en las que debemos agrupar campos de formulario utilizando `fieldset` y `legend`:</p>
+    <p>Hay dos ocasiones en las que debemos agrupar campos de formulario utilizando <code>fieldset</code> y <code>legend</code>:</p>
     <ul>
       <li>Cuando el formulario es muy largo, para agrupar campos de formulario relacionados.</li>
-      <li>Cuando utilizamos campos `checkbox` o `radio`, para darles una etiqueta descriptiva en conjunto.</li>
+      <li>Cuando utilizamos campos <code>checkbox</code> o <code>radio</code>, para darles una etiqueta descriptiva en conjunto.</li>
     </ul>
     <CodeTabs label="Implementación de la agrupación de campos">
       <template #js>
@@ -127,7 +127,7 @@ const colectivo = ref('alumno')
     &lt;button type="submit"&gt;Guardar&lt;/button&gt;
   &lt;/div&gt;
 &lt;/form&gt;</code></pre>
-        <p>Ejemplo de campos `checkbox` o `radio` agrupados:</p>
+        <p>Ejemplo de campos <code>checkbox</code> o <code>radio</code> agrupados:</p>
         <pre class="course-code"><code>&lt;form&gt;
   &lt;!-- Resto de campos... --&gt;
   &lt;fieldset&gt;
@@ -154,7 +154,7 @@ const colectivo = ref('alumno')
 &lt;/form&gt;</code></pre>
       </template>
       <template #vue>
-        <p>`v-model` no sustituye la agrupación mediante `fieldset` y `legend`; ambos siguen siendo necesarios:</p>
+        <p><code>v-model</code> no sustituye la agrupación mediante <code>fieldset</code> y <code>legend</code>; ambos siguen siendo necesarios:</p>
         <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
@@ -217,13 +217,13 @@ const tipoUsuario = ref('alumno')
     </ul>
     <p>
       En general, se recomienda la segunda aproximación cuando hay pocos campos o la mayoría son
-      obligatorios. De esta forma, se reduce la carga cognitiva a los usuarios. Además, el `*` a
+      obligatorios. De esta forma, se reduce la carga cognitiva a los usuarios. Además, el <code>*</code> a
       un lector de pantalla solo se lee como “asterisco”.
     </p>
     <p>
       Cuando un campo tiene instrucciones adicionales, como un formato concreto, no basta con que
       el texto de ayuda esté cerca visualmente: hay que relacionarlo con el campo de forma
-      programática mediante `aria-describedby`.
+      programática mediante <code>aria-describedby</code>.
     </p>
     <CodeTabs label="Implementación del texto de ayuda de un campo">
       <template #js>
@@ -266,7 +266,7 @@ const password = ref('')
 &lt;/template&gt;</code></pre>
       </template>
     </CodeTabs>
-    <p>La clase `form-text` proporciona la presentación de Bootstrap y `aria-describedby` establece la relación accesible con la ayuda. Un campo opcional se indica del mismo modo en su propia etiqueta:</p>
+    <p>La clase <code>form-text</code> proporciona la presentación de Bootstrap y <code>aria-describedby</code> establece la relación accesible con la ayuda. Un campo opcional se indica del mismo modo en su propia etiqueta:</p>
     <pre class="course-code"><code>&lt;label for="email" class="form-label"&gt;Correo electrónico (opcional)&lt;/label&gt;</code></pre>
 
     <h2>Nombres claros para las acciones</h2>
@@ -282,8 +282,8 @@ const password = ref('')
 
     <h2>Reglas generales de validación</h2>
     <p>
-      Es recomendable utilizar el atributo `required` en los campos de formulario, ya que indica la
-      semántica a un lector de pantalla. Aunque usemos el atributo `novalidate`, hay que validar
+      Es recomendable utilizar el atributo <code>required</code> en los campos de formulario, ya que indica la
+      semántica a un lector de pantalla. Aunque usemos el atributo <code>novalidate</code>, hay que validar
       siempre los datos también en el servidor: la validación realizada en el navegador mejora la
       experiencia, pero no es una medida de seguridad.
     </p>
@@ -305,13 +305,13 @@ const password = ref('')
 
     <h2>Validación y mensajes de error</h2>
     <p>
-      Bootstrap proporciona clases de validación como `is-invalid` e `invalid-feedback`, pero su
+      Bootstrap proporciona clases de validación como <code>is-invalid</code> e <code>invalid-feedback</code>, pero su
       propia documentación advierte de que los estilos personalizados de validación en cliente
       tienen limitaciones de accesibilidad con algunas tecnologías de asistencia, y recomienda
       valorar también la validación nativa del navegador o del servidor. En cualquier caso, no
       debemos depender únicamente del borde rojo o del icono para indicar que existe un error: el
-      campo debe marcarse con `aria-invalid` y el mensaje debe asociarse mediante
-      `aria-describedby`. Cuando se produzca un error, los datos introducidos deben conservarse
+      campo debe marcarse con <code>aria-invalid</code> y el mensaje debe asociarse mediante
+      <code>aria-describedby</code>. Cuando se produzca un error, los datos introducidos deben conservarse
       siempre que sea posible.
     </p>
     <CodeTabs label="Implementación de la validación de un campo">
@@ -436,7 +436,7 @@ document.getElementById("mi-form").addEventListener("submit", (event) =&gt; {
 &lt;/script&gt;</code></pre>
       </template>
       <template #vue>
-        <p>Con estado reactivo, el resumen se genera con `v-for` a partir de un array de errores. Añadir un enlace a cada uno, apuntando al `id` del campo, es una mejora sencilla sobre el patrón anterior que permite saltar directamente al campo problemático:</p>
+        <p>Con estado reactivo, el resumen se genera con <code>v-for</code> a partir de un array de errores. Añadir un enlace a cada uno, apuntando al <code>id</code> del campo, es una mejora sencilla sobre el patrón anterior que permite saltar directamente al campo problemático:</p>
         <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
@@ -469,15 +469,15 @@ function guardarCambios() {
       </template>
     </CodeTabs>
     <p>
-      En ambos casos, el contenedor con `role="alert"` permanece montado desde el principio y la
-      lista solo se genera cuando hay errores, por lo que no queda un `&lt;ul&gt;` vacío. Mantener
-      el contenedor ya presente no es estrictamente necesario para que `role="alert"` se anuncie
-      (a diferencia de `role="status"`, sí se anuncia igualmente si aparece de golpe con su
+      En ambos casos, el contenedor con <code>role="alert"</code> permanece montado desde el principio y la
+      lista solo se genera cuando hay errores, por lo que no queda un <code>&lt;ul&gt;</code> vacío. Mantener
+      el contenedor ya presente no es estrictamente necesario para que <code>role="alert"</code> se anuncie
+      (a diferencia de <code>role="status"</code>, sí se anuncia igualmente si aparece de golpe con su
       contenido), pero es una forma más conservadora de asegurar que el aviso se detecta de forma
       fiable en distintos lectores de pantalla.
     </p>
     <p>
-      En el fichero `formularios.html` del repositorio GitHub se pueden encontrar más ejemplos de
+      En el fichero <code>formularios.html</code> del repositorio GitHub se pueden encontrar más ejemplos de
       validación, como por ejemplo el tamaño máximo de un fichero y su extensión requerida.
     </p>
     <p>En el bloque de usabilidad y UX veremos después cómo reducir también la fricción y mejorar la experiencia general de estos formularios.</p>

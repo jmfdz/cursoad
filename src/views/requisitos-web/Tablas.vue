@@ -3,8 +3,8 @@
     <p>Las tablas son para estructurar datos, no para maquetar o colocar contenido visualmente.</p>
     <p>Conviene evitar dividir o combinar celdas cuando no sea necesario, para mantener las tablas sencillas de entender.</p>
     <p>
-      Deben tener un título que las titule con la etiqueta `caption`. Por defecto, la etiqueta
-      `caption` se muestra visualmente asociado a la tabla. Si el diseño lo necesita, se puede
+      Deben tener un título que las titule con la etiqueta <code>caption</code>. Por defecto, la etiqueta
+      <code>caption</code> se muestra visualmente asociado a la tabla. Si el diseño lo necesita, se puede
       ajustar su posición con CSS sin perder esa asociación.
     </p>
     <h2>Encabezados de fila y columna: scope</h2>

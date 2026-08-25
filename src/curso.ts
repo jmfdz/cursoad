@@ -12,15 +12,14 @@ import Pdf from './views/documentos/Pdf.vue'
 import Powerpoint from './views/documentos/Powerpoint.vue'
 import Word from './views/documentos/Word.vue'
 import ComponentesEjemplos from './views/requisitos-web/ComponentesEjemplos.vue'
-import CssMaquetacion from './views/requisitos-web/CssMaquetacion.vue'
-import EnlacesBotones from './views/requisitos-web/EnlacesBotones.vue'
+import ColorContraste from './views/requisitos-web/ColorContraste.vue'
+import EnlacesBotonesTeclado from './views/requisitos-web/EnlacesBotonesTeclado.vue'
 import EstructuraSemantica from './views/requisitos-web/EstructuraSemantica.vue'
 import Formularios from './views/requisitos-web/Formularios.vue'
 import Imagenes from './views/requisitos-web/Imagenes.vue'
 import Tablas from './views/requisitos-web/Tablas.vue'
 import SpaVueContenidoDinamico from './views/requisitos-web/SpaVueContenidoDinamico.vue'
 import SpaVueEstructura from './views/requisitos-web/SpaVueEstructura.vue'
-import TecladoFoco from './views/requisitos-web/TecladoFoco.vue'
 import TextoIdioma from './views/requisitos-web/TextoIdioma.vue'
 import WaiAria from './views/requisitos-web/WaiAria.vue'
 import ArquitecturaInformacion from './views/ux/ArquitecturaInformacion.vue'
@@ -152,11 +151,13 @@ export const bloquesCurso: BloqueCurso[] = [
     shortTitle: 'Requisitos web',
     title: 'Requisitos web',
     menuDescription:
-      'Texto, semántica, CSS, color, formularios, tablas, componentes, ARIA y accesibilidad en SPA con Vue.js.',
+      'Semántica, texto y tipografía, color, imágenes, enlaces y teclado, tablas, formularios, componentes, ARIA y accesibilidad en SPA con Vue.js.',
     homeSummary:
-      'Recoge los requisitos técnicos que deben cumplir las páginas y aplicaciones web: texto, idioma, estructura, CSS, color, imágenes, enlaces, tablas, formularios, componentes accesibles y su implementación en una SPA con Vue.js.',
+      'Recoge los requisitos técnicos que deben cumplir las páginas y aplicaciones web: estructura, texto y tipografía, idioma, color y contraste, imágenes, enlaces y botones, navegación por teclado, tablas, formularios, componentes accesibles y su implementación en una SPA con Vue.js.',
     intro: [
       'En este bloque se reúnen los requisitos técnicos de accesibilidad aplicados a la web: contenido, estructura, interacción y componentes.',
+      'Los apartados siguen el orden en que se construye una página: primero la estructura, después el contenido (texto, color e imágenes), luego la interacción (enlaces, botones, teclado, tablas y formularios) y por último los componentes complejos y su implementación en una aplicación de una sola página.',
+      'Los ejemplos parten de Bootstrap 5 como base de CSS y JS. En un proyecto que lo utilice, buena parte de estas cuestiones ya vienen resueltas de fábrica: sus componentes (botones, formularios, navegación, indicadores de foco) están construidos siguiendo estas buenas prácticas por defecto, así que no suele hacer falta reimplementarlas a mano salvo que se personalice el diseño más allá de lo que ofrece el framework.',
     ],
     sections: [
       {
@@ -166,10 +167,16 @@ export const bloquesCurso: BloqueCurso[] = [
         toc: 'h2',
       },
       {
-        id: 'css-maquetacion',
-        title: 'CSS, maquetación y color',
-        component: markRaw(CssMaquetacion),
+        id: 'texto-idioma',
+        title: 'Texto, tipografía e idioma',
+        component: markRaw(TextoIdioma),
         toc: 'h2-h3',
+      },
+      {
+        id: 'color-contraste',
+        title: 'Color y contraste',
+        component: markRaw(ColorContraste),
+        toc: 'h2',
         gallery: [
           {
             src: '/curso-media/image6.png',
@@ -212,28 +219,16 @@ export const bloquesCurso: BloqueCurso[] = [
         ],
       },
       {
-        id: 'texto-idioma',
-        title: 'Texto e idioma',
-        component: markRaw(TextoIdioma),
-        toc: 'h2',
-      },
-      {
         id: 'imagenes',
         title: 'Imágenes y elementos no textuales',
         component: markRaw(Imagenes),
         toc: 'h2',
       },
       {
-        id: 'enlaces-botones',
-        title: 'Enlaces y botones',
-        component: markRaw(EnlacesBotones),
-        toc: 'h2',
-      },
-      {
-        id: 'teclado-foco',
-        title: 'Navegación por teclado y foco',
-        component: markRaw(TecladoFoco),
-        toc: 'h2',
+        id: 'enlaces-botones-teclado',
+        title: 'Enlaces, botones y navegación por teclado',
+        component: markRaw(EnlacesBotonesTeclado),
+        toc: 'h2-h3',
       },
       {
         id: 'tablas',

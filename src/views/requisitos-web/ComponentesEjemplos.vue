@@ -6,7 +6,7 @@
       con una buena base, pero hay que mantener su estructura y comprobar su uso en cada caso.
     </p>
     <p>
-      En el repositorio de GitHub del curso se puede consultar el fichero `componentes.html` con
+      En el repositorio de GitHub del curso se puede consultar el fichero <code>componentes.html</code> con
       ejemplos de cuadros modales, acordeones, desplegables, pestañas, etc.
     </p>
     <p>

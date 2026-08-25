@@ -35,6 +35,20 @@
       para hacerlo más grande y que visualmente parezca un título en lugar de utilizar las
       etiquetas de encabezado (<code>h1</code>, <code>h2</code>, <code>h3</code>...).
     </p>
+    <p>
+      El principio general es que <strong>cada texto debe incluirse en el elemento que corresponda
+      a su función</strong>: párrafo, encabezado, enlace, botón, etc. Un <code>div</code> puede
+      contener texto, pero no indica que ese texto sea un párrafo, y por eso un lector de pantalla
+      no puede anunciarlo ni permitir saltar de uno a otro. Veamos un ejemplo:
+    </p>
+    <pre class="course-code"><code>&lt;div&gt;¡Hola mundo!&lt;/div&gt; &lt;!-- Sin semántica de párrafo --&gt;
+&lt;p&gt;¡Hola mundo!&lt;/p&gt; &lt;!-- Párrafo --&gt;</code></pre>
+    <p>
+      Dicho de otro modo: <code>div</code> y <code>span</code> son elementos sin significado,
+      pensados para agrupar y maquetar. Son la elección correcta cuando lo único que necesitamos es
+      un contenedor al que aplicar estilos, y la incorrecta cuando el contenido tiene una función
+      para la que ya existe una etiqueta.
+    </p>
 
     <h2>Estructura de una página web</h2>
     <p>

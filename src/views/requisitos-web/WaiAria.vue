@@ -26,43 +26,39 @@
       controles nativos, pueden recibir el foco del teclado sin añadir <code>tabindex</code>.
     </p>
     <p>
-      Por el contrario, elementos HTML como listas, párrafos, capas `div` o `span` nunca reciben
+      Por el contrario, elementos HTML como listas, párrafos, capas <code>div</code> o <code>span</code> nunca reciben
       el foco del teclado al tratarse de elementos con un propósito diferente: marcar y maquetar el
       contenido.
     </p>
     <p>
-      Por este motivo, no se deben incluir eventos JavaScript tales como `onclick` u `onkeypress`
+      Por este motivo, no se deben incluir eventos JavaScript tales como <code>onclick</code> u <code>onkeypress</code>
       en elementos de marca y maquetación, puesto que estaríamos dejando fuera a los usuarios que
-      acceden sin ratón.
-    </p>
-    <p>Veamos un ejemplo:</p>
-    <pre class="course-code"><code>&lt;div onclick="alert('¡Saludo!');"&gt;Púlsame&lt;/div&gt;</code></pre>
-    <p>
-      Lo que estamos haciendo es crear una capa `div` que simula el comportamiento de un enlace o
-      un botón, que no es su propósito y además jamás se podrá acceder por teclado ya que este
-      elemento nunca recibirá el foco.
+      acceden sin ratón. El apartado «Enlaces, botones y navegación por teclado» explica por qué un
+      <code>div</code> con un <code>onclick</code> nunca es una alternativa válida a un botón.
     </p>
     <p>
-      Si por compatibilidad o por una interfaz ya construida no podemos sustituir un `div` o un
-      `li` interactivo por un control nativo, hay que completar manualmente su comportamiento:
-      foco con `tabindex`, rol, nombre accesible y activación con teclado. Es más trabajo y por eso
-      se debe preferir un enlace o botón nativo siempre que sea posible.
+      Aquí nos interesa el caso contrario: qué hacer cuando <strong>no podemos evitarlo</strong>. Si
+      por compatibilidad o por una interfaz ya construida no podemos sustituir un <code>div</code> o un
+      <code>li</code> interactivo por un control nativo, hay que completar manualmente todo lo que el
+      navegador nos habría dado gratis: foco con <code>tabindex</code>, rol, nombre accesible y
+      activación con teclado. Son cuatro cosas que hay que recordar una por una, y por eso se debe
+      preferir un enlace o botón nativo siempre que sea posible.
     </p>
     <pre class="course-code"><code>&lt;div role="button" tabindex="0" onclick="saludar()"
   onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); saludar(); }"&gt;
   Púlsame
 &lt;/div&gt;</code></pre>
-    <p>El atributo `tabindex` puede utilizarse para varios cometidos dependiendo del valor asignado:</p>
+    <p>El atributo <code>tabindex</code> puede utilizarse para varios cometidos dependiendo del valor asignado:</p>
     <ul>
-      <li>`tabindex="0"` permite que un elemento que no puede recibir el foco por defecto pueda recibirlo siguiendo el orden natural del HTML.</li>
-      <li>`tabindex="-1"` permite que el elemento pueda coger el foco mediante JavaScript con la función `focus()`, aunque no podamos llegar a él con tabulación normal.</li>
+      <li><code>tabindex="0"</code> permite que un elemento que no puede recibir el foco por defecto pueda recibirlo siguiendo el orden natural del HTML.</li>
+      <li><code>tabindex="-1"</code> permite que el elemento pueda coger el foco mediante JavaScript con la función <code>focus()</code>, aunque no podamos llegar a él con tabulación normal.</li>
       <li>Un valor positivo, como <code>tabindex="1"</code>, define un orden de tabulación explícito. No se recomienda su uso porque puede crear confusión.</li>
     </ul>
 
     <h2>Roles</h2>
     <p>
       Incluir información sobre el rol o función de un elemento de nuestra página mediante ARIA es
-      tan sencillo como añadir a la etiqueta del elemento `role="[nombre_del_rol]"`.
+      tan sencillo como añadir a la etiqueta del elemento <code>role="[nombre_del_rol]"</code>.
     </p>
     <p>Por ejemplo:</p>
     <pre class="course-code"><code>&lt;div role="progressbar" aria-label="Progreso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"&gt;
@@ -89,23 +85,23 @@
     </p>
     <p>Los roles de estructura y su función son:</p>
     <ul>
-      <li>`role="banner"` para la cabecera principal.</li>
-      <li>`role="navigation"` para los menús de navegación.</li>
-      <li>`role="main"` para marcar dónde está el contenido principal de la página.</li>
-      <li>`role="complementary"` para contenidos no imprescindibles, por ejemplo una barra lateral.</li>
-      <li>`role="contentinfo"` para la información repetida del pie.</li>
-      <li>`role="search"` para las zonas donde hay un buscador.</li>
-      <li>`role="form"` para una zona de formulario identificada con un nombre accesible.</li>
-      <li>`role="application"` si hay una aplicación web interactiva que cambia las reglas normales de teclado.</li>
+      <li><code>role="banner"</code> para la cabecera principal.</li>
+      <li><code>role="navigation"</code> para los menús de navegación.</li>
+      <li><code>role="main"</code> para marcar dónde está el contenido principal de la página.</li>
+      <li><code>role="complementary"</code> para contenidos no imprescindibles, por ejemplo una barra lateral.</li>
+      <li><code>role="contentinfo"</code> para la información repetida del pie.</li>
+      <li><code>role="search"</code> para las zonas donde hay un buscador.</li>
+      <li><code>role="form"</code> para una zona de formulario identificada con un nombre accesible.</li>
+      <li><code>role="application"</code> si hay una aplicación web interactiva que cambia las reglas normales de teclado.</li>
     </ul>
     <p>
       En general, es recomendable utilizar las etiquetas nativas de HTML5 para marcar zonas de un
-      sitio web como `nav`, `header` o `main`. Si las utilizamos, no se debe poner etiqueta nativa
-      y `role` juntos por redundancia.
+      sitio web como <code>nav</code>, <code>header</code> o <code>main</code>. Si las utilizamos, no se debe poner etiqueta nativa
+      y <code>role</code> juntos por redundancia.
     </p>
     <pre class="course-code"><code>&lt;nav role="navigation"&gt;...&lt;/nav&gt; &lt;!-- Mal por redundancia --&gt;</code></pre>
     <p>
-      Para los roles de estructura, además, puede ser necesario incluir `aria-label` para indicar
+      Para los roles de estructura, además, puede ser necesario incluir <code>aria-label</code> para indicar
       el título de la zona. Por ejemplo:
     </p>
     <pre class="course-code"><code>&lt;div role="navigation" aria-label="Menú principal"&gt;
@@ -118,20 +114,20 @@
       elementos HTML que lo necesiten.
     </p>
     <p>
-      `aria-label` sirve para dar nombre accesible a un elemento. Debe usarse solo en ocasiones que
+      <code>aria-label</code> sirve para dar nombre accesible a un elemento. Debe usarse solo en ocasiones que
       lo requieran; por defecto, el nombre de un elemento debe ser su contenido.
     </p>
     <pre class="course-code"><code>&lt;button type="button" aria-label="Cerrar"&gt;×&lt;/button&gt;</code></pre>
     <p>
-      `aria-labelledby` también sirve para dar un nombre a un elemento HTML, con la diferencia de
-      que aquí referenciamos el `id` de otro elemento que actúa como etiqueta.
+      <code>aria-labelledby</code> también sirve para dar un nombre a un elemento HTML, con la diferencia de
+      que aquí referenciamos el <code>id</code> de otro elemento que actúa como etiqueta.
     </p>
     <pre class="course-code"><code>&lt;section aria-labelledby="titulo-informe"&gt;
   &lt;h3 id="titulo-informe"&gt;Informe de accesibilidad&lt;/h3&gt;
   ...
 &lt;/section&gt;</code></pre>
     <p>
-      `aria-describedby` permite asociar una descripción larga a un elemento indicando el `id` del
+      <code>aria-describedby</code> permite asociar una descripción larga a un elemento indicando el <code>id</code> del
       elemento que proporciona la descripción.
     </p>
     <pre class="course-code"><code>&lt;label for="usuario"&gt;Usuario&lt;/label&gt;
@@ -184,14 +180,14 @@ button.addEventListener('click', () =&gt; {
 
     <h2>Live regions: aria-live</h2>
     <p>
-      `aria-live` permite identificar una zona dinámica de nuestro contenido que se actualiza
+      <code>aria-live</code> permite identificar una zona dinámica de nuestro contenido que se actualiza
       automáticamente. De esta manera los cambios se anunciarán al usuario de los productos de
-      apoyo. En función de su valor (`off`, `polite`, `assertive`) indicaremos cuándo queremos que
+      apoyo. En función de su valor (<code>off</code>, <code>polite</code>, <code>assertive</code>) indicaremos cuándo queremos que
       se anuncie la actualización.
     </p>
     <p>
-      Se combina con `aria-atomic` para indicar si queremos que se anuncie toda la región o solo
-      las partes que cambian, y con `aria-relevant` para indicar el tipo de actualización que
+      Se combina con <code>aria-atomic</code> para indicar si queremos que se anuncie toda la región o solo
+      las partes que cambian, y con <code>aria-relevant</code> para indicar el tipo de actualización que
       queremos que se anuncie.
     </p>
     <p>

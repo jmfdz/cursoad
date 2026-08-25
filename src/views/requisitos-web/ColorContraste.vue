@@ -1,92 +1,24 @@
 <template>
   <div>
     <p>
-      La estructura semántica y el formato del texto no son suficientes por sí solos: la forma en
-      que maquetamos y coloreamos una página con CSS también tiene consecuencias directas sobre su
-      accesibilidad. En este apartado se reúnen las herramientas de CSS moderno, el diseño
-      responsive y el uso accesible del color y del movimiento.
-    </p>
-
-    <h2>CSS moderno para maquetación</h2>
-    <p>
-      CSS moderno aporta herramientas de layout y estilo que evitan depender de trucos de
-      maquetación:
-    </p>
-    <ul>
-      <li><strong>Flexbox</strong> distribuye elementos en una sola dimensión (útil en barras de navegación o formularios en línea).</li>
-      <li><strong>Grid</strong> distribuye en dos dimensiones a la vez (útil en maquetas de página completas).</li>
-      <li>Las <strong>custom properties</strong> (variables CSS) centralizan valores reutilizables.</li>
-      <li>Las <strong>container queries</strong> adaptan un componente según el tamaño de su propio contenedor en vez del viewport completo.</li>
-      <li>Pseudo-clases como <code>:focus-visible</code>, <code>:has()</code>, <code>:is()</code> o <code>:where()</code> permiten seleccionar estados y estructuras complejas sin añadir clases solo para poder aplicarles estilo.</li>
-    </ul>
-    <p>
-      En un proyecto que use <strong>Bootstrap 5</strong> como base de estilos, buena parte de
-      estas cuestiones ya vienen resueltas de fábrica: sus componentes (botones, formularios,
-      navegación, indicadores de foco) están construidos siguiendo estas buenas prácticas por
-      defecto, así que no suele hacer falta reimplementarlas a mano salvo que se personalice el
-      diseño más allá de lo que ofrece el framework. Los ejemplos de este curso parten precisamente
-      de Bootstrap 5 como base de CSS y JS.
-    </p>
-
-    <h2>Diseño responsive</h2>
-    <p>
-      El diseño debe adaptarse a contenido, dispositivo y preferencias, no solo a puntos de corte
-      por tamaño de pantalla: debe seguir funcionando con zoom, texto ampliado, distintas
-      orientaciones, entrada táctil y teclado. Buenas prácticas:
-    </p>
-    <ul>
-      <li>anchuras máximas y evitar el scroll horizontal cuando se amplía el contenido,</li>
-      <li>imágenes responsivas,</li>
-      <li>objetivos táctiles de tamaño suficiente,</li>
-      <li>evitar alturas fijas que corten el texto.</li>
-    </ul>
-
-    <h2>Accesibilidad y CSS</h2>
-    <p>Dos reglas generales conviene tener siempre presentes:</p>
-    <ul>
-      <li>
-        no usar <code>display: none</code> ni <code>visibility: hidden</code> para ocultar solo
-        visualmente un contenido que debe seguir anunciándose a las tecnologías de apoyo, ya que
-        ambas propiedades lo retiran también del árbol de accesibilidad, no solo de la pantalla;
-      </li>
-      <li>
-        respetar la preferencia <code>prefers-reduced-motion</code> de la persona usuaria,
-        reduciendo o eliminando animaciones no esenciales cuando esté activada. El apartado
-        «Imágenes y elementos no textuales» explica con más detalle qué contenido en movimiento
-        debe poder pausarse.
-      </li>
-    </ul>
-    <pre class="course-code"><code>@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}</code></pre>
-
-    <h3>Orden visual con CSS y navegación por teclado</h3>
-    <p>
-      Los frameworks CSS permiten reordenar visualmente elementos (por ejemplo, con clases de
-      utilidad de orden en Bootstrap) sin tocar el HTML. Esto puede provocar que el orden visual
-      difiera del orden en el que el teclado recorre esos mismos elementos, porque el foco sigue
-      el orden del documento, no el orden visual aplicado por CSS.
-    </p>
-    <p>
-      Por ejemplo, en un grupo de botones <em>Cancelar</em> y <em>Guardar cambios</em>, si CSS
-      coloca &quot;Guardar cambios&quot; primero visualmente pero en el HTML aparece después, el
-      teclado seguirá pasando primero por &quot;Cancelar&quot;. El orden de foco no tiene por qué
-      coincidir estrictamente con la disposición visual, pero debe seguir siendo lógico: lo más
-      simple para evitar sorpresas es escribir los elementos en el HTML en el mismo orden en que
-      se van a mostrar y recibir el foco.
-    </p>
-
-    <h2>Color, contraste y percepción visual</h2>
-    <p>
       Existe un porcentaje de la población con problemas para percibir los colores, ya sea a la
       hora de diferenciar determinados colores o porque padece alguna forma de ceguera que solo le
       permite percibir un espectro reducido de colores.
     </p>
+    <p>
+      A ellas se suman las personas con baja visión y, sobre todo, cualquier persona en una
+      situación desfavorable: un móvil a pleno sol, una pantalla vieja con poco contraste o un
+      proyector mal calibrado. Por eso el color no es una decisión únicamente estética: condiciona
+      quién puede leer el contenido y quién no.
+    </p>
+    <p>En este apartado se tratan tres cuestiones distintas y complementarias:</p>
+    <ul>
+      <li>que exista <strong>contraste suficiente</strong> entre el texto y su fondo,</li>
+      <li>que el color <strong>no sea el único medio</strong> para transmitir una información,</li>
+      <li>cómo <strong>comprobar</strong> ambas cosas antes de publicar.</li>
+    </ul>
 
-    <h3>Contraste de luminosidad</h3>
+    <h2>Contraste de luminosidad</h2>
     <p>
       El contraste de luminosidad <strong>entre el color del fondo y el color del texto</strong>
       debe ser suficiente para garantizar una buena legibilidad del texto en situaciones
@@ -95,7 +27,10 @@
     </p>
     <p>
       Las pautas de accesibilidad del contenido web establecen en su nivel AA los diferentes
-      ratios mínimos de contraste según el tamaño y tipo de texto:
+      ratios mínimos de contraste según el tamaño y tipo de texto. Corresponden a los criterios
+      <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html" rel="noreferrer">1.4.3 Contraste (mínimo)</a>
+      y
+      <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html" rel="noreferrer">1.4.11 Contraste no textual</a>:
     </p>
     <ul>
       <li>Ratio de <strong>4.5:1</strong> para texto normal, incluidos los enlaces y botones cuando contienen texto normal.</li>
@@ -112,13 +47,20 @@
       botón formado únicamente por un icono.
     </p>
     <p>
-      Es importante destacar que hablamos en unidades absolutas de puntos (`pt`), por lo que
-      habría que hacer su conversión a su equivalente en píxeles. Por ejemplo:
+      Es importante destacar que el umbral de «texto grande» se expresa en unidades absolutas de
+      puntos (<code>pt</code>), por lo que habría que hacer su conversión a su equivalente en
+      píxeles. Por ejemplo:
     </p>
     <ul>
       <li>18 puntos son 24px.</li>
       <li>14 puntos son 18,666px.</li>
     </ul>
+    <p>
+      La equivalencia entre puntos, píxeles y <code>rem</code> se explica con detalle en el
+      apartado «Texto, tipografía e idioma». Lo que interesa retener aquí es que un texto no se
+      considera grande por parecerlo: hay que comprobar su tamaño real antes de aplicarle el
+      umbral de 3:1.
+    </p>
     <p>
       Un contraste suficiente facilita la lectura, pero no existe una única combinación adecuada
       para todas las personas. Además de cumplir los mínimos, conviene comprobar el resultado con
@@ -134,8 +76,14 @@
       cambios de tono de color podrían dificultar el acceso a la información del documento, sobre
       todo si se coloca texto sobre ese fondo.
     </p>
+    <p>
+      Conviene revisar también los <strong>estados</strong> de los elementos, no solo su aspecto en
+      reposo: el texto deshabilitado, el texto de sugerencia de un campo
+      (<code>placeholder</code>), el color de un enlace ya visitado o el fondo de una fila
+      resaltada suelen ser los puntos donde se pierde el contraste sin que nadie se dé cuenta.
+    </p>
 
-    <h3>Comprobar el contraste entre colores</h3>
+    <h2>Comprobar el contraste entre colores</h2>
     <p>
       En la aplicación Accesibilidad de UACloud está disponible la herramienta Comprobación del
       contraste entre colores con el objetivo de hacer un buen uso del color en tu web o
@@ -160,11 +108,29 @@
       En las capturas del tema se puede observar un caso en el que el contraste no es suficiente y
       cómo la propia herramienta propone colores alternativos accesibles para corregirlo.
     </p>
+    <p>
+      Una forma cómoda de trabajar es definir la paleta una sola vez con
+      <strong>custom properties</strong> y comprobar únicamente esas combinaciones, en lugar de ir
+      revisando color a color por toda la hoja de estilos:
+    </p>
+    <pre class="course-code"><code>:root {
+  --color-texto: #000000;
+  --color-fondo: #f1f5f8;
+  --color-primario: #005682; /* 7.2:1 sobre blanco */
+}</code></pre>
+    <p>
+      Además de la herramienta de UACloud, el propio navegador ayuda: las herramientas de
+      desarrollo de Chrome y Firefox muestran la ratio de contraste al inspeccionar un texto y
+      permiten corregir el color desde el mismo panel.
+    </p>
 
-    <h3>Uso semántico del color</h3>
+    <h2>Uso semántico del color</h2>
     <p>
       Es recomendable no utilizar únicamente el color para transmitir información. Siempre se debe
-      incluir esta información mediante otro sistema alternativo, además del uso del color.
+      incluir esta información mediante otro sistema alternativo, además del uso del color. Es el
+      criterio
+      <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html" rel="noreferrer">1.4.1 Uso del color</a>,
+      de nivel A.
     </p>
     <p>Veamos un ejemplo incorrecto:</p>
     <p>Nota: La respuesta correcta está en color rojo.</p>
@@ -186,8 +152,23 @@
       <li><strong>Respuesta correcta:</strong> Falso</li>
     </ol>
     <p>En este ejemplo, la respuesta puede identificarse sin necesidad de percibir el color.</p>
+    <p>
+      La misma regla se aplica a muchos casos habituales de una aplicación de gestión, en los que
+      basta con acompañar el color de un texto o un icono con su alternativa textual:
+    </p>
+    <ul>
+      <li>los <strong>estados de una tabla</strong> (una fila roja de «rechazada» necesita además la palabra «Rechazada»),</li>
+      <li>los <strong>campos con error</strong> de un formulario, que no pueden marcarse solo con un borde rojo,</li>
+      <li>las <strong>leyendas de un gráfico</strong>, que además del color pueden distinguirse por forma, trama o etiqueta,</li>
+      <li>los <strong>enlaces dentro de un párrafo</strong>, que necesitan algo más que un color distinto al del texto: lo habitual es el subrayado.</li>
+    </ul>
+    <p>
+      Este último caso es el que más se incumple sin querer al retirar el subrayado por motivos de
+      diseño. Si se quita, el enlace debe distinguirse del texto que lo rodea con una ratio de
+      3:1 <em>y</em> ofrecer alguna señal adicional al pasar el ratón o al recibir el foco.
+    </p>
 
-    <h3>Simular la ceguera al color</h3>
+    <h2>Simular la ceguera al color</h2>
     <p>
       Se puede instalar en Google Chrome una extensión de navegador llamada Colorblindly que
       permite comprobar cómo se ven los colores de nuestra web por una persona con diferentes
@@ -207,6 +188,11 @@
       En los ejemplos de Bootstrap del curso se puede observar cómo, bajo este tipo de simulación,
       el verde y el rojo llegan a percibirse de forma muy parecida. Eso confirma por qué no debe
       dependerse solo del color para distinguir estados o acciones.
+    </p>
+    <p>
+      Las herramientas de desarrollo de Chrome incluyen también esta simulación sin instalar nada:
+      en el panel <em>Rendering</em> se puede activar <em>Emulate vision deficiencies</em> y probar
+      protanopía, deuteranopía, tritanopía y visión borrosa.
     </p>
   </div>
 </template>

@@ -15,7 +15,7 @@
 
     <h2>Texto alternativo</h2>
     <p>
-      Para incluir la descripción de una imagen en una web debemos incluir el atributo `alt`, que
+      Para incluir la descripción de una imagen en una web debemos incluir el atributo <code>alt</code>, que
       es obligatorio. Veamos dos ejemplos, una imagen con descripción y otra decorativa:
     </p>
     <pre class="course-code"><code>&lt;img src="mano-ua.png" alt="Estatua de una mano con un lápiz que simboliza la libertad de expresión de la UA" /&gt;
@@ -28,8 +28,8 @@
 
     <h2>Descripciones largas</h2>
     <p>
-      Otra forma de incluir una descripción larga es mediante la etiqueta `figcaption` dentro de
-      `figure` en HTML5. Veamos un ejemplo:
+      Otra forma de incluir una descripción larga es mediante la etiqueta <code>figcaption</code> dentro de
+      <code>figure</code> en HTML5. Veamos un ejemplo:
     </p>
     <pre class="course-code"><code>&lt;figure&gt;
   &lt;img src="mano-ua.png" alt="Estatua de la Mano de la UA" /&gt;
@@ -68,7 +68,7 @@
       De esta forma, un lector de pantalla al llegar al botón leerá “Editar”.
     </p>
     <p>
-      En ningún caso podemos dejar solamente el atributo `title` y ninguna información más, ya que
+      En ningún caso podemos dejar solamente el atributo <code>title</code> y ninguna información más, ya que
       no todos los lectores de pantalla leen ese contenido.
     </p>
 
@@ -107,9 +107,30 @@
     <p>
       Además, las animaciones que arrancan solas y duran más de cinco segundos (incluidos GIF y
       contenido que se actualiza automáticamente) deben poder pausarse, detenerse u ocultarse,
-      salvo que el movimiento sea imprescindible para la actividad. En CSS, esto se apoya en la
-      preferencia <code>prefers-reduced-motion</code>, explicada en el apartado «CSS, maquetación
-      y color».
+      salvo que el movimiento sea imprescindible para la actividad.
+    </p>
+    <p>
+      Al margen de ese mínimo, hay personas a las que el movimiento les provoca mareo o náuseas
+      (trastornos vestibulares) y que lo han indicado en la configuración de su sistema operativo.
+      El navegador traslada esa preferencia a CSS mediante
+      <code>prefers-reduced-motion</code>, y debemos respetarla reduciendo o eliminando las
+      animaciones no esenciales cuando esté activada:
+    </p>
+    <pre class="course-code"><code>@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}</code></pre>
+    <p>
+      La regla anterior es la red de seguridad general que conviene tener siempre en la hoja de
+      estilos. Lo que no debe hacer es eliminar información: si una animación comunica algo (por
+      ejemplo, que un panel se ha desplegado), al reducirla hay que asegurarse de que ese cambio
+      se sigue percibiendo de otra forma.
     </p>
   </div>
 </template>
