@@ -255,7 +255,7 @@ export const bloquesCurso: BloqueCurso[] = [
         id: 'formularios',
         title: 'Formularios',
         component: markRaw(Formularios),
-        toc: 'h2',
+        toc: 'h2-h3',
         examples: [
           {
             title: 'Ejemplo de formularios',
@@ -276,14 +276,6 @@ export const bloquesCurso: BloqueCurso[] = [
         title: 'Ejemplos de componentes',
         component: markRaw(ComponentesEjemplos),
         toc: 'h2',
-        examples: [
-          {
-            title: 'Ejemplo de componentes',
-            href: '/ejemplos/componentes.html',
-            description:
-              'Incluye ejemplos reales de modales, acordeones, menús desplegables, pestañas y otros componentes interactivos.',
-          },
-        ],
       },
       {
         id: 'spa-vue-estructura',

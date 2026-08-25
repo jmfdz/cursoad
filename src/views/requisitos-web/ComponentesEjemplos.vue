@@ -1,18 +1,30 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import DemoComponente from '../../components/DemoComponente.vue'
+
+const ultimaAccion = ref('')
+
+function registrar(accion: string) {
+  ultimaAccion.value = accion
+}
+</script>
+
 <template>
   <div>
     <p>
-      Como hemos visto en el apartado anterior, crear componentes interactivos accesibles tiene una
-      gran complejidad. En nuestro caso, utilizar una librería como Bootstrap aporta componentes
+      Como hemos visto en los apartados anteriores, crear componentes interactivos accesibles tiene
+      una gran complejidad. En nuestro caso, utilizar una librería como Bootstrap aporta componentes
       con una buena base, pero hay que mantener su estructura y comprobar su uso en cada caso.
-    </p>
-    <p>
-      En el repositorio de GitHub del curso se puede consultar el fichero <code>componentes.html</code> con
-      ejemplos de cuadros modales, acordeones, desplegables, pestañas, etc.
     </p>
     <p>
       Todos los componentes de este apartado comparten un mismo principio de fondo: si el propio
       plugin de Bootstrap JavaScript ya gestiona el estado y lo comunica mediante los atributos
       ARIA correctos, la tarea de Vue es dejarle hacerlo, no reconstruirlo por su cuenta.
+    </p>
+    <p>
+      Cada componente se muestra aquí <strong>funcionando de verdad</strong>, junto al código que lo
+      genera. Conviene probarlos con el ratón y después repetir el recorrido solo con el teclado,
+      porque es ahí donde se aprecia lo que el plugin está haciendo por nosotros.
     </p>
 
     <h2>Qué debe cumplir un componente interactivo</h2>
@@ -27,13 +39,52 @@
       <li>reflejar correctamente su estado, por ejemplo abierto o cerrado,</li>
       <li>y anunciar o hacer perceptibles los cambios importantes cuando el contenido se actualiza.</li>
     </ul>
-
-    <h2>Dropdown de Bootstrap</h2>
     <p>
-      Cuando utilizamos Bootstrap JavaScript debemos dejar que Bootstrap gestione el estado del
-      componente:
+      Los cinco requisitos se repiten en cada uno de los ejemplos que siguen. Al probarlos, merece
+      la pena comprobarlos uno a uno en lugar de limitarse a mirar si el componente se abre.
     </p>
-    <pre class="course-code"><code>&lt;div class="dropdown"&gt;
+
+    <h2>Dropdown</h2>
+    <p>
+      Un dropdown despliega un conjunto de acciones asociadas a un elemento. Es el componente más
+      habitual para no saturar una tabla con un botón por operación.
+    </p>
+
+    <DemoComponente
+      label="menú desplegable de acciones"
+      prueba="llega al botón con TAB y ábrelo con Intro o con la barra espaciadora. Dentro, recorre las opciones con las flechas y cierra con Escape; el foco vuelve al botón."
+    >
+      <template #demo>
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Acciones
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <button class="dropdown-item" type="button" @click="registrar('Editar')">
+                Editar
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item" type="button" @click="registrar('Eliminar')">
+                Eliminar
+              </button>
+            </li>
+          </ul>
+        </div>
+        <p aria-live="polite" class="mt-3 mb-0">
+          <template v-if="ultimaAccion">Última acción elegida: <strong>{{ ultimaAccion }}</strong>.</template>
+          <template v-else>Todavía no has elegido ninguna acción.</template>
+        </p>
+      </template>
+
+      <template #codigo>
+        <pre class="course-code"><code>&lt;div class="dropdown"&gt;
   &lt;button
     class="btn btn-secondary dropdown-toggle"
     type="button"
@@ -56,11 +107,20 @@
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
+      </template>
+    </DemoComponente>
+
     <p>
-      Aquí, <code>aria-expanded="false"</code> indica el estado inicial. Bootstrap JavaScript se
-      encarga después de actualizar el estado al abrir y cerrar el dropdown. Por tanto, no debemos
-      crear innecesariamente un <code>:aria-expanded="dropdownAbierto"</code> ligado a un
-      <code>ref(false)</code> propio únicamente para replicar un estado que ya gestiona Bootstrap.
+      Si al probarlo abres el menú y miras el HTML con las herramientas de desarrollo, verás que
+      <code>aria-expanded</code> pasa de <code>false</code> a <code>true</code> y vuelve a
+      <code>false</code> al cerrar. Eso es exactamente lo que anuncia el lector de pantalla, y lo
+      hace Bootstrap solo.
+    </p>
+    <p>
+      Por eso, <code>aria-expanded="false"</code> en el código indica únicamente el estado inicial.
+      No debemos crear innecesariamente un <code>:aria-expanded="dropdownAbierto"</code> ligado a un
+      <code>ref(false)</code> propio para replicar un estado que ya gestiona Bootstrap: acabaríamos
+      con dos fuentes de verdad que pueden desincronizarse.
     </p>
     <p>
       Tampoco debemos añadir automáticamente <code>role="menu"</code> y
@@ -82,9 +142,35 @@
 
     <h2>Collapse y Accordion</h2>
     <p>
-      Bootstrap ya proporciona el comportamiento necesario para expandir y contraer contenido:
+      Collapse muestra u oculta un bloque de contenido. Accordion es varios Collapse coordinados,
+      de modo que al abrir uno se cierra el anterior.
     </p>
-    <pre class="course-code"><code>&lt;button
+
+    <DemoComponente
+      label="bloque plegable"
+      prueba="pulsa el botón y observa cómo cambia su texto de estado. Con el teclado se activa con Intro o Espacio, igual que cualquier botón."
+    >
+      <template #demo>
+        <button
+          class="btn btn-secondary"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#demo-filtros"
+          aria-expanded="false"
+          aria-controls="demo-filtros"
+        >
+          Mostrar filtros
+        </button>
+
+        <div id="demo-filtros" class="collapse mt-3">
+          <div class="card card-body">
+            <p class="mb-0">Opciones disponibles para filtrar los resultados.</p>
+          </div>
+        </div>
+      </template>
+
+      <template #codigo>
+        <pre class="course-code"><code>&lt;button
   class="btn btn-secondary"
   type="button"
   data-bs-toggle="collapse"
@@ -100,14 +186,28 @@
     &lt;p class="mb-0"&gt;Opciones disponibles para filtrar los resultados.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+      </template>
+    </DemoComponente>
+
+    <p>
+      Aquí hay dos atributos que hacen todo el trabajo y conviene no confundir:
+      <code>aria-expanded</code> va <strong>en el botón</strong> y dice si el contenido está abierto
+      o cerrado; <code>aria-controls</code> también va en el botón y apunta al <code>id</code> del
+      bloque que abre. El primero comunica el estado, el segundo la relación.
+    </p>
     <p>
       Bootstrap utiliza su plugin <i>Collapse</i> para gestionar el componente, y Accordion está
       construido internamente sobre este mismo comportamiento. No necesitamos añadir
       <code>role="status"</code> al contenido expandido: el propio botón ya comunica su estado
       mediante <code>aria-expanded</code>, y Bootstrap lo actualiza.
     </p>
+    <p>
+      Un detalle que sí es responsabilidad nuestra: el texto del botón debe seguir teniendo sentido
+      en los dos estados. «Mostrar filtros» funciona, porque describe la acción; un botón que solo
+      diga «Filtros» deja al usuario sin saber si va a abrirlos o cerrarlos.
+    </p>
 
-    <h2>Pestañas Bootstrap</h2>
+    <h2>Pestañas</h2>
     <p>
       Las pestañas cambian contenido dentro de la misma vista. Por eso se implementan con botones y
       no como enlaces de navegación. Los roles de pestaña solo deben utilizarse cuando el
@@ -115,7 +215,67 @@
       apariencia visual de pestañas no debe utilizar <code>role="tablist"</code>,
       <code>role="tab"</code> ni <code>role="tabpanel"</code>.
     </p>
-    <pre class="course-code"><code>&lt;ul id="usuarioTabs" class="nav nav-tabs" role="tablist"&gt;
+
+    <DemoComponente
+      label="pestañas de datos y permisos"
+      prueba="tabula hasta la pestaña activa y cambia de pestaña con las flechas izquierda y derecha, no con TAB. Un TAB más te lleva al contenido del panel."
+    >
+      <template #demo>
+        <ul id="demo-usuarioTabs" class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              id="demo-datos-tab"
+              class="nav-link active"
+              type="button"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#demo-datos-panel"
+              aria-controls="demo-datos-panel"
+              aria-selected="true"
+            >
+              Datos
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              id="demo-permisos-tab"
+              class="nav-link"
+              type="button"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#demo-permisos-panel"
+              aria-controls="demo-permisos-panel"
+              aria-selected="false"
+            >
+              Permisos
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content border border-top-0 p-3">
+          <div
+            id="demo-datos-panel"
+            class="tab-pane fade show active"
+            role="tabpanel"
+            aria-labelledby="demo-datos-tab"
+            tabindex="0"
+          >
+            <p class="mb-0">Datos generales del usuario.</p>
+          </div>
+          <div
+            id="demo-permisos-panel"
+            class="tab-pane fade"
+            role="tabpanel"
+            aria-labelledby="demo-permisos-tab"
+            tabindex="0"
+          >
+            <p class="mb-0">Permisos asignados al usuario.</p>
+          </div>
+        </div>
+      </template>
+
+      <template #codigo>
+        <pre class="course-code"><code>&lt;ul id="usuarioTabs" class="nav nav-tabs" role="tablist"&gt;
   &lt;li class="nav-item" role="presentation"&gt;
     &lt;button
       id="datos-tab"
@@ -166,22 +326,78 @@
     &lt;p&gt;Permisos asignados al usuario.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+      </template>
+    </DemoComponente>
+
     <p>
-      El contenedor utiliza <code>role="tablist"</code>. Cada botón tiene <code>role="tab"</code>,
-      identifica su panel mediante <code>aria-controls</code> y comunica su estado con
-      <code>aria-selected</code>. Cada panel utiliza <code>role="tabpanel"</code> y queda
-      relacionado con su pestaña mediante <code>aria-labelledby</code>. Bootstrap actualiza las
-      clases, <code>aria-selected</code> y el orden de foco cuando se cambia de pestaña: no
-      debemos controlar de nuevo el estado activo mediante Vue si ya utilizamos
-      <code>data-bs-toggle="tab"</code>.
+      Al probarlo con teclado se aprecia lo que distingue a este componente: <strong>las pestañas no
+      se recorren con <code>TAB</code></strong>. El tabulador entra en el grupo de pestañas y sale
+      de él, y el cambio entre pestañas se hace con las flechas. Es el comportamiento que espera
+      quien usa un lector de pantalla, y Bootstrap lo implementa por nosotros.
+    </p>
+    <p>
+      El reparto de atributos es el siguiente: el contenedor utiliza <code>role="tablist"</code>.
+      Cada botón tiene <code>role="tab"</code>, identifica su panel mediante
+      <code>aria-controls</code> y comunica su estado con <code>aria-selected</code>. Cada panel
+      utiliza <code>role="tabpanel"</code> y queda relacionado con su pestaña mediante
+      <code>aria-labelledby</code>.
+    </p>
+    <p>
+      El <code>tabindex="0"</code> de los paneles tampoco es decorativo: hace que el panel pueda
+      recibir el foco, de modo que tras elegir una pestaña el siguiente <code>TAB</code> lleva
+      directamente a su contenido. Bootstrap actualiza las clases, <code>aria-selected</code> y el
+      orden de foco cuando se cambia de pestaña: no debemos controlar de nuevo el estado activo
+      mediante Vue si ya utilizamos <code>data-bs-toggle="tab"</code>.
     </p>
 
-    <h2>Modales Bootstrap</h2>
+    <h2>Modales</h2>
     <p>
-      Si utilizamos Bootstrap Modal, no debemos reconstruir manualmente su comportamiento mediante
-      Vue. El modal puede declararse al final de la misma vista donde se utiliza:
+      Un modal interrumpe la tarea para pedir una confirmación o mostrar información. Es el
+      componente con más requisitos de accesibilidad, porque mientras está abierto debe capturar el
+      foco y no dejar que se escape al contenido de detrás.
     </p>
-    <pre class="course-code"><code>&lt;button
+
+    <DemoComponente
+      label="diálogo modal de confirmación"
+      prueba="ábrelo y tabula varias veces: el foco da vueltas dentro del diálogo y no sale al resto de la página. Ciérralo con Escape y comprueba que el foco vuelve al botón que lo abrió."
+    >
+      <template #demo>
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#demo-modalEliminar"
+        >
+          Eliminar usuario
+        </button>
+
+        <div
+          id="demo-modalEliminar"
+          class="modal fade"
+          tabindex="-1"
+          aria-labelledby="demo-modalEliminarTitulo"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 id="demo-modalEliminarTitulo" class="modal-title fs-5">Eliminar usuario</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+              </div>
+              <div class="modal-body">
+                <p class="mb-0">¿Seguro que desea eliminar este usuario?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <template #codigo>
+        <pre class="course-code"><code>&lt;button
   type="button"
   class="btn btn-danger"
   data-bs-toggle="modal"
@@ -213,12 +429,24 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+      </template>
+    </DemoComponente>
+
     <p>
-      El botón con <code>class="btn-close"</code> no contiene texto visible, por lo que utiliza
-      <code>aria-label="Cerrar"</code> para proporcionar su nombre accesible. El atributo
-      <code>data-bs-dismiss="modal"</code> indica al plugin de Bootstrap que debe cerrar el modal;
-      se usa tanto en el botón gráfico de cierre como en <strong>Cancelar</strong>, que ya obtiene
-      su nombre accesible de su texto visible.
+      Lo que acabas de comprobar al tabular tiene nombre: <strong>retención del foco</strong>. Es el
+      requisito que más se incumple cuando alguien construye un modal a mano, porque de nada sirve
+      que el diálogo se vea encima si el teclado sigue paseando por los enlaces de la página que hay
+      debajo. Bootstrap lo resuelve, y también devuelve el foco al botón de origen al cerrar, que es
+      la otra mitad del problema.
+    </p>
+    <p>
+      El título del diálogo se conecta con el contenedor mediante
+      <code>aria-labelledby</code>, de forma que al abrirse el lector de pantalla anuncia de qué
+      diálogo se trata. El botón con <code>class="btn-close"</code> no contiene texto visible, por
+      lo que utiliza <code>aria-label="Cerrar"</code> para proporcionar su nombre accesible. El
+      atributo <code>data-bs-dismiss="modal"</code> indica al plugin de Bootstrap que debe cerrar el
+      modal; se usa tanto en el botón gráfico de cierre como en <strong>Cancelar</strong>, que ya
+      obtiene su nombre accesible de su texto visible.
     </p>
     <p>
       Bootstrap proporciona un plugin específico para diálogos modales y gestiona su comportamiento
@@ -245,8 +473,9 @@ if (elemento) {
       <li>y componentes que cambian el contenido, pero no dejan claro qué ha ocurrido.</li>
     </ul>
     <p>
-      Por eso conviene revisar estos ejemplos no solo desde el punto de vista visual, sino también
-      desde la interacción real, la semántica y la percepción de cambios.
+      Todos ellos tienen algo en común: se detectan en cuanto se aparta el ratón. Por eso conviene
+      revisar estos ejemplos no solo desde el punto de vista visual, sino también desde la
+      interacción real, la semántica y la percepción de cambios.
     </p>
   </div>
 </template>

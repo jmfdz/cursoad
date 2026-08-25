@@ -280,7 +280,16 @@ const password = ref('')
       <strong>Eliminar usuario</strong> en lugar de un genérico <strong>Eliminar</strong>.
     </p>
 
-    <h2>Reglas generales de validación</h2>
+    <h2>Validación y errores</h2>
+    <p>
+      La validación es la parte del formulario donde más fácil resulta dejar fuera a alguien, porque
+      un error que solo se percibe por el color o la posición no llega a todo el mundo. Se resuelve
+      en tres niveles, que son los tres subapartados siguientes: unos <strong>principios</strong>
+      que valen para cualquier formulario, el <strong>error señalado junto al campo</strong> que
+      falla, y el <strong>resumen</strong> que agrupa todos los errores del formulario.
+    </p>
+
+    <h3>Principios generales</h3>
     <p>
       Es recomendable utilizar el atributo <code>required</code> en los campos de formulario, ya que indica la
       semántica a un lector de pantalla. Aunque usemos el atributo <code>novalidate</code>, hay que validar
@@ -303,7 +312,7 @@ const password = ref('')
       agrupa todos los errores del formulario.
     </p>
 
-    <h2>Validación y mensajes de error</h2>
+    <h3>El error junto al campo</h3>
     <p>
       Bootstrap proporciona clases de validación como <code>is-invalid</code> e <code>invalid-feedback</code>, pero su
       propia documentación advierte de que los estilos personalizados de validación en cliente
@@ -368,7 +377,7 @@ function validarEmail() {
       </template>
     </CodeTabs>
 
-    <h2>Resumen de errores</h2>
+    <h3>El resumen de errores</h3>
     <p>
       En formularios extensos, además de señalar el error junto a cada campo, resulta útil mostrar
       un resumen cuando la validación falla, situado después del botón de enviar y anunciado con

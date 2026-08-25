@@ -11,6 +11,19 @@
       elementos que la componen y de esta manera transmitirán, aparte del contenido, su significado
       y relación con los demás elementos.
     </p>
+    <p>
+      Conviene entender para qué sirve todo esto, porque explica el resto del apartado. Quien navega
+      con un lector de pantalla <strong>no lee la página de arriba abajo</strong>: pide la lista de
+      encabezados para hacerse una idea del contenido, salta directamente a la región que le
+      interesa y entra a leer solo cuando ha llegado. Es el equivalente a lo que hacemos los demás
+      recorriendo la página con la vista.
+    </p>
+    <p>
+      Esas dos operaciones, <strong>listar encabezados</strong> y <strong>saltar entre
+      regiones</strong>, solo funcionan si el HTML las hace posibles. Una página maquetada
+      íntegramente con <code>div</code> se ve perfectamente y, sin embargo, no ofrece ningún punto
+      de agarre: hay que recorrerla entera. Este apartado trata de darle esos puntos de agarre.
+    </p>
 
     <h2>Semántica de los elementos</h2>
     <p>Pongamos un ejemplo de lista con los colores corporativos UA. Podemos hacerla escribiendo en cada línea:</p>
@@ -50,36 +63,29 @@
       para la que ya existe una etiqueta.
     </p>
 
-    <h2>Estructura de una página web</h2>
+    <h2>Regiones de la página: landmarks</h2>
     <p>
       Siguiendo con la función semántica de las etiquetas HTML, deberíamos especificar un
       esqueleto de nuestra página web que separe las diferentes secciones y elementos de la página.
+      HTML5 incorpora para ello elementos de <i>sectioning</i> que describen las grandes regiones
+      de un documento:
     </p>
+    <ul>
+      <li><code>header</code>, la cabecera común de la página;</li>
+      <li><code>nav</code>, los menús de navegación;</li>
+      <li><code>main</code>, el contenido principal;</li>
+      <li><code>article</code>, contenido autónomo;</li>
+      <li><code>section</code>, agrupaciones temáticas;</li>
+      <li><code>aside</code>, contenido complementario;</li>
+      <li><code>footer</code>, el pie de página.</li>
+    </ul>
     <p>
-      El contenido principal debe identificarse con la etiqueta <code>main</code>. Si la página tiene
-      una cabecera común, conviene marcarla con <code>header</code>; también se pueden incluir otras
-      etiquetas como <code>footer</code> para el pie de página.
-    </p>
-    <p>
-      Además, si utilizamos menús de navegación, también deberíamos utilizar etiquetas
-      <code>nav</code> para especificar que es un menú de navegación.
-    </p>
-    <p>
-      En la etiqueta <code>html</code> también debemos indicar el idioma principal de la página, por
-      ejemplo <code>&lt;html lang="es"&gt;</code> para español. Este requisito se explicará con más
-      detalle en el apartado de idioma.
-    </p>
-
-    <h2>Regiones y landmarks</h2>
-    <p>
-      Más allá de elegir el elemento adecuado para cada fragmento de texto, HTML5 incorpora
-      elementos de sectioning para describir las grandes regiones de una página: cabecera
-      (<code>header</code>), navegación (<code>nav</code>), contenido principal (<code>main</code>),
-      contenido autónomo (<code>article</code>), agrupaciones temáticas (<code>section</code>),
-      contenido complementario (<code>aside</code>) y pie (<code>footer</code>). Cada uno expone
-      automáticamente un rol de landmark, sin que haga falta añadirlo a mano, lo que permite que
-      una persona que navega con lector de pantalla salte directamente entre regiones en lugar de
-      recorrer todo el contenido de forma lineal.
+      Cada uno expone automáticamente un rol de <i>landmark</i>, sin que haga falta añadirlo a
+      mano. Eso es lo que permite que una persona que navega con lector de pantalla pida la lista
+      de regiones y salte directamente a la que le interesa, en lugar de recorrer todo el contenido
+      de forma lineal. Escribir <code>&lt;main&gt;</code> en lugar de
+      <code>&lt;div class="main"&gt;</code> no cambia nada visualmente, pero es la diferencia entre
+      poder saltar al contenido y no poder.
     </p>
     <p>Algunas reglas prácticas de uso:</p>
     <ul>
@@ -98,7 +104,17 @@
         página, mientras que <code>section</code> agrupa contenido relacionado dentro de un mismo
         documento.
       </li>
+      <li>
+        <code>section</code> solo se comporta como región si tiene nombre accesible, normalmente
+        mediante <code>aria-labelledby</code> apuntando a su encabezado; sin nombre, no aparece en
+        la lista de regiones.
+      </li>
     </ul>
+    <p>
+      En la etiqueta <code>html</code> también debemos indicar el idioma principal de la página, por
+      ejemplo <code>&lt;html lang="es"&gt;</code> para español. Este requisito se explicó con más
+      detalle en el apartado «Texto, tipografía e idioma».
+    </p>
 
     <h2>Título de página</h2>
     <p>
@@ -163,6 +179,14 @@
     <p>
       Los encabezados son uno de los elementos más importantes para darle una estructura coherente
       a una página web.
+    </p>
+    <p>
+      Son también la herramienta de navegación más usada por quien emplea un lector de pantalla.
+      Todos ellos ofrecen un atajo para <strong>listar los encabezados de la página</strong> y otro
+      para <strong>saltar al siguiente</strong>. Dicho de otro modo: los encabezados de una página
+      funcionan como su índice, y de ahí salen todas las reglas que vienen a continuación. Un
+      índice con niveles desordenados, o con entradas que no corresponden a ninguna sección, es un
+      índice inservible.
     </p>
 
     <p>

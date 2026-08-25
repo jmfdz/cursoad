@@ -6,11 +6,32 @@
     </p>
     <p>
       En una imagen, el texto alternativo debe explicar lo que aporta dentro de ese contexto, sin
-      limitarse a enumerar todo lo que aparece visualmente.
+      limitarse a enumerar todo lo que aparece visualmente. Esta idea de <strong>contexto</strong> es
+      la clave de todo el apartado: la misma fotografía puede necesitar una descripción larga, una
+      corta o ninguna, según el papel que cumpla en la página donde está.
     </p>
     <p>
-      En el caso de que un elemento sea meramente decorativo, se deberá dejar la etiqueta de texto
-      alternativo vacía.
+      Antes de escribir nada, por tanto, conviene responder a una sola pregunta:
+      <strong>¿qué se perdería si esta imagen no estuviera?</strong> La respuesta decide el tipo de
+      alternativa:
+    </p>
+    <ul>
+      <li>
+        <strong>Nada</strong>: la imagen es decorativa y se deja el texto alternativo vacío
+        (<code>alt=""</code>), para que el lector de pantalla la ignore por completo.
+      </li>
+      <li>
+        <strong>Una información</strong>: hay que describirla, con la extensión que pida el
+        contenido.
+      </li>
+      <li>
+        <strong>Una acción</strong>: la imagen es un enlace o un botón, y la alternativa no describe
+        el dibujo sino <strong>a dónde lleva o qué hace</strong>.
+      </li>
+    </ul>
+    <p>
+      Ese tercer caso es el que más se falla, y por eso tiene apartado propio más adelante: en un
+      icono de lápiz que sirve para editar, la alternativa correcta no es «lápiz», es «Editar».
     </p>
 
     <h2>Texto alternativo</h2>
@@ -24,6 +45,26 @@
     <p>
       No existe un límite fijo de caracteres, pero el texto alternativo debe ser conciso. Si la
       descripción necesaria es muy larga, conviene incluirla dentro del contenido de la página.
+    </p>
+    <p>
+      Hay una diferencia importante entre <strong>dejar el <code>alt</code> vacío y no ponerlo</strong>,
+      aunque visualmente el resultado sea el mismo:
+    </p>
+    <ul>
+      <li>
+        <code>alt=""</code> le dice al lector de pantalla «esta imagen no aporta nada, sáltala». Es
+        una decisión deliberada y correcta para lo decorativo.
+      </li>
+      <li>
+        Sin <code>alt</code>, el lector de pantalla no sabe qué hacer y en muchos casos acaba
+        leyendo el nombre del fichero, con resultados como «guion bajo cabecera guion dos punto
+        png».
+      </li>
+    </ul>
+    <p>
+      Tampoco conviene empezar la descripción con «Imagen de…» o «Fotografía de…»: el lector de
+      pantalla ya anuncia por su cuenta que se trata de una imagen, así que esa fórmula solo añade
+      ruido.
     </p>
 
     <h2>Descripciones largas</h2>

@@ -1,12 +1,51 @@
 <template>
   <div>
-    <p>Las tablas son para estructurar datos, no para maquetar o colocar contenido visualmente.</p>
-    <p>Conviene evitar dividir o combinar celdas cuando no sea necesario, para mantener las tablas sencillas de entender.</p>
     <p>
-      Deben tener un título que las titule con la etiqueta <code>caption</code>. Por defecto, la etiqueta
-      <code>caption</code> se muestra visualmente asociado a la tabla. Si el diseño lo necesita, se puede
-      ajustar su posición con CSS sin perder esa asociación.
+      Las tablas son para estructurar datos, no para maquetar o colocar contenido visualmente. Esa
+      es la primera regla y de ella se derivan casi todas las demás.
     </p>
+    <p>
+      El motivo es que una tabla no se lee igual con los ojos que con un lector de pantalla. Quien
+      ve la pantalla capta de un vistazo que el «8» de la tercera fila está bajo la columna «Nota»;
+      quien la escucha recibe las celdas una detrás de otra, en fila, y necesita que el navegador le
+      diga a qué encabezado pertenece cada una. Todo lo que hacemos al marcar una tabla sirve para
+      reconstruir esa rejilla que solo existe visualmente.
+    </p>
+    <p>Para conseguirlo hacen falta tres cosas, que son las que recorre este apartado:</p>
+    <ol>
+      <li>que la tabla <strong>tenga nombre</strong>, con <code>caption</code>;</li>
+      <li>que sus <strong>encabezados estén marcados</strong> y asociados, con <code>th</code> y <code>scope</code>;</li>
+      <li>que se pueda <strong>percibir y recorrer</strong>, con contraste suficiente y sin romperse en una pantalla pequeña.</li>
+    </ol>
+
+    <h2>Título de la tabla: caption</h2>
+    <p>
+      Toda tabla debe tener un título que la identifique, y para eso existe la etiqueta
+      <code>caption</code>, que se coloca como primer elemento dentro de <code>table</code>.
+    </p>
+    <pre class="course-code"><code>&lt;table&gt;
+  &lt;caption&gt;Notas de la asignatura de accesibilidad&lt;/caption&gt;
+  ...
+&lt;/table&gt;</code></pre>
+    <p>
+      No es lo mismo que poner un encabezado justo encima de la tabla. El <code>caption</code>
+      queda <strong>asociado a la tabla</strong>, de modo que el lector de pantalla lo anuncia al
+      entrar en ella y permite distinguirla del resto cuando una página contiene varias. Un
+      <code>h3</code> encima informa a quien lee la página de arriba abajo, pero no acompaña a la
+      tabla cuando se salta directamente a ella.
+    </p>
+    <p>
+      Por defecto, la etiqueta <code>caption</code> se muestra visualmente asociada a la tabla. Si
+      el diseño lo necesita, se puede ajustar su posición con CSS sin perder esa asociación. Lo que
+      no conviene es ocultarlo con <code>display: none</code>, porque desaparecería también para las
+      tecnologías de apoyo; si de verdad no debe verse, la técnica correcta es
+      <code>.visually-hidden</code>, explicada en «Enlaces, botones y navegación por teclado».
+    </p>
+    <p>
+      Conviene además evitar dividir o combinar celdas cuando no sea necesario, para mantener las
+      tablas sencillas de entender.
+    </p>
+
     <h2>Encabezados de fila y columna: scope</h2>
     <p>
       Los encabezados de fila o columna deben marcarse con <code>th</code>, nunca con
@@ -34,7 +73,7 @@
   &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 
-    <h2>Ejemplo de tabla</h2>
+    <h2>Contraste y filas alternas</h2>
     <p>
       En vez de fijar los colores con un atributo <code>style</code> en el propio HTML, es
       preferible llevarlos a una hoja de estilos: resulta más fácil de mantener y de comprobar el
