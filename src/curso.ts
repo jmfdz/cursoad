@@ -25,9 +25,7 @@ import WaiAria from './views/requisitos-web/WaiAria.vue'
 import ArquitecturaInformacion from './views/ux/ArquitecturaInformacion.vue'
 import EstadosFeedback from './views/ux/EstadosFeedback.vue'
 import FundamentosUx from './views/ux/FundamentosUx.vue'
-import LeyesUxCargaDecision from './views/ux/LeyesUxCargaDecision.vue'
-import LeyesUxInteraccion from './views/ux/LeyesUxInteraccion.vue'
-import LeyesUxPercepcion from './views/ux/LeyesUxPercepcion.vue'
+import LeyesUx from './views/ux/LeyesUx.vue'
 import PatronesUsabilidad from './views/ux/PatronesUsabilidad.vue'
 import PrevencionErrores from './views/ux/PrevencionErrores.vue'
 
@@ -296,9 +294,9 @@ export const bloquesCurso: BloqueCurso[] = [
     shortTitle: 'Usabilidad y UX',
     title: 'Usabilidad y UX',
     menuDescription:
-      'Conceptos base, carga y accesibilidad cognitiva, arquitectura, feedback, prevención de errores, leyes UX y patrones de diseño.',
+      'Conceptos base, carga y accesibilidad cognitiva, arquitectura, feedback, prevención de errores, patrones de diseño y leyes UX.',
     homeSummary:
-      'Reúne fundamentos de diseño inclusivo, usabilidad y experiencia de usuario, carga y accesibilidad cognitiva, arquitectura de información, estados y feedback, prevención de errores, leyes UX y patrones aplicados al diseño de interfaces.',
+      'Reúne fundamentos de diseño inclusivo, usabilidad y experiencia de usuario, carga y accesibilidad cognitiva, arquitectura de información, estados y feedback, prevención de errores, patrones aplicados al diseño de interfaces y un catálogo de leyes UX.',
     intro: [
       'En este bloque se trabajan los conceptos de diseño inclusivo, usabilidad y experiencia de usuario, así como varios patrones de diseño.',
     ],
@@ -307,7 +305,7 @@ export const bloquesCurso: BloqueCurso[] = [
         id: 'fundamentos-ux',
         title: 'Fundamentos, carga y accesibilidad cognitiva',
         component: markRaw(FundamentosUx),
-        toc: 'h2',
+        toc: 'h2-h3',
       },
       {
         id: 'arquitectura-informacion',
@@ -388,21 +386,9 @@ export const bloquesCurso: BloqueCurso[] = [
         ],
       },
       {
-        id: 'leyes-ux-percepcion',
-        title: 'Leyes UX: percepción y organización',
-        component: markRaw(LeyesUxPercepcion),
-        toc: 'h2-h3',
-      },
-      {
-        id: 'leyes-ux-carga-decision',
-        title: 'Leyes UX: carga mental y decisión',
-        component: markRaw(LeyesUxCargaDecision),
-        toc: 'h2-h3',
-      },
-      {
-        id: 'leyes-ux-interaccion',
-        title: 'Leyes UX: interacción y rendimiento',
-        component: markRaw(LeyesUxInteraccion),
+        id: 'leyes-ux',
+        title: 'Leyes UX',
+        component: markRaw(LeyesUx),
         toc: 'h2-h3',
       },
     ],

@@ -37,109 +37,81 @@
       fuentes como Times New Roman; al eliminarlos, las formas quedan más limpias y se distinguen
       mejor en pantalla y a tamaños pequeños.
     </p>
-    <p>Al elegir una fuente conviene fijarse en algo más que en si tiene remates o no:</p>
+    <p>
+      Debemos utilizar tipos de fuente que estén presentes en la mayoría de sistemas operativos,
+      para garantizar así la interoperabilidad de nuestros contenidos. Con Arial o Verdana no hay
+      que descargar nada: basta con declararlas, siempre seguidas de alternativas por si el sistema
+      no las tuviera.
+    </p>
+    <pre class="course-code"><code>body {
+  font-family: Arial, Verdana, sans-serif;
+}</code></pre>
+    <p>
+      La lista se lee de izquierda a derecha: el navegador usa Arial si la encuentra, si no Verdana,
+      y si tampoco, la fuente sans serif que tenga configurada el sistema. Esa última palabra,
+      <code>sans-serif</code>, no debe faltar nunca: es la red de seguridad que evita acabar en una
+      fuente con remates.
+    </p>
+    <p>Al elegir una fuente conviene además fijarse en tres cosas:</p>
     <ul>
       <li>
-        que <strong>no confunda caracteres parecidos</strong>. El caso clásico es la I mayúscula,
-        la l minúscula y el número 1, que en muchas tipografías son casi idénticos.
+        que <strong>no confunda caracteres parecidos</strong>, como la I mayúscula, la l minúscula
+        y el número 1, o la O y el 0;
       </li>
       <li>
         que <strong>no sea demasiado estrecha ni demasiado ligera</strong>, porque los pesos finos
-        pierden contraste contra el fondo.
+        pierden contraste contra el fondo;
       </li>
       <li>
         que <strong>tenga suficientes pesos</strong> para poder marcar jerarquía sin recurrir a
         efectos raros.
       </li>
-      <li>
-        que <strong>esté presente en la mayoría de sistemas operativos</strong>, o bien que la
-        sirvamos nosotros, para garantizar así la interoperabilidad de nuestros contenidos.
-      </li>
     </ul>
-    <p>
-      Hay tipografías diseñadas específicamente para maximizar la legibilidad, pensadas para
-      personas con baja visión o con dislexia. La Universidad de Alicante utiliza una de ellas,
-      <a href="https://www.brailleinstitute.org/freefont/" rel="noreferrer">Atkinson Hyperlegible Next</a>,
-      creada por el Braille Institute precisamente para diferenciar al máximo caracteres que
-      suelen confundirse.
-    </p>
 
-    <h3>Servir una fuente propia con CSS</h3>
+    <h3>Fuentes hiperlegibles</h3>
     <p>
-      En el caso de que utilicemos tipos de fuente específicos, como en el caso de la UA que
-      utiliza Atkinson Hyperlegible Next y no está instalada en los sistemas por defecto, debemos
-      servirla como recurso web e incluir fuentes alternativas. Puede alojarse en el propio sitio o
-      cargarse desde un proveedor de fuentes.
+      Existen tipografías diseñadas específicamente para maximizar la legibilidad, pensadas para
+      personas con baja visión o con dislexia. La Universidad de Alicante utiliza una de ellas en su
+      web, <a href="https://www.brailleinstitute.org/freefont/" rel="noreferrer">Atkinson Hyperlegible
+      Next</a>, creada por el Braille Institute.
     </p>
     <p>
-      La forma de declararla es la regla <code>@font-face</code>. Este es el código real con el que
-      se sirve la tipografía en esta misma web del curso:
+      Su aportación consiste justamente en atacar el primero de los tres puntos anteriores: dibuja
+      de forma deliberadamente distinta los caracteres que suelen confundirse. La I mayúscula lleva
+      remates que la separan de la l minúscula y del 1; el 0 se distingue de la O; la b, la d, la p
+      y la q no son la misma forma girada. Sobre un texto corrido apenas se nota, pero marca la
+      diferencia en un DNI, una matrícula o una contraseña.
+    </p>
+    <p>
+      El inconveniente es que <strong>no está instalada en los sistemas operativos</strong>, así que
+      hay que servirla nosotros. Se puede hacer de dos formas. La primera, alojando el fichero en el
+      propio sitio y declarándolo con <code>@font-face</code>, que es como funciona esta misma web
+      del curso:
     </p>
     <pre class="course-code"><code>@font-face {
   font-family: 'Atkinson Hyperlegible Next';
-  src: url('/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-}</code></pre>
-    <p>Conviene entender qué hace cada línea, porque tres de ellas tienen consecuencias directas:</p>
-    <ul>
-      <li>
-        <code>font-family</code> es el nombre con el que después invocaremos la fuente. Es una
-        etiqueta que elegimos nosotros, no tiene que coincidir con el nombre del fichero.
-      </li>
-      <li>
-        <code>src</code> apunta al fichero. Se usa <strong>woff2</strong> porque es el formato
-        comprimido que entienden todos los navegadores actuales; ya no hace falta servir
-        <code>woff</code>, <code>ttf</code> ni <code>eot</code> como alternativas.
-      </li>
-      <li>
-        <code>font-weight: 100 900</code> indica que es una <strong>fuente variable</strong>: un
-        único fichero contiene todos los pesos, del más fino al más grueso. Evita descargar un
-        fichero por cada peso.
-      </li>
-      <li>
-        <code>font-display: swap</code> es el más importante para la accesibilidad. Le dice al
-        navegador que <strong>muestre ya el texto</strong> con una fuente alternativa mientras se
-        descarga la nuestra, y que la sustituya cuando llegue. Sin esta línea, el comportamiento
-        por defecto de la mayoría de navegadores es dejar el texto invisible durante un tiempo
-        (lo que se conoce como <em>FOIT</em>), de modo que si la descarga falla o va lenta el
-        contenido simplemente no se lee.
-      </li>
-    </ul>
-    <p>
-      Una vez declarada, se aplica indicando siempre <strong>una lista de alternativas</strong>
-      detrás, nunca la fuente sola. Si el fichero no carga, el navegador va bajando por la lista
-      hasta encontrar algo que sí tenga instalado:
-    </p>
-    <pre class="course-code"><code>&lt;!-- Evitar: si la descarga falla, el navegador elige una fuente cualquiera --&gt;
-body {
-  font-family: 'Atkinson Hyperlegible Next';
+  src: url('/fonts/atkinson-hyperlegible-next.woff2') format('woff2');
+  font-weight: 100 900;   /* Fuente variable: todos los pesos en un fichero */
+  font-display: swap;     /* Muestra ya el texto con la fuente alternativa */
 }
 
-/* Correcto: siempre con alternativas sans serif detrás */
 body {
-  font-family:
-    'Atkinson Hyperlegible Next',
-    Arial,
-    system-ui,
-    -apple-system,
-    'Segoe UI',
-    sans-serif;
+  font-family: 'Atkinson Hyperlegible Next', Arial, Verdana, sans-serif;
 }</code></pre>
     <p>
-      La alternativa a alojar el fichero es cargarlo desde un proveedor externo, normalmente con un
-      <code>&lt;link&gt;</code> en el <code>&lt;head&gt;</code>:
+      De esas líneas, la que no conviene olvidar es <code>font-display: swap</code>. Sin ella, el
+      comportamiento por defecto de la mayoría de navegadores es <strong>dejar el texto invisible
+      </strong> mientras se descarga la fuente, de modo que si la descarga va lenta o falla, el
+      contenido no se lee.
     </p>
-    <pre class="course-code"><code>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
-&lt;link
-  href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;display=swap"
+    <p>La segunda forma es cargarla desde un proveedor externo con un <code>&lt;link&gt;</code>:</p>
+    <pre class="course-code"><code>&lt;link
+  href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap"
   rel="stylesheet"&gt;</code></pre>
     <p>
-      Es más rápido de poner en marcha, pero <strong>alojar la fuente en el propio sitio suele ser
-      preferible</strong>: no dependemos de que un tercero esté disponible, no enviamos datos de
-      navegación de nuestros usuarios a otro servidor (con las implicaciones que eso tiene en
-      protección de datos) y la fuente sigue funcionando en una intranet sin salida a Internet.
+      Es más rápido de poner en marcha, pero <strong>alojarla en el propio sitio suele ser
+      preferible</strong>: no dependemos de un tercero, no enviamos datos de navegación de nuestros
+      usuarios a otro servidor y la fuente sigue funcionando en una intranet sin salida a Internet.
     </p>
 
     <h3>Dónde se declara la fuente</h3>
@@ -292,20 +264,26 @@ button {
       debajo del suelo. Partiendo de 14 puntos, el texto secundario todavía puede bajar a 12 y
       seguir cumpliendo.
     </p>
-    <p>Por ejemplo, para partir del tamaño recomendado de 14 puntos como base del contenido:</p>
-    <pre class="course-code"><code>body {
-  font-size: 1.1667rem; /* 14 pt = 18,67px, tamaño recomendado como base */
-}
-
-small,
-.texto-secundario {
-  font-size: 1rem; /* 12 pt = 16px, tamaño mínimo, nunca por debajo */
-}</code></pre>
     <p>
-      Esta escala es la que utiliza esta misma web del curso. Y conviene recordar que el mínimo se
-      aplica <strong>a todo el texto</strong>, no solo al cuerpo: los pies de tabla, las etiquetas
-      de los campos, los mensajes de error, las migas de pan y el pie de página son los sitios
-      donde con más frecuencia se cuela un tamaño demasiado pequeño.
+      Partiendo de esos 14 puntos como base del contenido, el resto de la escala se define también
+      en <code>rem</code>, de modo que todo quede referido al mismo origen:
+    </p>
+    <pre class="course-code"><code>body { font-size: 1.1667rem; } /* 14 pt = 18,67px, base del contenido */
+
+h1 { font-size: 2.5rem; }      /* 40px */
+h2 { font-size: 2rem; }        /* 32px */
+h3 { font-size: 1.5rem; }      /* 24px */</code></pre>
+    <p>
+      Aquí se ve por qué insistimos en las unidades relativas. Los píxeles del comentario son los
+      que resultan <em>con la raíz por defecto</em>. Si alguien tiene configurado su navegador con
+      un tamaño de letra de 20 píxeles en lugar de 16, los cuatro valores crecen a la vez y en la
+      misma proporción: el <code>h1</code> pasa a 50px y el cuerpo a 23px, y la jerarquía visual se
+      mantiene intacta. Escritos en píxeles fijos, no se movería ninguno.
+    </p>
+    <p>
+      El mínimo de 12 puntos se aplica <strong>a todo el texto</strong>, no solo al cuerpo: los
+      pies de tabla, las etiquetas de los campos, los mensajes de error, las migas de pan y el pie
+      de página son los sitios donde con más frecuencia se cuela un tamaño demasiado pequeño.
     </p>
     <p>
       Ninguno de estos valores debe fijarse con un tamaño absoluto ni bloquearse: el criterio

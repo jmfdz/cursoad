@@ -9,6 +9,13 @@ import CodeTabs from '../../components/CodeTabs.vue'
       que se repiten. No deben aplicarse de forma automática: hay que elegirlos según la tarea y la
       cantidad de información que necesita el usuario.
     </p>
+    <p>
+      Los tres que se recogen aquí cubren la mayor parte de los casos de una aplicación de gestión,
+      y la elección entre ellos depende sobre todo de <strong>cuánta información necesita ver la
+      persona a la vez</strong>: dos columnas cuando hay que comparar o consultar mientras se
+      trabaja, formulario centrado cuando la tarea es única y corta, y proceso por pasos cuando es
+      larga y conviene trocearla.
+    </p>
 
     <h2>Diseño en dos columnas</h2>
     <p>
@@ -234,94 +241,5 @@ const paneles = [
       </template>
     </CodeTabs>
 
-    <h2>Avisar antes de salir</h2>
-    <p>
-      Si hay cambios sin guardar, puede mostrarse el aviso estándar del navegador antes de
-      abandonar la página. Los navegadores actuales no permiten personalizar el texto del diálogo.
-    </p>
-    <CodeTabs label="Implementación del aviso de cambios sin guardar">
-      <template #js>
-        <p>
-          En una página convencional, <code>beforeunload</code> controla el cierre, la recarga o la
-          salida del documento.
-        </p>
-        <pre class="course-code"><code>// Localiza el formulario que puede contener cambios pendientes.
-const formulario = document.querySelector('#solicitud')
-
-// Registra si el usuario ha modificado algún dato.
-let cambiosSinGuardar = false
-
-// Marca el formulario como modificado al cambiar cualquier campo.
-formulario?.addEventListener('input', () =&gt; {
-  cambiosSinGuardar = true
-})
-
-// Limpia la marca cuando el formulario se envía correctamente.
-formulario?.addEventListener('submit', () =&gt; {
-  cambiosSinGuardar = false
-})
-
-// Solicita la confirmación estándar al cerrar, recargar o salir de la página.
-window.addEventListener('beforeunload', (evento) =&gt; {
-  if (!cambiosSinGuardar) return
-
-  evento.preventDefault()
-  evento.returnValue = ''
-})</code></pre>
-      </template>
-
-      <template #vue>
-        <p>
-          En una SPA hay que controlar dos salidas distintas. <code>beforeunload</code> se ocupa de
-          cerrar o recargar la página y <code>onBeforeRouteLeave</code> de Vue Router controla la
-          navegación interna.
-        </p>
-        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
-import { onBeforeUnmount, onMounted, ref } from 'vue'
-import { onBeforeRouteLeave } from 'vue-router'
-
-// Mantiene el estado reactivo de los cambios pendientes.
-const cambiosSinGuardar = ref(false)
-
-// Prepara el aviso nativo del navegador para salidas del documento.
-function avisarAntesDeSalir(evento: BeforeUnloadEvent) {
-  if (!cambiosSinGuardar.value) return
-
-  evento.preventDefault()
-  evento.returnValue = ''
-}
-
-// Registra el evento cuando el componente ya está montado en el navegador.
-onMounted(() =&gt; {
-  window.addEventListener('beforeunload', avisarAntesDeSalir)
-})
-
-// Elimina el evento cuando el componente deja de existir.
-onBeforeUnmount(() =&gt; {
-  window.removeEventListener('beforeunload', avisarAntesDeSalir)
-})
-
-// Cancela una navegación interna de Vue Router si el usuario no la confirma.
-onBeforeRouteLeave(() =&gt; {
-  if (!cambiosSinGuardar.value) return true
-  return window.confirm('Hay cambios sin guardar. ¿Quieres salir de esta página?')
-})
-
-// Simula el guardado y permite abandonar la vista sin mostrar el aviso.
-function guardar() {
-  cambiosSinGuardar.value = false
-}
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;!-- El evento input detecta cambios en cualquier campo del formulario. --&gt;
-  &lt;form id="solicitud" @input="cambiosSinGuardar = true" @submit.prevent="guardar"&gt;
-    &lt;label for="asunto-vue" class="form-label"&gt;Asunto&lt;/label&gt;
-    &lt;input id="asunto-vue" class="form-control" type="text" required&gt;
-    &lt;button class="btn btn-primary mt-3" type="submit"&gt;Guardar cambios&lt;/button&gt;
-  &lt;/form&gt;
-&lt;/template&gt;</code></pre>
-      </template>
-    </CodeTabs>
   </div>
 </template>

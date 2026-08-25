@@ -5,8 +5,22 @@
       no significan exactamente lo mismo. Conviene diferenciarlos porque cada uno aporta un enfoque
       distinto a la calidad real de una interfaz.
     </p>
+    <p>
+      La forma más rápida de distinguirlos es por la pregunta que responde cada uno:
+      <strong>¿puede usarlo todo el mundo?</strong> es diseño inclusivo,
+      <strong>¿se maneja bien?</strong> es usabilidad, y <strong>¿qué sensación deja?</strong> es
+      experiencia de usuario. Una interfaz puede aprobar una y suspender las otras dos.
+    </p>
+    <p>
+      Tras definirlos, el apartado se ocupa de cómo evaluarlos y de un factor que los atraviesa a
+      los tres: el <strong>esfuerzo mental</strong> que una interfaz exige, primero en general
+      (carga cognitiva) y después desde el punto de vista de quién queda fuera cuando ese esfuerzo
+      es excesivo (accesibilidad cognitiva).
+    </p>
 
-    <h2>Diseño inclusivo</h2>
+    <h2>Tres conceptos que no son sinónimos</h2>
+
+    <h3>Diseño inclusivo</h3>
     <p>
       El diseño inclusivo busca aprovechar toda la diversidad humana al concebir productos y
       servicios, de modo que funcionen para personas con diferentes capacidades, contextos y
@@ -31,7 +45,7 @@
       formas de participación, que guían a los equipos durante todo el ciclo de vida del producto.
     </p>
 
-    <h2>Usabilidad</h2>
+    <h3>Usabilidad</h3>
     <p>
       La usabilidad se refiere a cómo de <strong>eficaz, eficiente y satisfactoria</strong> es la
       interacción de personas concretas con un sitio web o aplicación, en un contexto de uso
@@ -47,7 +61,7 @@
       <li>Satisfacción: el uso del sistema resulta agradable.</li>
     </ul>
 
-    <h2>Experiencia de usuario (UX)</h2>
+    <h3>Experiencia de usuario (UX)</h3>
     <p>
       La experiencia de usuario es más amplia: engloba todas las <strong>emociones, percepciones y
       reacciones</strong> que una persona tiene al interactuar con una página web o aplicación.
@@ -110,7 +124,7 @@
       Varias de las «Leyes UX» recogidas en este bloque explican por qué funcionan estas medidas
       (por ejemplo, la ley de Miller sobre el número de elementos que podemos retener, o la ley de
       Hick sobre el tiempo que se tarda en decidir entre muchas opciones); pueden consultarse en el
-      apartado «Leyes UX: carga mental y decisión».
+      apartado «Leyes UX».
     </p>
 
     <h2>Accesibilidad cognitiva</h2>

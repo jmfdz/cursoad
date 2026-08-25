@@ -9,6 +9,14 @@ import CodeTabs from '../../components/CodeTabs.vue'
       para que el usuario entienda dónde está, qué información tiene delante y qué caminos puede
       seguir.
     </p>
+    <p>
+      Esas tres cuestiones son, precisamente, las que recorre el apartado: cómo se
+      <strong>ordena</strong> la información dentro de una pantalla, cómo se le dice a la persona
+      <strong>dónde está</strong> dentro del sitio, y qué <strong>caminos</strong> se le ofrecen
+      para moverse. Cierra con la condición que hace que todo lo anterior sirva de algo: que se
+      resuelva <strong>igual en todas las pantallas</strong>, porque una convención que cambia de
+      una página a otra deja de ser una convención.
+    </p>
 
     <h2>Agrupar y jerarquizar</h2>
     <p>
