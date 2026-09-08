@@ -7,6 +7,7 @@ import Wcag from './views/fundamentos/Wcag.vue'
 import ExtensionCadua from './views/herramientas/ExtensionCadua.vue'
 import LectorPantalla from './views/herramientas/LectorPantalla.vue'
 import RevisionAccesibilidad from './views/herramientas/RevisionAccesibilidad.vue'
+import SkillUaAccesibilidad from './views/herramientas/SkillUaAccesibilidad.vue'
 import Multimedia from './views/documentos/Multimedia.vue'
 import Pdf from './views/documentos/Pdf.vue'
 import Powerpoint from './views/documentos/Powerpoint.vue'
@@ -435,9 +436,9 @@ export const bloquesCurso: BloqueCurso[] = [
     slug: 'herramientas',
     shortTitle: 'Herramientas',
     title: 'Herramientas',
-    menuDescription: 'Revisión de accesibilidad, extensión de CADUA y lector de pantalla.',
+    menuDescription: 'Revisión de accesibilidad, extensión de CADUA, skill ua-accesibilidad y lector de pantalla.',
     homeSummary:
-      'Explica cómo combinar pruebas automáticas y manuales, utilizar la extensión de CADUA y hacer una comprobación básica con lector de pantalla.',
+      'Explica cómo combinar pruebas automáticas y manuales, utilizar la extensión de CADUA, trabajar con la skill ua-accesibilidad y hacer una comprobación básica con lector de pantalla.',
     intro: [
       'En este bloque se explica cómo revisar la accesibilidad en la práctica combinando herramientas automáticas, comprobaciones manuales y tecnologías de apoyo.',
       'Ninguna herramienta puede determinar por sí sola si una página es accesible. Por eso se propone un proceso de revisión que permita detectar errores técnicos sin perder de vista la experiencia real de uso.',
@@ -459,6 +460,12 @@ export const bloquesCurso: BloqueCurso[] = [
           alt: 'Ficha de CADUA en Chrome Web Store y panel de la extensión mostrando resultados de accesibilidad.',
           caption: 'La extensión de navegador de CADUA está disponible en Chrome Web Store.',
         },
+      },
+      {
+        id: 'skill-ua-accesibilidad',
+        title: 'Skill ua-accesibilidad',
+        component: markRaw(SkillUaAccesibilidad),
+        toc: 'h2',
       },
       {
         id: 'lector-pantalla',
