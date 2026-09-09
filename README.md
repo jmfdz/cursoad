@@ -19,6 +19,11 @@ Vite crea el resultado en `dist/`. Hay que copiar **el contenido de esa carpeta*
 al directorio `accesibilidad/docs/` del servidor, de modo que el fichero principal
 quede publicado como `accesibilidad/docs/index.html`.
 
+El build de UA también genera `docs.zip` en la raíz del proyecto, con el contenido
+de `dist/` directamente dentro del ZIP, sin una carpeta contenedora. Se actualiza
+en cada compilación y elimina del ZIP los ficheros que ya no estén en `dist/`.
+Para generarlo es necesario tener disponible el comando `zip`.
+
 Las rutas internas usan `#` para que todas las páginas funcionen en un alojamiento
 estático sin reglas de reescritura. Por ejemplo:
 
