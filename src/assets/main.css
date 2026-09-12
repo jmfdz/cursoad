@@ -205,13 +205,14 @@ h1,
   --bs-nav-link-font-weight: 600;
 }
 
-.navbar-nav .nav-link.active {
+.navbar-nav .nav-item.active > .nav-link {
+  color: var(--bs-navbar-active-color);
   font-weight: 700;
 }
 
 /* El subrayado del activo tambien usa box-shadow, asi que le cede el sitio
    al anillo de foco en lugar de taparlo */
-.navbar-nav .nav-link.active:not(:focus-visible) {
+.navbar-nav .nav-item.active > .nav-link:not(:focus-visible) {
   box-shadow: inset 0 -0.1875rem 0 var(--bs-primary);
 }
 
@@ -239,6 +240,13 @@ h1,
 
 .nav-pills {
   --bs-nav-pills-link-active-bg: var(--bs-primary);
+}
+
+/* Sin esto los enlaces de una lista salen en gris y no parecen enlaces */
+.list-group {
+  --bs-list-group-action-color: var(--bs-link-color);
+  --bs-list-group-action-hover-color: var(--bs-link-hover-color);
+  --bs-list-group-action-active-color: var(--bs-link-hover-color);
 }
 
 .course-page-index {

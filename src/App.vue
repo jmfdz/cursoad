@@ -3,11 +3,6 @@ import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { bloquesCurso, getRutaApartado } from './curso'
 
-type DesplegableBootstrap = { hide: () => void }
-type ApiBootstrap = {
-  Dropdown: { getInstance: (elemento: Element) => DesplegableBootstrap | null }
-}
-
 const navbarTitle = 'Accesibilidad, Usabilidad y UX'
 const menuAbierto = ref(false)
 const route = useRoute()
@@ -15,16 +10,15 @@ const route = useRoute()
 const closeMainNav = () => {
   menuAbierto.value = false
 
-  // Bootstrap localiza el desplegable abierto con [data-bs-toggle="dropdown"].show,
-  // y ese .show esta en el boton. Al cambiar de bloque Vue reescribe su atributo
-  // class y lo borra, asi que Bootstrap deja de encontrarlo y el menu se queda
-  // abierto. Se cierra a mano: hide() mira el .show del <ul>, que si sigue ahi.
-  const bootstrap = (window as unknown as { bootstrap?: ApiBootstrap }).bootstrap
-  if (!bootstrap) return
-
-  document
-    .querySelectorAll('#mainNav [data-bs-toggle="dropdown"]')
-    .forEach((disparador) => bootstrap.Dropdown.getInstance(disparador)?.hide())
+  // Red de seguridad: Bootstrap solo cierra los desplegables cuando hay un clic
+  // en el documento, asi que la navegacion por teclado o con el historial puede
+  // dejar uno abierto.
+  document.querySelectorAll('#mainNav .dropdown-menu.show').forEach((menu) => {
+    menu.classList.remove('show')
+    const disparador = menu.parentElement?.querySelector('[data-bs-toggle="dropdown"]')
+    disparador?.classList.remove('show')
+    disparador?.setAttribute('aria-expanded', 'false')
+  })
 }
 
 // Tambien al navegar con el teclado o con los botones del historial
@@ -75,13 +69,20 @@ const esApartadoActual = (slug: string, apartadoId: string) =>
         </button>
         <div id="mainNav" class="navbar-collapse collapse" :class="{ show: menuAbierto }">
           <ul class="navbar-nav ms-auto align-items-xl-center">
-            <li v-for="block in bloquesCurso" :key="block.slug" class="nav-item dropdown">
+            <!-- El estado activo va en el <li>: si Vue reescribe la clase del boton,
+                 se lleva por delante el .show con el que Bootstrap localiza el
+                 desplegable abierto y ya nadie lo cierra. -->
+            <li
+              v-for="block in bloquesCurso"
+              :key="block.slug"
+              class="nav-item dropdown"
+              :class="{ active: esBloqueActual(block.slug) }"
+            >
               <button
                 class="nav-link dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                :class="{ active: esBloqueActual(block.slug) }"
               >
                 {{ block.shortTitle }}
               </button>
