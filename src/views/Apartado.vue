@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { getBloquePorSlug, getRutaBloque } from '../curso'
+import { getBloquePorSlug } from '../curso'
 import type { ApartadoCurso, SubtituloApartado } from '../curso'
 import IndiceApartado from '../components/IndiceApartado.vue'
 
@@ -84,17 +84,7 @@ onMounted(() => {
     <div class="col-12">
       <header class="border-bottom px-1 px-lg-0">
         <div class="py-3 py-xl-4">
-          <nav aria-label="Migas de pan">
-            <ol class="breadcrumb small mb-2">
-              <li class="breadcrumb-item">
-                <RouterLink to="/">Inicio</RouterLink>
-              </li>
-              <li class="breadcrumb-item">
-                <RouterLink :to="getRutaBloque(bloque.slug)">{{ bloque.title }}</RouterLink>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">{{ apartado.title }}</li>
-            </ol>
-          </nav>
+          <p class="mb-1">{{ bloque.title }}</p>
           <h1 class="mb-0" tabindex="-1">{{ apartado.title }}</h1>
           <span class="ua-filete d-block mt-3"></span>
 
