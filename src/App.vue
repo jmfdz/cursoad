@@ -78,11 +78,15 @@ const esApartadoActual = (slug: string, apartadoId: string) =>
               class="nav-item dropdown"
               :class="{ active: esBloqueActual(block.slug) }"
             >
+              <!-- "page" es para la pagina abierta, que la marca su elemento del
+                   desplegable. Aqui el boton es solo el ancestro: "true" dice que es
+                   el seleccionado del conjunto sin afirmar que sea una pagina. -->
               <button
                 class="nav-link dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                :aria-current="esBloqueActual(block.slug) ? 'true' : undefined"
               >
                 {{ block.shortTitle }}
               </button>

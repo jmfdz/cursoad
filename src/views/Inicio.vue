@@ -25,15 +25,11 @@ const destacados = computed(() =>
           <div class="col-lg-8">
             <h1 class="mb-0" tabindex="-1">{{ tituloCurso }}</h1>
             <span class="ua-filete d-block mt-3 mb-4"></span>
-            <p>
+            <p class="mb-0">
               Accesibilidad, usabilidad y experiencia de uso están relacionadas, pero no son
               exactamente lo mismo: una interfaz puede ser vistosa o cómoda para parte de sus
               usuarios y seguir excluyendo a otros si no cumple unos mínimos de percepción, manejo y
               comprensión.
-            </p>
-            <p class="mb-0">
-              El curso recorre esos mínimos, desde el marco técnico y normativo hasta los requisitos
-              de una página web, los documentos ofimáticos y las herramientas de revisión.
             </p>
           </div>
 
