@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { bloquesCurso, getRutaApartado } from './curso'
+
+type DesplegableBootstrap = { hide: () => void }
+type ApiBootstrap = {
+  Dropdown: { getInstance: (elemento: Element) => DesplegableBootstrap | null }
+}
 
 const navbarTitle = 'Accesibilidad, Usabilidad y UX'
 const menuAbierto = ref(false)
@@ -9,7 +14,21 @@ const route = useRoute()
 
 const closeMainNav = () => {
   menuAbierto.value = false
+
+  // Bootstrap localiza el desplegable abierto con [data-bs-toggle="dropdown"].show,
+  // y ese .show esta en el boton. Al cambiar de bloque Vue reescribe su atributo
+  // class y lo borra, asi que Bootstrap deja de encontrarlo y el menu se queda
+  // abierto. Se cierra a mano: hide() mira el .show del <ul>, que si sigue ahi.
+  const bootstrap = (window as unknown as { bootstrap?: ApiBootstrap }).bootstrap
+  if (!bootstrap) return
+
+  document
+    .querySelectorAll('#mainNav [data-bs-toggle="dropdown"]')
+    .forEach((disparador) => bootstrap.Dropdown.getInstance(disparador)?.hide())
 }
+
+// Tambien al navegar con el teclado o con los botones del historial
+watch(() => route.fullPath, closeMainNav)
 
 const esBloqueActual = (slug: string) => String(route.name ?? '').startsWith(`${slug}-`)
 
@@ -23,9 +42,13 @@ const esApartadoActual = (slug: string, apartadoId: string) =>
 
     <div class="bg-primary text-white py-1">
       <div class="container small d-flex flex-wrap align-items-center justify-content-between gap-2">
-        <span class="fw-semibold" lang="ca-valencia">Universitat d'Alacant</span>
-        <a class="text-white fw-semibold" href="https://www.ua.es" rel="noreferrer">
-          Universidad de Alicante
+        <span class="fw-semibold">SI UA</span>
+        <a
+          class="text-white fw-semibold"
+          href="https://web.ua.es/es/accesibilidad/contacto.html"
+          rel="noreferrer"
+        >
+          Contacto
         </a>
       </div>
     </div>
