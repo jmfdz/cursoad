@@ -12,7 +12,7 @@ const bloque = computed(() => getBloquePorSlug(props.slug))
 <template>
   <div v-if="bloque" class="row g-4">
     <div class="col-12">
-      <header class="rounded-4 border bg-white p-4 p-lg-5 shadow-sm">
+      <header class="rounded-4 border p-4 p-lg-5">
         <div class="d-flex flex-column flex-lg-row justify-content-between gap-4">
           <div class="pe-lg-4">
             <nav aria-label="Migas de pan">
@@ -47,7 +47,7 @@ const bloque = computed(() => getBloquePorSlug(props.slug))
     </div>
 
     <div class="col-12">
-      <section class="card border-0 shadow-sm">
+      <section class="card border">
         <div class="card-body p-4 p-lg-5">
           <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
             <div>

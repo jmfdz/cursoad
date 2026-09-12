@@ -13,11 +13,15 @@
   --bs-link-color-rgb: 0, 86, 130;
   --bs-link-hover-color: #00486c;
   --bs-link-hover-color-rgb: 0, 72, 108;
-  --bs-body-bg: #f1f5f8;
+  --bs-body-bg: #ffffff;
   --bs-body-color: #000000;
-  /* El gris institucional #767676 solo llega a 4,14:1 sobre --bs-body-bg */
+  /* El gris institucional #767676 se queda en 4,54:1; #4f4f4f da 8,19:1 */
   --bs-secondary-color: #4f4f4f;
   --bs-border-color: #c2c2c2;
+  /* Anillo de foco de la plantilla institucional */
+  --bs-focus-ring-width: 0.25rem;
+  --bs-focus-ring-opacity: 1;
+  --bs-focus-ring-color: #dd6e00;
   --bs-font-sans-serif:
     'Atkinson Hyperlegible Next',
     Arial,
@@ -71,9 +75,26 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid #9c3d00;
-  outline-offset: 3px;
+textarea:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible,
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  /* Transparente para que el foco siga siendo visible en alto contraste */
+  outline: 0.1875rem solid transparent;
+  outline-offset: 0.1875rem;
+  border-color: var(--bs-primary);
+  /* Halo blanco interior: separa el anillo del azul del boton, que a solas
+     se queda en 2,38:1 frente al naranja */
+  box-shadow:
+    0 0 0 0.125rem #ffffff,
+    0 0 0 calc(var(--bs-focus-ring-width) + 0.125rem) var(--bs-focus-ring-color);
+}
+
+/* Un enlace de texto recibe el anillo con las esquinas redondeadas de la UA */
+a:focus-visible {
+  border-radius: var(--bs-border-radius);
 }
 
 button,

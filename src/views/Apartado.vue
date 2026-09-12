@@ -112,7 +112,7 @@ onMounted(() => {
             </button>
 
             <div :id="idIndiceMovil" class="collapse mt-3">
-              <nav class="card border-0 shadow-sm" aria-label="Índice de la página">
+              <nav class="card border" aria-label="Índice de la página">
                 <div class="card-body">
                   <IndiceApartado :subheadings="subtitulos" :current-hash="hashActual" />
                 </div>
@@ -125,7 +125,7 @@ onMounted(() => {
 
     <div v-if="subtitulos.length" class="col-lg-4 col-xl-3 d-none d-lg-block">
       <nav
-        class="course-page-index card border-0 shadow-sm sticky-lg-top"
+        class="course-page-index card border sticky-lg-top"
         aria-label="Índice de la página"
       >
         <div class="card-body">
@@ -136,7 +136,7 @@ onMounted(() => {
     </div>
 
     <div :class="subtitulos.length ? 'col-lg-8 col-xl-9' : 'col-12'">
-      <article class="card border-0 shadow-sm">
+      <article class="card border">
         <div class="card-body p-4 p-xl-5">
           <div v-if="apartado.figure" class="mb-4">
             <figure class="figure mb-0">
@@ -157,7 +157,7 @@ onMounted(() => {
           </div>
 
           <section v-if="apartado.showcase" class="mb-4" aria-labelledby="apartado-showcase">
-            <div class="rounded-4 border bg-white p-4 shadow-sm">
+            <div class="rounded-4 border p-4">
               <h2 id="apartado-showcase" class="mb-2">{{ apartado.showcase.title }}</h2>
               <p class="mb-4">{{ apartado.showcase.summary }}</p>
 

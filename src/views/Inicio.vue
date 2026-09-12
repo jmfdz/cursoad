@@ -4,7 +4,7 @@ import { bloquesCurso, getRutaApartado, tituloCurso } from '../curso'
 
 <template>
   <section class="d-flex flex-column gap-4">
-    <div class="card border-0 shadow-sm overflow-hidden">
+    <div class="card border overflow-hidden">
       <div class="row g-0">
         <div class="col-12">
           <div class="card-body p-4 p-md-5">
@@ -20,7 +20,7 @@ import { bloquesCurso, getRutaApartado, tituloCurso } from '../curso'
         :key="block.slug"
         :class="index < 3 ? 'col-md-4' : 'col-md-6'"
       >
-        <article class="card h-100 border-0 shadow-sm">
+        <article class="card h-100 border">
           <div class="card-body p-4 d-flex flex-column">
             <h2 class="mb-3">{{ block.title }}</h2>
 

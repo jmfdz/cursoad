@@ -217,7 +217,7 @@
         </div>
 
         <div class="offset-md-1 col-md-5">
-          <article class="card border-0 shadow-sm">
+          <article class="card border">
             <div class="card-body p-4">
               <h3 class="h4">Más información</h3>
               <p>
