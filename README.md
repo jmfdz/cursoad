@@ -5,7 +5,7 @@
 El proyecto está configurado para publicarse en:
 
 ```text
-https://web.ua.es/accesibilidad/docs/
+https://web.ua.es/accesibilidad/docs_ua/
 ```
 
 Instala las dependencias y genera la versión para la web de la UA:
@@ -16,10 +16,10 @@ pnpm run build:ua
 ```
 
 Vite crea el resultado en `dist/`. Hay que copiar **el contenido de esa carpeta**
-al directorio `accesibilidad/docs/` del servidor, de modo que el fichero principal
-quede publicado como `accesibilidad/docs/index.html`.
+al directorio `accesibilidad/docs_ua/` del servidor, de modo que el fichero principal
+quede publicado como `accesibilidad/docs_ua/index.html`.
 
-El build de UA también genera `docs.zip` en la raíz del proyecto, con el contenido
+El build de UA también genera `docs_ua.zip` en la raíz del proyecto, con el contenido
 de `dist/` directamente dentro del ZIP, sin una carpeta contenedora. Se actualiza
 en cada compilación y elimina del ZIP los ficheros que ya no estén en `dist/`.
 Para generarlo es necesario tener disponible el comando `zip`.
@@ -28,7 +28,7 @@ Las rutas internas usan `#` para que todas las páginas funcionen en un alojamie
 estático sin reglas de reescritura. Por ejemplo:
 
 ```text
-https://web.ua.es/accesibilidad/docs/#/documentos/word
+https://web.ua.es/accesibilidad/docs_ua/#/documentos/word
 ```
 
 ## Generar y desplegar en Cloudflare

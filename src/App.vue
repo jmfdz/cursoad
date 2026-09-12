@@ -22,10 +22,19 @@ const esApartadoActual = (slug: string, apartadoId: string) =>
   <div class="min-vh-100">
     <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 
+    <div class="bg-primary text-white py-1">
+      <div class="container small d-flex flex-wrap align-items-center justify-content-between gap-2">
+        <span class="fw-semibold" lang="ca-valencia">Universitat d'Alacant</span>
+        <a class="text-white fw-semibold" href="https://www.ua.es" rel="noreferrer">
+          Universidad de Alicante
+        </a>
+      </div>
+    </div>
+
     <nav class="navbar navbar-expand-xl bg-white border-bottom shadow-sm sticky-top" aria-label="Navegación principal">
       <div class="container">
         <RouterLink
-          class="navbar-brand d-inline-block fw-semibold text-wrap lh-sm"
+          class="navbar-brand d-inline-block fw-bold text-wrap lh-sm"
           to="/"
           :aria-current="route.name === 'home' ? 'page' : undefined"
           @click="closeMainNav"
