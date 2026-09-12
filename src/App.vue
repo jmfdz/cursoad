@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import BuscadorCurso from './components/BuscadorCurso.vue'
 import { useRoute } from 'vue-router'
 import { bloquesCurso, getRutaApartado } from './curso'
 
@@ -40,6 +41,7 @@ const esApartadoActual = (slug: string, apartadoId: string) =>
     <header class="bg-primary text-white py-1">
       <div class="container small d-flex flex-wrap align-items-center justify-content-between gap-2">
         <span class="fw-semibold">SI UA</span>
+        <BuscadorCurso />
         <a
           class="text-white fw-semibold"
           href="https://web.ua.es/es/accesibilidad/contacto.html"

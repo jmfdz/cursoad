@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "build:ua": "vue-tsc -b && vite build --mode ua && (cd dist && zip -qr -FS ../docs_ua.zip .)",
+    "dev": "node scripts/generar-indice.mjs && vite",
+    "build": "node scripts/generar-indice.mjs && vue-tsc -b && vite build",
+    "build:ua": "node scripts/generar-indice.mjs && vue-tsc -b && vite build --mode ua && (cd dist && zip -qr -FS ../docs_ua.zip .)",
     "preview": "pnpm run build && wrangler dev",
     "deploy": "pnpm run build && wrangler deploy"
   },

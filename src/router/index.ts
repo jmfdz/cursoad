@@ -56,6 +56,12 @@ const router = createRouter({
       meta: { TITULO: tituloCurso },
     },
     {
+      path: '/buscar',
+      name: 'buscar',
+      component: () => import('../views/Buscar.vue'),
+      meta: { TITULO: 'Buscar en el curso' },
+    },
+    {
       path: '/ejemplos',
       name: 'ejemplos',
       component: () => import('../views/ejemplos/Ejemplos.vue'),

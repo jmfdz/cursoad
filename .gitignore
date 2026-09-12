@@ -34,3 +34,6 @@ dist-ssr
 
 # resultados locales de accesibilidad
 results-accesibilidad
+
+# Índice generado antes de iniciar o compilar
+/src/generated/indice-busqueda.json

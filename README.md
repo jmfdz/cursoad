@@ -44,3 +44,14 @@ pnpm run deploy
 Cada compilación vuelve a crear `dist/`. Por tanto, antes de copiar los ficheros
 a la web de la UA hay que ejecutar `pnpm run build:ua`; antes de desplegar en
 Cloudflare, `pnpm run deploy` genera de nuevo la versión adecuada automáticamente.
+
+## Búsqueda en el curso
+
+El buscador de la franja superior busca en los títulos y el contenido de los
+apartados, sin distinguir mayúsculas ni tildes. Los resultados muestran un
+fragmento y un enlace al apartado correspondiente.
+
+`dev`, `build` y `build:ua` generan automáticamente el índice mediante
+`scripts/generar-indice.mjs`. El índice se carga al abrir la búsqueda y no necesita
+un servidor de búsqueda. En desarrollo, reinicia `dev` tras editar contenido para
+actualizarlo. No se indexa el contenido de archivos descargables ni webs externas.
