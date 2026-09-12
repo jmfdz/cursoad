@@ -169,7 +169,7 @@ onMounted(() => {
 
               <div>
                 <h3 class="h5 mb-3">Código representativo</h3>
-                <pre class="course-code"><code>{{ apartado.showcase.code }}</code></pre>
+                <pre class="course-code" tabindex="0"><code>{{ apartado.showcase.code }}</code></pre>
               </div>
             </div>
           </section>

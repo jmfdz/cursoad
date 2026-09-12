@@ -30,7 +30,7 @@
       botones actúan</strong>. Un enlace lleva a otro sitio, ya sea otra página o un punto de la
       página actual; un botón ejecuta algo sin cambiar de dirección.
     </p>
-    <pre class="course-code"><code>&lt;!-- Navega a otra página --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Navega a otra página --&gt;
 &lt;a href="resultados.html"&gt;Consultar resultados&lt;/a&gt;
 
 &lt;!-- Ejecuta una acción en la página actual --&gt;
@@ -54,7 +54,7 @@
       <code>onclick</code> parece un botón, pero no recibe el foco, no responde al teclado y el
       lector de pantalla no lo anuncia como algo pulsable:
     </p>
-    <pre class="course-code"><code>&lt;!-- Evitar: no recibe foco ni funciona con teclado de forma nativa --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Evitar: no recibe foco ni funciona con teclado de forma nativa --&gt;
 &lt;div onclick="guardar()"&gt;Guardar&lt;/div&gt;
 
 &lt;!-- Correcto: incluye semántica y comportamiento de teclado --&gt;
@@ -90,7 +90,7 @@
       Si van a provocar un cambio de contexto debemos indicarlo en el texto del enlace o en su
       nombre accesible. Por ejemplo: “Ver el vídeo en YouTube (se abre en una ventana nueva)”.
     </p>
-    <pre class="course-code"><code>&lt;!-- Texto poco descriptivo --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Texto poco descriptivo --&gt;
 &lt;a href="admision.html"&gt;Pulsa aquí&lt;/a&gt;
 
 &lt;!-- El destino se entiende al leer el enlace de forma aislada --&gt;
@@ -107,7 +107,7 @@
       altamente aconsejable incluir la extensión y el tamaño del fichero. Por ejemplo para un vídeo
       MP4:
     </p>
-    <pre class="course-code"><code>&lt;a href="video.mp4" download&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;a href="video.mp4" download&gt;
   Vídeo de presentación (MP4, 300 MB)
 &lt;/a&gt;</code></pre>
     <p>
@@ -122,7 +122,7 @@
       no. En este sentido, si el enlace o botón solo incluye una imagen o icono, deben tener texto
       alternativo o <code>aria-label</code>.
     </p>
-    <pre class="course-code"><code>&lt;!-- Enlace formado únicamente por una imagen --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Enlace formado únicamente por una imagen --&gt;
 &lt;a href="inicio.html"&gt;
   &lt;img src="logo-ua.svg" alt="Ir a la página de inicio de la UA"&gt;
 &lt;/a&gt;
@@ -194,7 +194,7 @@
       enlace repetido. Bootstrap 5 ya trae la clase <code>.visually-hidden</code> de fábrica, así
       que basta con usarla; si se trabaja sin framework, esta es la implementación habitual:
     </p>
-    <pre class="course-code"><code>.visually-hidden {
+    <pre class="course-code" tabindex="0"><code>.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -210,7 +210,7 @@
       reducido a un píxel recortado, de modo que la pantalla no lo muestra y el lector de pantalla
       sí lo recorre. Aplicado al caso de un enlace repetido:
     </p>
-    <pre class="course-code"><code>&lt;!-- Evitar: el enlace, leído de forma aislada, no dice a qué se refiere --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Evitar: el enlace, leído de forma aislada, no dice a qué se refiere --&gt;
 &lt;a href="/noticia-1"&gt;Leer más&lt;/a&gt;
 
 &lt;!-- Correcto: el complemento se lee pero no se ve --&gt;
@@ -252,7 +252,7 @@
       coloca «Guardar cambios» primero visualmente pero en el HTML aparece después, el teclado
       seguirá pasando primero por «Cancelar»:
     </p>
-    <pre class="course-code"><code>&lt;!-- Evitar: el orden visual y el orden de foco no coinciden --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Evitar: el orden visual y el orden de foco no coinciden --&gt;
 &lt;div class="d-flex"&gt;
   &lt;button type="button" class="order-2"&gt;Cancelar&lt;/button&gt;
   &lt;button type="submit" class="order-1"&gt;Guardar cambios&lt;/button&gt;
@@ -292,7 +292,7 @@
       habitual de resolverlo es el <strong>enlace de salto</strong>: un enlace situado como primer
       elemento del <code>body</code> que apunta al contenido principal.
     </p>
-    <pre class="course-code"><code>&lt;body&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;body&gt;
   &lt;a class="skip-link" href="#contenido"&gt;Saltar al contenido principal&lt;/a&gt;
   &lt;header&gt;...&lt;/header&gt;
   &lt;nav&gt;...&lt;/nav&gt;
@@ -309,7 +309,7 @@
       pantalla dejándolo enfocable. Este es el código real con el que funciona el enlace de salto
       de esta misma web del curso:
     </p>
-    <pre class="course-code"><code>.skip-link {
+    <pre class="course-code" tabindex="0"><code>.skip-link {
   position: fixed;
   z-index: 1100;
   top: 0.5rem;
@@ -360,7 +360,7 @@
       Por este motivo, no se debe eliminar el contorno de foco que trae el navegador salvo que se
       sustituya por otro estilo claramente visible y con contraste suficiente.
     </p>
-    <pre class="course-code"><code>&lt;!-- Evitar: deja sin rastro visible a quien navega con teclado --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Evitar: deja sin rastro visible a quien navega con teclado --&gt;
 :focus {
   outline: none;
 }

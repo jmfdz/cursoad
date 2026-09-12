@@ -34,7 +34,10 @@ const esApartadoActual = (slug: string, apartadoId: string) =>
   <div class="min-vh-100">
     <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 
-    <div class="bg-primary text-white py-1">
+    <!-- <header> y no <div>: sin landmark, esta franja queda fuera de toda region.
+         Va suelto y no envolviendo al <nav>, porque el nav es sticky-top y solo se
+         queda pegado mientras su padre este a la vista. -->
+    <header class="bg-primary text-white py-1">
       <div class="container small d-flex flex-wrap align-items-center justify-content-between gap-2">
         <span class="fw-semibold">SI UA</span>
         <a
@@ -45,7 +48,7 @@ const esApartadoActual = (slug: string, apartadoId: string) =>
           Contacto
         </a>
       </div>
-    </div>
+    </header>
 
     <nav class="navbar navbar-expand-xl bg-white border-bottom shadow-sm sticky-top" aria-label="Navegación principal">
       <div class="container">

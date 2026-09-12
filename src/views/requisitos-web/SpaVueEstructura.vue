@@ -68,11 +68,11 @@
 
     <h2>HTML semántico antes que ARIA</h2>
     <p>La primera capa de accesibilidad debe ser siempre el HTML. No:</p>
-    <pre class="course-code"><code>&lt;div class="btn btn-primary" @click="guardar"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;div class="btn btn-primary" @click="guardar"&gt;
   Guardar
 &lt;/div&gt;</code></pre>
     <p>Sí:</p>
-    <pre class="course-code"><code>&lt;button type="button" class="btn btn-primary" @click="guardar"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;button type="button" class="btn btn-primary" @click="guardar"&gt;
   Guardar
 &lt;/button&gt;</code></pre>
     <p>
@@ -81,11 +81,11 @@
       foco, activación mediante teclado y nombre accesible a partir de su contenido.
     </p>
     <p>Lo mismo ocurre con la navegación: es preferible</p>
-    <pre class="course-code"><code>&lt;RouterLink to="/usuarios" class="nav-link"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;RouterLink to="/usuarios" class="nav-link"&gt;
   Usuarios
 &lt;/RouterLink&gt;</code></pre>
     <p>a</p>
-    <pre class="course-code"><code>&lt;button class="nav-link" @click="router.push('/usuarios')"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;button class="nav-link" @click="router.push('/usuarios')"&gt;
   Usuarios
 &lt;/button&gt;</code></pre>
     <p>Regla sencilla: cambiar de lugar es un enlace, ejecutar una acción es un botón.</p>
@@ -114,7 +114,7 @@
       sitúa la estructura común que envuelve el contenido que cambia mediante
       <code>&lt;RouterView /&gt;</code>. Una estructura base recomendable sería:
     </p>
-    <pre class="course-code"><code>&lt;template&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;template&gt;
   &lt;nav aria-label="Enlaces para saltar"&gt;
     &lt;a href="#contenido-principal" class="visually-hidden-focusable"&gt;
       Saltar al contenido principal
@@ -155,14 +155,14 @@
       Cada vista principal debe disponer de un <code>H1</code> que identifique claramente su
       contenido y tenga <code>tabindex="-1"</code>:
     </p>
-    <pre class="course-code"><code>&lt;template&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;template&gt;
   &lt;div&gt;
     &lt;h1 tabindex="-1"&gt;Usuarios&lt;/h1&gt;
     ...
   &lt;/div&gt;
 &lt;/template&gt;</code></pre>
     <p>El nivel de encabezado se escoge por estructura, no por apariencia:</p>
-    <pre class="course-code"><code>&lt;h1 tabindex="-1"&gt;Usuarios&lt;/h1&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;h1 tabindex="-1"&gt;Usuarios&lt;/h1&gt;
 &lt;h2&gt;Usuarios activos&lt;/h2&gt;
 &lt;h2&gt;Usuarios pendientes&lt;/h2&gt;
 &lt;h3&gt;Filtros avanzados&lt;/h3&gt;</code></pre>
@@ -204,7 +204,7 @@
       si el destino no tiene <code>tabindex</code>, se añade <code>tabindex="-1"</code> antes de
       llevarle el foco:
     </p>
-    <pre class="course-code"><code>import { nextTick } from 'vue'
+    <pre class="course-code" tabindex="0"><code>import { nextTick } from 'vue'
 
 let esCargaInicial = true
 
@@ -244,7 +244,7 @@ router.afterEach(async (to) => {
 
     <h2>Contenido que desaparece mediante <code>v-if</code></h2>
     <p>Vue puede destruir completamente un nodo del DOM:</p>
-    <pre class="course-code"><code>&lt;form v-if="editando"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;form v-if="editando"&gt;
   ...
 &lt;/form&gt;</code></pre>
     <p>
@@ -252,7 +252,7 @@ router.afterEach(async (to) => {
       que tenía el foco deja de existir, y la aplicación debe plantearse dónde debe continuar la
       interacción:
     </p>
-    <pre class="course-code"><code>editando.value = false
+    <pre class="course-code" tabindex="0"><code>editando.value = false
 
 await nextTick()
 

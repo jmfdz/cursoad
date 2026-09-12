@@ -31,3 +31,6 @@ dist-ssr
 !.dev.vars.example
 .env*
 !.env.example
+
+# resultados locales de accesibilidad
+results-accesibilidad

@@ -84,7 +84,7 @@ function registrar(accion: string) {
       </template>
 
       <template #codigo>
-        <pre class="course-code"><code>&lt;div class="dropdown"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;div class="dropdown"&gt;
   &lt;button
     class="btn btn-secondary dropdown-toggle"
     type="button"
@@ -170,7 +170,7 @@ function registrar(accion: string) {
       </template>
 
       <template #codigo>
-        <pre class="course-code"><code>&lt;button
+        <pre class="course-code" tabindex="0"><code>&lt;button
   class="btn btn-secondary"
   type="button"
   data-bs-toggle="collapse"
@@ -275,7 +275,7 @@ function registrar(accion: string) {
       </template>
 
       <template #codigo>
-        <pre class="course-code"><code>&lt;ul id="usuarioTabs" class="nav nav-tabs" role="tablist"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;ul id="usuarioTabs" class="nav nav-tabs" role="tablist"&gt;
   &lt;li class="nav-item" role="presentation"&gt;
     &lt;button
       id="datos-tab"
@@ -397,7 +397,7 @@ function registrar(accion: string) {
       </template>
 
       <template #codigo>
-        <pre class="course-code"><code>&lt;button
+        <pre class="course-code" tabindex="0"><code>&lt;button
   type="button"
   class="btn btn-danger"
   data-bs-toggle="modal"
@@ -454,7 +454,7 @@ function registrar(accion: string) {
       propio mecanismo de apertura/cierre, ni duplicar mediante Vue el comportamiento interno de
       Bootstrap. Si necesitamos abrirlo desde código Vue:
     </p>
-    <pre class="course-code"><code>import { Modal } from 'bootstrap'
+    <pre class="course-code" tabindex="0"><code>import { Modal } from 'bootstrap'
 
 const elemento = document.getElementById('modalEliminar')
 

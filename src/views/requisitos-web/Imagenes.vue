@@ -39,7 +39,7 @@
       Para incluir la descripción de una imagen en una web debemos incluir el atributo <code>alt</code>, que
       es obligatorio. Veamos dos ejemplos, una imagen con descripción y otra decorativa:
     </p>
-    <pre class="course-code"><code>&lt;img src="mano-ua.png" alt="Estatua de una mano con un lápiz que simboliza la libertad de expresión de la UA" /&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;img src="mano-ua.png" alt="Estatua de una mano con un lápiz que simboliza la libertad de expresión de la UA" /&gt;
 &lt;!-- Imagen decorativa --&gt;
 &lt;img src="fondo-decorativo.png" alt="" /&gt;</code></pre>
     <p>
@@ -72,7 +72,7 @@
       Otra forma de incluir una descripción larga es mediante la etiqueta <code>figcaption</code> dentro de
       <code>figure</code> en HTML5. Veamos un ejemplo:
     </p>
-    <pre class="course-code"><code>&lt;figure&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;figure&gt;
   &lt;img src="mano-ua.png" alt="Estatua de la Mano de la UA" /&gt;
   &lt;figcaption&gt;La Mano de la UA simboliza la libertad de expresión y sostiene un lápiz que apunta al cielo.&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
@@ -102,7 +102,7 @@
       el icono, podemos proporcionar el nombre mediante <code>aria-label</code>.
     </p>
     <p>Veamos un ejemplo de un botón con un icono de editar:</p>
-    <pre class="course-code"><code>&lt;button type="button" aria-label="Editar"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;button type="button" aria-label="Editar"&gt;
   &lt;i class="icon icon-edit" aria-hidden="true"&gt;&lt;/i&gt;
 &lt;/button&gt;</code></pre>
     <p>
@@ -124,7 +124,7 @@
       Si el SVG es decorativo, o ya está acompañado por un texto que transmite la misma
       información, utilizaremos <code>aria-hidden="true"</code>.
     </p>
-    <pre class="course-code"><code>&lt;!-- SVG informativo con title --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- SVG informativo con title --&gt;
 &lt;svg role="img" focusable="false"&gt;
   &lt;title&gt;Estado completado&lt;/title&gt;
   ...
@@ -157,7 +157,7 @@
       <code>prefers-reduced-motion</code>, y debemos respetarla reduciendo o eliminando las
       animaciones no esenciales cuando esté activada:
     </p>
-    <pre class="course-code"><code>@media (prefers-reduced-motion: reduce) {
+    <pre class="course-code" tabindex="0"><code>@media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {

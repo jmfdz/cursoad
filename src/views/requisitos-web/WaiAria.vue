@@ -49,7 +49,7 @@
       tan sencillo como añadir a la etiqueta del elemento <code>role="[nombre_del_rol]"</code>.
     </p>
     <p>Por ejemplo:</p>
-    <pre class="course-code"><code>&lt;div role="progressbar" aria-label="Progreso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;div role="progressbar" aria-label="Progreso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"&gt;
   60 %
 &lt;/div&gt;
 
@@ -143,12 +143,12 @@
       programemos nosotros. Salvo en un editor o un componente muy especializado, casi nunca es la
       respuesta correcta.
     </p>
-    <pre class="course-code"><code>&lt;nav role="navigation"&gt;...&lt;/nav&gt; &lt;!-- Mal por redundancia --&gt;</code></pre>
+    <pre class="course-code" tabindex="0"><code>&lt;nav role="navigation"&gt;...&lt;/nav&gt; &lt;!-- Mal por redundancia --&gt;</code></pre>
     <p>
       Para los roles de estructura, además, puede ser necesario incluir <code>aria-label</code> para indicar
       el título de la zona. Por ejemplo:
     </p>
-    <pre class="course-code"><code>&lt;div role="navigation" aria-label="Menú principal"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;div role="navigation" aria-label="Menú principal"&gt;
   &lt;ul&gt;...&lt;/ul&gt;
 &lt;/div&gt;</code></pre>
 
@@ -161,12 +161,12 @@
       <code>aria-label</code> sirve para dar nombre accesible a un elemento. Debe usarse solo en ocasiones que
       lo requieran; por defecto, el nombre de un elemento debe ser su contenido.
     </p>
-    <pre class="course-code"><code>&lt;button type="button" aria-label="Cerrar"&gt;×&lt;/button&gt;</code></pre>
+    <pre class="course-code" tabindex="0"><code>&lt;button type="button" aria-label="Cerrar"&gt;×&lt;/button&gt;</code></pre>
     <p>
       <code>aria-labelledby</code> también sirve para dar un nombre a un elemento HTML, con la diferencia de
       que aquí referenciamos el <code>id</code> de otro elemento que actúa como etiqueta.
     </p>
-    <pre class="course-code"><code>&lt;section aria-labelledby="titulo-informe"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;section aria-labelledby="titulo-informe"&gt;
   &lt;h3 id="titulo-informe"&gt;Informe de accesibilidad&lt;/h3&gt;
   ...
 &lt;/section&gt;</code></pre>
@@ -174,7 +174,7 @@
       <code>aria-describedby</code> permite asociar una descripción larga a un elemento indicando el <code>id</code> del
       elemento que proporciona la descripción.
     </p>
-    <pre class="course-code"><code>&lt;label for="usuario"&gt;Usuario&lt;/label&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;label for="usuario"&gt;Usuario&lt;/label&gt;
 &lt;input id="usuario" aria-describedby="ayuda-usuario"&gt;
 &lt;p id="ayuda-usuario"&gt;Escribe tu dirección de correo sin @ua.es.&lt;/p&gt;</code></pre>
 
@@ -183,7 +183,7 @@
       Los elementos dinámicos cambian de estado, por ejemplo un menú desplegable puede estar
       plegado o desplegado. ARIA permite definir las propiedades y estados de los elementos.
     </p>
-    <pre class="course-code"><code>&lt;ul role="tree" aria-label="Categorías"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;ul role="tree" aria-label="Categorías"&gt;
   &lt;li role="treeitem" aria-expanded="false" tabindex="0"&gt;
     Lenguajes
   &lt;/li&gt;
@@ -194,7 +194,7 @@
       productos de apoyo puedan transmitir el cambio al usuario. Un árbol completo también necesita
       implementar su modelo de navegación con teclado.
     </p>
-    <pre class="course-code"><code>$id.attr('aria-expanded', 'true');</code></pre>
+    <pre class="course-code" tabindex="0"><code>$id.attr('aria-expanded', 'true');</code></pre>
     <p>
       Por tanto, el rol es fijo, no se cambia; los estados y propiedades son dinámicos y sí deben
       actualizarse.
@@ -205,7 +205,7 @@
       insertar un mensaje de error o confirmación.
     </p>
     <p>Veamos un ejemplo del típico desplegable:</p>
-    <pre class="course-code"><code>&lt;button id="toggleButton" aria-expanded="false" aria-controls="panel"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;button id="toggleButton" aria-expanded="false" aria-controls="panel"&gt;
   Mostrar panel
 &lt;/button&gt;
 &lt;div id="panel" hidden&gt;
@@ -246,7 +246,7 @@ button.addEventListener('click', () =&gt; {
       activación con teclado. Son cuatro cosas que hay que recordar una por una, y por eso se debe
       preferir un enlace o botón nativo siempre que sea posible.
     </p>
-    <pre class="course-code"><code>&lt;div role="button" tabindex="0" onclick="saludar()"
+    <pre class="course-code" tabindex="0"><code>&lt;div role="button" tabindex="0" onclick="saludar()"
   onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); saludar(); }"&gt;
   Púlsame
 &lt;/div&gt;</code></pre>
@@ -273,7 +273,7 @@ button.addEventListener('click', () =&gt; {
       <code>role="alert"</code> crea una región de aviso urgente con un comportamiento equivalente
       a <code>aria-live="assertive"</code>.
     </p>
-    <pre class="course-code"><code>&lt;!-- Mensaje informativo: se anuncia cuando cambia --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Mensaje informativo: se anuncia cuando cambia --&gt;
 &lt;p id="estado" aria-live="polite"&gt;&lt;/p&gt;
 
 &lt;!-- Error urgente insertado dinámicamente --&gt;

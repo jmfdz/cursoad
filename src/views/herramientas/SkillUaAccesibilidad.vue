@@ -137,7 +137,7 @@
       comprobar páginas públicas y repetir otras con distintos perfiles de acceso.
       Este ejemplo utiliza datos ficticios:
     </p>
-    <pre class="course-code"><code>{
+    <pre class="course-code" tabindex="0"><code>{
   "publica": {
     "usuario": "",
     "contrasena": "",

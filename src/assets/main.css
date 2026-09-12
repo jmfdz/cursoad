@@ -83,9 +83,7 @@ textarea:focus-visible,
 .form-control:focus,
 .form-select:focus,
 .form-check-input:focus {
-  /* Transparente para que el foco siga siendo visible en alto contraste */
-  outline: 0.1875rem solid transparent;
-  outline-offset: 0.1875rem;
+  outline: none;
   border-color: var(--bs-primary);
   /* Halo blanco interior: separa el anillo del azul del boton, que a solas
      se queda en 2,38:1 frente al naranja */
@@ -97,6 +95,24 @@ textarea:focus-visible,
 /* Un enlace de texto recibe el anillo con las esquinas redondeadas de la UA */
 a:focus-visible {
   border-radius: var(--bs-border-radius);
+}
+
+/* En alto contraste el navegador descarta box-shadow, asi que ahi el anillo tiene
+   que ser un contorno de verdad y con un color del sistema */
+@media (forced-colors: active) {
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  .btn:focus-visible,
+  .nav-link:focus-visible,
+  .form-control:focus,
+  .form-select:focus,
+  .form-check-input:focus {
+    outline: 0.1875rem solid CanvasText;
+    outline-offset: 0.1875rem;
+  }
 }
 
 button,

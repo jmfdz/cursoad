@@ -24,7 +24,7 @@ import CodeTabs from '../../components/CodeTabs.vue'
     </p>
     <CodeTabs label="Implementación del diseño en dos columnas">
       <template #js>
-        <pre class="course-code"><code>&lt;!-- El contenedor limita y centra el contenido general. --&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;!-- El contenedor limita y centra el contenido general. --&gt;
 &lt;div class="container my-4"&gt;
   &lt;!-- La fila crea separación entre las dos zonas. --&gt;
   &lt;div class="row g-4"&gt;
@@ -51,7 +51,7 @@ import CodeTabs from '../../components/CodeTabs.vue'
           Las clases de Bootstrap se utilizan igual dentro del <code>template</code>. Vue se añade
           para enlazar los campos y actualizar el resultado sin recargar la página.
         </p>
-        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script setup lang="ts"&gt;
 import { computed, ref } from 'vue'
 
 // Mantiene sincronizado el contenido del campo.
@@ -101,7 +101,7 @@ const resultado = computed(() =&gt; texto.value.trim().toUpperCase())
       En formularios lineales y sencillos, una anchura limitada mejora la lectura y evita campos
       innecesariamente largos. En Vue se mantienen las mismas clases de Bootstrap.
     </p>
-    <pre class="course-code"><code>&lt;!-- El elemento main suele estar en el layout general de la aplicación. --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- El elemento main suele estar en el layout general de la aplicación. --&gt;
 &lt;main class="container my-5"&gt;
   &lt;!-- justify-content-center centra la columna dentro de la fila. --&gt;
   &lt;div class="row justify-content-center"&gt;
@@ -126,7 +126,7 @@ const resultado = computed(() =&gt; texto.value.trim().toUpperCase())
     </p>
     <CodeTabs label="Implementación de procesos por pasos y paneles">
       <template #js>
-        <pre class="course-code"><code>&lt;!-- La navegación indica que el listado representa el progreso. --&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;!-- La navegación indica que el listado representa el progreso. --&gt;
 &lt;nav aria-label="Progreso de la solicitud"&gt;
   &lt;ol class="nav nav-pills gap-2 mb-4"&gt;
     &lt;li class="nav-item"&gt;
@@ -142,7 +142,7 @@ const resultado = computed(() =&gt; texto.value.trim().toUpperCase())
   &lt;/ol&gt;
 &lt;/nav&gt;</code></pre>
         <p>Para un panel de seguimiento puede utilizarse la misma cuadrícula:</p>
-        <pre class="course-code"><code>&lt;!-- Cada estado se muestra como una columna del panel. --&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;!-- Cada estado se muestra como una columna del panel. --&gt;
 &lt;div class="row g-3"&gt;
   &lt;!-- La sección tiene un encabezado que identifica su contenido. --&gt;
   &lt;section class="col-12 col-lg-4" aria-labelledby="pendientes"&gt;
@@ -180,7 +180,7 @@ const resultado = computed(() =&gt; texto.value.trim().toUpperCase())
           Si los pasos o los paneles proceden del estado de la aplicación, pueden generarse con
           <code>v-for</code> y actualizarse de forma reactiva.
         </p>
-        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
 // Define los pasos en el mismo orden en que se realizan.

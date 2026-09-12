@@ -113,7 +113,7 @@
       <strong>custom properties</strong> y comprobar únicamente esas combinaciones, en lugar de ir
       revisando color a color por toda la hoja de estilos:
     </p>
-    <pre class="course-code"><code>:root {
+    <pre class="course-code" tabindex="0"><code>:root {
   --color-texto: #000000;
   --color-fondo: #f1f5f8;
   --color-primario: #005682; /* 7.2:1 sobre blanco */

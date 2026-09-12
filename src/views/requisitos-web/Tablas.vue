@@ -23,7 +23,7 @@
       Toda tabla debe tener un título que la identifique, y para eso existe la etiqueta
       <code>caption</code>, que se coloca como primer elemento dentro de <code>table</code>.
     </p>
-    <pre class="course-code"><code>&lt;table&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;table&gt;
   &lt;caption&gt;Notas de la asignatura de accesibilidad&lt;/caption&gt;
   ...
 &lt;/table&gt;</code></pre>
@@ -62,7 +62,7 @@
       Además de marcarse con <code>scope</code>, los encabezados deben diferenciarse visualmente
       del resto de celdas con contraste suficiente, no basta con el atributo por sí solo.
     </p>
-    <pre class="course-code"><code>&lt;table&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;table&gt;
   &lt;tr&gt;
     &lt;th scope="col"&gt;Nombre&lt;/th&gt;
     &lt;th scope="col"&gt;Nota&lt;/th&gt;
@@ -85,7 +85,7 @@
       puramente visual, así que no sustituye a <code>scope</code> ni al contraste de la cabecera,
       y el color alterno debe mantener igualmente un contraste suficiente con el texto:
     </p>
-    <pre class="course-code"><code>&lt;table class="table table-striped"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;table class="table table-striped"&gt;
   &lt;caption&gt;Notas de la asignatura de accesibilidad&lt;/caption&gt;
   &lt;thead&gt;
     &lt;tr&gt;
@@ -104,7 +104,7 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-    <pre class="course-code"><code>/* Cabecera con contraste suficiente (blanco sobre azul oscuro, más de 4.5:1) */
+    <pre class="course-code" tabindex="0"><code>/* Cabecera con contraste suficiente (blanco sobre azul oscuro, más de 4.5:1) */
 .table thead th {
   background-color: #1a3c8f;
   color: #ffffff;
@@ -131,7 +131,7 @@
       <li>Los enlaces, botones o campos internos de la tabla se alcanzan pulsando <strong>Tab</strong>, no con las flechas.</li>
       <li>No hay que añadir <code>tabindex</code> a cada celda: basta con el <code>tabindex="0"</code> del contenedor.</li>
     </ul>
-    <pre class="course-code"><code>&lt;div class="table-responsive" tabindex="0" role="region" aria-label="Notas de la asignatura"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;div class="table-responsive" tabindex="0" role="region" aria-label="Notas de la asignatura"&gt;
   &lt;table&gt;
     ...
   &lt;/table&gt;

@@ -92,7 +92,7 @@ import CodeTabs from '../../components/CodeTabs.vue'
           En una página convencional, <code>beforeunload</code> controla el cierre, la recarga o la
           salida del documento.
         </p>
-        <pre class="course-code"><code>// Localiza el formulario que puede contener cambios pendientes.
+        <pre class="course-code" tabindex="0"><code>// Localiza el formulario que puede contener cambios pendientes.
 const formulario = document.querySelector('#solicitud')
 
 // Registra si el usuario ha modificado algún dato.
@@ -123,7 +123,7 @@ window.addEventListener('beforeunload', (evento) =&gt; {
           cerrar o recargar la página y <code>onBeforeRouteLeave</code> de Vue Router controla la
           navegación interna.
         </p>
-        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script setup lang="ts"&gt;
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 
@@ -181,7 +181,7 @@ function guardar() {
     </p>
     <CodeTabs label="Implementación de eliminar con deshacer">
       <template #js>
-        <pre class="course-code"><code>&lt;li id="fila-1248" class="list-group-item d-flex justify-content-between align-items-center"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;li id="fila-1248" class="list-group-item d-flex justify-content-between align-items-center"&gt;
   Solicitud 1248
   &lt;button type="button" class="btn btn-sm btn-outline-danger" data-id="1248"&gt;
     Eliminar
@@ -189,7 +189,7 @@ function guardar() {
 &lt;/li&gt;
 
 &lt;div id="avisoDeshacer" role="status" class="mt-2"&gt;&lt;/div&gt;</code></pre>
-        <pre class="course-code"><code>&lt;script&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script&gt;
 let temporizador;
 
 document.querySelectorAll("[data-id]").forEach((boton) =&gt; {
@@ -216,7 +216,7 @@ document.querySelectorAll("[data-id]").forEach((boton) =&gt; {
 &lt;/script&gt;</code></pre>
       </template>
       <template #vue>
-        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
 const solicitudes = ref([

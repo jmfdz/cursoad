@@ -42,7 +42,7 @@ import CodeTabs from '../../components/CodeTabs.vue'
     </p>
     <CodeTabs label="Implementación de campos con etiqueta asociada">
       <template #js>
-        <pre class="course-code"><code>&lt;form&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;form&gt;
   &lt;div class="mb-3"&gt;
     &lt;label for="nombre" class="form-label"&gt;Nombre:&lt;/label&gt;
     &lt;input type="text" id="nombre" class="form-control w-25" /&gt;
@@ -59,7 +59,7 @@ import CodeTabs from '../../components/CodeTabs.vue'
       </template>
       <template #vue>
         <p>La etiqueta se relaciona con el campo exactamente igual; lo único que cambia es que el valor queda enlazado con <code>v-model</code> en lugar de leerse del DOM al enviar:</p>
-        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
 const nombre = ref('')
@@ -94,7 +94,7 @@ const colectivo = ref('alumno')
     <CodeTabs label="Implementación de la agrupación de campos">
       <template #js>
         <p>Ejemplo en el caso de un formulario largo, agrupando por relación:</p>
-        <pre class="course-code"><code>&lt;form&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;form&gt;
   &lt;fieldset&gt;
     &lt;legend&gt;Datos personales&lt;/legend&gt;
     &lt;div class="mb-3"&gt;
@@ -128,7 +128,7 @@ const colectivo = ref('alumno')
   &lt;/div&gt;
 &lt;/form&gt;</code></pre>
         <p>Ejemplo de campos <code>checkbox</code> o <code>radio</code> agrupados:</p>
-        <pre class="course-code"><code>&lt;form&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;form&gt;
   &lt;!-- Resto de campos... --&gt;
   &lt;fieldset&gt;
     &lt;legend&gt;Colectivo UA&lt;/legend&gt;
@@ -155,7 +155,7 @@ const colectivo = ref('alumno')
       </template>
       <template #vue>
         <p><code>v-model</code> no sustituye la agrupación mediante <code>fieldset</code> y <code>legend</code>; ambos siguen siendo necesarios:</p>
-        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
 const tipoUsuario = ref('alumno')
@@ -227,7 +227,7 @@ const tipoUsuario = ref('alumno')
     </p>
     <CodeTabs label="Implementación del texto de ayuda de un campo">
       <template #js>
-        <pre class="course-code"><code>&lt;div class="mb-3"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;div class="mb-3"&gt;
   &lt;label for="password" class="form-label"&gt;Contraseña&lt;/label&gt;
   &lt;input
     id="password"
@@ -242,7 +242,7 @@ const tipoUsuario = ref('alumno')
 &lt;/div&gt;</code></pre>
       </template>
       <template #vue>
-        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
 const password = ref('')
@@ -267,7 +267,7 @@ const password = ref('')
       </template>
     </CodeTabs>
     <p>La clase <code>form-text</code> proporciona la presentación de Bootstrap y <code>aria-describedby</code> establece la relación accesible con la ayuda. Un campo opcional se indica del mismo modo en su propia etiqueta:</p>
-    <pre class="course-code"><code>&lt;label for="email" class="form-label"&gt;Correo electrónico (opcional)&lt;/label&gt;</code></pre>
+    <pre class="course-code" tabindex="0"><code>&lt;label for="email" class="form-label"&gt;Correo electrónico (opcional)&lt;/label&gt;</code></pre>
 
     <h2>Nombres claros para las acciones</h2>
     <p>
@@ -325,12 +325,12 @@ const password = ref('')
     </p>
     <CodeTabs label="Implementación de la validación de un campo">
       <template #js>
-        <pre class="course-code"><code>&lt;div class="mb-3"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;div class="mb-3"&gt;
   &lt;label for="email" class="form-label"&gt;Correo electrónico&lt;/label&gt;
   &lt;input id="email" type="email" class="form-control" required aria-describedby="emailError" /&gt;
   &lt;div id="emailError" class="invalid-feedback"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-        <pre class="course-code"><code>&lt;script&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script&gt;
 const email = document.getElementById("email");
 const emailError = document.getElementById("emailError");
 
@@ -346,7 +346,7 @@ email.addEventListener("blur", validarEmail);
 &lt;/script&gt;</code></pre>
       </template>
       <template #vue>
-        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
 const email = ref('')
@@ -386,7 +386,7 @@ function validarEmail() {
     <CodeTabs label="Implementación del resumen de errores">
       <template #js>
         <p>Veamos un ejemplo de validación de un formulario mediante Ajax que efectúa los cambios en el cliente:</p>
-        <pre class="course-code"><code>&lt;form novalidate id="mi-form"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;form novalidate id="mi-form"&gt;
   &lt;div class="mb-3"&gt;
     &lt;label for="nombre"&gt;Nombre&lt;/label&gt;
     &lt;input type="text" id="nombre" name="nombre" class="form-control" required /&gt;
@@ -405,7 +405,7 @@ function validarEmail() {
   &lt;!-- Con role="alert" un lector de pantalla lee el contenido automáticamente cuando se inserte --&gt;
   &lt;div id="mensajealerta" role="alert" tabindex="-1"&gt;&lt;/div&gt;
 &lt;/form&gt;</code></pre>
-        <pre class="course-code"><code>&lt;script&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script&gt;
 document.getElementById("mi-form").addEventListener("submit", (event) =&gt; {
   event.preventDefault();
 
@@ -446,7 +446,7 @@ document.getElementById("mi-form").addEventListener("submit", (event) =&gt; {
       </template>
       <template #vue>
         <p>Con estado reactivo, el resumen se genera con <code>v-for</code> a partir de un array de errores. Añadir un enlace a cada uno, apuntando al <code>id</code> del campo, es una mejora sencilla sobre el patrón anterior que permite saltar directamente al campo problemático:</p>
-        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
 const errores = ref&lt;{ id: string; campo: string; mensaje: string }[]&gt;([])

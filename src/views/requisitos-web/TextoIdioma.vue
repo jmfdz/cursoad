@@ -43,7 +43,7 @@
       que descargar nada: basta con declararlas, siempre seguidas de alternativas por si el sistema
       no las tuviera.
     </p>
-    <pre class="course-code"><code>body {
+    <pre class="course-code" tabindex="0"><code>body {
   font-family: Arial, Verdana, sans-serif;
 }</code></pre>
     <p>
@@ -88,7 +88,7 @@
       propio sitio y declarándolo con <code>@font-face</code>, que es como funciona esta misma web
       del curso:
     </p>
-    <pre class="course-code"><code>@font-face {
+    <pre class="course-code" tabindex="0"><code>@font-face {
   font-family: 'Atkinson Hyperlegible Next';
   src: url('/fonts/atkinson-hyperlegible-next.woff2') format('woff2');
   font-weight: 100 900;   /* Fuente variable: todos los pesos en un fichero */
@@ -105,7 +105,7 @@ body {
       contenido no se lee.
     </p>
     <p>La segunda forma es cargarla desde un proveedor externo con un <code>&lt;link&gt;</code>:</p>
-    <pre class="course-code"><code>&lt;link
+    <pre class="course-code" tabindex="0"><code>&lt;link
   href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap"
   rel="stylesheet"&gt;</code></pre>
     <p>
@@ -125,7 +125,7 @@ body {
       regla a todos los elementos uno por uno, en lugar de dejar que la herencia haga su trabajo,
       y pisa elementos que normalmente queremos distintos, como los bloques de código:
     </p>
-    <pre class="course-code"><code>&lt;!-- Evitar: rompe la herencia y aplasta también pre, code o kbd --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Evitar: rompe la herencia y aplasta también pre, code o kbd --&gt;
 * {
   font-family: Arial, sans-serif;
 }</code></pre>
@@ -137,7 +137,7 @@ body {
       quien haya subido el tamaño de letra porque lo necesita para leer seguirá viendo el texto
       igual de pequeño.
     </p>
-    <pre class="course-code"><code>&lt;!-- Evitar: ambas anulan la configuración del navegador --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Evitar: ambas anulan la configuración del navegador --&gt;
 html { font-size: 16px; }
 html { font-size: 62.5%; }
 
@@ -150,7 +150,7 @@ html {
       resto del documento. Es el sitio donde se define la familia tipográfica y el tamaño base del
       contenido:
     </p>
-    <pre class="course-code"><code>body {
+    <pre class="course-code" tabindex="0"><code>body {
   font-family: 'Atkinson Hyperlegible Next', Arial, system-ui, sans-serif;
   font-size: 1.1667rem;
   line-height: 1.5;
@@ -162,7 +162,7 @@ html {
       es un formulario con la letra más pequeña que el texto que lo rodea, justo donde más falta
       hace leer bien. Se corrige con una única regla:
     </p>
-    <pre class="course-code"><code>input,
+    <pre class="course-code" tabindex="0"><code>input,
 select,
 textarea,
 button {
@@ -268,7 +268,7 @@ button {
       Partiendo de esos 14 puntos como base del contenido, el resto de la escala se define también
       en <code>rem</code>, de modo que todo quede referido al mismo origen:
     </p>
-    <pre class="course-code"><code>body { font-size: 1.1667rem; } /* 14 pt = 18,67px, base del contenido */
+    <pre class="course-code" tabindex="0"><code>body { font-size: 1.1667rem; } /* 14 pt = 18,67px, base del contenido */
 
 h1 { font-size: 2.5rem; }      /* 40px */
 h2 { font-size: 2rem; }        /* 32px */
@@ -317,7 +317,7 @@ h3 { font-size: 1.5rem; }      /* 24px */</code></pre>
       dejar que el bloque crezca con su contenido usando <code>min-height</code> en lugar de
       <code>height</code>:
     </p>
-    <pre class="course-code"><code>&lt;!-- Evitar: al ampliar el texto, el contenido se corta --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Evitar: al ampliar el texto, el contenido se corta --&gt;
 .tarjeta {
   height: 180px;
   overflow: hidden;
@@ -345,7 +345,7 @@ h3 { font-size: 1.5rem; }      /* 24px */</code></pre>
       utilizaremos elementos semánticos y reglas CSS. El salto de línea sí puede emplearse cuando
       forma parte del contenido, por ejemplo en una dirección postal.
     </p>
-    <pre class="course-code"><code>&lt;!-- Evitar: son dos párrafos simulados con saltos de línea --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Evitar: son dos párrafos simulados con saltos de línea --&gt;
 &lt;p&gt;Primer párrafo.&lt;br&gt;&lt;br&gt;Segundo párrafo.&lt;/p&gt;
 
 &lt;!-- Correcto: cada párrafo es un elemento, y el espacio lo pone CSS --&gt;
@@ -386,7 +386,7 @@ h3 { font-size: 1.5rem; }      /* 24px */</code></pre>
       mirada. Afecta especialmente a personas con dislexia, y se agrava cuanto más estrecha es la
       columna, es decir, justo en móvil.
     </p>
-    <pre class="course-code"><code>p {
+    <pre class="course-code" tabindex="0"><code>p {
   line-height: 1.5;
   text-align: left; /* No usar justify y no abusar de center */
   margin-bottom: 1rem;
@@ -415,7 +415,7 @@ h3 { font-size: 1.5rem; }      /* 24px */</code></pre>
       Partir de un interlineado de <code>1.5</code> en el cuerpo del texto y algo menor en los
       titulares, donde las líneas son cortas, es una base razonable:
     </p>
-    <pre class="course-code"><code>body {
+    <pre class="course-code" tabindex="0"><code>body {
   line-height: 1.5;
 }
 
@@ -435,7 +435,7 @@ h1, h2, h3 {
       cómoda porque equivale aproximadamente a la anchura de un carácter, de modo que el valor se
       lee directamente:
     </p>
-    <pre class="course-code"><code>.contenido p {
+    <pre class="course-code" tabindex="0"><code>.contenido p {
   max-width: 70ch;
 }</code></pre>
     <p>
@@ -459,7 +459,7 @@ h1, h2, h3 {
       la palabra se deletree como si fuera una sigla; aplicarlas con
       <code>text-transform</code> deja el contenido intacto:
     </p>
-    <pre class="course-code"><code>&lt;!-- Evitar: el lector de pantalla puede deletrear "M-A-T-R-Í-C-U-L-A" --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Evitar: el lector de pantalla puede deletrear "M-A-T-R-Í-C-U-L-A" --&gt;
 &lt;button type="button"&gt;MATRÍCULA&lt;/button&gt;
 
 &lt;!-- Correcto: el texto real es "Matrícula", las mayúsculas son presentación --&gt;
@@ -492,7 +492,7 @@ h1, h2, h3 {
       consiste en escribir contenido con la propiedad <code>content</code> de los pseudoelementos
       <code>::before</code> y <code>::after</code>:
     </p>
-    <pre class="course-code"><code>&lt;!-- Evitar: el texto solo existe en la hoja de estilos --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Evitar: el texto solo existe en la hoja de estilos --&gt;
 .aviso::before {
   content: "Importante: ";
 }
@@ -521,7 +521,7 @@ h1, h2, h3 {
       </li>
     </ul>
     <p>La forma correcta es que el texto viva en el HTML, que es donde se puede leer y traducir:</p>
-    <pre class="course-code"><code>&lt;p class="aviso"&gt;&lt;strong&gt;Importante:&lt;/strong&gt; el plazo termina el 30 de junio.&lt;/p&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;p class="aviso"&gt;&lt;strong&gt;Importante:&lt;/strong&gt; el plazo termina el 30 de junio.&lt;/p&gt;
 &lt;p class="precio"&gt;24,90 € &lt;span&gt;(IVA incluido)&lt;/span&gt;&lt;/p&gt;</code></pre>
     <p>
       Sí es legítimo usar <code>content</code> para elementos <strong>puramente
@@ -529,7 +529,7 @@ h1, h2, h3 {
       siempre que no aporten información que no esté ya en el texto. En ese caso conviene marcarlo
       explícitamente como decorativo:
     </p>
-    <pre class="course-code"><code>.icono-flecha::after {
+    <pre class="course-code" tabindex="0"><code>.icono-flecha::after {
   content: "→";
   /* Decorativo: el enlace ya dice a dónde va */
 }</code></pre>
@@ -561,7 +561,7 @@ h1, h2, h3 {
       <code>es</code> para español o <code>es-ES</code> para español de España.
     </p>
     <p>Para indicar que el contenido de la web es en español, escribiríamos:</p>
-    <pre class="course-code"><code>&lt;!DOCTYPE html&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;...&lt;/head&gt;
 &lt;body&gt;...&lt;/body&gt;
@@ -572,7 +572,7 @@ h1, h2, h3 {
       Para marcar que un fragmento de texto está en otro idioma, lo hacemos directamente en el
       texto deseado. Por ejemplo, marcando la palabra <span lang="en">People</span> como inglesa:
     </p>
-    <pre class="course-code"><code>&lt;!DOCTYPE html&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;...&lt;/head&gt;
 &lt;body&gt;

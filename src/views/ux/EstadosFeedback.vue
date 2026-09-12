@@ -37,7 +37,7 @@ import CodeTabs from '../../components/CodeTabs.vue'
     <CodeTabs label="Implementación de los estados de una interfaz">
       <template #js>
         <p>En HTML y JavaScript, los mensajes se incorporan o actualizan al cambiar el estado:</p>
-        <pre class="course-code"><code>&lt;!-- Estado de carga: informa sin interrumpir --&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;!-- Estado de carga: informa sin interrumpir --&gt;
 &lt;div class="alert alert-info" role="status"&gt;
   Cargando solicitudes…
 &lt;/div&gt;
@@ -58,7 +58,7 @@ import CodeTabs from '../../components/CodeTabs.vue'
           En Vue, los mensajes se muestran según el estado reactivo de la petición. Bootstrap sigue
           controlando su presentación.
         </p>
-        <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+        <pre class="course-code" tabindex="0"><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 
 // Controla si la petición está en curso.
@@ -142,7 +142,7 @@ async function guardarSolicitud() {
       <li>Es mejor <strong>No se ha podido guardar la solicitud. Revisa los campos marcados.</strong> que un mensaje genérico como <strong>Error inesperado</strong>.</li>
       <li>Es mejor <strong>Todavía no tienes solicitudes creadas</strong> que mostrar una pantalla vacía sin explicación.</li>
     </ul>
-    <pre class="course-code"><code>&lt;!-- Textos ambiguos --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- Textos ambiguos --&gt;
 &lt;button type="button" class="btn btn-primary"&gt;Aceptar&lt;/button&gt;
 &lt;button type="button" class="btn btn-primary"&gt;Continuar&lt;/button&gt;
 
@@ -180,7 +180,7 @@ async function guardarSolicitud() {
       anuncia el <code>aria-label</code> en lugar del texto visible, así que basta con una
       etiqueta para resolverlo, sin necesidad de tocar el HTML visible.
     </p>
-    <pre class="course-code"><code>&lt;!-- El lector de pantalla anuncia "Editar Aula 12", no solo "Editar" --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!-- El lector de pantalla anuncia "Editar Aula 12", no solo "Editar" --&gt;
 &lt;button type="button" class="btn btn-sm btn-outline-primary" aria-label="Editar Aula 12"&gt;
   Editar
 &lt;/button&gt;</code></pre>

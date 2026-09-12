@@ -9,7 +9,7 @@
 
     <h2>Renderizado de listas con Vue</h2>
     <p>Las listas deben conservar su semántica HTML:</p>
-    <pre class="course-code"><code>&lt;ul v-if="elementos.length > 0"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;ul v-if="elementos.length > 0"&gt;
   &lt;li v-for="elemento in elementos" :key="elemento.id" v-text="elemento.nombre"&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -21,7 +21,7 @@
       no aportar nada, esto permite representar correctamente el estado vacío. Cuando existe carga
       asíncrona podemos diferenciar claramente los tres estados:
     </p>
-    <pre class="course-code"><code>&lt;p v-if="loading"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;p v-if="loading"&gt;
   Cargando usuarios…
 &lt;/p&gt;
 
@@ -62,7 +62,7 @@
       subido, cambios aplicados. Con <code>role="status"</code>, el contenedor permanece en el DOM
       y Vue introduce dentro el mensaje dinámico. Patrón recomendado:
     </p>
-    <pre class="course-code"><code>&lt;div role="status"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;div role="status"&gt;
   &lt;p v-if="mensaje" class="alert alert-success" v-text="mensaje"&gt;&lt;/p&gt;
 &lt;/div&gt;</code></pre>
     <p>
@@ -89,7 +89,7 @@
       aviso. Por tanto, no es necesario aplicar a <code>role="alert"</code> la regla de mantener
       previamente un contenedor vacío en el DOM.
     </p>
-    <pre class="course-code"><code>&lt;p v-if="errorUrgente" class="alert alert-danger" role="alert" v-text="errorUrgente"&gt;&lt;/p&gt;</code></pre>
+    <pre class="course-code" tabindex="0"><code>&lt;p v-if="errorUrgente" class="alert alert-danger" role="alert" v-text="errorUrgente"&gt;&lt;/p&gt;</code></pre>
     <p>
       En este caso, Vue crea a la vez el elemento con <code>role="alert"</code> y su contenido. El
       aviso se anuncia al insertarse, aunque el elemento no estuviera previamente en el DOM. Esta
@@ -99,7 +99,7 @@
 
     <h2>Estados de carga</h2>
     <p>Un spinner visual por sí solo no comunica qué está ocurriendo. Con Bootstrap podemos utilizar:</p>
-    <pre class="course-code"><code>&lt;div role="status"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;div role="status"&gt;
   &lt;div v-if="loading" class="d-flex align-items-center gap-2"&gt;
     &lt;div class="spinner-border spinner-border-sm" aria-hidden="true"&gt;&lt;/div&gt;
     &lt;p class="mb-0"&gt;Cargando usuarios…&lt;/p&gt;
@@ -113,7 +113,7 @@
 
     <h2>Estado de paginación de una tabla</h2>
     <p>El texto situado junto a los controles de paginación, debajo de una tabla, es un ejemplo típico de mensaje de estado:</p>
-    <pre class="course-code"><code>&lt;div class="d-flex justify-content-between align-items-center"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;div class="d-flex justify-content-between align-items-center"&gt;
   &lt;div role="status"&gt;
     &lt;p
       v-if="tablaCargada"
@@ -140,7 +140,7 @@
       componente <code>Notificaciones</code>; veamos ahora cómo se resuelve. Un composable
       <code>useNotificaciones</code> expone el estado y los métodos que utiliza el componente:
     </p>
-    <pre class="course-code"><code>&lt;script setup lang="ts"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;script setup lang="ts"&gt;
 import { useNotificaciones } from '../composables/useNotificaciones'
 import type { INotificacion } from '../composables/useNotificaciones'
 
@@ -162,7 +162,7 @@ const coloresTipo: Record&lt;INotificacion['tipo'], string&gt; = {
       Las notificaciones visibles se muestran en una región identificada como «Notificaciones».
       Cada una dispone de un botón de cierre cuyo nombre incluye el título de la notificación:
     </p>
-    <pre class="course-code"><code>&lt;div class="toast-container position-fixed top-0 end-0 p-3" role="region" aria-label="Notificaciones"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;div class="toast-container position-fixed top-0 end-0 p-3" role="region" aria-label="Notificaciones"&gt;
   &lt;div
     v-for="item in notificaciones"
     :key="item.id"
@@ -194,7 +194,7 @@ const coloresTipo: Record&lt;INotificacion['tipo'], string&gt; = {
       contenedores permanecen fuera de la presentación visual mediante
       <code>visually-hidden</code>:
     </p>
-    <pre class="course-code"><code>&lt;div class="visually-hidden" role="status" v-text="mensajePaciente"&gt;&lt;/div&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;div class="visually-hidden" role="status" v-text="mensajePaciente"&gt;&lt;/div&gt;
 
 &lt;div class="visually-hidden" role="alert" v-text="mensajeUrgente"&gt;&lt;/div&gt;</code></pre>
     <p>

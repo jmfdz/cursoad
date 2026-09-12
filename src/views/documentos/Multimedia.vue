@@ -113,7 +113,7 @@
       Por ejemplo, en HTML5 podríamos cargar un vídeo con un fichero de subtítulos <code>.srt</code>
       convertido a <code>WebVTT</code> así:
     </p>
-    <pre class="course-code"><code>&lt;video controls width="720"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;video controls width="720"&gt;
   &lt;source src="clase.mp4" type="video/mp4" /&gt;
   &lt;track
     kind="captions"
@@ -134,7 +134,7 @@
       Si el vídeo está incrustado desde otra plataforma, por ejemplo YouTube, al menos el
       <code>iframe</code> debe tener un título que identifique con claridad su contenido:
     </p>
-    <pre class="course-code"><code>&lt;iframe
+    <pre class="course-code" tabindex="0"><code>&lt;iframe
   width="560"
   height="315"
   src="https://www.youtube.com/embed/xxxxxxxxxxx"
@@ -202,7 +202,7 @@
     <p>
       Puede hacerse, por ejemplo, enlazando un fichero de texto o una página con la transcripción:
     </p>
-    <pre class="course-code"><code>&lt;p id="transcripcion-audio"&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;p id="transcripcion-audio"&gt;
   Transcripción de la entrevista:
   &lt;a href="entrevista.txt"&gt;leer transcripción completa&lt;/a&gt;
 &lt;/p&gt;

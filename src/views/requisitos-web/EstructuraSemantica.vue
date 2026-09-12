@@ -27,14 +27,14 @@
 
     <h2>Semántica de los elementos</h2>
     <p>Pongamos un ejemplo de lista con los colores corporativos UA. Podemos hacerla escribiendo en cada línea:</p>
-    <pre class="course-code"><code>&lt;p&gt;1. Azul&lt;/p&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;p&gt;1. Azul&lt;/p&gt;
 &lt;p&gt;2. Naranja&lt;/p&gt;
 &lt;p&gt;3. Gris&lt;/p&gt;</code></pre>
     <p>
       El problema es que estaremos simulando una lista, cuando en realidad son tres párrafos. Sin
       embargo, si utilizamos una lista ordenada, ni siquiera necesitamos escribir los números:
     </p>
-    <pre class="course-code"><code>&lt;ol&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;ol&gt;
 &lt;li&gt;Azul&lt;/li&gt;
 &lt;li&gt;Naranja&lt;/li&gt;
 &lt;li&gt;Gris&lt;/li&gt;
@@ -54,7 +54,7 @@
       contener texto, pero no indica que ese texto sea un párrafo, y por eso un lector de pantalla
       no puede anunciarlo ni permitir saltar de uno a otro. Veamos un ejemplo:
     </p>
-    <pre class="course-code"><code>&lt;div&gt;¡Hola mundo!&lt;/div&gt; &lt;!-- Sin semántica de párrafo --&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;div&gt;¡Hola mundo!&lt;/div&gt; &lt;!-- Sin semántica de párrafo --&gt;
 &lt;p&gt;¡Hola mundo!&lt;/p&gt; &lt;!-- Párrafo --&gt;</code></pre>
     <p>
       Dicho de otro modo: <code>div</code> y <code>span</code> son elementos sin significado,
@@ -147,7 +147,7 @@
       diferenciarlas; en otro caso, no sabremos en qué pestaña está cada contenido.
     </p>
     <p>Veamos un ejemplo completo con título, cabecera, contenido principal y pie de página:</p>
-    <pre class="course-code"><code>&lt;!DOCTYPE html&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
   &lt;title&gt;Bienvenido/a a la UA&lt;/title&gt;
@@ -207,7 +207,7 @@
       Tampoco se deben crear encabezados consecutivos del mismo nivel y que no tengan elementos
       entre ellos, pues su función es encabezar una sección. Por ejemplo, estaría mal:
     </p>
-    <pre class="course-code"><code>&lt;h1&gt;Web UA&lt;/h1&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;h1&gt;Web UA&lt;/h1&gt;
 &lt;p&gt;Descubre la web de la UA…&lt;/p&gt;
 &lt;h2&gt;Noticias&lt;/h2&gt;
 &lt;h2&gt;Eventos&lt;/h2&gt;</code></pre>
@@ -215,7 +215,7 @@
       Ahora veamos una estructura de la web de la UA, con la sección de noticias y eventos de
       forma correcta:
     </p>
-    <pre class="course-code"><code>&lt;h1&gt;Web UA&lt;/h1&gt;
+    <pre class="course-code" tabindex="0"><code>&lt;h1&gt;Web UA&lt;/h1&gt;
 &lt;p&gt;Descubre la web de la UA…&lt;/p&gt;
 &lt;h2&gt;Noticias&lt;/h2&gt;
 &lt;h3&gt;Enlace a noticia 1&lt;/h3&gt;
