@@ -11,8 +11,7 @@ const closeMainNav = () => {
   menuAbierto.value = false
 }
 
-const esBloqueActual = (slug: string) =>
-  route.name === slug || String(route.name ?? '').startsWith(`${slug}-`)
+const esBloqueActual = (slug: string) => String(route.name ?? '').startsWith(`${slug}-`)
 
 const esApartadoActual = (slug: string, apartadoId: string) =>
   route.name === `${slug}-${apartadoId}`

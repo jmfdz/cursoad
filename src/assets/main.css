@@ -17,6 +17,8 @@
   --bs-body-color: #000000;
   /* El gris institucional #767676 se queda en 4,54:1; #4f4f4f da 8,19:1 */
   --bs-secondary-color: #4f4f4f;
+  /* .text-secondary lee de --bs-secondary-rgb, no de --bs-secondary-color */
+  --bs-secondary-rgb: 79, 79, 79;
   --bs-border-color: #c2c2c2;
   /* Anillo de foco de la plantilla institucional */
   --bs-focus-ring-width: 0.25rem;

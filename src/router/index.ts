@@ -10,12 +10,11 @@ declare module 'vue-router' {
 
 const nombreSitio = 'Accesibilidad, Usabilidad y UX'
 
+// Los bloques ya no tienen pagina propia: el indice del curso esta en la portada.
+// Se conservan como redireccion para no romper enlaces antiguos.
 const rutasBloque = bloquesCurso.map((bloque) => ({
   path: `/${bloque.slug}`,
-  name: bloque.slug,
-  component: () => import('../views/Bloque.vue'),
-  props: { slug: bloque.slug },
-  meta: { TITULO: bloque.title },
+  redirect: `/${bloque.slug}/${bloque.sections[0].id}`,
 }))
 
 const rutasApartado = bloquesCurso.flatMap((bloque) =>

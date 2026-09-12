@@ -1,41 +1,51 @@
 <script setup lang="ts">
-import { bloquesCurso, getRutaApartado, tituloCurso } from '../curso'
+import { computed } from 'vue'
+import {
+  autorCurso,
+  bloquesCurso,
+  fechaRevisionCurso,
+  getRutaApartado,
+  tituloCurso,
+} from '../curso'
+
+const totalApartados = computed(() =>
+  bloquesCurso.reduce((total, bloque) => total + bloque.sections.length, 0),
+)
 </script>
 
 <template>
-  <section class="d-flex flex-column gap-4">
-    <div class="card border overflow-hidden">
-      <div class="row g-0">
-        <div class="col-12">
-          <div class="card-body p-4 p-md-5">
-            <h1 class="mb-3" tabindex="-1">{{ tituloCurso }}</h1>
-          </div>
-        </div>
+  <section class="d-flex flex-column gap-4 gap-lg-5">
+    <header>
+      <h1 class="mb-3" tabindex="-1">{{ tituloCurso }}</h1>
+      <p class="mb-1">{{ autorCurso }}</p>
+      <p class="mb-0 text-secondary">
+        {{ bloquesCurso.length }} bloques y {{ totalApartados }} temas.
+        Última revisión: {{ fechaRevisionCurso }}.
+      </p>
+    </header>
+
+    <article
+      v-for="(bloque, indice) in bloquesCurso"
+      :key="bloque.slug"
+      class="card border"
+    >
+      <div class="card-body p-4 p-lg-5 pb-lg-4">
+        <p class="mb-1 text-secondary">Bloque {{ indice + 1 }} de {{ bloquesCurso.length }}</p>
+        <h2 class="mb-3">{{ bloque.title }}</h2>
+        <p class="mb-0">{{ bloque.homeSummary ?? bloque.menuDescription }}</p>
       </div>
-    </div>
 
-    <div class="row g-4">
-      <div
-        v-for="(block, index) in bloquesCurso"
-        :key="block.slug"
-        :class="index < 3 ? 'col-md-4' : 'col-md-6'"
-      >
-        <article class="card h-100 border">
-          <div class="card-body p-4 d-flex flex-column">
-            <h2 class="mb-3">{{ block.title }}</h2>
-
-            <p class="mb-4">{{ block.homeSummary ?? block.menuDescription }}</p>
-
-            <RouterLink
-              :to="getRutaApartado(block.slug, block.sections[0].id)"
-              class="btn btn-primary mt-auto align-self-start d-inline-flex text-white"
-              :aria-label="`Ir al bloque ${block.shortTitle}`"
-            >
-              {{ `Ir a ${block.shortTitle}` }}
-            </RouterLink>
-          </div>
-        </article>
-      </div>
-    </div>
+      <ol class="list-group list-group-flush list-group-numbered">
+        <li
+          v-for="apartado in bloque.sections"
+          :key="apartado.id"
+          class="list-group-item px-4 px-lg-5 py-3"
+        >
+          <RouterLink :to="getRutaApartado(bloque.slug, apartado.id)">
+            {{ apartado.title }}
+          </RouterLink>
+        </li>
+      </ol>
+    </article>
   </section>
 </template>
