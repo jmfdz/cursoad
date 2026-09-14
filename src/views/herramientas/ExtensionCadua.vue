@@ -8,6 +8,7 @@
 
     <p>
       <a
+        class="btn btn-primary"
         href="https://chromewebstore.google.com/detail/cadua/dkdoelfmjnclpchkhfghgeabpkbjkigj?authuser=0&amp;hl=es"
         target="_blank"
         rel="noreferrer"

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import BuscadorCurso from './components/BuscadorCurso.vue'
+import AccesibilidadUa from './components/AccesibilidadUa.vue'
 import { useRoute } from 'vue-router'
 import { bloquesCurso, getRutaApartado } from './curso'
 
@@ -39,15 +40,17 @@ const esApartadoActual = (slug: string, apartadoId: string) =>
          Va suelto y no envolviendo al <nav>, porque el nav es sticky-top y solo se
          queda pegado mientras su padre este a la vista. -->
     <header class="bg-primary text-white py-1">
-      <div class="container small d-flex flex-wrap align-items-center justify-content-between gap-2">
-        <span class="fw-semibold">SI UA</span>
+      <div class="container small d-flex flex-nowrap align-items-center justify-content-end gap-2">
+        <AccesibilidadUa />
         <BuscadorCurso />
         <a
-          class="text-white fw-semibold"
+          class="text-white fw-semibold fs-5 px-2 flex-shrink-0"
           href="https://web.ua.es/es/accesibilidad/contacto.html"
           rel="noreferrer"
+          aria-label="Contacto"
+          title="Contacto"
         >
-          Contacto
+          <span aria-hidden="true">@</span>
         </a>
       </div>
     </header>

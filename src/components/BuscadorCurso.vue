@@ -33,11 +33,13 @@ function buscar() {
 
 <style scoped>
 .buscador-curso {
-  padding-block: 0.25rem;
+  width: 16rem;
+  min-width: 0;
 }
 .buscador-controles { flex-wrap: nowrap; }
 .buscador-controles input { min-width: 0; }
-@media (max-width: 575.98px) {
-  .buscador-curso { order: 3; width: 100%; }
+.buscador-controles > .form-control,
+.buscador-controles > .btn {
+  padding-block: 0.125rem;
 }
 </style>
