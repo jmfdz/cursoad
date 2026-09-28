@@ -1,5 +1,16 @@
+<script setup lang="ts">
+const rutaZip = `${import.meta.env.BASE_URL}ua-accesibilidad.zip`
+</script>
+
 <template>
   <div>
+    <p>
+      <a
+        class="btn btn-primary"
+        :href="rutaZip"
+        download="ua-accesibilidad.zip"
+      >Descargar skill ua-accesibilidad (ZIP, 317 KiB)</a>
+    </p>
     <p>
       La skill <strong>ua-accesibilidad</strong> reúne instrucciones, referencias y herramientas
       para que un agente de IA ayude a crear, revisar y corregir interfaces web accesibles.
@@ -15,12 +26,12 @@
     <h2>Instalación y primeros pasos</h2>
     <ol>
       <li>
-        Accede al repositorio <strong>Skills.md del Git</strong>. Allí está ua-accesibilidad,
-        junto con otras skills.
+        Descarga el ZIP anterior o accede al repositorio <strong>Skills.md del SI</strong>.
+        Allí está ua-accesibilidad, junto con otras skills.
       </li>
       <li>
-        Sigue las instrucciones del repositorio. Incluye scripts para instalar todas las skills;
-        utiliza el que corresponda a tu entorno y al agente con el que vayas a trabajar.
+        Si utilizas el repositorio, sigue sus instrucciones. Incluye scripts para instalar todas
+        las skills; utiliza el que corresponda a tu entorno y al agente con el que vayas a trabajar.
       </li>
       <li>Abre el proyecto en Claude o Codex y comprueba que ua-accesibilidad está disponible.</li>
       <li>
@@ -286,5 +297,6 @@
       termine sin errores no significa que la aplicación sea accesible: hay que completar la revisión
       con teclado, lector de pantalla y tareas reales.
     </p>
+    <p class="text-muted small">Última actualización: <time datetime="2026-09-28">28 de septiembre de 2026</time>.</p>
   </div>
 </template>
