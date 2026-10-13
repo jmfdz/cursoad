@@ -9,7 +9,7 @@ const rutaZip = `${import.meta.env.BASE_URL}ua-accesibilidad.zip`
         class="btn btn-primary"
         :href="rutaZip"
         download="ua-accesibilidad.zip"
-      >Descargar skill ua-accesibilidad (ZIP, 317 KiB)</a>
+      >Descargar skill ua-accesibilidad (ZIP, 382 KiB)</a>
     </p>
     <p>
       La skill <strong>ua-accesibilidad</strong> reúne instrucciones, referencias y herramientas
